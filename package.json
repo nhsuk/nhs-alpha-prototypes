@@ -21,7 +21,6 @@
     "grunt-nodemon": "0.3.0",
     "grunt-sass": "0.18.0",
     "grunt-text-replace": "0.3.12",
-    "hogan.js": "3.0.2",
     "minimist": "0.0.8",
     "node-sass": "2.1.1",
     "readdir": "0.0.6",
