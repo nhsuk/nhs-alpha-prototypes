@@ -37,6 +37,9 @@ swig.setDefaults({ cache: false });
 // NOTE: You should always cache templates in a production environment.
 // Don't leave both of these to `false` in production!
 
+// Set base directory for Swig templates and includes
+swig.setDefaults({ loader: swig.loaders.fs(__dirname + '/app/views' )});
+
 
 // Middleware to serve static assets
 app.use('/public', express.static(__dirname + '/public'));
