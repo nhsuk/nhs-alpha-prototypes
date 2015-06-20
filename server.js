@@ -21,13 +21,13 @@ if (env === 'production') {
 }
 
 // Application settings
-//app.engine('html', require(__dirname + '/lib/template-engine.js').__express);
-
 app.engine('html', swig.renderFile);
 app.set('view engine', 'html');
 app.set('vendorViews', __dirname + '/govuk_modules/govuk_template/views/layouts');
 app.set('views', __dirname + '/app/views');
 
+
+// Template engine settings
 
 // Swig will cache templates for you, but you can disable
 // that and use Express's caching instead, if you like:

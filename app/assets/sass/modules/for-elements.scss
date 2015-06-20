@@ -1,0 +1,109 @@
+// Proposed amends and additions to the GOV.UK Elements
+
+
+// ======================================================
+// _forms.scss
+
+// Fix full-width buttons on mobile.
+// At the moment the right edge sticks out.
+
+.button {
+  @include media(mobile) {
+    box-sizing: border-box
+  }
+}
+
+
+// Make bold form labels the same as non-bold ones
+.form-label-bold {
+  @include bold-19;
+  margin-bottom: 5px;
+}
+
+
+// In Webkit, the bottom margin of a legend and the top margin 
+// of the next element don't overlap, which they should. This 
+// addresses that by ignoring the top margin of the next element
+
+legend + * {
+    -webkit-margin-top-collapse : discard;
+}
+
+
+// Set textarea to block so Chrome and FF don't add a funny little bottom margin
+textarea{
+  display: block
+}
+
+// Add missing form-control widths. Adding these allows us to set 
+// form control widths to all the main grid widths.
+
+.form-control-1-4 {
+  width: 100%;
+  @include media(tablet) {
+    width: 25%;
+  }
+}
+
+.form-control-1-3 {
+  width: 100%;
+  @include media(tablet) {
+    width: 33.33%;
+  }
+}
+
+.form-control-2-3 {
+  width: 100%;
+  @include media(tablet) {
+    width: 66.66%;
+  }
+}
+
+.form-control-1-1 {
+  width: 100%;
+}
+
+
+// ======================================================
+// _panels.scss
+
+// Remove the top margin from the first item in indented panels
+.panel-indent > * {
+  margin-top: 0;
+}
+
+
+// ======================================================
+// _typography.scss
+
+
+// Make heading styles block elements, so they work as intended when 
+// applied to non-block elements (like form labels)
+
+.heading-small,
+.heading-medium,
+.heading-large,
+.heading-xlarge{
+  display: block
+}
+
+
+// Create a link style for the times when you want to style non-links
+// as links (eg. for link toggles)
+
+.link-style{
+  color: $link-colour;
+  text-decoration: underline;
+  &:hover{
+    cursor: pointer;
+    color: $link-hover-colour;
+  }
+}
+
+// Sensible style for HR tags
+hr{
+  background: $border-colour;
+  border: 0 solid;
+  height: 1px;
+  margin-bottom: 60px;
+}

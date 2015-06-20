@@ -1,0 +1,23 @@
+// Form navigation
+
+.form-navigation{
+  @include core-16();
+  margin: $gutter 0 0;
+}
+
+// Back link
+
+a.back-to-previous{
+  color: $text-colour;
+  text-decoration: none;
+  background: url('/public/images/back-arrow.png') no-repeat 0 3px;
+  padding-left: 10px;
+  background-size: 15%;
+  border-bottom: 1px solid $text-colour;
+}
+
+// Question number
+.question-number{
+  padding-left: $gutter-half;
+  color: $secondary-text-colour;
+}

@@ -1,0 +1,105 @@
+// Styling for radios and checkboxes
+
+
+.form-control{
+  padding: 2px 5px;
+}
+
+  // Hide native controls - (!!!)
+  input[type='checkbox'],
+  input[type='radio']{
+    display: none;
+  }
+
+
+  .form-control-checkbox,
+  .form-control-radio{
+    //margin-top: -5px;
+    //margin-bottom: 15px;
+    margin-bottom: 10px;
+    padding-top: 5px;
+    width: auto;
+    float: left;
+    clear: left;
+    padding-right: 20px;
+    // Show click area on hover
+    &:hover{
+      cursor: pointer;
+      background: $highlight-colour;
+      outline: 6px solid $highlight-colour;
+    }
+  }
+
+  // Create box style for checbox and radio
+  .form-control-checkbox::before,
+  .form-control-radio::before{
+    content: "";
+    float: left;
+    background-color: #fff;
+    border: 2px solid $border-colour;
+
+    //width: 32px;
+    //height: 32px;
+
+    width: 30px;
+    height: 30px;
+
+    margin-right: 10px;
+    margin-top: -5px;
+  }
+
+  // Make radios circles not boxes
+  .form-control-radio::before{
+    //border-radius: 17px
+    border-radius: 16px
+  }
+
+  // Checked style
+  input[type='checkbox']:checked + .form-control-checkbox::before{
+    content: "";
+    background: #FFF url(/public/images/tick.png) no-repeat 1px 1px;
+    background-size: 91%;
+  }
+
+  input[type='radio']:checked + .form-control-radio::before{
+    content: "●";
+    line-height: 1;
+    text-align: center;
+    font-size: 31px;
+  }
+
+
+  // Compact versions
+  .form-control-checkbox.compact-control,
+  .form-control-radio.compact-control{
+    line-height: 1;
+    margin-top: 0;
+    padding-top: 2px; // + Offset
+  }
+  .form-control-checkbox.compact-control::before,
+  .form-control-radio.compact-control::before{
+    width: 16px;
+    height: 16px;
+    margin-top: -2px; // - Offset
+  }
+
+  input[type='radio']:checked + .form-control-radio.compact-control::before{
+    font-size: 17px;
+  }
+
+
+  // Checkbox header
+
+  .checkbox-header:checked + .form-control-checkbox{
+    font-weight: bold;
+  }
+
+
+// No bottom margin on last checkbox or radio (because the parent form group has a margin already)
+.form-group .form-control-checkbox:last-child,
+.form-group .form-control-radio:last-child{
+  margin-bottom: 0
+}
+
+
+

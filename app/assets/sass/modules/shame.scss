@@ -1,0 +1,132 @@
+
+
+// Simpler form hint style
+.form-hint{
+  margin: 0 0 20px 0;
+  color: $black;
+}
+
+// Fixed character width form controls
+.form-control-1-char    {	width: 1.5em }
+.form-control-2-chars   {	width: 2.4em }
+.form-control-3-chars   {	width: 3.3em }
+.form-control-4-chars   {	width: 4.2em }
+.form-control-5-chars   {	width: 5.1em }
+.form-control-6-chars   {	width: 6em }
+.form-control-7-chars   {	width: 7em }
+.form-control-8-chars   {	width: 8em }
+.form-control-9-chars   {	width: 9em }
+.form-control-10-chars  {	width: 10em }
+.form-control-11-chars  {	width: 11em }
+.form-control-12-chars  {	width: 12em }
+.form-control-13-chars  {	width: 13em }
+.form-control-14-chars  {	width: 14em }
+.form-control-15-chars  {	width: 15em }
+.form-control-16-chars  {	width: 16em }
+
+
+// Inline fieldsets for compound controls
+fieldset.inline,
+.inline-form-groups {
+  @extend %contain-floats;
+  .form-group {
+    width: auto;
+    margin-right: 10px;
+    clear: none;
+  }
+}
+
+
+// Thick grey borders
+.form-control-checkbox::before,
+.form-control-radio::before,
+.form-select-2,
+textarea.form-control,
+input.form-control{
+  border: 2px solid $border-colour;
+}
+
+.form-control-email{
+  width: 36em;
+}
+
+
+// Margins for left or right aligned labels
+
+.form-label.horizontal-right-label{
+  margin-bottom: 0;
+  .form-control{
+    margin-right: 10px
+  }
+}
+
+.form-label.horizontal-left-label{
+  margin-bottom: 0;
+  .form-control{
+    margin-left: 10px
+  }
+}
+
+
+// VERTICAL SPACING
+
+body { 
+  //background-image: url(/public/images/v-rhythm-46.png); 
+  //background-position-y: -5px;
+}
+
+// Reduce bottom margin by 2px so the spacing between labels and controls is the same as between related controls - 10px
+.form-label{
+  margin-bottom: 3px;
+}
+
+.form-control{
+  //padding: 3px; // Slightly reduce the v-hight to match that of the radios and checkboxes
+}
+
+.form-group{
+  //margin-bottom: 28px // Slightly reduced from 30px - seems to keep it closer to the 46px vertical rhythm
+}
+
+fieldset.form-group{
+  //margin-bottom: 26px
+  //margin-bottom: 42px;
+  //margin-bottom: 19px;
+}
+
+
+// Make margin between related form groups smaller
+
+.form-group-related{
+  margin-bottom: 10px;
+}
+
+
+// Grids
+
+.grid-row {
+  @extend %grid-row;
+}
+
+.column-quarter {
+  @include grid-column( 1/4 );
+}
+
+.column-three-quarters {
+  @include grid-column( 3/4 );
+}
+
+// Align service header in a quarter-width grid layout
+#global-header.with-proposition .header-wrapper .header-global {
+  //width: 25%;
+}
+
+// Position the 'or' in radio lists
+
+.or{ 
+  display: none;
+  float: left;
+  clear: left;
+  padding: 5px 0 0 7px;
+}
+
