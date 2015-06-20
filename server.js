@@ -1,5 +1,6 @@
 var path = require('path'),
     express = require('express'),
+    swig = require('swig'),
     routes = require(__dirname + '/app/routes.js'),
     app = express(),
     port = (process.env.PORT || 3000),
@@ -20,10 +21,22 @@ if (env === 'production') {
 }
 
 // Application settings
-app.engine('html', require(__dirname + '/lib/template-engine.js').__express);
+//app.engine('html', require(__dirname + '/lib/template-engine.js').__express);
+
+app.engine('html', swig.renderFile);
 app.set('view engine', 'html');
 app.set('vendorViews', __dirname + '/govuk_modules/govuk_template/views/layouts');
 app.set('views', __dirname + '/app/views');
+
+
+// Swig will cache templates for you, but you can disable
+// that and use Express's caching instead, if you like:
+app.set('view cache', false);
+// To disable Swig's cache, do the following:
+swig.setDefaults({ cache: false });
+// NOTE: You should always cache templates in a production environment.
+// Don't leave both of these to `false` in production!
+
 
 // Middleware to serve static assets
 app.use('/public', express.static(__dirname + '/public'));
