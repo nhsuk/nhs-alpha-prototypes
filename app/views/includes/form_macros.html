@@ -1,0 +1,37 @@
+
+{% macro radio_buttons(id, options) %}
+  {% for x in options %}
+    {% if loop.first %}
+  <div class="form-group">
+    <p class="form-hint">Select one:</p>
+      <div class="form-group">
+    {% endif %}
+        <input type="radio" id="{{ id }}-{{ loop.key }}" name="{{ id }}" value="{{ id }}-{{ loop.key }}"> 
+        <label class="form-label form-control-radio" for="{{ id }}-{{ loop.key }}">
+          {{ x }}
+        </label>
+    {% if loop.last %}      
+    </div>
+  </div>
+    {% endif %}
+  {% endfor %}
+{% endmacro %}
+
+
+{% macro checkboxes(id, options) %}
+  {% for x in options %}
+    {% if loop.first %}
+  <div class="form-group">
+    <p class="form-hint">Select all that apply:</p>
+      <div class="form-group">
+    {% endif %}
+        <input type="checkbox" id="{{ id }}-{{ loop.key }}" value="{{ id }}-{{ loop.key }}"> 
+        <label class="form-label form-control-checkbox" for="{{ id }}-{{ loop.key }}">
+          {{ x }}
+        </label>
+    {% if loop.last %}      
+    </div>
+  </div>
+    {% endif %}
+  {% endfor %}
+{% endmacro %}

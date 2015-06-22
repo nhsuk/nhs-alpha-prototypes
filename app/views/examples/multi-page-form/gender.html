@@ -1,9 +1,9 @@
 {% extends 'templates/question_template.html' %}
+{% import 'includes/form_macros.html' as form %}
 
 {% block pageTitle %}
   What is your gender?
 {% endblock %}
-
 
 {% block questionNumber %}6{% endblock %}
 {% block prevURL %}internet-adjustments{% endblock %}
@@ -11,27 +11,12 @@
 
 {% block questionContent %}
 
-	<div class="form-group">
-		<p class="form-hint">Select one:</p>
-	    <div class="form-group">
-	    	<input type="radio" id="gender-female" name="gender"> 
-	      <label class="form-label form-control-radio" for="gender-female">
-	      	female
-	      </label>
-	      <input type="radio" id="gender-male" name="gender"> 
-	      <label class="form-label form-control-radio" for="gender-male">
-	      	male
-	      </label>
-	      <input type="radio" id="gender-unspecified" name="gender"> 
-	      <label class="form-label form-control-radio" for="gender-unspecified">
-	      	unspecified
-	      </label>
-	      <input type="radio" id="gender-prefer-not-to-say" name="gender"> 
-	      <label class="form-label form-control-radio" for="gender-prefer-not-to-say">
-	      	prefer not to say
-	      </label>
-	    </div>
-	</div>
+	{{ form.radio_buttons('gender', { 
+		1:	'female', 
+		2:	'male',
+		3:	'unspecified', 
+		4:	'prefer not to say'  
+	})}}
 
 {% endblock %}
 
