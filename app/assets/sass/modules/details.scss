@@ -1,0 +1,23 @@
+details{
+  margin-bottom: 30px;
+  summary{
+    text-decoration: underline;
+  }
+  summary::-webkit-details-marker {
+    display: none
+  }
+}
+
+details[open]{
+  summary{
+    font-weight: bold;
+    text-decoration: none;
+    color: $text-colour;
+  }
+  summary:focus{
+    outline: none;
+  }
+  summary:hover{
+    text-decoration: underline;
+  }
+}

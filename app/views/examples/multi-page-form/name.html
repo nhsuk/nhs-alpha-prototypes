@@ -1,0 +1,34 @@
+{% extends 'templates/question_template.html' %}
+{% import 'includes/form_macros.html' as form %}
+
+{% block pageTitle %}
+  What is your full name?
+{% endblock %}
+
+{% block questionNumber %}6{% endblock %}
+{% block prevURL %}internet-adjustments{% endblock %}
+{% block nextURL %}country-live{% endblock %}
+
+{% block questionContent %}
+
+  <div class="form-group">
+    <label class="form-label" for="first-name">
+      First name
+    </label>
+    <input type="text" id="first-name" class="form-control"> 
+  </div>
+   <div class="form-group">
+    <label class="form-label" for="middle-names">
+      Middle names
+    </label>
+    <input type="text" id="middle-names" class="form-control"> 
+  </div>
+  <div class="form-group">
+    <label class="form-label" for="last-name">
+      Last name
+    </label>
+    <input type="text" id="last-name" class="form-control"> 
+  </div>
+
+{% endblock %}
+

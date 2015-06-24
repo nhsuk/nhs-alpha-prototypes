@@ -1,0 +1,38 @@
+<!-- Preferred contact method -->
+
+<fieldset class="form-group">
+  <legend class="heading-medium">Preferred method of contact</legend>
+
+  <p>We'll only contact you when it's important.</p>
+  <p>Select one:</p>
+
+  <div class="form-group">
+    <input type="radio" id="email" name="contact"> 
+    <label class="form-label form-control-radio js-toggle" for="email" data-show="#contact-email-address" data-hide="#contact-mobile-number">
+      email
+    </label>
+    <input type="radio" id="mobile" name="contact"> 
+    <label class="form-label form-control-radio js-toggle" for="mobile" data-hide="#contact-email-address" data-show="#contact-mobile-number">
+      text message
+    </label>
+  </div>
+
+  <div class="js-hidden" id="contact-email-address">
+    <label class="heading-medium" for="email-address">
+      Email address
+    </label>
+    <p class="form-hint">We'll ask you to confirm this before you can use the service</p>
+    <input type="text" id="email-address" class="form-control form-control-email">
+  </div>
+
+  <div class="js-hidden" id="contact-mobile-number">
+    <label class="heading-medium" for="mobile-number">
+      Mobile number
+    </label>
+    <p class="form-hint">We'll ask you to confirm this before you can use the service</p>
+    <input type="text" id="mobile-number" class="form-control form-control-14-chars">
+  </div>
+
+  <br>
+
+</fieldset>

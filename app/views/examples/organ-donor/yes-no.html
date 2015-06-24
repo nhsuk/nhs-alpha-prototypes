@@ -2,7 +2,7 @@
 {% import 'includes/form_macros.html' as form %}
 
 {% block pageTitle %}
-  What is your gender?
+  Do you want to donate your organs after you die?
 {% endblock %}
 
 {% block questionNumber %}6{% endblock %}
@@ -11,18 +11,9 @@
 
 {% block questionContent %}
 
-
-	{{ form.radio_buttons({
-
-		id:	'gender',
-
-		options: { 
-			1:	'female', 
-			2:	'male',
-			3:	'unspecified', 
-			4:	'prefer not to say'  
-		}
-		
+	{{ form.radio_buttons('donate', { 
+		1:	'yes', 
+		2:	'no'  
 	})}}
 
 {% endblock %}

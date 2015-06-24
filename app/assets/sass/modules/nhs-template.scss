@@ -1,0 +1,12 @@
+// NHS template
+// Overwrites GOV.Uk template styles
+
+$nhsblue: #005eb8;
+
+#global-header .header-wrapper {
+  background-color: #005eb8;
+}
+
+#global-header-bar .header-bar{
+  display: none;
+}

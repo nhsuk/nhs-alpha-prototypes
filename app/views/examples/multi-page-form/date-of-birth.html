@@ -2,7 +2,7 @@
 {% import 'includes/form_macros.html' as form %}
 
 {% block pageTitle %}
-  What is your gender?
+  What is your date of birth?
 {% endblock %}
 
 {% block questionNumber %}6{% endblock %}
@@ -11,17 +11,11 @@
 
 {% block questionContent %}
 
+	<p>For example, 6 March 1976</p>
 
-	{{ form.radio_buttons({
+	{{ form.date({
 
-		id:	'gender',
-
-		options: { 
-			1:	'female', 
-			2:	'male',
-			3:	'unspecified', 
-			4:	'prefer not to say'  
-		}
+		id:	'dob'
 		
 	})}}
 
