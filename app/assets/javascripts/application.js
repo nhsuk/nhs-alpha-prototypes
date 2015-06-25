@@ -7,7 +7,7 @@ $(document).ready(function(){
   
 
   // Uses radio buttons to emulate a more usable select box
-  $( ".js-form-select, .js-form-select label" ).click(function() {
+  $( ".js-form-select label" ).click(function() {
   	$( this ).closest('.js-form-select').toggleClass( "open" );
   });
 

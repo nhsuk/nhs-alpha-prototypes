@@ -52,28 +52,30 @@ select.form-select{
     cursor: pointer;
   }
 
-  // Hide all items...
-  label{
-    display: none;
-    padding: 5px 45px 4px 10px;
-    background-color: white;
-    border-bottom: 1px solid $border-colour;
-    &:hover{
-      cursor: pointer;
+  .select-options{
+    // Hide all items...
+    label{
+      display: none;
+      padding: 5px 45px 4px 10px;
+      background-color: white;
+      border-bottom: 1px solid $border-colour;
+      &:hover{
+        cursor: pointer;
+      } 
+    }
+
+
+    label:nth-child(2){
     } 
+
+    // ...then show checked item
+    input:checked + label{
+      display: block;
+      margin-right: 30px;
+    }
   }
 
-
-  label:nth-child(2){
-  } 
-
-  // ...then show checked item
-  input:checked + label{
-    display: block;
-    margin-right: 30px;
-  }
-
-  // Open styles
+    // Open styles
 
   &.open{
     height: auto;
@@ -83,30 +85,26 @@ select.form-select{
       display: none;
     }
 
-    label{
+    .select-options{
+      label{
       display: block;
+      }
+      input:checked + label{
+        margin-right: 0;
+          background-color: $highlight-colour;
+      }
+      label:nth-child(2){
+        margin-right: 30px !important;
+      }
+      label{
+        &:hover{
+          background-color: $highlight-colour;
+        }  
+      }
     }
-    input:checked + label{
-      margin-right: 0;
-        background-color: $highlight-colour;
-    }
-    label:nth-child(2){
-      margin-right: 30px !important;
-    }
-    label:last-child{
-      border-bottom: none;
-    }
-    label{
-      &:hover{
-        background-color: $highlight-colour;
-      }  
-    }
-  }
-
-  .none-of-the-above{
-    margin: 20px 10px;
   }
 }
+
 
 // Compact version
 

@@ -38,8 +38,11 @@
 {% endmacro %}
 
 
-{% macro date(id) %}
+{% macro date(i) %}
   <div class="inline-form-groups">
+
+    <p class="form-hint">{{ i.hint }}</p>
+
     <div class="form-group">
       <label class="form-label" for="{{ i.id }}-day">Day</label>
       <input class="form-control form-control-2-chars" id="{{ i.id }}-day" type="number" pattern="[0-9]*" min="0" max="31">
