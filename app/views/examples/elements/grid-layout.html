@@ -1,13 +1,14 @@
-{% extends 'templates/govuk_template.html' %}
+{% extends 'templates/nhs_template.html' %}
 
 {% block head %}
+  {% include "includes/nhs.uk/head.html" %}
   {% include 'includes/elements_head.html' %}
 {% endblock %}
 
 {% block content %}
 <main id="content" role="main">
 
-  <a href="/examples/" class="example-back-link">Back to the GOV.UK prototype kit examples</a>
+  <a href="/examples/" class="example-back-link">Back to the prototype kit examples</a>
 
   <h1 class="heading-xlarge">
     New grid layout example

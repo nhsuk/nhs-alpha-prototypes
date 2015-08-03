@@ -1,12 +1,28 @@
 // NHS template
-// Overwrites GOV.Uk template styles
+// Overwrites GOV.UK template styles
 
 $nhsblue: #005eb8;
 
-#global-header .header-wrapper {
-  background-color: #005eb8;
+
+#global-header {
+    background-color: $nhsblue;
+    .header-wrapper {
+  		background-color: $nhsblue;
+	}
+	#logo img{
+		width: auto;
+		top: 2px;
+		height: 20px;
+	}
 }
 
 #global-header-bar .header-bar{
   display: none;
+}
+
+#footer {
+	border-top: 0;
+	.footer-meta .copyright{
+		display: none;
+	}
 }
