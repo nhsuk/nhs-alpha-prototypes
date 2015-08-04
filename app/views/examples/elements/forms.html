@@ -1,9 +1,5 @@
-{% extends 'templates/nhs_template.html' %}
-
-{% block head %}
-  {% include "includes/nhs.uk/head.html" %}
-  {% include 'includes/elements_head.html' %}
-{% endblock %}
+{% extends 'templates/nhs_layout.html' %}
+{% import 'includes/form_macros.html' as form %}
 
 {% block content %}
 <main id="content" role="main" class="new-styles">
@@ -13,27 +9,27 @@
     <form action="/" method="post" class="form">
 
 
-      {% include "includes/patterns/forms/name.html" %}
+      {% include "includes/forms/name.html" %}
 
-      {% include "includes/patterns/forms/address.html" %}
+      {% include "includes/forms/address.html" %}
 
-      {% include "includes/patterns/forms/date-of-birth.html" %}
+      {% include "includes/forms/date-of-birth.html" %}
 
-      {% include "includes/patterns/forms/preferred-contact-method.html" %}
+      {% include "includes/forms/preferred-contact-method.html" %}
 
-      {% include "includes/patterns/forms/create-a-password.html" %}
+      {% include "includes/forms/create-a-password.html" %}
 
-      {% include "includes/patterns/forms/radios-binary.html" %}
+      {% include "includes/forms/radios-binary.html" %}
 
-      {% include "includes/patterns/forms/pounds-per-time-period.html" %}
+      {% include "includes/forms/pounds-per-time-period.html" %}
 
-      {% include "includes/patterns/forms/checkboxes-fruit.html" %}
+      {% include "includes/forms/checkboxes-fruit.html" %}
 
-      {% include "includes/patterns/forms/radios-fruit.html" %}
+      {% include "includes/forms/radios-fruit.html" %}
 
-      {% include "includes/patterns/forms/textarea-fruit.html" %}
+      {% include "includes/forms/textarea-fruit.html" %}
 
-      {% include "includes/patterns/forms/side-filters.html" %}
+      {% include "includes/forms/side-filters.html" %}
 
       <!-- Submit -->
       <div class="form-group">

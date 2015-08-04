@@ -3,20 +3,17 @@
 <fieldset class="form-group">
   <legend class="heading-medium">What's your favourite thing about fruit?</legend>
 
-  <p>Select one:</p>
-  
-  <div class="form-group">
-    <input type="radio" id="nice" name="why"> 
-    <label class="form-label form-control-radio" for="nice">
-      it's healthy
-    </label>
-    <input type="radio" id="tasty" name="why"> 
-    <label class="form-label form-control-radio" for="tasty">
-      it's tasty
-    </label>
-    <input type="radio" id="fruity" name="why"> 
-    <label class="form-label form-control-radio" for="fruity">
-      it's fruity
-    </label>
-  </div>
+   {{ form.radio_buttons({
+
+    id: 'fruit-favourite',
+
+    options: { 
+      1:  "It's healthy", 
+      2:  "It's tasty",
+      3:  "It's fruity" 
+    }
+    
+  })}}
+   
 </fieldset>
+

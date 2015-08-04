@@ -1,16 +1,15 @@
-{% extends 'templates/question_template.html' %}
+{% extends 'templates/nhs_question_template.html' %}
 {% import 'includes/form_macros.html' as form %}
 
 {% block pageTitle %}
   What is your gender?
 {% endblock %}
 
-{% block questionNumber %}6{% endblock %}
+{% block questionNumber %}4{% endblock %}
 {% block prevURL %}internet-adjustments{% endblock %}
 {% block nextURL %}country-live{% endblock %}
 
 {% block questionContent %}
-
 
 	{{ form.radio_buttons({
 

@@ -1,14 +1,13 @@
-{% extends 'templates/govuk_template.html' %}
+{% extends 'templates/nhs_question_template.html' %}
+{% import 'includes/form_macros.html' as form %}
 
-{% block head %}
-  {% include "includes/head.html" %}
+{% block pageTitle %}
+  Where do you live?
 {% endblock %}
 
-{% block propositionHeader %}
-  {% include "includes/propositional_navigation.html" %}
-{% endblock %}
-
-{% block headerClass %}with-proposition{% endblock %}
+{% block questionNumber %}2{% endblock %}
+{% block prevURL %}name{% endblock %}
+{% block nextURL %}date-of-birth{% endblock %}
 
 {% block content %}
 
@@ -19,7 +18,7 @@
 
 			<p class="form-navigation">
 				<a class="back-to-previous" href="./">Back <span class="visuallyhidden"> to the previous question.</span></a>
-				<span class="question-number">Question 3 of 16</span>
+				<span class="question-number">Question 2 of 4</span>
 			</p>
 
 			<h1 class="heading-large">Where do you live?</h1>
@@ -96,7 +95,7 @@
 	        </div>		
 
 			    <div class="form-group"> 
-			    	<a class="button" href="next-question" >Continue</a>
+			    	<a class="button" href="date-of-birth" >Continue</a>
 			    </div>
 			  </div>
 
