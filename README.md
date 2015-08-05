@@ -1,6 +1,6 @@
-# GOV.UK Prototyping Kit
+# NHS.UK Prototyping Kit
 
-The kit provides a simple way to make interactive prototypes that look like pages on GOV.UK. These prototypes can be used to show ideas to people you work with, and to do user research.
+The kit provides a simple way to make interactive prototypes for alpha.NHS.UK. These prototypes can be used to show ideas to people you work with, and to do user research.
 
 It's built on the [Express](http://expressjs.com/) framework, and uses these GOV.UK resources:
 
@@ -31,7 +31,8 @@ Install Node.js (see requirements)
 #### Clone this repo
 
 ```
-git clone git@github.com:alphagov/govuk_prototype_kit.git
+git clone git@github.com:/timpaul/nhs_prototype_kit.git
+
 ```
 
 #### Install dependencies
