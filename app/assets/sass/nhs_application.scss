@@ -1,8 +1,28 @@
-// Import GOV.UK elements, this will import the frontend toolkit and some base styles.
-// Take a look at elements.scss to see which files are imported.
-@import 'elements';
+// Import GOV.UK frontend toolkit
+@import "colours";
+@import "measurements";
+@import "conditionals";
+@import "shims";
+@import "typography";
+@import "css3";
+@import "design-patterns/alpha-beta";
+@import "design-patterns/buttons";
 
-// Import modules specific to this service
+// Import GOV.UK elements
+
+@import "elements/helpers";
+@import "elements/reset";
+@import "elements/typography";
+@import "elements/layout";
+@import "elements/forms";
+@import "elements/tables";
+@import "elements/buttons";
+@import "elements/details";
+@import "elements/lists";
+@import "elements/panels";
+
+
+// Import modules
 
 @import "modules/shame";
 @import "modules/for-elements";
@@ -12,6 +32,6 @@
 @import "modules/auto-suggest";
 @import "modules/select-boxes";
 
-
+// GOV.UK Template style overrides
 
 @import "modules/nhs-template";
