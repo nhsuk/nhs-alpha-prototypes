@@ -59,7 +59,7 @@
   <body class="{% block bodyClasses %}{% endblock %}">
     <script type="text/javascript">document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
 
-    
+
 
     <div id="skiplink-container">
       <div>
@@ -70,21 +70,21 @@
     <div id="global-cookie-message">
       <div class="outer-block">
         <div class="inner-block">
-          
+
             {% block cookieMessage %}{% endblock %}
-          
+
         </div>
       </div>
     </div>
     <!--end global-cookie-message-->
 
-    
+
     <header role="banner" id="global-header" class="{% block headerClass %}{% endblock %}">
       <div class="header-wrapper">
         <div class="header-global">
           <div class="header-logo">
-            <a href="https://www.nhs.uk/" title="Go to the NHS.UK homepage" id="logo" class="content">
-              <img src="{{assetPath}}images/NHS_logo.png" height="31" alt=""> <!--NHS.UK-->
+            <a href="{% block logotypeLink %}https://www.nhs.uk/{% endblock %}" title="{% block logotypeTitle %}Go to the NHS.UK homepage{% endblock %}" id="logo" class="content">
+              <img src="{{assetPath}}images/nhs-logotype.svg" width="70" height="28" alt=""> <!--NHS.UK-->
             </a>
           </div>
           {% block insideHeader %}{% endblock %}
@@ -93,7 +93,7 @@
       </div>
     </header>
     <!--end header-->
-    
+
 
     {% block afterHeader %}{% endblock %}
 
