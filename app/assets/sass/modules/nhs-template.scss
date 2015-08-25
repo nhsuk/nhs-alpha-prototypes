@@ -10,9 +10,11 @@ $nhsblue: #005eb8;
   		background-color: $nhsblue;
 	}
 	#logo img{
-		width: auto;
-		top: 2px;
-		height: 20px;
+    width: 70px;
+    height: 28px;
+    padding-right: 0;
+    float: none;
+    position: static;
 	}
 }
 
