@@ -1,7 +1,7 @@
 module.exports = function(grunt){
   grunt.initConfig({
     // Clean
-    clean: ['public', 'govuk_modules'],
+    clean: ['public'],
 
     // Builds Sass
     sass: {
@@ -10,8 +10,8 @@ module.exports = function(grunt){
           style: "expanded",
           sourcemap: true,
           includePaths: [
-            'govuk_modules/govuk_template/assets/stylesheets',
-            'govuk_modules/govuk_frontend_toolkit/stylesheets'
+            'app/assets_govuk_legacy/stylesheets',
+            'nhsalpha_modules/nhsalpha_frontend_toolkit/stylesheets'
           ],
           outputStyle: 'expanded'
         },
@@ -34,27 +34,13 @@ module.exports = function(grunt){
           src: ['**/*', '!sass/**'],
           dest: 'public/'
         }]
-      },
-      govuk: {
-        files: [{
-          expand: true,
-          cwd: 'node_modules/govuk_frontend_toolkit',
-          src: '**',
-          dest: 'govuk_modules/govuk_frontend_toolkit/'
-        },
-        {
-          expand: true,
-          cwd: 'node_modules/govuk_template_mustache/',
-          src: '**',
-          dest: 'govuk_modules/govuk_template/'
-        }]
-      },
+      }
     },
 
     // workaround for libsass
     replace: {
       fixSass: {
-        src: ['govuk_modules/govuk_template/**/*.scss', 'govuk_modules/govuk_frontend_toolkit/**/*.scss'],
+        src: ['nhsalpha_modules/nhsalpha_frontend_toolkit/**/*.scss'],
         overwrite: true,
         replacements: [{
           from: /filter:chroma(.*);/g,

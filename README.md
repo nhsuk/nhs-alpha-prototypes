@@ -1,14 +1,14 @@
-# NHS.UK Prototyping Kit
+# NHS.UK Alpha Prototyping Kit
 
-The kit provides a simple way to make interactive prototypes for alpha.NHS.UK. These prototypes can be used to show ideas to people you work with, and to do user research.
+This kit is adapted from the [GOV.UK prototyping kit.](https://github.com/alphagov/govuk_prototype_kit).
 
-It's built on the [Express](http://expressjs.com/) framework, and uses these GOV.UK resources:
+The kit provides a simple way to make interactive prototypes for NHS.UK alpha. These prototypes can be used to show ideas to people you work with, and to do user research.
+
+It's built on the [Express](http://expressjs.com/) framework and contains code adapted from these GOV.UK resources:
 
 - [GOV.UK template](https://github.com/alphagov/govuk_template)
 - [GOV.UK front end toolkit](https://github.com/alphagov/govuk_frontend_toolkit)
 - [GOV.UK elements](https://github.com/alphagov/govuk_elements)
-
-Read the [project principles](docs/principles.md).
 
 ## Requirements
 
@@ -31,7 +31,7 @@ Install Node.js (see requirements)
 #### Clone this repo
 
 ```
-git clone git@github.com:/timpaul/nhs_prototype_kit.git
+git clone git@github.com:/nhsalpha/nhs_prototype_kit.git
 
 ```
 
@@ -66,7 +66,6 @@ Find out how to work with the prototyping application.
 * [Making pages](docs/making-pages.md)
 * [Writing CSS](docs/writing-css.md)
 * [Deploying (getting your work online)](docs/deploying.md)
-* [Tips and Tricks](docs/tips-and-tricks.md)
 
 This project is built on top of Express, the idea is that it is straightforward to create simple static pages out of the box. However, you're not limited to that - more dynamic sites can be built with more understanding of Express. Here's a good [Express tutorial.](http://code.tutsplus.com/tutorials/introduction-to-express--net-33367)
 

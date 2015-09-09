@@ -23,7 +23,6 @@ if (env === 'production') {
 // Application settings
 app.engine('html', swig.renderFile);
 app.set('view engine', 'html');
-app.set('vendorViews', __dirname + '/govuk_modules/govuk_template/views/layouts');
 app.set('views', __dirname + '/app/views');
 
 
@@ -43,10 +42,10 @@ swig.setDefaults({ loader: swig.loaders.fs(__dirname + '/app/views' )});
 
 // Middleware to serve static assets
 app.use('/public', express.static(__dirname + '/public'));
-app.use('/public', express.static(__dirname + '/govuk_modules/govuk_template/assets'));
-app.use('/public', express.static(__dirname + '/govuk_modules/govuk_frontend_toolkit'));
+app.use('/public', express.static(__dirname + '/app/assets_govuk_legacy'));
+app.use('/public', express.static(__dirname + '/nhsalpha_modules/nhsalpha_frontend_toolkit'));
 
-app.use(express.favicon(path.join(__dirname, 'govuk_modules', 'govuk_template', 'assets', 'images','favicon.ico'))); 
+app.use(express.favicon(path.join(__dirname, 'app', 'assets_govuk_legacy', 'images','favicon.ico')));
 
 
 // send assetPath to all views
