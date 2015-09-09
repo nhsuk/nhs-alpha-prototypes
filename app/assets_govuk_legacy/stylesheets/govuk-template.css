@@ -9,47 +9,11 @@
   font-family: GDS-Logo;
   src: local("HelveticaNeue"), local("Helvetica Neue"), local("Arial"), local("Helvetica"); }
 
-@-ms-viewport {
-  width: device-width; }
-
-@-o-viewport {
-  width: device-width; }
-
-@-ms-viewport {
-  width: device-width; }
-
-@-o-viewport {
-  width: device-width; }
-
-@-ms-viewport {
-  width: device-width; }
-
-@-o-viewport {
-  width: device-width; }
-
 #global-header .header-wrapper:after, #global-header .header-wrapper .header-global:after, #global-header .header-wrapper .header-global .header-logo:after, #global-header .header-proposition #proposition-link:after,
 #global-header .header-proposition #proposition-links:after, #global-cookie-message .outer-block:after, #footer .footer-wrapper:after, #footer .footer-meta:after {
   content: "";
   display: block;
   clear: both; }
-
-@-ms-viewport {
-  width: device-width; }
-
-@-o-viewport {
-  width: device-width; }
-
-#global-header .header-wrapper:after, #global-header .header-wrapper .header-global:after, #global-header .header-wrapper .header-global .header-logo:after, #global-header .header-proposition #proposition-link:after,
-#global-header .header-proposition #proposition-links:after, #global-cookie-message .outer-block:after, #footer .footer-wrapper:after, #footer .footer-meta:after {
-  content: "";
-  display: block;
-  clear: both; }
-
-@-ms-viewport {
-  width: device-width; }
-
-@-o-viewport {
-  width: device-width; }
 
 /* local styleguide includes */
 /* Old depricated greys, new things should use the toolkit greys */
@@ -295,24 +259,6 @@ button:focus,
   outline: none; }
 #global-header a:focus {
   color: #0b0c0c; }
-
-@-ms-viewport {
-  width: device-width; }
-
-@-o-viewport {
-  width: device-width; }
-
-#global-header .header-wrapper:after, #global-header .header-wrapper .header-global:after, #global-header .header-wrapper .header-global .header-logo:after, #global-header .header-proposition #proposition-link:after,
-#global-header .header-proposition #proposition-links:after, #global-cookie-message .outer-block:after, #footer .footer-wrapper:after, #footer .footer-meta:after {
-  content: "";
-  display: block;
-  clear: both; }
-
-@-ms-viewport {
-  width: device-width; }
-
-@-o-viewport {
-  width: device-width; }
 
 #global-header {
   background-color: #0b0c0c;
