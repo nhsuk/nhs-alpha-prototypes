@@ -9,47 +9,11 @@
   font-family: GDS-Logo;
   src: local("HelveticaNeue"), local("Helvetica Neue"), local("Arial"), local("Helvetica"); }
 
-@-ms-viewport {
-  width: device-width; }
-
-@-o-viewport {
-  width: device-width; }
-
-@-ms-viewport {
-  width: device-width; }
-
-@-o-viewport {
-  width: device-width; }
-
-@-ms-viewport {
-  width: device-width; }
-
-@-o-viewport {
-  width: device-width; }
-
 #global-header .header-wrapper:after, #global-header .header-wrapper .header-global:after, #global-header .header-wrapper .header-global .header-logo:after, #global-header .header-proposition #proposition-link:after,
-#global-header .header-proposition #proposition-links:after, #global-header-bar:after, #global-cookie-message .outer-block:after, #footer .footer-wrapper:after, #footer .footer-meta:after {
+#global-header .header-proposition #proposition-links:after, #footer .footer-wrapper:after, #footer .footer-meta:after {
   content: "";
   display: block;
   clear: both; }
-
-@-ms-viewport {
-  width: device-width; }
-
-@-o-viewport {
-  width: device-width; }
-
-#global-header .header-wrapper:after, #global-header .header-wrapper .header-global:after, #global-header .header-wrapper .header-global .header-logo:after, #global-header .header-proposition #proposition-link:after,
-#global-header .header-proposition #proposition-links:after, #global-header-bar:after, #global-cookie-message .outer-block:after, #footer .footer-wrapper:after, #footer .footer-meta:after {
-  content: "";
-  display: block;
-  clear: both; }
-
-@-ms-viewport {
-  width: device-width; }
-
-@-o-viewport {
-  width: device-width; }
 
 /* local styleguide includes */
 /* Old depricated greys, new things should use the toolkit greys */
@@ -296,24 +260,6 @@ button:focus,
 #global-header a:focus {
   color: #0b0c0c; }
 
-@-ms-viewport {
-  width: device-width; }
-
-@-o-viewport {
-  width: device-width; }
-
-#global-header .header-wrapper:after, #global-header .header-wrapper .header-global:after, #global-header .header-wrapper .header-global .header-logo:after, #global-header .header-proposition #proposition-link:after,
-#global-header .header-proposition #proposition-links:after, #global-header-bar:after, #global-cookie-message .outer-block:after, #footer .footer-wrapper:after, #footer .footer-meta:after {
-  content: "";
-  display: block;
-  clear: both; }
-
-@-ms-viewport {
-  width: device-width; }
-
-@-o-viewport {
-  width: device-width; }
-
 #global-header {
   background-color: #0b0c0c;
   width: 100%; }
@@ -515,54 +461,6 @@ button:focus,
         #global-header .header-proposition #proposition-link {
           float: none; } }
 
-/* Global header bar */
-#global-header-bar {
-  margin: 0 auto;
-  width: auto;
-  max-width: 1020px; }
-  #global-header-bar .inner-block {
-    padding-left: 15px;
-    padding-right: 15px; }
-    @media (min-width: 641px) {
-      #global-header-bar .inner-block {
-        padding-left: 30px;
-        padding-right: 30px; } }
-  #global-header-bar .header-bar {
-    height: 10px;
-    background-color: #005ea5; }
-
-/* Global cookie message */
-.js-enabled #global-cookie-message {
-  display: none;
-  /* shown with JS, always on for non-JS */ }
-
-#global-cookie-message {
-  background-color: #d5e8f3;
-  padding-top: 10px;
-  padding-bottom: 10px; }
-  #global-cookie-message .outer-block {
-    margin: 0 auto;
-    width: auto;
-    max-width: 1020px; }
-  #global-cookie-message .inner-block {
-    padding-left: 15px;
-    padding-right: 15px; }
-    @media (min-width: 641px) {
-      #global-cookie-message .inner-block {
-        padding-left: 30px;
-        padding-right: 30px; } }
-  #global-cookie-message p {
-    font-family: "nta", Arial, sans-serif;
-    font-size: 16px;
-    line-height: 1.25;
-    font-weight: 400;
-    text-transform: none;
-    margin: 0; }
-    @media (max-width: 640px) {
-      #global-cookie-message p {
-        font-size: 14px;
-        line-height: 1.14286; } }
-
 /* Global footer */
 #footer {
   background-color: #dee0e2;
@@ -673,41 +571,3 @@ button:focus,
             #footer .footer-meta .footer-meta-inner .open-government-licence p {
               font-size: 14px;
               line-height: 1.14286; } }
-    #footer .footer-meta .copyright {
-      font-family: "nta", Arial, sans-serif;
-      font-size: 16px;
-      line-height: 1.25;
-      font-weight: 400;
-      text-transform: none;
-      margin: 30px 0 0 0;
-      width: 100%;
-      display: block; }
-      @media (max-width: 640px) {
-        #footer .footer-meta .copyright {
-          font-size: 14px;
-          line-height: 1.14286; } }
-      @media (min-width: 641px) {
-        #footer .footer-meta .copyright {
-          display: inline-block;
-          text-align: inherit;
-          width: 25%;
-          padding-top: 15px;
-          margin-top: 0; } }
-      #footer .footer-meta .copyright a {
-        display: block;
-        background-image: url(images/govuk-crest.png?0.12.0);
-        background-repeat: no-repeat;
-        background-position: 50% 0%;
-        text-align: center;
-        text-decoration: none;
-        padding: 115px 0 0 0; }
-        @media (min-width: 641px) {
-          #footer .footer-meta .copyright a {
-            background-position: 100% 0%; } }
-        @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 20 / 10), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-          #footer .footer-meta .copyright a {
-            background-image: url(images/govuk-crest-2x.png?0.12.0);
-            background-size: 125px 102px; } }
-        @media (min-width: 641px) {
-          #footer .footer-meta .copyright a {
-            text-align: right; } }
