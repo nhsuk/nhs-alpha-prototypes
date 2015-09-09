@@ -11,7 +11,7 @@ module.exports = function(grunt){
           sourcemap: true,
           includePaths: [
             'nhsalpha_modules/govuk_template/assets/stylesheets',
-            'nhsalpha_modules/govuk_frontend_toolkit/stylesheets'
+            'nhsalpha_modules/nhsalpha_frontend_toolkit/stylesheets'
           ],
           outputStyle: 'expanded'
         },
@@ -40,7 +40,7 @@ module.exports = function(grunt){
     // workaround for libsass
     replace: {
       fixSass: {
-        src: ['nhsalpha_modules/govuk_template/**/*.scss', 'nhsalpha_modules/govuk_frontend_toolkit/**/*.scss'],
+        src: ['nhsalpha_modules/govuk_template/**/*.scss', 'nhsalpha_modules/nhsalpha_frontend_toolkit/**/*.scss'],
         overwrite: true,
         replacements: [{
           from: /filter:chroma(.*);/g,
