@@ -1,7 +1,7 @@
 module.exports = function(grunt){
   grunt.initConfig({
     // Clean
-    clean: ['public', 'govuk_modules'],
+    clean: ['public'],
 
     // Builds Sass
     sass: {
@@ -34,21 +34,7 @@ module.exports = function(grunt){
           src: ['**/*', '!sass/**'],
           dest: 'public/'
         }]
-      },
-      govuk: {
-        files: [{
-          expand: true,
-          cwd: 'node_modules/govuk_frontend_toolkit',
-          src: '**',
-          dest: 'govuk_modules/govuk_frontend_toolkit/'
-        },
-        {
-          expand: true,
-          cwd: 'node_modules/govuk_template_mustache/',
-          src: '**',
-          dest: 'govuk_modules/govuk_template/'
-        }]
-      },
+      }
     },
 
     // workaround for libsass
