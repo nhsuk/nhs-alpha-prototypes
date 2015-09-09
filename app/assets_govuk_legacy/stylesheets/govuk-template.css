@@ -10,7 +10,7 @@
   src: local("HelveticaNeue"), local("Helvetica Neue"), local("Arial"), local("Helvetica"); }
 
 #global-header .header-wrapper:after, #global-header .header-wrapper .header-global:after, #global-header .header-wrapper .header-global .header-logo:after, #global-header .header-proposition #proposition-link:after,
-#global-header .header-proposition #proposition-links:after, #global-cookie-message .outer-block:after, #footer .footer-wrapper:after, #footer .footer-meta:after {
+#global-header .header-proposition #proposition-links:after, #footer .footer-wrapper:after, #footer .footer-meta:after {
   content: "";
   display: block;
   clear: both; }
@@ -460,38 +460,6 @@ button:focus,
       @media (min-width: 769px) {
         #global-header .header-proposition #proposition-link {
           float: none; } }
-
-/* Global cookie message */
-.js-enabled #global-cookie-message {
-  display: none;
-  /* shown with JS, always on for non-JS */ }
-
-#global-cookie-message {
-  background-color: #d5e8f3;
-  padding-top: 10px;
-  padding-bottom: 10px; }
-  #global-cookie-message .outer-block {
-    margin: 0 auto;
-    width: auto;
-    max-width: 1020px; }
-  #global-cookie-message .inner-block {
-    padding-left: 15px;
-    padding-right: 15px; }
-    @media (min-width: 641px) {
-      #global-cookie-message .inner-block {
-        padding-left: 30px;
-        padding-right: 30px; } }
-  #global-cookie-message p {
-    font-family: "nta", Arial, sans-serif;
-    font-size: 16px;
-    line-height: 1.25;
-    font-weight: 400;
-    text-transform: none;
-    margin: 0; }
-    @media (max-width: 640px) {
-      #global-cookie-message p {
-        font-size: 14px;
-        line-height: 1.14286; } }
 
 /* Global footer */
 #footer {
