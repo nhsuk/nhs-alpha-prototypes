@@ -14,11 +14,11 @@
     <p class="form-hint">Select one:</p>
       <div class="form-group">
     {% endif %}
-        <input type="radio" id="{{ i.id }}-{{ loop.key }}" name="{{ i.id }}" value="{{ i.id }}-{{ loop.key }}"> 
+        <input type="radio" id="{{ i.id }}-{{ loop.key }}" name="{{ i.id }}" value="{{ i.id }}-{{ loop.key }}">
         <label class="form-label form-control-radio" for="{{ i.id }}-{{ loop.key }}">
           {{ x }}
         </label>
-    {% if loop.last %}      
+    {% if loop.last %}
     </div>
   </div>
     {% endif %}
@@ -33,11 +33,11 @@
     <p class="form-hint">Select all that apply:</p>
       <div class="form-group">
     {% endif %}
-        <input type="checkbox" id="{{ i.id }}-{{ loop.key }}" value="{{ i.id }}-{{ loop.key }}"> 
+        <input type="checkbox" id="{{ i.id }}-{{ loop.key }}" value="{{ i.id }}-{{ loop.key }}">
         <label class="form-label form-control-checkbox" for="{{ i.id }}-{{ loop.key }}">
           {{ x }}
         </label>
-    {% if loop.last %}      
+    {% if loop.last %}
     </div>
   </div>
     {% endif %}
