@@ -1,5 +1,4 @@
 @import '../_colours';
-@import '../_url-helpers';
 
 // Player overrides
 
@@ -65,11 +64,11 @@
       }
 
       .play {
-        background-image: file-url('player-icon-play.png');
+        background-image: url('/public/images/player-icon-play.png');
       }
 
       .pause {
-        background-image: file-url('player-icon-pause.png');
+        background-image: url('/public/images/player-icon-pause.png');
       }
 
       .rewind, .forward {
@@ -86,13 +85,13 @@
 
       .rewind {
         left: 0;
-        background-image: file-url('player-icon-rewind.png');
+        background-image: url('/public/images/player-icon-rewind.png');
       }
 
       .forward {
         left: 100%;
         margin-left: -40px;
-        background-image: file-url('player-icon-forward.png');
+        background-image: url('/public/images/player-icon-forward.png');
       }
     }
 
@@ -173,7 +172,7 @@
         line-height: 40px;
         background-repeat: no-repeat;
         background-position: center left;
-        background-image: file-url('player-icon-volume.png');
+        background-image: url('/public/images/player-icon-volume.png');
       }
     }
 
