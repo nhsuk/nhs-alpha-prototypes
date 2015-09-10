@@ -1,0 +1,33 @@
+{% extends 'templates/nhs_layout.html' %}
+{% import 'includes/form_macros.html' as form_macros %}
+
+{% block content %}
+<main id="content" role="main">
+
+  <h1 class="heading-xlarge">Appointment confirmed</h1>
+
+  <div>
+    <img>
+    <h3><span>Tomorrow</span> at 16:30</h3>
+    <div>Dr. Helen Leaf</div>
+    <div>Face to face</div>
+    <p>
+    Lakeside Surgery<br>
+    22 Castelnau<br>
+    London<br>
+    NW13 9HJ
+    <a href="#">map</a>
+    </p>
+
+  </div>
+
+  <p>
+    Please arrive on time.
+  </p>
+
+  <p>
+  We will send you SMS reminders of your appointment. <a href="#">change</a>
+  </p>
+
+</main>
+{% endblock %}
