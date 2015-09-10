@@ -1,0 +1,36 @@
+{% extends 'templates/nhs_layout.html' %}
+{% import 'includes/form_macros.html' as form_macros %}
+
+{% block content %}
+<main id="content" role="main">
+
+  <h1 class="heading-xlarge">Book an appointment</h1>
+
+    <p>
+    Lakeside Surgery<br>
+    22 Castelnau<br>
+    London<br>
+    NW13 9HJ
+    </p>
+
+    <h2>Next available appointment:</h2>
+
+    <a href="#">
+        <img>
+        <h3>TODAY at 16:10</h3>
+        <div>Dr. Malcolm Branch</div>
+        <div>Face to face</div>
+    </a>
+
+    <ul class="list-bullet">
+      <li><a href="#">I'd prefer to see a woman</a></li>
+      <li><a href="#">I'd like an early morning appointment</a></li>
+      <li><a href="#">I'd like a late afternoon appointment</a></li>
+    </ul>
+
+    <p>
+    or <a href="#">see all appointments</a>
+    </p>
+
+</main>
+{% endblock %}
