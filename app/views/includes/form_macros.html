@@ -1,4 +1,11 @@
-
+{% macro text_field(i) %}
+ <div class="form-group">
+   <label class="form-label" for="{{ i.id }}">
+     {{ i.label }}
+   </label>
+   <input type="text" id="{{ i.id }}" name="{{ i.id }}" class="form-control">
+ </div>
+{% endmacro %}
 
 {% macro radio_buttons(i) %}
   {% for x in i.options %}
