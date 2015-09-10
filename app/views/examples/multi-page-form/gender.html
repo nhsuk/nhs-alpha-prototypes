@@ -1,5 +1,5 @@
 {% extends 'templates/nhs_question_template.html' %}
-{% import 'includes/form_macros.html' as form %}
+{% import 'includes/form_macros.html' as form_macros %}
 
 {% block pageTitle %}
   What is your gender?
@@ -11,17 +11,17 @@
 
 {% block questionContent %}
 
-	{{ form.radio_buttons({
+	{{ form_macros.radio_buttons({
 
 		id:	'gender',
 
-		options: { 
-			1:	'female', 
+		options: {
+			1:	'female',
 			2:	'male',
-			3:	'unspecified', 
-			4:	'prefer not to say'  
+			3:	'unspecified',
+			4:	'prefer not to say'
 		}
-		
+
 	})}}
 
 {% endblock %}
