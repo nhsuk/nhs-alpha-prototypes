@@ -1,0 +1,37 @@
+{% extends 'templates/nhs_layout.html' %}
+{% import 'includes/form_macros.html' as form_macros %}
+
+{% block content %}
+<main id="content" role="main">
+
+  <h1 class="heading-xlarge">Book an appointment</h1>
+
+    <form action="/" method="post" class="form">
+
+      {{
+        form_macros.text_field({
+          id: 'name',
+          label: 'Name'
+        })
+      }}
+
+      {% include "includes/forms/date-of-birth.html" %}
+
+      {{
+        form_macros.text_field({
+          id: 'practice_or_doctor',
+          label: 'Practice or Doctor'
+        })
+      }}
+
+      <!-- Submit -->
+      <div class="form-group">
+        <a class="button" href="activate-account">Find appointment</a>
+      </div>
+
+  </form>
+
+
+
+</main>
+{% endblock %}
