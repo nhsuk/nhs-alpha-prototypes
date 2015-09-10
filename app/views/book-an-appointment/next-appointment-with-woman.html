@@ -1,0 +1,39 @@
+{% extends 'templates/nhs_layout.html' %}
+{% import 'includes/form_macros.html' as form_macros %}
+
+{% block content %}
+<main id="content" role="main">
+
+  <a href="next-available-appointment">Back</a>
+
+  <h1 class="heading-xlarge">Lakeside surgery</h1>
+
+  <h2>Next available appointment with a woman GP:</h2>
+
+  <a href="#">
+    <img>
+    <h3><span>Tomorrow</span> at 16:30</h3>
+    <div>Dr. Helen Leaf</div>
+    <div>Face to face</div>
+  </a>
+
+  <h2>Next available appointment:</h2>
+
+  <a href="#">
+    <img>
+    <h3><span>Today</span> at 16:10</h3>
+    <div>Dr. Malcolm Branch</div>
+    <div>Face to face</div>
+  </a>
+
+  <ul class="list-bullet">
+    <li><a href="#">I'd like an early morning appointment</a></li>
+    <li><a href="#">I'd like a late afternoon appointment</a></li>
+  </ul>
+
+  <p>
+    or <a href="#">see all appointments</a>
+  </p>
+
+</main>
+{% endblock %}
