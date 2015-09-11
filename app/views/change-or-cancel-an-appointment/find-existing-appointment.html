@@ -1,0 +1,51 @@
+{% extends 'templates/nhs_layout.html' %}
+{% import 'includes/form_macros.html' as form_macros %}
+
+{% block content %}
+<main id="content" role="main">
+
+  <h1 class="heading-xlarge">Find existing appointment</h1>
+
+    <form action="/" method="post" class="form">
+
+      {{
+        form_macros.text_field({
+          id: 'name',
+          label: 'Name'
+        })
+      }}
+
+      {{
+        form_macros.date_field({
+          label: 'Date of birth',
+          hint_date: '31 7 1961',
+          id_prefix: 'dob-'
+        })
+      }}
+
+      {{
+        form_macros.text_field({
+          id: 'practice_or_doctor',
+          label: 'Location of appointment'
+        })
+      }}
+
+      {{
+        form_macros.date_field({
+          label: 'Date of appointment',
+          hint_date: '31 7 2015',
+          id_prefix: 'appointment-'
+        })
+      }}
+
+      <!-- Submit -->
+      <div class="form-group">
+        <a class="button" href="existing-appointment-details">Find appointment</a>
+      </div>
+
+  </form>
+
+
+
+</main>
+{% endblock %}
