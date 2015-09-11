@@ -24,3 +24,43 @@
 .panel-indent .form-group:last-child {
   margin-bottom: 0;
 }
+
+// NHS Panels
+// ==========================================================================
+
+.link-appointment {
+  display: block;
+  max-width: 30em;
+  padding: $gutter/3 $gutter/4;
+  margin-bottom: $gutter;
+  border: 3px solid #00855F;
+  @extend %contain-floats;
+
+  &:focus {
+    background-color: $white;
+  }
+
+  .heading-medium {
+    margin-top: 0;
+  }
+
+  @include media(tablet) {
+    padding: $gutter;
+  }
+
+}
+
+.link-appointment__avatar {
+  float: left;
+  width: 35px;
+  padding-right: $gutter/3;
+  @include media(tablet) {
+    width: 75px;
+    padding-right: $gutter/2;
+  }
+}
+
+.link-appointment__info {
+  float: left;
+  text-decoration: underline;
+}

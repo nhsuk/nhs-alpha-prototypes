@@ -70,8 +70,8 @@ input.form-control{
 
 // VERTICAL SPACING
 
-body { 
-  //background-image: url(/public/images/v-rhythm-46.png); 
+body {
+  //background-image: url(/public/images/v-rhythm-46.png);
   //background-position-y: -5px;
 }
 
@@ -123,7 +123,7 @@ fieldset.form-group{
 
 // Position the 'or' in radio lists
 
-.or{ 
+.or{
   display: none;
   float: left;
   clear: left;
@@ -144,3 +144,11 @@ fieldset.form-group{
   }
 }
 
+
+
+
+// helper classes
+
+.transform-uppercase {
+  text-transform: uppercase;
+}
