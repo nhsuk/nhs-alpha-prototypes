@@ -1,0 +1,45 @@
+{% extends 'templates/nhs_layout.html' %}
+{% import 'includes/form_macros.html' as form_macros %}
+{% import 'includes/ui_element_macros.html' as ui_element_macros %}
+
+{% block content %}
+<main id="content" role="main">
+
+  <a href="find-existing-appointment" class="back-to-previous">Back</a>
+
+  <h1 class="heading-xlarge">
+    <span class="heading-secondary">Change or cancel an appointment</span>
+    Appointment details
+  </h1>
+
+  {{
+    ui_element_macros.appointment_confirmation({
+      appointment_date: 'Friday 25th January 2016',
+      appointment_time: '16:30',
+      avatar_img_path: '/public/images/icon-avatar-helen-leaf.png',
+      name: 'Dr. Helen Leaf',
+      appointment_type: 'Face to face'
+    })
+  }}
+
+  <p>
+    Lakeside Surgery<br>
+    22 Castelnau<br>
+    London<br>
+    NW13 9HJ
+  </p>
+
+  <p>
+    Would you like to:
+  </p>
+
+  <div class="form-group">
+    <a class="button" href="change-to-next-available-appointment">Change</a>
+  </div>
+
+  <div class="form-group">
+    <a class="button button-warning" href="cancel-appointment">Cancel</a>
+  </div>
+
+</main>
+{% endblock %}
