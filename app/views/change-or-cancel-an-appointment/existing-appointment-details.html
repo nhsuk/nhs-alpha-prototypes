@@ -29,17 +29,26 @@
     NW13 9HJ
   </p>
 
-  <p>
-    Would you like to:
-  </p>
-
-  <div class="form-group">
-    <a class="button" href="change-to-next-available-appointment">Change</a>
-  </div>
-
-  <div class="form-group">
-    <a class="button button-warning" href="cancel-appointment">Cancel</a>
-  </div>
+  <form action="" method="get" class="form">
+    <fieldset>
+      <legend class="heading-medium">Would you like to:</legend>
+      <div class="form-group">
+        <input type="radio" id="appointment-change" name="appointment">
+        <label class="form-label form-control-radio" for="appointment-change">
+          Change this appointment
+        </label>
+      </div>
+      <div class="form-group">
+        <input type="radio" id="appointment-cancel" name="appointment">
+        <label class="form-label form-control-radio" for="appointment-cancel">
+          Cancel this appointment
+        </label>
+      </div>
+    </fieldset>
+    <div class="form-group">
+      <a class="button" href="change-to-next-available-appointment">Next</a>
+    </div>
+  </form>
 
 </main>
 {% endblock %}
