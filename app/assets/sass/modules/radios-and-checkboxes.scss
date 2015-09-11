@@ -1,9 +1,9 @@
 // Styling for radios and checkboxes
 
 
-.form-control{
+/*.form-control{
   padding: 2px 5px;
-}
+}*/
 
   // Hide native controls - (!!!)
   input[type='checkbox'],
@@ -36,7 +36,7 @@
     content: "";
     float: left;
     background-color: #fff;
-    border: 2px solid $border-colour;
+    border: 1px solid $border-colour;
 
     //width: 32px;
     //height: 32px;
@@ -100,6 +100,3 @@
 .form-group .form-control-radio:last-child{
   margin-bottom: 0
 }
-
-
-

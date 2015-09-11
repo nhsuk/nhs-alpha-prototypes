@@ -1,11 +1,3 @@
-
-
-// Simpler form hint style
-.form-hint{
-  margin: 0 0 20px 0;
-  color: $black;
-}
-
 // Fixed character width form controls
 .form-control-1-char    {	width: 1.5em }
 .form-control-2-chars   {	width: 2.4em }
@@ -32,19 +24,20 @@ fieldset.inline,
   .form-group {
     width: auto;
     margin-right: 10px;
+    margin-bottom: 0;
     clear: none;
   }
 }
 
 
 // Thick grey borders
-.form-control-checkbox::before,
+/*.form-control-checkbox::before,
 .form-control-radio::before,
 .form-select-2,
 textarea.form-control,
 input.form-control{
   border: 2px solid $border-colour;
-}
+}*/
 
 .form-control-email{
   width: 36em;
@@ -123,7 +116,7 @@ fieldset.form-group{
 
 // Position the 'or' in radio lists
 
-.or{
+.or {
   display: none;
   float: left;
   clear: left;

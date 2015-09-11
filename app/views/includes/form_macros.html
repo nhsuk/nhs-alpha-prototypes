@@ -1,6 +1,6 @@
 {% macro text_field(i) %}
  <div class="form-group">
-   <label class="form-label" for="{{ i.id }}">
+   <label class="form-label-bold" for="{{ i.id }}">
      {{ i.label }}
    </label>
    <input type="text" id="{{ i.id }}" name="{{ i.id }}" class="form-control">
@@ -11,7 +11,7 @@
 
 <fieldset class="form-group">
 
-  <legend class="heading-medium">{{ i.label }}</legend>
+  <legend class="form-label-bold">{{ i.label }}</legend>
 
   <p class="form-hint">For example {{ i.hint_date }}</p>
 
