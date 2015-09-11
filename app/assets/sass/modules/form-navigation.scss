@@ -8,12 +8,14 @@
 // Back link
 
 a.back-to-previous{
-  color: $text-colour;
-  text-decoration: none;
-  background: url('/public/images/back-arrow.png') no-repeat 0 3px;
-  padding-left: 10px;
-  background-size: 15%;
-  border-bottom: 1px solid $text-colour;
+  &:before {
+    content: '';
+    position: relative;
+    left: -6px;
+    display: inline-block;
+    border: 6px solid transparent;
+    border-right-color: $black;
+  }
 }
 
 // Question number
