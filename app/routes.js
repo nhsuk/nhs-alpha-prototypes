@@ -11,5 +11,15 @@ module.exports = {
 
     // add your routes here
 
+    // Change or cancel appointment fork:
+    app.get('/change-or-cancel-an-appointment/path-handler', function(req, res) {
+      console.log(req.query);
+      if (req.query.appointment === 'change') {
+        res.redirect('/change-or-cancel-an-appointment/change-to-next-available-appointment');
+      } else {
+        res.redirect('/change-or-cancel-an-appointment/cancel-appointment');
+      }
+    });
+
   }
 };
