@@ -1,4 +1,5 @@
 {% extends 'templates/nhs_layout.html' %}
+{% import 'includes/ui_element_macros.html' as ui_element_macros %}
 
 {% block content %}
 <main id="content" role="main">
@@ -8,28 +9,42 @@
     Appointment confirmed
   </h1>
 
-  <div>
-    <img>
-    <h3>Monday 28th January 2016 at 11:00</h3>
-    <div>Dr. Malcolm Branch</div>
-    <div>Face to face</div>
-    <p>
+  {{
+    ui_element_macros.appointment_confirmation({
+      appointment_date: 'Monday 28th January 2016',
+      appointment_time: '11:00',
+      avatar_img_path: '/public/images/icon-avatar-malcolm-branch.png',
+      name: 'Dr. Malcolm Branch',
+      appointment_type: 'Face to face'
+    })
+  }}
+
+  <p>
     Lakeside Surgery<br>
     22 Castelnau<br>
     London<br>
     NW13 9HJ
-    <a href="#">map</a>
+  </p>
+
+  <ul>
+    <li>
+      <a href="#" class="font-xsmall icomoon icomoon-calendar">Add to your calendar</a>
+    </li>
+    <li>
+      <a href="#" class="font-xsmall icomoon icomoon-location">Show a map</a>
+    </li>
+  </ul>
+
+  <hr>
+
+  <div class="font-xsmall">
+    <p>
+      Please arrive on time.
     </p>
-
+    <p>
+      We will send you SMS reminders of your appointment. <a href="#">Change reminders</a>
+    </p>
   </div>
-
-  <p>
-    Please arrive on time.
-  </p>
-
-  <p>
-  We will send you SMS reminders of your appointment. <a href="#">change</a>
-  </p>
 
 </main>
 {% endblock %}
