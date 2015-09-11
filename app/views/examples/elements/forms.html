@@ -13,7 +13,13 @@
 
       {% include "includes/forms/address.html" %}
 
-      {% include "includes/forms/date-of-birth.html" %}
+      {{
+        form_macros.date_field({
+          label: 'Date of birth',
+          hint_date: '31 7 1961',
+          id_prefix: 'dob-'
+        })
+      }}
 
       {% include "includes/forms/preferred-contact-method.html" %}
 

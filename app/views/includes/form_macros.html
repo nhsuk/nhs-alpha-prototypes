@@ -7,6 +7,34 @@
  </div>
 {% endmacro %}
 
+{% macro date_field(i) %}
+
+<fieldset class="form-group">
+
+  <legend class="heading-medium">{{ i.label }}</legend>
+
+  <p class="form-hint">For example {{ i.hint_date }}</p>
+
+  <div class="inline-form-groups">
+    <div class="form-group">
+      <label class="form-label" for="{{ i.id_prefix }}day">Day</label>
+      <input class="form-control form-control-2-chars" id="{{ i.id_prefix }}day" type="number" pattern="[0-9]*" min="0" max="31">
+    </div>
+
+    <div class="form-group">
+      <label class="form-label" for="{{ i.id_prefix }}month">Month</label>
+      <input class="form-control form-control-2-chars" id="{{ i.id_prefix }}month" type="number" pattern="[0-9]*" min="0" max="12">
+    </div>
+
+    <div class="form-group">
+      <label class="form-label" for="{{ i.id_prefix }}year">Year</label>
+      <input class="form-control form-control-4-chars" id="{{ i.id_prefix }}year" type="number" pattern="[0-9]*" min="0">
+    </div>
+  </div>
+
+</fieldset>
+{% endmacro %}
+
 {% macro radio_buttons(i) %}
   {% for x in i.options %}
     {% if loop.first %}
