@@ -13,7 +13,7 @@
 
   <h2 class="heading-medium">New appointment</h2>
   {{
-    ui_element_macros.link_appointment({
+    ui_element_macros.appointment_summary({
       appointment_date: 'Monday 28th January 2016',
       appointment_time: '11:00',
       avatar_img_path: '/public/images/icon-avatar-malcolm-branch.png',
@@ -24,13 +24,13 @@
 
   <h2 class="heading-medium">Old appointment</h2>
   {{
-    ui_element_macros.link_appointment({
+    ui_element_macros.appointment_summary({
       appointment_date: 'Friday 25th January 2016',
       appointment_time: '16:30',
       avatar_img_path: '/public/images/icon-avatar-helen-leaf.png',
       name: 'Dr. Helen Leaf',
       appointment_type: 'Face to face',
-      modifier_css_classes: 'link-appointment--secondary'
+      modifier_css_classes: 'appointment-summary--secondary'
     })
   }}
 
