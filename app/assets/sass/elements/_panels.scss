@@ -1,6 +1,7 @@
 // Panels
 // ==========================================================================
 
+/* GDS ELEMENTS
 // Indented panels with a grey left hand border
 .panel-indent {
   @extend %contain-floats;
@@ -24,10 +25,12 @@
 .panel-indent .form-group:last-child {
   margin-bottom: 0;
 }
+*/
 
 // NHS Panels
 // ==========================================================================
 
+// Link appointment panels
 .link-appointment {
   display: block;
   max-width: 30em;
@@ -76,4 +79,23 @@
 
 .link-appointment__info {
   float: left;
+}
+
+// Appointment confirmation panel
+.appointment-confirmation {
+  margin-bottom: $gutter;
+  @extend %contain-floats;
+}
+
+.appointment-confirmation__info {
+  float: left;
+}
+
+.appointment-confirmation__avatar {
+  float: left;
+  width: 75px;
+  padding-right: $gutter/3;
+  @include media(tablet) {
+    padding-right: $gutter/2;
+  }
 }

@@ -1,6 +1,7 @@
 // GOV.UK icons
 
 .icon {
+  display: inline-block;
   background-position: 0 0;
   background-repeat: no-repeat;
 }
@@ -219,4 +220,26 @@
   }
   width: 23px;
   height: 23px;
+}
+
+
+// Icomoon.io icons - temp for prototyping
+.icomoon:before {
+  content: ' ';
+  display: inline-block;
+  position: relative;
+  top: 0.1em;
+  height: 1em;
+  width: 1em;
+  margin-right: 0.3em;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icomoon-calendar:before {
+  background-image: url('/public/images/icomoon-calendar.svg');
+}
+
+.icomoon-location:before {
+  background-image: url('/public/images/icomoon-location.svg');
 }
