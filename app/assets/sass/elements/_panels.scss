@@ -83,7 +83,7 @@
 
 // Appointment confirmation panel
 .appointment-confirmation {
-  margin-bottom: $gutter;
+  margin-bottom: $gutter/2;
   @extend %contain-floats;
 }
 
@@ -96,6 +96,6 @@
   width: 75px;
   padding-right: $gutter/3;
   @include media(tablet) {
-    padding-right: $gutter/2;
+    padding-right: $gutter;
   }
 }

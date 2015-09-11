@@ -1,5 +1,6 @@
 {% extends 'templates/nhs_layout.html' %}
 {% import 'includes/form_macros.html' as form_macros %}
+{% import 'includes/ui_element_macros.html' as ui_element_macros %}
 
 {% block content %}
 <main id="content" role="main">
@@ -9,39 +10,42 @@
     Appointment confirmed
   </h1>
 
-  <h2 class="heading-large">Friday 25th January 2016 at 16:30</h2>
-  <div class="appointment-confirmation">
-    <img src="/public/images/icon-avatar-helen-leaf.png" class="appointment-confirmation__avatar">
-    <div class="appointment-confirmation__info">
-      <div class="font-medium">
-        Dr. Helen Leaf
-      </div>
-      Face to face
-      <p>
-        Lakeside Surgery<br>
-        22 Castelnau<br>
-        London<br>
-        NW13 9HJ
-      </p>
-      <ul>
-        <li>
-          <a href="#" class="font-xsmall icomoon icomoon-calendar">Add to your calendar</a>
-        </li>
-        <li>
-          <a href="#" class="font-xsmall icomoon icomoon-location">Show a map</a>
-        </li>
-      </ul>
-    </div>
-  </div>
+  {{
+    ui_element_macros.appointment_confirmation({
+      appointment_date: 'Friday 25th January 2016',
+      appointment_time: '16:30',
+      avatar_img_path: '/public/images/icon-avatar-helen-leaf.png',
+      name: 'Dr. Helen Leaf',
+      appointment_type: 'Face to face'
+    })
+  }}
+
+  <p>
+    Lakeside Surgery<br>
+    22 Castelnau<br>
+    London<br>
+    NW13 9HJ
+  </p>
+
+  <ul>
+    <li>
+      <a href="#" class="font-xsmall icomoon icomoon-calendar">Add to your calendar</a>
+    </li>
+    <li>
+      <a href="#" class="font-xsmall icomoon icomoon-location">Show a map</a>
+    </li>
+  </ul>
 
   <hr>
 
-  <p class="font-xsmall">
-    Please arrive on time.
-  </p>
-  <p class="font-xsmall">
-    We will send you SMS reminders of your appointment. <a href="#">Change reminders</a>
-  </p>
+  <div class="font-xsmall">
+    <p>
+      Please arrive on time.
+    </p>
+    <p>
+      We will send you SMS reminders of your appointment. <a href="#">Change reminders</a>
+    </p>
+  </div>
 
 </main>
 {% endblock %}
