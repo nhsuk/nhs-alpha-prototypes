@@ -33,11 +33,14 @@
   max-width: 30em;
   padding: $gutter/3 $gutter/4;
   margin-bottom: $gutter;
-  border: 3px solid #00855F;
+  border: 4px solid #00855F;
   @extend %contain-floats;
 
-  &:focus {
+  &:focus,
+  &:hover {
     background-color: $white;
+    border-color: $yellow;
+    outline: 3px solid $yellow;
   }
 
   .heading-medium {
@@ -45,9 +48,20 @@
   }
 
   @include media(tablet) {
-    padding: $gutter;
+    padding: $gutter/2;
+    border-width: 2px;
   }
 
+}
+
+.link-appointment--secondary {
+  border-color: $grey-3;
+  @include media(tablet) {
+    font-size: inherit;
+    .heading-medium {
+      font-size: inherit;
+    }
+  }
 }
 
 .link-appointment__avatar {
@@ -62,5 +76,4 @@
 
 .link-appointment__info {
   float: left;
-  text-decoration: underline;
 }
