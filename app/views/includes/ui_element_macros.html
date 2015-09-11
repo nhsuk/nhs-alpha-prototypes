@@ -1,0 +1,25 @@
+<!-- Appointment link block -->
+{% macro link_appointment(i) %}
+  <a href="{{ i.link_url }}" class="link-appointment {{ i.modifier_css_classes }}">
+    <h3 class="heading-medium">{{ i.appointment_date }} at {{ i.appointment_time }}</h3>
+    <img src="{{ i.avatar_img_path }}" class="link-appointment__avatar">
+    <div class="link-appointment__info">
+      <div>{{ i.name }}</div>
+      <div class="font-xsmall">{{ i.appointment_type }}</div>
+    </div>
+  </a>
+{% endmacro %}
+
+<!-- Apointment confirmation block -->
+{% macro appointment_confirmation(i) %}
+  <h2 class="heading-large">{{ i.appointment_date }} at {{ i.appointment_time }}</h2>
+  <div class="appointment-confirmation">
+    <img src="{{ i.avatar_img_path }}" class="appointment-confirmation__avatar">
+    <div class="appointment-confirmation__info">
+      <p>
+        <span class="font-medium">{{ i.name }}</span><br>
+        {{ i.appointment_type }}
+      </p>
+    </div>
+  </div>
+{% endmacro %}

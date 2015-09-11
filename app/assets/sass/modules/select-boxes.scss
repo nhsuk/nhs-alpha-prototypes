@@ -17,7 +17,7 @@ select.form-select{
   padding: 5px 45px 4px 10px;
   background-color: #fff;
   background: #FFF url(/public/images/toggle-sprite-grey.png) no-repeat 100% -50px;
-  border: 2px solid $border-colour;
+  border: 1px solid $border-colour;
   -webkit-appearance: none;
   border-radius: 0;
 
@@ -43,7 +43,7 @@ select.form-select{
   overflow: hidden;
   padding: 0;
   @include box-sizing(border-box);
-  border: 2px solid $border-colour;
+  border: 1px solid $border-colour;
   background: $border-colour url(/public/images/toggle-sprite-grey.png) no-repeat 100% -50px;
 
   @include core-19;
@@ -61,12 +61,12 @@ select.form-select{
       border-bottom: 1px solid $border-colour;
       &:hover{
         cursor: pointer;
-      } 
+      }
     }
 
 
     label:nth-child(2){
-    } 
+    }
 
     // ...then show checked item
     input:checked + label{
@@ -99,7 +99,7 @@ select.form-select{
       label{
         &:hover{
           background-color: $highlight-colour;
-        }  
+        }
       }
     }
   }
@@ -150,4 +150,3 @@ select.form-select{
   font-size: 16px;
   margin-top: 7px;
 }
-

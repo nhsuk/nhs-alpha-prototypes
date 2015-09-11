@@ -1,6 +1,7 @@
 // Panels
 // ==========================================================================
 
+/* GDS ELEMENTS
 // Indented panels with a grey left hand border
 .panel-indent {
   @extend %contain-floats;
@@ -23,4 +24,78 @@
 
 .panel-indent .form-group:last-child {
   margin-bottom: 0;
+}
+*/
+
+// NHS Panels
+// ==========================================================================
+
+// Link appointment panels
+.link-appointment {
+  display: block;
+  max-width: 30em;
+  padding: $gutter/3 $gutter/4;
+  margin-bottom: $gutter;
+  border: 4px solid #00855F;
+  @extend %contain-floats;
+
+  &:focus,
+  &:hover {
+    background-color: $white;
+    border-color: $yellow;
+    outline: 3px solid $yellow;
+  }
+
+  .heading-medium {
+    margin-top: 0;
+  }
+
+  @include media(tablet) {
+    padding: $gutter/2;
+    border-width: 2px;
+  }
+
+}
+
+.link-appointment--secondary {
+  border-color: $grey-3;
+  @include media(tablet) {
+    font-size: inherit;
+    .heading-medium {
+      font-size: inherit;
+    }
+  }
+}
+
+.link-appointment__avatar {
+  float: left;
+  width: 35px;
+  padding-right: $gutter/3;
+  @include media(tablet) {
+    width: 75px;
+    padding-right: $gutter/2;
+  }
+}
+
+.link-appointment__info {
+  float: left;
+}
+
+// Appointment confirmation panel
+.appointment-confirmation {
+  margin-bottom: $gutter/2;
+  @extend %contain-floats;
+}
+
+.appointment-confirmation__info {
+  float: left;
+}
+
+.appointment-confirmation__avatar {
+  float: left;
+  width: 75px;
+  padding-right: $gutter/3;
+  @include media(tablet) {
+    padding-right: $gutter;
+  }
 }

@@ -21,8 +21,8 @@
 }
 
 
-// In Webkit, the bottom margin of a legend and the top margin 
-// of the next element don't overlap, which they should. This 
+// In Webkit, the bottom margin of a legend and the top margin
+// of the next element don't overlap, which they should. This
 // addresses that by ignoring the top margin of the next element
 
 legend + * {
@@ -35,7 +35,7 @@ textarea{
   display: block
 }
 
-// Add missing form-control widths. Adding these allows us to set 
+// Add missing form-control widths. Adding these allows us to set
 // form control widths to all the main grid widths.
 
 .form-control-1-4 {
@@ -77,7 +77,7 @@ textarea{
 // _typography.scss
 
 
-// Make heading styles block elements, so they work as intended when 
+// Make heading styles block elements, so they work as intended when
 // applied to non-block elements (like form labels)
 
 .heading-small,
@@ -105,5 +105,5 @@ hr{
   background: $border-colour;
   border: 0 solid;
   height: 1px;
-  margin-bottom: 60px;
+  margin-bottom: $gutter*1.5;
 }
