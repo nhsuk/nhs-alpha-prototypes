@@ -110,3 +110,51 @@ $live-colour: $grass-green;       // Live badges and banners
 $banner-text-colour: #000;        // Text colour for Alpha & Beta banners
 $error-colour: $red;              // Error text and border colour
 $error-background: #fef7f7;       // Error background colour
+
+// NHS Colour palette, from http://www.nhsidentity.nhs.uk/
+// For tints, just use rgba( $nhs-color, .7 );
+
+$nhs-blue: #0072C6;
+$nhs-websafe-blue: #0066cc;
+
+$nhs-black: #000000;
+$nhs-white: #ffffff;
+
+$nhs-websafe-dark-green: #003300;
+$nhs-dark-green: #006647;
+
+$nhs-websafe-green: #009933;
+$nhs-green: #00953A;
+
+$nhs-websafe-light-green: #66cc33;
+$nhs-light-green: #77BC1F
+
+$nhs-websafe-aqua-green: #009966;
+$nhs-aqua-green: #00A19B;
+
+$nhs-websafe-aqua-blue: #0099cc;
+$nhs-aqua-blue: #00A7CE;
+
+$nhs-websafe-light-blue: #0099ff;
+$nhs-light-blue: #0082CA;
+
+$nhs-websafe-dark-blue: #0066cc;
+$nhs-dark-blue: #002F87;
+
+$nhs-websafe-purple: #330099;
+$nhs-purple: #33006F;
+
+$nhs-websafe-dark-pink: #990066;
+$nhs-dark-pink: #9B004F;
+
+$nhs-websafe-dark-red: #990000;
+$nhs-dark-red: #8F1336
+
+$nhs-websafe-red: #cc0000;
+$nhs-red: #E2231A;
+
+$nhs-websafe-orange:  #ff6600;
+$nhs-orange:  #F38B00;
+
+$nhs-websafe-yellow: #ffff00;
+$nhs-yellow: #FFED00;
