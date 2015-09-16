@@ -1,0 +1,59 @@
+{% extends 'templates/nhs_layout.html' %}
+{% import 'includes/form_macros.html' as form_macros %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <h1 class="heading-xlarge">
+    <span class="heading-secondary">Register with a GP</span>
+    Confirm your details
+  </h1>
+
+  <div class="text">
+    <p>We will send your details to Lakeside Surgery. Please check this
+    information is up to date and make any changes needed.</p>
+  </div>
+
+  <form action="" method="get" class="form">
+
+    {{
+      form_macros.text_field({
+        id: 'name',
+        label: 'Name',
+        value: 'Jose Baxter'
+      })
+    }}
+
+    {{
+      form_macros.text_field({
+        id: 'address',
+        label: 'Address',
+        value: '13 Fletcher Street, London, NW13 3XC'
+      })
+    }}
+
+    {{
+      form_macros.text_field({
+        id: 'email',
+        label: 'Email',
+        value: 'josetheb@gmail.com'
+      })
+    }}
+
+    {{
+      form_macros.text_field({
+        id: 'phone',
+        label: 'Phone',
+        value: '07700 900414'
+      })
+    }}
+
+    <div class="form-group">
+      <a href="register-with-signin-confirmed" class="button">Confirm</a>
+    </div>
+
+  </form>
+</main>
+
+{% endblock %}
