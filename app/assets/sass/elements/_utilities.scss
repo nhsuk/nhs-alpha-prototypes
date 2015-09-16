@@ -1,0 +1,31 @@
+// Utility classes
+// ==========================================================================
+
+.collapse-top {
+  margin-top: 0;
+}
+
+.collapse-bottom {
+  margin-bottom: 0;
+}
+
+.expand {
+  margin-top: $gutter;
+  margin-bottom: $gutter;
+}
+
+.expand-top {
+  margin-top: $gutter;
+}
+
+.expand-top-half {
+  margin-top: $gutter-half;
+}
+
+.expand-bottom {
+  margin-bottom: $gutter;
+}
+
+.expand-bottom-half {
+  margin-bottom: $gutter-half;
+}
