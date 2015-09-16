@@ -3,3 +3,4 @@
 .start.pid
 public
 node_modules/*
+.*.swp
