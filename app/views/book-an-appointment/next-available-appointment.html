@@ -19,7 +19,7 @@
     NW13 9HJ
   </p>
 
-  <h2 class="heading-medium">Next available appointment:</h2>
+  <h2 class="heading-medium">Next available appointments:</h2>
 
   {{
     ui_element_macros.appointment_summary({
@@ -28,6 +28,17 @@
       appointment_time: '16:10',
       avatar_img_path: '/public/images/icon-avatar-malcolm-branch.png',
       name: 'Dr. Malcolm Branch',
+      appointment_type: 'Face to face'
+    })
+  }}
+
+  {{
+    ui_element_macros.appointment_summary({
+      link_url: '#',
+      appointment_date: 'Wednesday 24rd January 2016',
+      appointment_time: '11:00',
+      avatar_img_path: '/public/images/icon-avatar-mike-johnson.png',
+      name: 'Dr. Mike Johnson',
       appointment_type: 'Face to face'
     })
   }}
