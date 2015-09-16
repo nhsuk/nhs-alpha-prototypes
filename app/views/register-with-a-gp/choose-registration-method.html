@@ -4,11 +4,32 @@
 
 <main id="content" role="main">
 
-  <h1 class="heading-xlarge">Choose registration method</h1>
+  <h1 class="heading-xlarge">
+    <span class="heading-secondary">Register with a GP</span>
+    Choose registration method
+  </h1>
 
-  <div class="text">
-    <p>Next: <a href="register-without-signin">Register without signin</a></p>
-  </div>
+  <form action="" method="get" class="form">
+    <fieldset>
+      <legend class="heading-medium">Do you have an NHS login?</legend>
+      <div class="form-group">
+        <input type="radio" id="appointment-change" name="appointment" value="change">
+        <label class="form-label form-control-radio" for="appointment-change">
+          <strong>Yes I do,</strong> I will sign in to register
+        </label>
+      </div>
+      <div class="form-group">
+        <input type="radio" id="appointment-cancel" name="appointment" value="cancel">
+        <label class="form-label form-control-radio" for="appointment-cancel">
+          <strong>No I don’t,</strong> I will register without signing in
+        </label>
+      </div>
+    </fieldset>
+
+    <div class="form-group">
+      <a href="register-without-signin" class="button">Next</a>
+    </div>
+  </form>
 </main>
 
 {% endblock %}
