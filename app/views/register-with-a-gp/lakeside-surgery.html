@@ -3,12 +3,61 @@
 {% block content %}
 
 <main id="content" role="main">
+  <!-- TODO: This will be weird if the user came from full results list -->
+  <p><a href="suggested-gps" class="back-to-previous">Back to results</a></p>
 
-  <h1 class="heading-xlarge">Lakeside Surgery details</h1>
+  <h1 class="heading-xlarge">
+    <span class="heading-secondary">Register with a GP</span>
+    Lakeside Surgery
+  </h1>
 
-  <div class="text">
-    <p>Next: <a href="choose-registration-method">Register with Lakeside Surgery</a></p>
-  </div>
+  <p>
+    22 Castelnau<br>
+    London<br>
+    NW13 9HJ
+  </p>
+
+  <ul class="list-bullet">
+    <li>82% of patients recommend Lakeside Surgery</li>
+    <li>88% of patients feel they are listened to</li>
+    <li>65% of patients are happy with waiting times</li>
+  </ul>
+
+  <p><a class="button" href="choose-registration-method">Register with Lakeside Surgery</a></p>
+
+  <h2 class="heading-large">Staff</h2>
+
+  <h3 class="heading-medium">GPs</h3>
+
+  <ul class="list-bullet">
+    <li>Dr Helen Leaf, female</li>
+    <li>Dr Ravi Johnson, male</li>
+    <li>Dr Emma Stace, female</li>
+    <li>Dr Malcolm Branch, male</li>
+  </ul>
+
+  <h3 class="heading-medium">Nurse practitioners</h3>
+
+  <ul class="list-bullet">
+    <li>Sasheika Wrench, female</li>
+    <li>Jonathan Hope, male</li>
+  </ul>
+
+  <h3 class="heading-medium">Nurses</h3>
+
+  <ul class="list-bullet">
+    <li>Alison Wylde, female</li>
+  </ul>
+
+  <h2 class="heading-large">Services</h2>
+
+  <ul class="list-bullet">
+    <li>Travel vaccinations</li>
+    <li>Over 40 health check</li>
+    <li>Diabetes clinic</li>
+    <li>Childhood vaccinations</li>
+    <li>Quit smoking</li>
+  </ul>
 </main>
 
 {% endblock %}
