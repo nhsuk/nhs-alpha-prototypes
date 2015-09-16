@@ -1,6 +1,14 @@
 // Typography
 // ==========================================================================
 
+// Inline element basic styles
+b, strong {
+  font-weight: 700;
+}
+i, em {
+  font-style: italic;
+}
+
 // Increase the base font size to 19px for the main content area
 // Using the core-19 mixin from the govuk_toolkit _typography.scss file
 
@@ -171,5 +179,3 @@ code {
   border: 1px solid $border-colour;
   padding: 3px 7px;
 }
-
-
