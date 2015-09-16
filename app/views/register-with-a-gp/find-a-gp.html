@@ -1,0 +1,31 @@
+{% extends 'templates/nhs_layout.html' %}
+{% import 'includes/form_macros.html' as form_macros %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <h1 class="heading-xlarge">Register with a GP</h1>
+
+  <div class="text">
+    <p>
+      Find a GP near you:
+    </p>
+
+    <form action="/" method="post" class="form">
+
+      {{
+        form_macros.text_field({
+          id: 'postcode',
+          label: 'Postcode'
+        })
+      }}
+
+      <div class="form-group">
+        <a class="button" href="suggested-gps">Find a GP</a>
+      </div>
+    </form>
+  </div>
+</main>
+
+{% endblock %}
