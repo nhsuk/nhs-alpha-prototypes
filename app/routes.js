@@ -21,5 +21,15 @@ module.exports = {
       }
     });
 
+    // Register with a GP - choose register method fork:
+    app.get('/register-with-a-gp/choose-registration-method-handler', function(req, res) {
+      console.log(req.query);
+      if (req.query.registration_method === 'with-signin') {
+        res.redirect('/register-with-a-gp/register-with-signin');
+      } else {
+        res.redirect('/register-with-a-gp/register-without-signin');
+      }
+    });
+
   }
 };

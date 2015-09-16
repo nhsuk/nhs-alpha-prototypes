@@ -9,25 +9,25 @@
     Choose registration method
   </h1>
 
-  <form action="" method="get" class="form">
+  <form action="choose-registration-method-handler" method="get" class="form">
     <fieldset>
       <legend class="heading-medium">Do you have an NHS login?</legend>
       <div class="form-group">
-        <input type="radio" id="appointment-change" name="appointment" value="change">
-        <label class="form-label form-control-radio" for="appointment-change">
+        <input type="radio" id="sign-in-to-register" name="registration_method" value="with-signin">
+        <label class="form-label form-control-radio" for="sign-in-to-register">
           <strong>Yes I do,</strong> I will sign in to register
         </label>
       </div>
       <div class="form-group">
-        <input type="radio" id="appointment-cancel" name="appointment" value="cancel">
-        <label class="form-label form-control-radio" for="appointment-cancel">
+        <input type="radio" id="register-without-signing-in" name="registration_method" value="without-signin">
+        <label class="form-label form-control-radio" for="register-without-signing-in">
           <strong>No I don’t,</strong> I will register without signing in
         </label>
       </div>
     </fieldset>
 
     <div class="form-group">
-      <a href="register-without-signin" class="button">Next</a>
+      <button type="submit" class="button">Next</button>
     </div>
   </form>
 </main>
