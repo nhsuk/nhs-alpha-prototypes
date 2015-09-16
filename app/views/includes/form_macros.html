@@ -7,6 +7,15 @@
  </div>
 {% endmacro %}
 
+{% macro password_field(i) %}
+ <div class="form-group">
+   <label class="form-label-bold" for="{{ i.id }}">
+     {{ i.label }}
+   </label>
+   <input type="password" id="{{ i.id }}" name="{{ i.id }}" class="form-control">
+ </div>
+{% endmacro %}
+
 {% macro date_field(i) %}
 
 <fieldset class="form-group">
