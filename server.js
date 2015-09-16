@@ -1,6 +1,7 @@
 var path = require('path'),
     express = require('express'),
     swig = require('swig'),
+    session = require('express-session'),
     routes = require(__dirname + '/app/routes.js'),
     app = express(),
     port = (process.env.PORT || 3000),
@@ -44,6 +45,16 @@ app.use(function (req, res, next) {
   next();
 });
 
+// set up sessions
+app.use(session({
+  secret: 'this is actually public'
+}));
+
+// give views/layouts direct access to session data
+app.use(function(req, res, next){
+  res.locals.session = req.session;
+  next();
+});
 
 // routes (found in app/routes.js)
 
