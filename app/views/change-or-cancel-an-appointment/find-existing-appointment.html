@@ -26,12 +26,7 @@
         })
       }}
 
-      {{
-        form_macros.text_field({
-          id: 'practice_or_doctor',
-          label: 'Practice or doctor'
-        })
-      }}
+      {% include "includes/forms/gp-practice.html" %}
 
       {{
         form_macros.date_field({
