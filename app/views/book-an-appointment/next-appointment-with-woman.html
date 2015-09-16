@@ -24,7 +24,7 @@
   {{
     ui_element_macros.appointment_summary({
       link_url: 'appointment-confirmed',
-      appointment_date: 'Friday 25th January 2016',
+      appointment_date: 'Friday 29th January 2016',
       appointment_time: '16:30',
       avatar_img_path: '/public/images/icon-avatar-helen-leaf.png',
       name: 'Dr. Helen Leaf',
@@ -32,23 +32,34 @@
     })
   }}
 
-  <h2 class="heading-small">Next available appointment:</h2>
+  <h2 class="heading-small">Next available appointments:</h2>
 
   {{
     ui_element_macros.appointment_summary({
       modifier_css_classes: 'appointment-summary--secondary',
       link_url: '#',
-      appointment_date: 'Tuesday 23rd January 2016',
+      appointment_date: 'Tuesday 26th January 2016',
       appointment_time: '16:10',
       avatar_img_path: '/public/images/icon-avatar-malcolm-branch.png',
       name: 'Dr. Malcolm Branch',
-      appointment_type: 'Face to face'
+      appointment_type: 'Telephone appointment'
     })
   }}
 
+  {{
+    ui_element_macros.appointment_summary({
+      modifier_css_classes: 'appointment-summary--secondary',
+      link_url: '#',
+      appointment_date: 'Thursday 28th January 2016',
+      appointment_time: '11:30',
+      avatar_img_path: '/public/images/icon-avatar-mike-johnson.png',
+      name: 'Dr. Mike Johnson',
+      appointment_type: 'Face to face'
+    })
+  }}
   <ul class="list-bullet">
     <li><a href="#">I'd like an early morning appointment</a></li>
-    <li><a href="#">I'd like a late afternoon appointment</a></li>
+    <li><a href="#">I'd like to see a particular person</a></li>
   </ul>
 
   <p>
