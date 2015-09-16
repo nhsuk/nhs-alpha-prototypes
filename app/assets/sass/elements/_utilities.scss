@@ -29,3 +29,26 @@
 .expand-bottom-half {
   margin-bottom: $gutter-half;
 }
+
+.clearfix {
+  @extend %contain-floats;
+}
+
+/* Hide only visually, but have it available for screenreaders */
+.visuallyhidden {
+  position: absolute;
+  left: -9999em;
+  /*
+  * Extends the .visuallyhidden class to allow the element to be
+  * focusable when navigated to via the keyboard
+  */
+  &.focusable:active,
+  &.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+  }
+}
