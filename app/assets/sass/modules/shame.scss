@@ -94,21 +94,6 @@ fieldset.form-group{
   margin-bottom: 10px;
 }
 
-
-// Grids
-
-.grid-row {
-  @extend %grid-row;
-}
-
-.column-quarter {
-  @include grid-column( 1/4 );
-}
-
-.column-three-quarters {
-  @include grid-column( 3/4 );
-}
-
 // Align service header in a quarter-width grid layout
 #global-header.with-proposition .header-wrapper .header-global {
   //width: 25%;

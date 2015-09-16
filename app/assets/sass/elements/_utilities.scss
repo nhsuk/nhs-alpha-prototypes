@@ -1,0 +1,54 @@
+// Utility classes
+// ==========================================================================
+
+.collapse-top {
+  margin-top: 0;
+}
+
+.collapse-bottom {
+  margin-bottom: 0;
+}
+
+.expand {
+  margin-top: $gutter;
+  margin-bottom: $gutter;
+}
+
+.expand-top {
+  margin-top: $gutter;
+}
+
+.expand-top-half {
+  margin-top: $gutter-half;
+}
+
+.expand-bottom {
+  margin-bottom: $gutter;
+}
+
+.expand-bottom-half {
+  margin-bottom: $gutter-half;
+}
+
+.clearfix {
+  @extend %contain-floats;
+}
+
+/* Hide only visually, but have it available for screenreaders */
+.visuallyhidden {
+  position: absolute;
+  left: -9999em;
+  /*
+  * Extends the .visuallyhidden class to allow the element to be
+  * focusable when navigated to via the keyboard
+  */
+  &.focusable:active,
+  &.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+  }
+}

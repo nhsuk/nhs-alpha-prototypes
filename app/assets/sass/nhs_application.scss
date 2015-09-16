@@ -11,7 +11,7 @@
 // Import GOV.UK elements
 
 @import "elements/helpers";
-// @import "elements/reset";
+@import "elements/reset";
 @import "elements/typography";
 @import "elements/layout";
 @import "elements/forms";
@@ -20,8 +20,8 @@
 @import "elements/details";
 @import "elements/lists";
 @import "elements/panels";
-
 @import "elements/icons";
+@import "elements/utilities";
 
 
 // Import modules
