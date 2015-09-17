@@ -25,17 +25,11 @@
       </div>
     </div>
 
-    <header role="banner" id="global-header" class="{% block headerClass %}{% endblock %}">
-      <div class="header-wrapper">
-        <div class="header-global">
-          <div class="header-logo">
-            <a href="{% block logotypeLink %}/{% endblock %}" title="{% block logotypeTitle %}Go to the NHS.UK homepage{% endblock %}" id="logo" class="content">
-              <img src="{{assetPath}}images/nhs-logotype.svg" width="70" height="28" alt=""> <!--NHS.UK-->
-            </a>
-          </div>
-          {% block insideHeader %}{% endblock %}
-        </div>
-        {% block propositionHeader %}{% endblock %}
+    <header role="banner" id="global-header">
+      <div class="header-logo">
+        <a href="{% block logotypeLink %}/{% endblock %}" title="{% block logotypeTitle %}Go to the NHS.UK homepage{% endblock %}">
+          <img src="{{assetPath}}images/nhs-logotype.svg" alt="">
+        </a>
       </div>
     </header>
     <!--end header-->

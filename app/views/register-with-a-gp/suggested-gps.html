@@ -1,11 +1,14 @@
 {% extends 'templates/nhs_layout.html' %}
 
+{% block afterHeader %}
+  {% include "includes/service-headers/register-with-a-gp.html" %}
+{% endblock %}
+
 {% block content %}
 
 <main id="content" role="main">
 
   <h1 class="heading-xlarge">
-    <span class="heading-secondary">Register with a GP</span>
     Suggested GPs
   </h1>
 

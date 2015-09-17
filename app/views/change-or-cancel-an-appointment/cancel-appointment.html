@@ -1,13 +1,16 @@
 {% extends 'templates/nhs_layout.html' %}
 {% import 'includes/ui_element_macros.html' as ui_element_macros %}
 
+{% block afterHeader %}
+  {% include "includes/service-headers/cancel-or-change-an-appointment.html" %}
+{% endblock %}
+
 {% block content %}
 <main id="content" role="main">
 
   <a href="existing-appointment-details" class="back-to-previous">Back</a>
 
   <h1 class="heading-xlarge">
-    <span class="heading-secondary">Cancel an appointment</span>
     Confirm cancellation
   </h1>
 

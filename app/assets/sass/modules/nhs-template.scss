@@ -1,23 +1,47 @@
 // NHS template
-// Overwrites GOV.UK template styles
-
-$nhsblue: #005eb8;
-
 
 #global-header {
-    background-color: $nhsblue;
-    .header-wrapper {
-  		background-color: $nhsblue;
-	}
-	#logo img{
-    width: 70px;
-    height: 28px;
-    padding-right: 0;
-    float: none;
-    position: static;
-	}
+  background-color: $nhs-blue;
+
+  @extend %contain-floats;
+
+  .header-logo {
+    max-width: 960px;
+  	margin: 0 15px;
+    padding: 0;
+
+    @include media(tablet) {
+      margin: 0 auto;
+      padding: 0 30px;
+    }
+
+    a {
+      display: block;
+      float: left;
+      margin: 15px 0;
+      &:focus {
+        background-color: transparent;
+      }
+    }
+
+    img {
+      display: block;
+      width: 90px;
+    }
+  }
 }
 
-#footer {
-	border-top: 0;
+.service-header {
+	background-color: rgba($nhs-blue, 0.25);
+}
+
+.service-header .service-name {
+  max-width: 960px;
+	margin: 0 15px;
+  padding: 8px 0;
+
+  @include media(tablet) {
+    margin: 0 auto;
+    padding: 15px 30px;
+  }
 }
