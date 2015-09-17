@@ -52,6 +52,13 @@ module.exports = {
                  {"service_context": service_context});
     });
 
+    app.get('/booking-with-context/appointment-confirmed', function(req, res) {
+      var service_context = appointment_details_for_service(req.query.service);
+
+      res.render('booking-with-context/appointment-confirmed',
+                 {"service_context": service_context});
+    });
+
   }
 };
 
