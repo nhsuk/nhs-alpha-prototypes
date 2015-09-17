@@ -80,18 +80,6 @@ fieldset {
   border: none;
   padding: 0; }
 
-a:link {
-  color: #005ea5; }
-
-a:visited {
-  color: #4c2c92; }
-
-a:hover {
-  color: #2e8aca; }
-
-a:active {
-  color: #2e8aca; }
-
 a[rel="external"]:after {
   background-image: url(external-links/external-link.png?0.12.0);
   background-repeat: no-repeat; }
