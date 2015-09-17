@@ -1,5 +1,9 @@
 {% extends 'templates/nhs_layout.html' %}
 
+{% block afterHeader %}
+  {% include "includes/service-headers/register-with-a-gp.html" %}
+{% endblock %}
+
 {% block content %}
 
 <main id="content" role="main">
@@ -7,7 +11,6 @@
   <p><a href="suggested-gps" class="back-to-previous">Back to results</a></p>
 
   <h1 class="heading-xlarge">
-    <span class="heading-secondary">Register with a GP</span>
     Victoria Medical Centre
   </h1>
 

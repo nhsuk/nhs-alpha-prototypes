@@ -1,12 +1,15 @@
 {% extends 'templates/nhs_layout.html' %}
 {% import 'includes/form_macros.html' as form_macros %}
 
+{% block afterHeader %}
+  {% include "includes/service-headers/register-with-a-gp.html" %}
+{% endblock %}
+
 {% block content %}
 
 <main id="content" role="main">
 
   <h1 class="heading-xlarge">
-    <span class="heading-secondary">Register with a GP</span>
     Confirm your details
   </h1>
 
