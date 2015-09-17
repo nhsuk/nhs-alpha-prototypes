@@ -42,6 +42,16 @@ module.exports = {
       var service = req.query.service;
       res.render('booking-with-context/your-details', {"service": service});
     });
+
+    // Booking with context - from "service" query parameter, pass in details
+    // about the session.
+    app.get('/booking-with-context/next-available-appointment', function(req, res) {
+      var service_context = appointment_details_for_service(req.query.service);
+
+      res.render('booking-with-context/next-available-appointment',
+                 {"service_context": service_context});
+    });
+
   }
 };
 
