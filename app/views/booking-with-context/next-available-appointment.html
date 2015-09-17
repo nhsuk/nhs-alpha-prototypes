@@ -1,0 +1,34 @@
+{% extends 'templates/nhs_layout.html' %}
+{% import 'includes/form_macros.html' as form_macros %}
+{% import 'includes/ui_element_macros.html' as ui_element_macros %}
+
+{% block content %}
+<main id="content" role="main">
+
+  <a href="your-details" class="back-to-previous">Back</a>
+
+  <h1 class="heading-xlarge">
+    <span class="heading-secondary">Book an appointment</span>
+    {{ service_context.name }} appointments
+  </h1>
+
+  <div class="panel-indent">
+    <p>
+      {{ service_context.triage_hint|safe }}
+    </p>
+  </div>
+
+  <h2 class="heading-medium">Next available appointment:</h2>
+
+  {{ ui_element_macros.appointment_summary(service_context.appointment)  }}
+
+  <ul class="list-bullet">
+    <li><a href="next-appointment-early-morning">I'd like an early morning appointment</a></li>
+  </ul>
+
+  <p>
+    or <a href="#">see all appointments</a>
+  </p>
+
+</main>
+{% endblock %}
