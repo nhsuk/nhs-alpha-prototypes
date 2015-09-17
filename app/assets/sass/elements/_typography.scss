@@ -155,16 +155,21 @@ p {
 }
 
 // Link styles
+
+a:link,
 .link {
   color: $link-colour;
   text-decoration: underline;
 }
+a:visited,
 .link:visited {
   color: $link-visited-colour;
 }
+a:hover,
 .link:hover {
   color: $link-hover-colour;
 }
+a:active,
 .link:active {
   color: $link-colour;
 }
