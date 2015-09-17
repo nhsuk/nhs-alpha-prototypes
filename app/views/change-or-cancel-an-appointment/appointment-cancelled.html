@@ -1,5 +1,9 @@
 {% extends 'templates/nhs_layout.html' %}
 
+{% block afterHeader %}
+  {% include "includes/service-headers/cancel-or-change-an-appointment.html" %}
+{% endblock %}
+
 {% block content %}
 
 <main id="content" role="main">
