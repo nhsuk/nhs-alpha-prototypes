@@ -35,6 +35,13 @@ module.exports = {
         res.redirect('/register-with-a-gp/register-without-signin');
       }
     });
+
+    // Booking with context - pass through "service" query parameter
+    // ie ?service=diabetes-foot-test
+    app.get('/booking-with-context/your-details', function(req, res) {
+      var service = req.query.service;
+      res.render('booking-with-context/your-details', {"service": service});
+    });
   }
 };
 
