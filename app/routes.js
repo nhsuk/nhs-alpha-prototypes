@@ -36,6 +36,15 @@ module.exports = {
       }
     });
 
+    // Book an appointment (with a particular pracitioner)
+
+    app.get('/book-an-appointment/appointments-with-practitioner', function(req, res) {
+      console.log(req.query.practitioner);
+      var practitioner = practitioner_details_for_slug(req.query.practitioner);
+      res.render('book-an-appointment/appointments-with-practitioner',
+                 {"practitioner": practitioner});
+    });
+
     // Booking with context - pass through "service" query parameter
     // ie ?service=diabetes-foot-test
     app.get('/booking-with-context/your-details', function(req, res) {
@@ -81,6 +90,47 @@ function practice_details_for_slug(slug) {
       };
   }
 }
+
+function practitioner_details_for_slug(slug) {
+  switch(slug) {
+    case 'helen-leaf':
+      return {
+        name: 'Dr Helen Leaf',
+        avatar: '/public/images/icon-avatar-helen-leaf.png'
+      };
+    case 'mike-johnson':
+      return {
+        name: 'Dr Mike Johnson',
+        avatar: '/public/images/icon-avatar-mike-johnson.png'
+      };
+    case 'emma-stace':
+      return {
+        name: 'Dr Emma Stace',
+        avatar: '/public/images/icon-avatar.svg'
+      };
+    case 'malcolm-branch':
+      return {
+        name: 'Dr Malcolm Branch',
+        avatar: '/public/images/icon-avatar-malcolm-branch.png'
+      };
+    case 'sasheika-wrench':
+      return {
+        name: 'Nurse Practitioner Sasheika Wrench',
+        avatar: '/public/images/icon-avatar.svg'
+      };
+    case 'jonathon-hope':
+      return {
+        name: 'Nurse Practioner Jonathon Hope',
+        avatar: '/public/images/icon-avatar-jonathon-hope.png'
+      };
+    case 'alison-wylde':
+      return {
+        name: 'Nurse Alison Wylde',
+        avatar: '/public/images/icon-avatar-alison-wylde.png'
+      };
+  }
+}
+
 
 function appointment_details_for_service(slug) {
   switch(slug) {
