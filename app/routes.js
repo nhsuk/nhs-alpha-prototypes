@@ -152,10 +152,10 @@ function appointment_details_for_service(slug) {
                            "such as blood glucose levels that you want to discuss.",
         appointment: {
           link_url: 'appointment-confirmed?service=' + slug,
-          appointment_date: 'Tuesday 26th January 2016',
-          appointment_time: '16:10',
-          avatar_img_path: '/public/images/icon-avatar-alison-wylde.png',
-          name: 'Nurse Alison Wylde',
+          appointment_date: 'Monday 25th January 2016',
+          appointment_time: '11.20',
+          avatar_img_path: '/public/images/icon-avatar-jonathon-hope.png',
+          name: 'Nurse Practitioner Jonathon Hope',
           appointment_type: 'Face to face',
           address: 'Lakeside Surgery<br>22 Castelnau<br>London<br>NW13 9HJ'
         }
