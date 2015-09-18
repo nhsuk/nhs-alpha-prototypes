@@ -1,0 +1,116 @@
+{% extends 'templates/nhs_layout.html' %}
+{% import 'includes/form_macros.html' as form_macros %}
+{% import 'includes/ui_element_macros.html' as ui_element_macros %}
+
+{% block afterHeader %}
+  {% include "includes/service-headers/book-an-appointment.html" %}
+{% endblock %}
+
+{% block content %}
+<main id="content" role="main">
+
+  <a href="next-available-appointment" class="back-to-previous">Back</a>
+
+  <h1 class="heading-xlarge">
+    See a particular person
+  </h1>
+    <div class="column-half">
+
+      <style>
+        .list-test {
+          margin-bottom: 30px;
+        }
+        .list-test li {
+          clear: both;
+          margin-bottom: 15px;
+        }
+        .list-test img {
+          width: 75px;
+          margin-right: 15px;
+          float: left;
+        }
+        .list-test p {
+          float: left;
+          margin-top: 8px;
+        }
+      </style>
+
+      <h3 class="heading-medium collapse-top">General practitioners (GPs)</h3>
+      <ul class="list-test">
+        <li class="clearfix">
+          <a href='#'>
+            <img src="/public/images/icon-avatar-helen-leaf.png">
+            <p>
+              Dr Helen Leaf<br>
+              <span class="font-xsmall">female</span>
+            </p>
+          </a>
+        </li>
+        <li class="clearfix">
+          <a href='#'>
+            <img src="/public/images/icon-avatar-mike-johnson.png">
+            <p>
+              Dr Mike Johnson<br>
+              <span class="font-xsmall">male</span>
+            </p>
+          </a>
+        </li>
+        <li class="clearfix">
+          <a href='#'>
+            <img src="/public/images/icon-avatar.svg">
+            <p>
+              Dr Emma Stace<br>
+              <span class="font-xsmall">female</span>
+            </p>
+          </a>
+        </li>
+        <li class="clearfix">
+          <a href='#'>
+            <img src="/public/images/icon-avatar-malcolm-branch.png">
+            <p>
+              Dr Malcolm Branch<br>
+              <span class="font-xsmall">male</span>
+            </p>
+          </a>
+        </li>
+      </ul>
+
+      <h3 class="heading-medium collapse-top">Nurse practitioners</h3>
+      <ul class="list-test">
+        <li class="clearfix">
+          <a href='#'>
+            <img src="/public/images/icon-avatar.svg">
+            <p>
+              Sasheika Wrench<br>
+              <span class="font-xsmall">female</span>
+            </p>
+          </a>
+        </li>
+        <li class="clearfix">
+          <a href='#'>
+            <img src="/public/images/icon-avatar-jonathon-hope.png">
+            <p>
+              Jonathan Hope<br>
+              <span class="font-xsmall">male</span>
+            </p>
+          </a>
+        </li>
+      </ul>
+
+      <h3 class="heading-medium collapse-top">Practice nurses</h3>
+      <ul class="list-test">
+        <li class="clearfix">
+          <a href='#'>
+            <img src="/public/images/icon-avatar-alison-wylde.png">
+            <p>
+              Alison Wylde<br>
+              <span class="font-xsmall">female</span>
+            </p>
+          </a>
+        </li>
+        </ul>
+
+    </div>
+
+</main>
+{% endblock %}
