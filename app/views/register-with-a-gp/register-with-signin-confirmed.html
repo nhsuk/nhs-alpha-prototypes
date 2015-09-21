@@ -12,8 +12,11 @@
   </h1>
 
   <div class="text">
-    <p>You are now registered with <strong>{{ session.practice.name
-      }}</strong>, {{ session.practice.address }}</p>
+    <p>
+      You are now registered with
+      <strong>{{ session.practice.name | default('Practice Name') }}</strong>,
+      {{ session.practice.address | default('practice address') }}
+    </p>
 
     <p>It may take up to 6 weeks for your medical records to be moved to your
     new practice, but you can start using services right away</p>
