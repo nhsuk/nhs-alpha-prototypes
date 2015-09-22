@@ -12,8 +12,11 @@
   </h1>
 
   <div class="text">
-    <p>You are now registered with <strong>{{ session.practice.name
-      }}</strong>, {{ session.practice.address }}</p>
+    <p>
+      You are now registered with
+      <strong>{{ session.practice.name | default('Practice Name') }}</strong>,
+      {{ session.practice.address | default('practice address') }}
+    </p>
 
     <div class="panel-indent">
       <p>The first time you go into your new GP you will need to take proof of
