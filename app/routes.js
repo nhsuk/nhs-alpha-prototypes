@@ -178,7 +178,7 @@ function appointment_details_for_service(slug) {
         name: 'Diabetes eye screening',
         triage_hint: 'For your GP practice, diabetic eye screening is ' +
                      'carried out at: ' +
-                    '<br>The Royal Hospital.<br>34 Queen\'s Avenue<br>SW14 4JR',
+                     '<br>The Royal Hospital<br>34 Queen\'s Avenue<br>SW14 4JR',
         confirmation_hint: 'Please bring along any glasses or contact lenses ' +
                            'if you wear them.',
         appointment: {
