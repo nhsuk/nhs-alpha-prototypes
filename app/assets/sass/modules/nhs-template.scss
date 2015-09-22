@@ -45,3 +45,24 @@
     padding: 15px 30px;
   }
 }
+
+html,
+#footer {
+  background-color: rgba($nhs-black, 0.1);
+}
+
+#footer {
+
+  @extend %contain-floats;
+
+  .footer-wrapper {
+    max-width: 960px;
+  	margin: 0 15px;
+    padding: 0;
+
+    @include media(tablet) {
+      margin: 0 auto;
+      padding: 0 30px;
+    }
+  }
+}
