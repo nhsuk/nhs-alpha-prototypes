@@ -1,0 +1,39 @@
+{% extends 'templates/nhs_layout.html' %}
+
+{% block afterHeader %}
+  {% include "includes/service-headers/register-with-a-gp.html" %}
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <h1 class="heading-xlarge">
+    Application complete
+  </h1>
+
+  <div class="text">
+    <h2 class="heading-large">What happens next?</h2>
+
+    <p>
+      Your application will be processed by
+      <strong>{{ session.practice.name | default('Practice Name') }}</strong>,
+      {{ session.practice.address | default('practice address') }}.
+    </p>
+
+    <p>They will contact you within 2 days – either to confirm your
+    registration or to ask for more information. You can book an appointment
+    right away.</p>
+
+    <p>
+      <a class="button" href="/book-an-appointment">
+        Book an appointment now
+      </a>
+    </p>
+
+    <p>If you need an urgent appointment, please phone
+    <strong>{{ session.practice.name | default('Practice Name') }}</strong>
+    on 020 7946 0319.</p>
+  </div>
+</main>
+
+{% endblock %}
