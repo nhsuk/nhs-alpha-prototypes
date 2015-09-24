@@ -161,8 +161,9 @@ a {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0.3); }
 
 a:focus {
-  background-color: #ffbf47;
-  outline: 3px solid #ffbf47; }
+  background-color: $nhs-yellow;
+  outline: 3px solid $nhs-yellow;
+}
 
 a:link,
 .link {
