@@ -32,18 +32,7 @@
           <img src="{{assetPath}}images/nhs-logotype.svg" alt="">
         </a>
 
-        <div class="header-controls">
-
-          <form action="#" method="get" id="header-search">
-            <input type="text" placeholder="Search" value="" class="form-control">
-            <button type="submit"><span class="visuallyhidden">Search</span></button>
-          </form>
-
-          <div id="header-menu-link">
-            <a href="#">menu</a>
-          </div>
-
-        </div>
+        {% block header-controls %}{% endblock %}
 
       </div>
     </header>
