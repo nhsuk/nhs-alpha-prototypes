@@ -30,12 +30,7 @@
       })
     }}
 
-    {{
-      form_macros.text_field({
-        id: 'current-practice',
-        label: 'Current practice or GP'
-      })
-    }}
+    {% include "includes/forms/gp-practice.html" %}
 
     <div class="form-group">
       <a href="register-without-signin-confirmed" class="button">Register</a>
