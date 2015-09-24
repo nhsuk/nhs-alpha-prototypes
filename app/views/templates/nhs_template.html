@@ -26,10 +26,24 @@
     </div>
 
     <header role="banner" id="global-header">
-      <div class="header-logo">
-        <a href="{% block logotypeLink %}/{% endblock %}" title="{% block logotypeTitle %}Go to the NHS.UK homepage{% endblock %}">
+      <div class="header-container">
+
+        <a href="{% block logotypeLink %}/{% endblock %}" class="header-logo" title="{% block logotypeTitle %}Go to the NHS.UK homepage{% endblock %}">
           <img src="{{assetPath}}images/nhs-logotype.svg" alt="">
         </a>
+        
+        <div class="header-controls">
+
+          <form action="#" method="get" id="header-search">
+            <input type="text" placeholder="Search" value="" class="form-control">
+            <button type="submit"><span class="visuallyhidden">Search</span></button>
+          </form>
+
+          <div id="header-menu-link">
+            <a href="#">menu</a>
+          </div>
+
+        </div>
       </div>
     </header>
     <!--end header-->

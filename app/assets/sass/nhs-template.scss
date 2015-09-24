@@ -5,7 +5,7 @@
 
   @extend %contain-floats;
 
-  .header-logo {
+  .header-container {
     max-width: 960px;
   	margin: 0 15px;
     padding: 0;
@@ -14,14 +14,17 @@
       margin: 0 auto;
       padding: 0 30px;
     }
+  }
 
-    a {
-      display: block;
-      float: left;
-      margin: 15px 0;
-      &:focus {
-        background-color: transparent;
-      }
+  a.header-logo {
+    display: block;
+    float: left;
+    width: 90px;
+    height: 36px;
+    margin: 15px 0 0 0;
+
+    &:focus {
+      background-color: transparent;
     }
 
     img {
@@ -29,10 +32,85 @@
       width: 90px;
     }
   }
+
+  .header-controls {
+    clear: both;
+    height: 66px;
+    @include media(tablet) {
+      clear: none;
+      float: right;
+    }
+  }
+
+  #header-search {
+    float: left;
+    width: calc(100% - 120px);
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    .form-control {
+      float: left;
+      width: 140px;
+      width: calc(100% - 40px);
+      height: 40px;
+      padding-left: 6px;
+      border: none;
+      @include media(tablet) {
+        width: 260px;
+      }
+    }
+    button {
+      display: block;
+      float: left;
+      width: 40px;
+      height: 40px;
+      background: url('/public/images/icomoon-search.svg') no-repeat center $nhs-black;
+      background-size: 24px;
+      border: none;
+    }
+  }
+
+  #header-menu-link {
+    float: right;
+    height: 100%;
+    margin: 0 0 0 30px;
+    @include media(tablet) {
+      float: left;
+    }
+
+    a {
+      display: block;
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+      color: $nhs-white;
+      font-weight: bold;
+      font-size: 18px;
+      text-decoration: none;
+
+      &:before {
+        content: '';
+        display: block;
+        float: left;
+        width: 30px;
+        height: 25px;
+        margin-right: 7px;
+        background: url('/public/images/icon-menu.svg') center no-repeat;
+      }
+
+      &:hover {
+        text-decoration: underline;
+      }
+      &:focus {
+        background-color: transparent;
+        outline: 3px solid $nhs-yellow;
+      }
+    }
+  }
 }
 
 .service-header {
-	background-color: rgba($nhs-blue, 0.25);
+	background-color: rgba($nhs-blue, 0.1);
 }
 
 .service-header .service-name {
