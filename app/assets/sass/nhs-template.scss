@@ -21,7 +21,7 @@
     float: left;
     width: 90px;
     height: 36px;
-    margin: 15px 0 0 0;
+    margin: 15px 0 15px 0;
 
     &:focus {
       background-color: transparent;
@@ -35,10 +35,12 @@
 
   .header-controls {
     clear: both;
-    height: 66px;
+    padding-top: 15px;
     @include media(tablet) {
       clear: none;
       float: right;
+      height: 66px;
+      padding-top: 0;
     }
   }
 
@@ -48,6 +50,9 @@
     position: relative;
     top: 50%;
     transform: translateY(-50%);
+    @include media(tablet) {
+      width: auto;
+    }
     .form-control {
       float: left;
       width: 140px;
