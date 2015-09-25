@@ -139,8 +139,10 @@ function appointment_details_for_service(slug) {
         name: 'Blood sugar test',
         triage_hint: 'In your GP practice, blood sugar test appointments ' +
                        'are carried out by a practice nurse.',
-        confirmation_hint: "You don't need to do anything special before the " +
-                           "test - just eat and drink as you normally would.",
+        confirmation_hint: "<p>The glycated haemoglobin (HbA1c) test gives your average blood glucose levels over the previous two to three months. The results can indicate whether the measures you're taking to control your diabetes are working.</p>" +
+          "<p>Unlike other tests the HbA1c test can be carried out at any time of day and it doesn't require any special preparation, such as fasting.</p>" +
+          "<p>The test will involve taking a small sample of blood from a vein.</p>",
+
         appointment: {
           link_url: 'appointment-confirmed?service=' + slug,
           appointment_date: 'Tuesday 26th January 2016',
