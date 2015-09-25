@@ -1,6 +1,13 @@
 // Forms
 // ==========================================================================
 
+input:focus,
+textarea:focus,
+select:focus,
+button:focus {
+  outline: 3px solid $nhs-yellow;
+}
+
 // Fieldset is used to group more than one .form-group
 fieldset {
   width: 100%;
