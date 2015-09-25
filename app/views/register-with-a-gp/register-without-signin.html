@@ -30,7 +30,9 @@
       })
     }}
 
-    {% include "includes/forms/gp-practice.html" %}
+    {% include "includes/forms/gp-practice.html" with {
+      label: "Current GP practice or doctor"
+    } %}
 
     <div class="form-group">
       <a href="application-complete" class="button">Register</a>
