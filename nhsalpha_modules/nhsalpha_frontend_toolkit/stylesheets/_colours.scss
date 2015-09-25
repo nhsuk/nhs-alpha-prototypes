@@ -94,7 +94,8 @@ $white: #fff;
 
 $nhs-blue: #0072C6;
 $nhs-websafe-blue: #0066cc;
-$nhs-black: #000000;
+$nhs-pure-black: #000000;
+$nhs-black: #141414;
 $nhs-white: #ffffff;
 $nhs-websafe-dark-green: #003300;
 $nhs-dark-green: #006647;
@@ -130,7 +131,7 @@ $link-hover-colour: #2e8aca;
 $link-visited-colour: $nhs-blue;
 $button-colour: #006747;          // NHS green
 $focus-colour: $yellow;
-$text-colour: $black;             // Standard text colour
+$text-colour: $nhs-black;             // Standard text colour
 $secondary-text-colour: $grey-1;  // Section headers, help text etc.
 $border-colour: $grey-2;          // Borders, seperators, rules, keylines etc.
 $panel-colour: $grey-3;           // Related links panel, page footer etc.
