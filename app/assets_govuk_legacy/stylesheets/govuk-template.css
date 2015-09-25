@@ -64,14 +64,6 @@ html {
 html {
   -ms-overflow-style: scrollbar; }
 
-body {
-  background: white;
-  color: #0b0c0c;
-  line-height: 1.5;
-  font-weight: 400;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; }
-
 ol, ul, nav ol, nav ul {
   list-style: inherit; }
 
