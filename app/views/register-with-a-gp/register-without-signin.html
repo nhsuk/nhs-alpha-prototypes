@@ -24,18 +24,34 @@
 
     {{
       form_macros.date_field({
-        label: 'Date of birth',
+        label: 'Your date of birth',
         hint_date: '31 7 1961',
         id_prefix: 'dob-'
       })
     }}
 
-    {% include "includes/forms/gp-practice.html" with {
-      label: "Current GP practice or doctor"
-    } %}
+    <div class="form-group">
+      <label class="form-label-bold" for="address-1">
+        Your address
+        <span class="form-hint">As you’d write it on an envelope</span>
+      </label>
+      <input type="text" id="address-1" class="form-control expand-bottom-quarter" value="">
+      <input type="text" class="form-control expand-bottom-quarter" value="">
+      <input type="text" class="form-control expand-bottom-quarter" value="">
+      <input type="text" class="form-control expand-bottom-quarter" value="">
+      <input type="text" class="form-control expand-bottom-quarter" value="">
+      <input type="text" class="form-control expand-bottom-quarter" value="">
+    </div>
+
+    {{
+      form_macros.text_field({
+        id: 'telephone',
+        label: 'Your telephone number'
+      })
+    }}
 
     <div class="form-group">
-      <a href="application-complete" class="button">Register</a>
+      <a href="your-existing-gp-details" class="button">Next</a>
     </div>
 
   </form>
