@@ -184,8 +184,11 @@ function appointment_details_for_service(slug) {
         triage_hint: 'For your GP practice, diabetic eye screening is ' +
                      'carried out at: ' +
                      '<br>The Royal Hospital<br>34 Queen\'s Avenue<br>SW14 4JR',
-        confirmation_hint: 'Please bring along any glasses or contact lenses ' +
-                           'if you wear them.',
+        confirmation_hint: '<p>People with diabetes are at risk of eye damage from diabetic retinopathy. Screening is a way of detecting the condition early before you notice any changes to your vision.</p>' +
+          '<p>The check takes about half an hour and involves examining the back of the eyes and taking photographs of the retina.</p>' +
+          '<p>If you wear glasses, bring these with you to the appointment.</p>' +
+          '<p>It is also advisable to bring sunglasses with you to help on the way home. When your pupils expand, lights will become brighter.</p>' +
+          '<p>The charity Diabetes UK have further <a href="http://www.diabetes.co.uk/diabetes-complications/retinopathy-screening.html">information about eye screening appointments.</a></p>',
         appointment: {
           link_url: 'appointment-confirmed?service=' + slug,
           appointment_date: 'Tuesday 26th January 2016',
