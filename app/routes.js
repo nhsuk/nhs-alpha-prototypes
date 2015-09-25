@@ -160,9 +160,12 @@ function appointment_details_for_service(slug) {
         name: 'Diabetes foot check',
         triage_hint: 'In your GP practice, diabetes foot checks are carried ' +
                      'out by a practice nurse.',
-        confirmation_hint: "You'll need to remove your shoes and socks " +
-                           "at your appointment so make sure you wear " +
-                           "comfortable footwear.",
+        confirmation_hint: "<p>People with diabetes have a much greater risk of " +
+          "developing problems with their feet. It is therefore important to " +
+          "have your feet examined regularly or if you have cuts or bruises.</p>" +
+          "<p>You will be asked to remove " +
+          "any footwear and the healthcare professional will examine your feet.</p>" +
+          "<p>The charity Diabetes UK has information on <a href='https://www.diabetes.org.uk/Documents/Guide%20to%20diabetes/monitoring/What-to-expect-at-annual-foot-check.pdf'>what to expect at your annual foot check.</a>",
         appointment: {
           link_url: 'appointment-confirmed?service=' + slug,
           appointment_date: 'Tuesday 26th January 2016',
