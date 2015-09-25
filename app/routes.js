@@ -206,8 +206,9 @@ function appointment_details_for_service(slug) {
         name: 'Diabetes annual review',
         triage_hint: 'In your GP practice, diabetes annual reviews are ' +
                      'carried out by a nurse practitioner.',
-        confirmation_hint: "Remember to bring along any records or information " +
-                           "such as blood glucose levels that you want to discuss.",
+        confirmation_hint: '<p>Your diabetic review will allow your doctors to monitor your health and assess aspects such as your long term blood glucose control, cholesterol levels and blood pressure.</p>' +
+          '<p>Because the review covers a lot of different things, it can be useful to bring a notebook and pen.</p>' +
+          '<p>The charity Diabetes UK have <a href="http://www.diabetes.co.uk/nhs/diabetes-annual-care-review.html">information about the diabetes annual review.</a></p>',
         appointment: {
           link_url: 'appointment-confirmed?service=' + slug,
           appointment_date: 'Monday 25th January 2016',
