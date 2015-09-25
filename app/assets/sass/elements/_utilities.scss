@@ -30,6 +30,10 @@
   margin-bottom: $gutter-half;
 }
 
+.expand-bottom-quarter {
+  margin-bottom: $gutter-half/2;
+}
+
 .clearfix {
   @extend %contain-floats;
 }
