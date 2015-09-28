@@ -10,6 +10,9 @@
       <div class="appointment-summary__info">
         <div>{{ i.name }}</div>
         <div class="font-xsmall">{{ i.appointment_type }}</div>
+        {% if i.appointment_length %}
+          <div class="font-xsmall">{{ i.appointment_length }} minutes</div>
+        {% endif %}
       </div>
   {% if i.link_url %}
     </a>

@@ -150,6 +150,7 @@ function appointment_details_for_service(slug) {
           avatar_img_path: '/public/images/icon-avatar-alison-wylde.png',
           name: 'Nurse Alison Wylde',
           appointment_type: 'Face to face',
+          appointment_length: 5,
           address: 'Lakeside Surgery<br>22 Castelnau<br>London<br>NW13 9HJ'
         }
 
@@ -173,6 +174,7 @@ function appointment_details_for_service(slug) {
           avatar_img_path: '/public/images/icon-avatar-alison-wylde.png',
           name: 'Nurse Alison Wylde',
           appointment_type: 'Face to face',
+          appointment_length: 20,
           address: 'Lakeside Surgery<br>22 Castelnau<br>London<br>NW13 9HJ'
         }
 
@@ -196,6 +198,7 @@ function appointment_details_for_service(slug) {
           avatar_img_path: '/public/images/icon-avatar-ravi-aggarwal.png',
           name: 'Nurse Ravi Aggarwal',
           appointment_type: 'Face to face',
+          appointment_length: 30,
           address: "The Royal Hospital<br>34 Queen's Avenue<br>London<br>NW13 9HJ"
         }
 
@@ -216,6 +219,7 @@ function appointment_details_for_service(slug) {
           avatar_img_path: '/public/images/icon-avatar-jonathon-hope.png',
           name: 'Nurse Practitioner Jonathon Hope',
           appointment_type: 'Face to face',
+          appointment_length: 25,
           address: 'Lakeside Surgery<br>22 Castelnau<br>London<br>NW13 9HJ'
         }
 
