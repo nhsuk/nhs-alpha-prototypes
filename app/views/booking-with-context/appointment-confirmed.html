@@ -13,12 +13,6 @@
     Appointment confirmed
   </h1>
 
-  <div class="panel-indent text">
-    <p>
-    {{ service_context.confirmation_hint }}
-    </p>
-  </div>
-
   {{ ui_element_macros.appointment_confirmation(service_context.appointment) }}
 
   <p>
@@ -39,12 +33,26 @@
 
   <hr>
 
+  <p>
+    A copy of this page has been sent to your email address.
+  </p>
 
   <div class="font-xsmall">
     <p>
       We will send you SMS reminders of your appointment. <a href="#">Change reminders</a>
     </p>
   </div>
+
+  <h2 class="heading-large">
+      About your {{ service_context.name|lower }}
+  </h2>
+
+  <div class="text">
+    <p>
+    {{ service_context.confirmation_hint|safe }}
+    </p>
+  </div>
+
 
 </main>
 {% endblock %}
