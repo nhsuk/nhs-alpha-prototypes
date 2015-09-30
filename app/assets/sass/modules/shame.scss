@@ -23,21 +23,11 @@ fieldset.inline,
   @extend %contain-floats;
   .form-group {
     width: auto;
-    margin-right: 10px;
-    margin-bottom: 0;
+    margin-right: 1rem;
     clear: none;
   }
 }
 
-
-// Thick grey borders
-/*.form-control-checkbox::before,
-.form-control-radio::before,
-.form-select-2,
-textarea.form-control,
-input.form-control{
-  border: 2px solid $border-colour;
-}*/
 
 .form-control-email{
   width: 36em;
@@ -61,43 +51,6 @@ input.form-control{
 }
 
 
-// VERTICAL SPACING
-
-body {
-  //background-image: url(/public/images/v-rhythm-46.png);
-  //background-position-y: -5px;
-}
-
-// Reduce bottom margin by 2px so the spacing between labels and controls is the same as between related controls - 10px
-.form-label{
-  margin-bottom: 3px;
-}
-
-.form-control{
-  //padding: 3px; // Slightly reduce the v-hight to match that of the radios and checkboxes
-}
-
-.form-group{
-  //margin-bottom: 28px // Slightly reduced from 30px - seems to keep it closer to the 46px vertical rhythm
-}
-
-fieldset.form-group{
-  //margin-bottom: 26px
-  //margin-bottom: 42px;
-  //margin-bottom: 19px;
-}
-
-
-// Make margin between related form groups smaller
-
-.form-group-related{
-  margin-bottom: 10px;
-}
-
-// Align service header in a quarter-width grid layout
-#global-header.with-proposition .header-wrapper .header-global {
-  //width: 25%;
-}
 
 // Position the 'or' in radio lists
 
