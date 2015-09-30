@@ -16,9 +16,6 @@
   clear: both; }
 
 /* local styleguide includes */
-/* Old depricated greys, new things should use the toolkit greys */
-html, body, button, input, table, td, th {
-  font-family: "nta", Arial, sans-serif; }
 
 html, body, div, h1, h2, h3, h4, h5, h6, article, aside, footer, header, hgroup, nav, section {
   margin: 0;
