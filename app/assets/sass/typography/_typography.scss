@@ -1,0 +1,304 @@
+// Typography
+// ---------------------------------------
+
+// Demo baseline grid styles.
+main,
+.show-grid {
+  background-image: -webkit-linear-gradient(top, cyan 0, rgba(255,255,255,0) 1px);
+  background-image: -moz-linear-gradient(top, cyan 0, rgba(255,255,255,0) 1px);
+  background-image: -o-linear-gradient(top, cyan 0, rgba(255,255,255,0) 1px);
+  background-image: linear-gradient(to bottom, cyan 0, rgba(255,255,255,0) 1px);
+  background-repeat: repeat-y;
+  background-size: 100% 1rem;
+}
+
+// Setting root sizes and base styles.
+html {
+  @include rootsize;
+}
+
+// Site-wide base styles.
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: $nhs-black;
+  font-family: unquote(map-get($bodytype, font-family));
+  font-style: normal;
+  font-weight: map-get($bodytype, regular);
+  line-height: 2rem;
+
+  @include fontsize(small, all);
+}
+
+// Set a max-width for text blocks
+// Less than 75 characters per line of text
+.text {
+  max-width: 30em;
+}
+
+.text-secondary {
+  color: $secondary-text-colour;
+}
+
+// Headings. OpenType ligatures, discretionary ligatures and lining figures enabled if available.
+h1, h2, h3, h4, h5, h6 {
+  -webkit-font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
+  -moz-font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
+  -ms-font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
+  -o-font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
+  font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
+
+  font-family: unquote(map-get($headingtype, font-family));
+  font-style: normal;
+  font-weight: 800;
+}
+
+// Make heading styles block elements, so they work as intended when
+// applied to non-block elements (like form labels)
+
+.heading-xxlarge,
+.heading-xlarge
+.heading-large,
+.heading-medium,
+.heading-small {
+  display: block;
+  font-weight: 800;
+}
+
+// Heading level 1.
+.heading-xxlarge {
+  @include sassline($fontsize: xx-large, $font: $headingtype, $lineheight: 6, $below: 4, $breakpoint: all);
+}
+
+// Heading level 2.
+.heading-xlarge {
+  @include sassline(x-large, $headingtype, 4, 4, all);
+}
+
+// Heading level 3.
+.heading-large {
+  @include sassline(large, $headingtype, 3, 1, all);
+}
+
+// Heading level 4.
+.heading-medium {
+  @include sassline(medium, $headingtype, 3, 1, all);
+}
+
+// Heading level 5.
+.heading-small {
+  @include sassline(small, $headingtype, 2, 1, all);
+}
+
+// Paragraphs. OpenType ligatures and oldstyle figures enabled if available.
+p {
+  -webkit-font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
+  -moz-font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
+  -ms-font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
+  -o-font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
+  font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
+
+  @include baseline($fontsize: small, $font: $bodytype, $lineheight: 2, $below: 2, $breakpoint: all);
+}
+
+.lede {
+  @include sassline(medium, $bodytype, 2.5, 2, all);
+}
+
+.bold-large {
+  @include sassline(large, $headingtype, 2, 0, all);
+  font-weight: map-get($headingtype, bold);
+}
+
+.font-xsmall {
+  @include sassline(16, $bodytype, 2, 2, all);
+}
+
+// Lists.
+ul, ol {
+  list-style-type: none;
+  @include baseline(small, $bodytype, 2, 2, all);
+
+  li {
+    -webkit-font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
+    -moz-font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
+    -ms-font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
+    -o-font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
+    font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
+    margin-left: 0;
+
+    ol, ul {
+      padding-top: 1rem;
+      margin-bottom: 1rem;
+    }
+  }
+}
+
+// Ordered lists.
+.list-number {
+  list-style-type: none;
+  margin-left: 2rem;
+
+  @include breakpoint(break-1) {
+    margin-left: 0;
+  }
+
+  li {
+    counter-increment: top-level;
+
+    &:before {
+      -webkit-font-feature-settings: 'lnum' 1, 'tnum' 1;
+      -moz-font-feature-settings: 'lnum' 1, 'tnum' 1;
+      -ms-font-feature-settings: 'lnum' 1, 'tnum' 1;
+      -o-font-feature-settings: 'lnum' 1, 'tnum' 1;
+      font-feature-settings: 'lnum' 1, 'tnum' 1;
+      content: counter(top-level) '.';
+      margin-left: -3rem;
+      position: absolute;
+      text-align: right;
+      width: 2em;
+    }
+  }
+}
+
+.list-bullet {
+  list-style-type: disc;
+  margin-left: 2rem;
+
+  @include breakpoint(break-1) {
+    margin-left: 0;
+  }
+}
+
+// Definition lists.
+dl {
+  @include baseline(small, $bodytype, 2, 2, all);
+
+  dt, dd {
+    -webkit-font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
+    -moz-font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
+    -ms-font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
+    -o-font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
+    font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
+    margin-left: 2rem;
+
+    @include breakpoint(break-1) {
+      margin-left: 0;
+    }
+  }
+
+  dt {
+    font-weight: map-get($bodytype, bold);
+  }
+
+  dd + dt {
+    padding-top: 1rem;
+  }
+}
+
+// Tables.
+table {
+  -webkit-font-feature-settings: 'liga' 1, 'lnum' 1, 'tnum' 1, 'kern' 1;
+  -moz-font-feature-settings: 'liga' 1, 'lnum' 1, 'tnum' 1, 'kern' 1;
+  -ms-font-feature-settings: 'liga' 1, 'lnum' 1, 'tnum' 1, 'kern' 1;
+  -o-font-feature-settings: 'liga' 1, 'lnum' 1, 'tnum' 1, 'kern' 1;
+  font-feature-settings: 'liga' 1, 'lnum' 1, 'tnum' 1, 'kern' 1;
+
+  font-family: unquote(map-get($bodytype, font-family));
+  font-style: normal;
+  width: 100%;
+
+  @include sassline(16, $bodytype, 2, 0, all);
+
+  th {
+    font-weight: bold;
+  }
+}
+
+// Link styles
+a {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0.3);
+}
+
+a:focus {
+  background-color: $nhs-yellow;
+  outline: 3px solid $nhs-yellow;
+}
+
+a:link,
+.link {
+  color: $link-colour;
+  text-decoration: underline;
+  cursor: pointer;
+}
+a:visited,
+.link:visited {
+  color: $link-visited-colour;
+}
+a:hover,
+.link:hover {
+  color: $link-hover-colour;
+}
+a:active,
+.link:active {
+  color: $link-colour;
+}
+
+// Bold.
+b, strong {
+  font-weight: map-get($bodytype, bold);
+}
+
+// Italic.
+em, i {
+  font-style: map-get($bodytype, italic);
+}
+
+// Caption and inline small text.
+small {
+  font-family: unquote(map-get($headingtype, font-family));
+  font-style: normal;
+  font-weight: map-get($headingtype, regular);
+
+  @include fontsize(x-small, all);
+}
+
+small {
+  line-height: 1rem;
+}
+
+// Horizontal rule.
+hr {
+  background-image: -webkit-gradient(linear,left top,left bottom,from(rgba(0, 0, 0, 0)),to($nhs-grey-1));
+  background-image: -webkit-linear-gradient(top,rgba(0, 0, 0, 0) 50%,$nhs-grey-1 50%);
+  background-image: linear-gradient(to bottom,rgba(0, 0, 0, 0) 50%,$nhs-grey-1 50%);
+  background-position: 0 50%;
+  background-repeat: repeat-x;
+  background-size: 100% 0.15rem;
+  border: 0;
+  margin: 0;
+  padding-bottom: 3rem;
+  padding-top: 3rem;
+}
+
+// Form labels
+label,
+.form-label,
+.form-label-bold {
+  color: $text-colour;
+}
+
+label,
+.form-label,
+.form-label-bold {
+  @include sassline(small, $bodytype, 2, 1, all);
+}
+
+.form-label-bold {
+  font-weight: 800;
+}
+
+// Form controls (ie text boxes)
+.form-control {
+  @include sassline(small, $bodytype, 2, 1, all);
+}

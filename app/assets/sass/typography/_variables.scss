@@ -1,0 +1,61 @@
+// SCSS variables
+// ---------------------------------------
+
+// Note: For the following Sass maps enter values as if they would be px units.
+
+// Breakpoint sizes from px to ems. Add more values here to add more breakpoints.
+// Change names if you prefer, it wont break the mixin as long as they are strings not just numbers.
+$breakpoints: (
+  break-0: 0,     // 0px       Mobile first
+  break-1: 640   // 640px   ~ Small tablet up
+) !default;
+
+// Root font-sizes for each breakpoint. Set to half desired line-height of body text.
+// ! Make sure to have as many sizes as breakpoints above.
+$rootsizes: (
+  rootsize-0: 11,   // 22px line-height body text
+  rootsize-1: 14   // 26px line-height body text
+) !default;
+
+// Set the optimum line-length for your text (based on typeface).
+// Aim for 75–100 characters a line when possible, at smaller sizes type size is more important.
+// ! Make sure to have as many widths as breakpoints above.
+// Note: this was 'maxwidths' in previous versions.
+$measures: (
+  measure-0: 500,  // 500px wide
+  measure-1: 550  // 550px wide
+) !default;
+
+// Set the max-widths for containers (based on design).
+// ! Make sure to have as many widths as breakpoints above.
+$maxwidths: (
+  width-0: 500,  // 500px wide
+  width-1: 600  // 600px wide
+) !default;
+
+// Gutter widths
+$gutterwidths: (
+  small: 1rem,
+  medium: 2rem,
+  large: 4rem
+) !default;
+
+// Add typefaces here.
+// Add weight and style details too.
+// ! Set cap height to set to the baseline.
+$bodytype: (
+  font-family: 'Frutiger Regular, Helvetica, sans-serif',
+  regular: 400,
+  bold: 700,
+  italic: italic,
+  cap-height: 0.5
+) !default;
+
+$headingtype: (
+  font-family: 'Frutiger Bold, Helvetica, sans-serif',
+  regular: 400,
+  bold: 800,
+  cap-height: 0.5
+) !default;
+
+$monospacetype: $bodytype;

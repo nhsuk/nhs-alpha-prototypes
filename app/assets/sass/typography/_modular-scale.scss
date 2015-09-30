@@ -1,0 +1,24 @@
+// Modular scale
+// ---------------------------------------
+
+// Setting responsive modular-scales. Use appropriate scales for viewport sizes.
+$modular-scale: (
+  scale-0: (
+    // Aug. Fourth: http://www.modularscale.com/?15,39&px&1.414&web&text
+    xx-large: 42.407,
+    x-large:  39,
+    large:    27.581,
+    medium:   21.21,
+    small:    15,
+    x-small:  10.608
+  ),
+  scale-1: (
+    // Aug. Fourth: http://www.modularscale.com/?18&px&1.414&web&text
+    xx-large: 71.957,
+    x-large:  50.889,
+    large:    35.989,
+    medium:   25.452,
+    small:    18,
+    x-small:  12.73
+  )
+);
