@@ -16,7 +16,7 @@
 
 .validation-summary li,
 .validation-summary p {
-  @include core-16;
+  //@include core-16;
 }
 
 .validation-summary p {
@@ -58,6 +58,6 @@
 // Validation message
 .validation-message {
   display: block;
-  @include core-16;
+  //@include core-16;
   color: $error-colour;
 }
