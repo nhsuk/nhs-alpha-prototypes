@@ -1,57 +1,42 @@
 // Styling for radios and checkboxes
 
+// Hide native controls - (!!!)
+input[type='checkbox'],
+input[type='radio']{
+  display: none;
+}
 
-/*.form-control{
-  padding: 2px 5px;
-}*/
 
-  // Hide native controls - (!!!)
-  input[type='checkbox'],
-  input[type='radio']{
-    display: none;
+.form-control-checkbox,
+.form-control-radio {
+  width: auto;
+  float: left;
+  clear: left;
+
+  position: relative;
+  padding-left: 3rem;
+  
+  // Show click area on hover
+  &:hover{
+    cursor: pointer;
   }
+}
 
-
-  .form-control-checkbox,
-  .form-control-radio{
-    //margin-top: -5px;
-    //margin-bottom: 15px;
-    margin-bottom: 10px;
-    padding-top: 5px;
-    width: auto;
-    float: left;
-    clear: left;
-    padding-right: 20px;
-    // Show click area on hover
-    &:hover{
-      cursor: pointer;
-      background: $highlight-colour;
-      outline: 6px solid $highlight-colour;
-    }
-  }
-
-  // Create box style for checbox and radio
-  .form-control-checkbox::before,
-  .form-control-radio::before{
-    content: "";
-    float: left;
-    background-color: #fff;
-    border: 1px solid $border-colour;
-
-    //width: 32px;
-    //height: 32px;
-
-    width: 30px;
-    height: 30px;
-
-    margin-right: 10px;
-    margin-top: -5px;
-  }
+// Create box style for checkbox and radio
+.form-control-checkbox::before,
+.form-control-radio::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  background-color: #fff;
+  border: 1px solid $nhs-black;
+  width: 2rem;
+  height: 2rem;
+}
 
   // Make radios circles not boxes
   .form-control-radio::before{
-    //border-radius: 17px
-    border-radius: 16px
+    border-radius: 100%;
   }
 
   // Checked style
@@ -63,9 +48,9 @@
 
   input[type='radio']:checked + .form-control-radio::before{
     content: "●";
-    line-height: 1;
+    line-height: 2rem;
     text-align: center;
-    font-size: 31px;
+    font-size: 32px;
   }
 
 
