@@ -13,7 +13,7 @@ select.form-select{
   width: 100%;
   @include box-sizing(border-box);
 
-  @include core-19;
+  //@include core-19;
   padding: 5px 45px 4px 10px;
   background-color: #fff;
   background: #FFF url(/public/images/toggle-sprite-grey.png) no-repeat 100% -50px;
@@ -46,7 +46,7 @@ select.form-select{
   border: 1px solid $border-colour;
   background: $border-colour url(/public/images/toggle-sprite-grey.png) no-repeat 100% -50px;
 
-  @include core-19;
+  //@include core-19;
 
   &:hover{
     cursor: pointer;
@@ -109,7 +109,7 @@ select.form-select{
 // Compact version
 
 .form-select.compact-control{
-  @include core-16;
+  //@include core-16;
   padding: 3px 22px 2px 5px;
   background: #FFF url(/public/images/toggle-sprite-grey.png) no-repeat 101% -55px;
 
@@ -117,7 +117,7 @@ select.form-select{
 
 
 .form-select-2{
-  @include core-19;
+  //@include core-19;
 
   width: 100%;
   @include box-sizing(border-box);
@@ -133,7 +133,7 @@ select.form-select{
 }
 
 .form-select-3{
-  @include core-19;
+  //@include core-19;
 
   margin-top: 3px;
 
