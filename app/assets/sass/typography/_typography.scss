@@ -2,7 +2,7 @@
 // ---------------------------------------
 
 // Demo baseline grid styles.
-//main,
+main,
 .show-grid {
   background-image: -webkit-linear-gradient(top, cyan 0, rgba(255,255,255,0) 1px);
   background-image: -moz-linear-gradient(top, cyan 0, rgba(255,255,255,0) 1px);
@@ -102,7 +102,7 @@ p {
 }
 
 .lede {
-  @include sassline(medium, $bodytype, 2.5, 2, all);
+  @include sassline(medium, $bodytype, 3, 2, all);
 }
 
 .bold-large {
@@ -263,10 +263,15 @@ label,
   color: $text-colour;
 }
 
-label,
+/*label,*/
 .form-label,
 .form-label-bold {
   @include sassline(small, $bodytype, 2, 1, all);
+}
+
+.form-control-checkbox,
+.form-control-radio {
+  @include fontsize(small, all);
 }
 
 .form-label-bold {
