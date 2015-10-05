@@ -27,18 +27,13 @@
       }
     %}
 
-    <div class="form-group">
-      <label class="form-label-bold" for="address-1">
-        Your previous home address
-        <span class="form-hint">When you were registered with your previous GP practice</span>
-      </label>
-      <input type="text" id="address-1" class="form-control expand-bottom-quarter" value="">
-      <input type="text" class="form-control expand-bottom-quarter" value="">
-      <input type="text" class="form-control expand-bottom-quarter" value="">
-      <input type="text" class="form-control expand-bottom-quarter" value="">
-      <input type="text" class="form-control expand-bottom-quarter" value="">
-      <input type="text" class="form-control expand-bottom-quarter" value="">
-    </div>
+    {{
+      form_macros.address_fields({
+        id: 'address-1',
+        label: 'Your address',
+        hint: 'When you were registered with your previous GP practice'
+      })
+    }}
 
     <details>
       <summary>I’m returning from the armed forces</summary>
@@ -59,17 +54,12 @@
           })
         }}
 
-        <div class="form-group">
-          <label class="form-label-bold" for="address-2">
-            Your home address when you enlisted
-          </label>
-          <input type="text" id="address-2" class="form-control expand-bottom-quarter" value="">
-          <input type="text" class="form-control expand-bottom-quarter" value="">
-          <input type="text" class="form-control expand-bottom-quarter" value="">
-          <input type="text" class="form-control expand-bottom-quarter" value="">
-          <input type="text" class="form-control expand-bottom-quarter" value="">
-          <input type="text" class="form-control expand-bottom-quarter" value="">
-        </div>
+        {{
+          form_macros.address_fields({
+            id: 'address-2',
+            label: 'Your address when you enlisted'
+          })
+        }}
       </div>
     </details>
 
@@ -77,17 +67,12 @@
       <summary>I’m moving back to the UK from abroad</summary>
       <div>
 
-        <div class="form-group expand-top-half">
-          <label class="form-label-bold" for="address-2">
-            Your home address when you first registered with a GP
-          </label>
-          <input type="text" id="address-2" class="form-control expand-bottom-quarter" value="">
-          <input type="text" class="form-control expand-bottom-quarter" value="">
-          <input type="text" class="form-control expand-bottom-quarter" value="">
-          <input type="text" class="form-control expand-bottom-quarter" value="">
-          <input type="text" class="form-control expand-bottom-quarter" value="">
-          <input type="text" class="form-control expand-bottom-quarter" value="">
-        </div>
+        {{
+          form_macros.address_fields({
+            id: 'address-3',
+            label: 'Your address when you first registered with A GP'
+          })
+        }}
 
         {{
           form_macros.date_field({
