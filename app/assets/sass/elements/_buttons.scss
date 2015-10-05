@@ -7,11 +7,15 @@
 
   width: 100%;
   padding: 0.5rem 1rem;
+  min-height: 3rem;
   border: 0;
+  border-bottom: 2px solid $nhs-black;
   @include border-radius(0);
   -webkit-appearance: none;
 
   color: $nhs-black;
+  background-color: $button-colour;
+
   &:link,
   &:hover,
   &:focus,
@@ -19,12 +23,8 @@
     color: $nhs-pure-black;
     background-color: $button-colour;
   }
-
   /* to be fixed */
   text-decoration: none !important;
-
-  background-color: $button-colour;
-  border-bottom: 2px solid $nhs-black;
 
   @include media (tablet) {
     width: auto;
