@@ -10,47 +10,13 @@
 <main id="content" role="main">
 
   <h1 class="heading-xlarge">
-    Blood and organ donation
+    Organ donation
   </h1>
 
   <form action="" method="get" class="form text">
 
-    <h2 class="heading-medium">NHS Blood Donor Register</h2>
-    <p>
-      Would you be prepared to give blood?
-    </p>
-
-    <div class="form-group">
-      <input type="radio" id="blood-yes" name="blood">
-      <label class="form-control-radio js-toggle" for="blood-yes" data-show="#blood-donor">
-        Yes
-      </label>
-      <input type="radio" id="blood-no" name="blood">
-      <label class="form-control-radio js-toggle" for="blood-no" data-hide="#blood-donor">
-        No
-      </label>
-    </div>
-
-    <div class="js-hidden panel-indent" id="blood-donor">
-      <fieldset class="form-group">
-        <legend>Have you given blood in the last 3 years?</legend>
-        <input type="radio" id="blood-given-yes" name="blood-given">
-        <label class="form-control-radio js-toggle" for="blood-given-yes">
-          Yes
-        </label>
-        <input type="radio" id="blood-given-no" name="blood-given">
-        <label class="form-control-radio js-toggle" for="blood-given-no">
-          No
-        </label>
-      </fieldset>
-    </div>
-
-    <h2 class="heading-medium">NHS Organ Donation Register</h2>
-    <p>
-      Are you willing for your organs to be used for transplantation after your death?
-    </p>
-
-    <div class="form-group">
+    <fieldset class="form-group">
+      <legend class="form-label-bold">Are you willing to donate your organs for transplantation after your death?</legend>
       <input type="radio" id="organs-yes" name="organs">
       <label class="form-control-radio js-toggle" for="organs-yes" data-show="#organ-donor">
         Yes
@@ -59,7 +25,7 @@
       <label class="form-control-radio js-toggle" for="organs-no" data-hide="#organ-donor">
         No
       </label>
-    </div>
+    </fieldset>
 
     <div class="js-hidden panel-indent" id="organ-donor">
       <fieldset>
