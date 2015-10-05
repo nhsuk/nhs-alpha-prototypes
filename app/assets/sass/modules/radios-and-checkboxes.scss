@@ -9,49 +9,57 @@ input[type='radio']{
 
 .form-control-checkbox,
 .form-control-radio {
+  position: relative;
+  display: block;
   width: auto;
   float: left;
-  clear: left;
+  @include box-sizing(border-box);
+  min-height: 3rem;
+  margin-top: 0.1rem;
+  padding: 0.5rem 0.5rem 0.5rem 3.25rem;
+  background-color: $nhs-grey-4;
 
-  position: relative;
-  padding-left: 3rem;
-  
   // Show click area on hover
   &:hover{
     cursor: pointer;
+    background-color: $nhs-yellow;
+  }
+
+  &:focus {
+    outline: 3px solid $nhs-yellow;
   }
 }
 
 // Create box style for checkbox and radio
-.form-control-checkbox::before,
-.form-control-radio::before{
+.form-control-checkbox:before,
+.form-control-radio:before{
   content: "";
   position: absolute;
-  left: 0;
+  left: 0.5rem;
   background-color: #fff;
   border: 1px solid $nhs-black;
   width: 2rem;
   height: 2rem;
 }
 
-  // Make radios circles not boxes
-  .form-control-radio::before{
-    border-radius: 100%;
-  }
+// Make radios circles not boxes
+.form-control-radio:before{
+  border-radius: 100%;
+}
 
-  // Checked style
-  input[type='checkbox']:checked + .form-control-checkbox::before{
-    content: "";
-    background: #FFF url(/public/images/tick.png) no-repeat 1px 1px;
-    background-size: 91%;
-  }
+// Checked style
+input[type='checkbox']:checked + .form-control-checkbox:before{
+  content: "";
+  background: #FFF url(/public/images/tick.png) no-repeat 1px 1px;
+  background-size: 91%;
+}
 
-  input[type='radio']:checked + .form-control-radio::before{
-    content: "●";
-    line-height: 2rem;
-    text-align: center;
-    font-size: 32px;
-  }
+input[type='radio']:checked + .form-control-radio:before{
+  content: "●";
+  line-height: 2rem;
+  text-align: center;
+  font-size: 32px;
+}
 
 
   // Compact versions
@@ -61,14 +69,14 @@ input[type='radio']{
     margin-top: 0;
     padding-top: 2px; // + Offset
   }
-  .form-control-checkbox.compact-control::before,
-  .form-control-radio.compact-control::before{
+  .form-control-checkbox.compact-control:before,
+  .form-control-radio.compact-control:before{
     width: 16px;
     height: 16px;
     margin-top: -2px; // - Offset
   }
 
-  input[type='radio']:checked + .form-control-radio.compact-control::before{
+  input[type='radio']:checked + .form-control-radio.compact-control:before{
     font-size: 17px;
   }
 
@@ -81,7 +89,7 @@ input[type='radio']{
 
 
 // No bottom margin on last checkbox or radio (because the parent form group has a margin already)
-.form-group .form-control-checkbox:last-child,
+/*.form-group .form-control-checkbox:last-child,
 .form-group .form-control-radio:last-child{
   margin-bottom: 0
-}
+}*/
