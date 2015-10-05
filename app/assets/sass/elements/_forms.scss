@@ -21,7 +21,7 @@ fieldset {
   @extend %contain-floats;
   margin-bottom: $gutter-half;
   margin-bottom: 2rem;
-  margin-top: -1px;
+  margin-top: -0.06rem;
 }
 
 .form-group-related {
@@ -68,7 +68,7 @@ fieldset {
 .form-hint {
   display: block;
   font-weight: normal;
-  color: $secondary-text-colour;
+  color: $nhs-grey-1;
 }
 
 
