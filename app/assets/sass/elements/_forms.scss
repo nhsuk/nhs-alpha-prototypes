@@ -67,6 +67,7 @@ fieldset {
 // Form hints & examples are light grey and sit above a form control
 .form-hint {
   display: block;
+  font-weight: normal;
   color: $secondary-text-colour;
 }
 
@@ -76,12 +77,14 @@ fieldset {
 // By default, form controls are 50% width for desktop,
 // and 100% width for mobile
 .form-control {
+  display: block;
   width: 100%;
   @include box-sizing(border-box);
-  padding: 0.3rem 0.75rem;
-  margin-bottom: 0 !important;
+  height: 3rem;
+  padding: 0 0.65rem;
+  margin: 0.375rem 0 1rem 0;
   background-color: $white;
-  border: 1px solid $nhs-black;
+  border: 1px solid $nhs-grey-1;
 
   // Disable webkit appearance and remove rounded corners
   -webkit-appearance: none;
