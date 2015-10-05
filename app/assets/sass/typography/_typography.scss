@@ -107,12 +107,13 @@ p {
 }
 
 .bold-large {
-  @include fontsize(large, all);
-  font-weight: map-get($headingtype, bold);
+  @include fontsize(x-large, all);
+  font-weight: bold;
+  line-height: inherit;
 }
 
 .font-xsmall {
-  @include sassline(15, $bodytype, 1, 1, all);
+  @include fontsize(15, all);
 }
 
 // Lists.
