@@ -17,31 +17,42 @@
 {% endmacro %}
 
 {% macro date_field(i) %}
-
 <fieldset>
-
   <legend class="form-label-bold">
     {{ i.label }}
     <span class="form-hint">For example {{ i.hint_date }}</span>
   </legend>
-
   <div class="inline-form-groups">
     <div class="form-group">
       <label class="form-label" for="{{ i.id_prefix }}day">Day</label>
       <input class="form-control form-control-2-chars" id="{{ i.id_prefix }}day" type="number" pattern="[0-9]*" min="0" max="31">
     </div>
-
     <div class="form-group">
       <label class="form-label" for="{{ i.id_prefix }}month">Month</label>
       <input class="form-control form-control-2-chars" id="{{ i.id_prefix }}month" type="number" pattern="[0-9]*" min="0" max="12">
     </div>
-
     <div class="form-group">
       <label class="form-label" for="{{ i.id_prefix }}year">Year</label>
       <input class="form-control form-control-4-chars" id="{{ i.id_prefix }}year" type="number" pattern="[0-9]*" min="0">
     </div>
   </div>
+</fieldset>
+{% endmacro %}
 
+{% macro address_fields(i) %}
+<fieldset class="form-group">
+  <label class="form-label-bold" for="{{ i.id }}">
+    {{ i.label }}
+    {% if i.hint %}
+      <span class="form-hint">{{ i.hint }}</span>
+    {% endif %}
+  </label>
+  <input type="text" id="{{ i.id }}" class="form-control" value="">
+  <input type="text" class="form-control" value="">
+  <input type="text" class="form-control" value="">
+  <input type="text" class="form-control" value="">
+  <input type="text" class="form-control" value="">
+  <input type="text" class="form-control" value="">
 </fieldset>
 {% endmacro %}
 
@@ -81,27 +92,3 @@
     {% endif %}
   {% endfor %}
 {% endmacro %}
-
-
-{% macro date(i) %}
-  <div class="inline-form-groups">
-
-    <p class="form-hint">{{ i.hint }}</p>
-
-    <div class="form-group">
-      <label class="form-label" for="{{ i.id }}-day">Day</label>
-      <input class="form-control form-control-2-chars" id="{{ i.id }}-day" type="number" pattern="[0-9]*" min="0" max="31">
-    </div>
-
-    <div class="form-group">
-      <label class="form-label" for="{{ i.id }}-month">Month</label>
-      <input class="form-control form-control-4-chars" id="{{ i.id }}-month" type="number" pattern="[0-9]*" min="0" max="12">
-    </div>
-
-    <div class="form-group">
-      <label class="form-label" for="{{ i.id }}-year">Year</label>
-      <input class="form-control form-control-4-chars" id="{{ i.id }}-year" type="number" pattern="[0-9]*" min="0" max="2015">
-    </div>
-  </div>
-{% endmacro %}
-</fieldset>

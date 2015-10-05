@@ -30,18 +30,13 @@
       })
     }}
 
-    <div class="form-group">
-      <label class="form-label-bold" for="address-1">
-        Your address
-        <span class="form-hint">As you’d write it on an envelope</span>
-      </label>
-      <input type="text" id="address-1" class="form-control" value="">
-      <input type="text" class="form-control" value="">
-      <input type="text" class="form-control" value="">
-      <input type="text" class="form-control" value="">
-      <input type="text" class="form-control" value="">
-      <input type="text" class="form-control" value="">
-    </div>
+    {{
+      form_macros.address_fields({
+        id: 'address-1',
+        label: 'Your address',
+        hint: 'As you’d write it on a envelope'
+      })
+    }}
 
     {{
       form_macros.text_field({
