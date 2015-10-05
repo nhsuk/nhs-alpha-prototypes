@@ -20,6 +20,13 @@
   </div>
 
   <form action="" method="get" class="form">
+    <div class="form-group">
+      <label class="form-label-bold" for="nhs-number">
+        Your NHS number
+      </label>
+      <!-- 8 digits -->
+      <input type="text" id="nhs-number" class="form-control form-control-1-4" value="">
+    </div>
 
     {% include "includes/forms/gp-practice.html" with
       {
@@ -38,7 +45,7 @@
     <details>
       <summary>I’m returning from the armed forces</summary>
       <div>
-        <div class="form-group expand-top-half">
+        <div class="form-group">
           <label class="form-label-bold" for="service-number">
             Service or personnel number
           </label>
