@@ -1,0 +1,110 @@
+{% extends 'templates/nhs_transaction_layout.html' %}
+{% import 'includes/form_macros.html' as form_macros %}
+
+{% block afterHeader %}
+  {% include "includes/service-headers/register-with-a-gp.html" %}
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <h1 class="heading-xlarge">
+    Help us trace your medical records
+  </h1>
+
+  <div class="text">
+    <p class="lede">
+      Please fill in as much information as you can.
+    </p>
+  </div>
+
+  <form action="" method="get" class="form">
+
+    {% include "includes/forms/gp-practice.html" with
+      {
+        label: "Your previous GP practice or doctor"
+      }
+    %}
+
+    <div class="form-group">
+      <label class="form-label-bold" for="address-1">
+        Your previous home address
+        <span class="form-hint">When you were registered with your previous GP practice</span>
+      </label>
+      <input type="text" id="address-1" class="form-control expand-bottom-quarter" value="">
+      <input type="text" class="form-control expand-bottom-quarter" value="">
+      <input type="text" class="form-control expand-bottom-quarter" value="">
+      <input type="text" class="form-control expand-bottom-quarter" value="">
+      <input type="text" class="form-control expand-bottom-quarter" value="">
+      <input type="text" class="form-control expand-bottom-quarter" value="">
+    </div>
+
+    <details>
+      <summary>I’m returning from the armed forces</summary>
+      <div>
+        <div class="form-group expand-top-half">
+          <label class="form-label-bold" for="service-number">
+            Service or personnel number
+          </label>
+          <!-- 8 digits -->
+          <input type="text" id="service-number" class="form-control form-control-1-4" value="">
+        </div>
+
+        {{
+          form_macros.date_field({
+            label: 'Enlistment date',
+            hint_date: '31 7 1994',
+            id_prefix: 'enlistment-'
+          })
+        }}
+
+        <div class="form-group">
+          <label class="form-label-bold" for="address-2">
+            Your home address when you enlisted
+          </label>
+          <input type="text" id="address-2" class="form-control expand-bottom-quarter" value="">
+          <input type="text" class="form-control expand-bottom-quarter" value="">
+          <input type="text" class="form-control expand-bottom-quarter" value="">
+          <input type="text" class="form-control expand-bottom-quarter" value="">
+          <input type="text" class="form-control expand-bottom-quarter" value="">
+          <input type="text" class="form-control expand-bottom-quarter" value="">
+        </div>
+      </div>
+    </details>
+
+    <details>
+      <summary>I’m moving back to the UK from abroad</summary>
+      <div>
+
+        <div class="form-group expand-top-half">
+          <label class="form-label-bold" for="address-2">
+            Your home address when you first registered with a GP
+          </label>
+          <input type="text" id="address-2" class="form-control expand-bottom-quarter" value="">
+          <input type="text" class="form-control expand-bottom-quarter" value="">
+          <input type="text" class="form-control expand-bottom-quarter" value="">
+          <input type="text" class="form-control expand-bottom-quarter" value="">
+          <input type="text" class="form-control expand-bottom-quarter" value="">
+          <input type="text" class="form-control expand-bottom-quarter" value="">
+        </div>
+
+        {{
+          form_macros.date_field({
+            label: 'The date you left the UK',
+            hint_date: '31 7 1994',
+            id_prefix: 'left-uk-'
+          })
+        }}
+
+      </div>
+    </details>
+
+    <div class="form-group expand-top">
+      <a href="dispense-medicines" class="button">Next</a>
+    </div>
+
+  </form>
+</main>
+
+{% endblock %}

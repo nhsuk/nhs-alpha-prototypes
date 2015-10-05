@@ -1,0 +1,39 @@
+{% extends 'templates/nhs_transaction_layout.html' %}
+{% import 'includes/form_macros.html' as form_macros %}
+
+{% block afterHeader %}
+  {% include "includes/service-headers/register-with-a-gp.html" %}
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <h1 class="heading-xlarge">
+    Dispensing medicines and appliances
+  </h1>
+
+  <form action="" method="get" class="form text">
+
+    <div class="form-group">
+      <input type="checkbox" id="distance">
+      <label class="form-label form-control-checkbox" for="distance">
+        I live more than a mile from the nearest chemist
+      </label>
+    </div>
+
+    <div class="form-group">
+      <input type="checkbox" id="difficulty">
+      <label class="form-label form-control-checkbox" for="difficulty">
+        I would have serious difficulty in getting medicines and appliances from a chemist
+      </label>
+    </div>
+
+    <div class="form-group expand-top">
+      <a href="donor" class="button">Next</a>
+    </div>
+
+  </form>
+</main>
+
+{% endblock %}

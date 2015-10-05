@@ -1,0 +1,104 @@
+{% extends 'templates/nhs_transaction_layout.html' %}
+{% import 'includes/form_macros.html' as form_macros %}
+
+{% block afterHeader %}
+  {% include "includes/service-headers/register-with-a-gp.html" %}
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <h1 class="heading-xlarge">
+    Blood and organ donation
+  </h1>
+
+  <form action="" method="get" class="form text">
+
+    <h2 class="heading-medium">Organ donation</h2>
+    <p>
+      You can join the NHS Organ Donation Register as someone whose organs may
+      be used for transplantation after death.
+    </p>
+
+    <fieldset>
+      <legend class="form-label-bold">I will donate</legend>
+
+      <div class="form-group expand-top-half">
+        <input type="checkbox" id="corneas">
+        <label class="form-label form-control-checkbox" for="corneas">
+          My corneas
+        </label>
+      </div>
+
+      <div class="form-group">
+        <input type="checkbox" id="heart">
+        <label class="form-label form-control-checkbox" for="heart">
+          My heart
+        </label>
+      </div>
+
+      <div class="form-group">
+        <input type="checkbox" id="kidneys">
+        <label class="form-label form-control-checkbox" for="kidneys">
+          My kidneys
+        </label>
+      </div>
+
+      <div class="form-group">
+        <input type="checkbox" id="liver">
+        <label class="form-label form-control-checkbox" for="liver">
+          My liver
+        </label>
+      </div>
+
+      <div class="form-group">
+        <input type="checkbox" id="lungs">
+        <label class="form-label form-control-checkbox" for="lungs">
+          My lungs
+        </label>
+      </div>
+
+      <div class="form-group">
+        <input type="checkbox" id="pancreas">
+        <label class="form-label form-control-checkbox" for="pancreas">
+          My pancreas
+        </label>
+      </div>
+
+      <div class="form-group">
+        <input type="checkbox" id="any-part-of-my-body">
+        <label class="form-label form-control-checkbox" for="any-part-of-my-body">
+          Any part of my body
+        </label>
+      </div>
+    </fieldset>
+
+    <h2 class="heading-medium">Blood donation</h2>
+    <p>
+      You can join the NHS Blood Donor Register as someone who may be contacted
+      and who would be prepared to give blood.
+    </p>
+
+    <div class="form-group">
+      <input type="checkbox" id="blood">
+      <label class="form-label form-control-checkbox" for="blood">
+        I am prepared to give blood
+      </label>
+    </div>
+
+    <div class="form-group">
+      <input type="checkbox" id="blood-previous">
+      <label class="form-label form-control-checkbox" for="blood-previous">
+        I have given blood within the last 3 years
+      </label>
+    </div>
+
+    <div class="form-group">
+      <a href="application-complete" class="button">Next</a>
+    </div>
+
+  </form>
+</main>
+
+{% endblock %}
