@@ -275,5 +275,5 @@ label,
 
 // Form controls (ie text boxes)
 .form-control {
-  @include sassline(small, $bodytype, 2, 1, all);
+  @include fontsize(small, all);
 }
