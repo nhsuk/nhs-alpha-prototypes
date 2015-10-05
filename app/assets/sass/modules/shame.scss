@@ -23,6 +23,7 @@ fieldset.inline,
   @extend %contain-floats;
   .form-group {
     width: auto;
+    margin-top: -1rem;
     margin-right: 1rem;
     clear: none;
   }
