@@ -1,9 +1,10 @@
 // Import GOV.UK frontend toolkit
 @import "colours";
+@import "device-pixels";
 @import "measurements";
 @import "conditionals";
 @import "shims";
-@import "typography";
+//@import "typography";
 @import "grid_layout";
 @import "css3";
 @import "design-patterns/buttons";
@@ -12,13 +13,13 @@
 
 @import "elements/helpers";
 @import "elements/reset";
-@import "elements/typography";
+//@import "elements/typography";
 @import "elements/layout";
 @import "elements/forms";
 @import "elements/tables";
 @import "elements/buttons";
 @import "elements/details";
-@import "elements/lists";
+//@import "elements/lists";
 @import "elements/panels";
 @import "elements/icons";
 @import "elements/utilities";
@@ -37,3 +38,9 @@
 // NHS.UK Template
 
 @import "modules/nhs-template";
+
+// NHS "Sassline" based typography
+@import "typography/variables";
+@import "typography/modular-scale";
+@import "typography/mixins";
+@import "typography/typography";
