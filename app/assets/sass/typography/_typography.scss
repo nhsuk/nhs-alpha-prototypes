@@ -2,7 +2,7 @@
 // ---------------------------------------
 
 // Demo baseline grid styles.
-main,
+//main,
 .show-grid {
   background-image: -webkit-linear-gradient(top, cyan 0, rgba(255,255,255,0) 1px);
   background-image: -moz-linear-gradient(top, cyan 0, rgba(255,255,255,0) 1px);
@@ -77,12 +77,13 @@ h1, h2, h3, h4, h5, h6 {
 
 // Heading level 3.
 .heading-large {
-  @include sassline(large, $headingtype, 3, 1, all);
+  @include sassline(large, $headingtype, 3, 2, all);
+  //margin-top: 2rem;
 }
 
 // Heading level 4.
 .heading-medium {
-  @include sassline(medium, $headingtype, 3, 1, all);
+  @include sassline(medium, $headingtype, 3, 2, all);
 }
 
 // Heading level 5.
@@ -106,12 +107,12 @@ p {
 }
 
 .bold-large {
-  @include sassline(large, $headingtype, 2, 0, all);
+  @include fontsize(large, all);
   font-weight: map-get($headingtype, bold);
 }
 
 .font-xsmall {
-  @include sassline(16, $bodytype, 2, 2, all);
+  @include sassline(15, $bodytype, 1, 1, all);
 }
 
 // Lists.
@@ -183,7 +184,7 @@ table {
   font-style: normal;
   width: 100%;
 
-  @include sassline(16, $bodytype, 2, 0, all);
+  @include fontsize(15, all);
 
   th {
     font-weight: bold;
