@@ -6,69 +6,69 @@
 
 {% block content %}
 
-<main id="content" role="main">
+<main id="content" role="main" class="">
   <!-- TODO: This will be weird if the user came from full results list -->
   <p><a href="suggested-gps" class="back-to-previous">Back to results</a></p>
 
   <h1 class="heading-xlarge">
     Lakeside Surgery
   </h1>
-  
+
   <div class="grid-row">
     <div class="column-third">
       <p>
-        22 Castelnau<br>
+        <b>22 Castelnau<br>
         London<br>
-        NW13 9HJ<br>
-        <span class="font-xsmall">
-          0.4 miles away, about a 6 minute walk
-        </span>
+        NW13 9HJ</b>
       </p>
-      <p>7 staff members, 2,000 patients</p>
-      <h2 class="visuallyhidden">Services</h2>
-      <ul class="list-bullet">
-        <li>Travel vaccinations</li>
-        <li>Over 40 health check</li>
-        <li>Diabetes clinic</li>
-        <li>Childhood vaccinations</li>
-        <li>Quit smoking</li>
+      <p class="font-xsmall">
+        0.4 miles away, about a 6 minute walk
+      </p>
+      <ul>
+        <li>7 staff members</li>
+        <li>2,000 patients</li>
       </ul>
 
       <p>
-        <a href="lakeside-surgery/register">Register with Lakeside Surgery</a>
+        <a href="lakeside-surgery/register">Register now</a>
       </p>
     </div>
     <div class="column-third">
-      <img src="/public/images/gp-map.png" style="height: 22rem; margin-top: 1rem;">
+      <img src="/public/images/gp-map.png" style="display:block; height: 22rem; margin-top: 1rem;">
     </div>
   </div>
 
 
 
-  <div class="grid-row expand-top">
+  <div class="grid-row expand-top" style="margin-bottom: 1.5rem;">
     <div class="column-third">
-      <p>
-        <span class="bold-large">82%</span><br>
-        of patients would recommend this surgery
-      </p>
+      <div class="panel-indent">
+        <p>
+          <span class="bold-large">82%</span>
+          of patients would recommend this surgery
+        </p>
+      </div>
     </div>
     <div class="column-third">
-      <p>
-        <span class="bold-large">88%</span><br>
-        feel they are listened to
-      </p>
+      <div class="panel-indent">
+        <p>
+          <span class="bold-large">88%</span>
+          of patients feel they are listened to
+        </p>
+      </div>
     </div>
     <div class="column-third">
-      <p>
-        <span class="bold-large">8 days</span><br>
-        average wait time for routine appointments
-      </p>
+      <div class="panel-indent">
+        <p>
+          <span class="bold-large">8 days</span>
+          average wait time for routine appointments
+        </p>
+      </div>
     </div>
   </div>
 
   <div class="grid-row">
     <div class="column-third">
-
       <h2 class="heading-medium">Appointment hours</h3>
       <table>
         <tr>
@@ -92,31 +92,42 @@
           <td>7.30am &ndash; 7.20pm</td>
         </tr>
       </table>
-
     </div>
     <div class="column-third">
+      <h2 class="heading-medium">Services offered</h2>
+      <ul class="list-bullet">
+        <li>Travel vaccinations</li>
+        <li>Over 40 health check</li>
+        <li>Diabetes clinic</li>
+        <li>Childhood vaccinations</li>
+        <li>Quit smoking</li>
+      </ul>
+    </div>
+  </div>
 
-      <style>
-        .list-test {
-          padding-top: 0;
-        }
-        .list-test li {
-          clear: both;
-          margin-bottom: 2rem;
-        }
-        .list-test img {
-          float: left;
-          height: 5rem;
-          margin-right: 1rem;
-        }
-        .list-test div {
-          float: left;
-          padding-top: 1rem;
-          line-height: 1.4rem;
-        }
-      </style>
+  <style>
+    .list-test {
+      padding-top: 0;
+    }
+    .list-test li {
+      clear: both;
+      margin-bottom: 2rem;
+    }
+    .list-test img {
+      float: left;
+      height: 5rem;
+      margin-right: 1rem;
+    }
+    .list-test div {
+      float: left;
+      padding-top: 1rem;
+      line-height: 1.4rem;
+    }
+  </style>
 
-      <h2 class="heading-medium">Staff members</h2>
+  <h2 class="heading-medium">Staff members</h2>
+  <div class="grid-row">
+    <div class="column-third">
       <ul class="list-test">
         <li class="clearfix">
           <img src="/public/images/icon-avatar-helen-leaf.png">
@@ -146,6 +157,10 @@
             <span class="font-xsmall">GP, male</span>
           </div>
         </li>
+      </ul>
+    </div>
+    <div class="column-third">
+      <ul class="list-test">
         <li class="clearfix">
           <img src="/public/images/icon-avatar.svg">
           <div>
@@ -160,6 +175,10 @@
             <span class="font-xsmall">Nurse practitioner, male</span>
           </div>
         </li>
+      </ul>
+    </div>
+    <div class="column-third">
+      <ul class="list-test">
         <li class="clearfix">
           <img src="/public/images/icon-avatar-alison-wylde.png">
           <div>
@@ -168,7 +187,6 @@
           </div>
         </li>
       </ul>
-
     </div>
   </div>
 
