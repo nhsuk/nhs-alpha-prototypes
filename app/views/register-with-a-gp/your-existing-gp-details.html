@@ -9,88 +9,106 @@
 
 <main id="content" role="main">
 
-  <h1 class="heading-xlarge">
-    Help us trace your medical records
-  </h1>
-
   <div class="text">
-    <p class="lede">
-      Please fill in as much information as you can.
-    </p>
+    <h1 class="heading-xlarge">
+      Help us trace your medical records
+    </h1>
   </div>
 
   <form action="" method="get" class="form">
-    <div class="form-group">
-      <label class="form-label-bold" for="nhs-number">
-        Your NHS number
+
+    <fieldset class="form-group">
+      <legend class="form-label-bold">Are you currently registered with a GP practice?</legend>
+      <input type="radio" id="current-gp-yes" name="current-gp">
+      <label class="form-control-radio js-toggle" for="current-gp-yes" data-show="#current-gp">
+        Yes
       </label>
-      <!-- 8 digits -->
-      <input type="text" id="nhs-number" class="form-control form-control-1-4" value="">
+      <input type="radio" id="current-gp-no" name="current-gp">
+      <label class="form-control-radio js-toggle" for="current-gp-no" data-hide="#current-gp">
+        No
+      </label>
+    </fieldset>
+
+    <div class="js-hidden panel-indent" id="current-gp">
+
+      {% include "includes/forms/gp-practice.html" with
+        {
+          label: "Your current GP practice or doctor"
+        }
+      %}
+
+      {{
+        form_macros.address_fields({
+          id: 'address-1',
+          label: 'Your address',
+          hint: 'When you were registered with this GP practice'
+        })
+      }}
+
     </div>
 
-    {% include "includes/forms/gp-practice.html" with
-      {
-        label: "Your previous GP practice or doctor"
-      }
-    %}
+    <fieldset class="form-group">
+      <legend class="form-label-bold">Have you recently left the armed forces?</legend>
+      <input type="radio" id="armed-forces-yes" name="armed-forces">
+      <label class="form-control-radio js-toggle" for="armed-forces-yes" data-show="#armed-forces">
+        Yes
+      </label>
+      <input type="radio" id="armed-forces-no" name="armed-forces">
+      <label class="form-control-radio js-toggle" for="armed-forces-no" data-hide="#armed-forces">
+        No
+      </label>
+    </fieldset>
 
-    {{
-      form_macros.address_fields({
-        id: 'address-1',
-        label: 'Your address',
-        hint: 'When you were registered with your previous GP practice'
-      })
-    }}
-
-    <details>
-      <summary>I’m returning from the armed forces</summary>
-      <div>
-        <div class="form-group">
-          <label class="form-label-bold" for="service-number">
-            Service or personnel number
-          </label>
-          <!-- 8 digits -->
-          <input type="text" id="service-number" class="form-control form-control-1-4" value="">
-        </div>
-
-        {{
-          form_macros.date_field({
-            label: 'Enlistment date',
-            hint_date: '31 7 1994',
-            id_prefix: 'enlistment-'
-          })
-        }}
-
-        {{
-          form_macros.address_fields({
-            id: 'address-2',
-            label: 'Your address when you enlisted'
-          })
-        }}
+    <div class="js-hidden panel-indent" id="armed-forces">
+      <div class="form-group">
+        <label class="form-label-bold" for="service-number">
+          Your service or personnel number
+        </label>
+        <!-- 8 digits -->
+        <input type="text" id="service-number" class="form-control form-control-1-4" value="">
       </div>
-    </details>
+      {{
+        form_macros.date_field({
+          label: 'Enlistment date',
+          hint_date: '31 7 1994',
+          id_prefix: 'enlistment-'
+        })
+      }}
+      {{
+        form_macros.address_fields({
+          id: 'address-2',
+          label: 'Your home address when you enlisted'
+        })
+      }}
+    </div>
 
-    <details>
-      <summary>I’m moving back to the UK from abroad</summary>
-      <div>
+    <fieldset class="form-group">
+      <legend class="form-label-bold">Are you moving to the UK from abroad?</legend>
+      <input type="radio" id="abroad-yes" name="abroad">
+      <label class="form-control-radio js-toggle" for="abroad-yes" data-show="#abroad">
+        Yes
+      </label>
+      <input type="radio" id="abroad-no" name="abroad">
+      <label class="form-control-radio js-toggle" for="abroad-no" data-hide="#abroad">
+        No
+      </label>
+    </fieldset>
 
-        {{
-          form_macros.address_fields({
-            id: 'address-3',
-            label: 'Your address when you first registered with A GP'
-          })
-        }}
-
-        {{
-          form_macros.date_field({
-            label: 'The date you left the UK',
-            hint_date: '31 7 1994',
-            id_prefix: 'left-uk-'
-          })
-        }}
-
-      </div>
-    </details>
+    <div class="js-hidden panel-indent" id="abroad">
+      {{
+        form_macros.date_field({
+          label: 'The date you left the UK',
+          hint_date: '31 7 1994',
+          id_prefix: 'left-uk-'
+        })
+      }}
+      {{
+        form_macros.address_fields({
+          id: 'address-3',
+          label: 'Your address when you first registered with A GP'
+        })
+      }}
+    </div>
 
     <div class="form-group expand-top">
       <a href="dispense-medicines" class="button">Next</a>
