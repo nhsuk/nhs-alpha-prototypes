@@ -2,15 +2,34 @@
 // ==========================================================================
 
 .button {
-  @include button ($button-colour);
   @include box-sizing (border-box);
-  margin: 0 $gutter-half $gutter-half 0;
-  padding: em(10) em(15) em(5) em(15);
-  vertical-align: top;
+  @include inline-block;
+
+  width: 100%;
+  padding: 0.5rem 1rem;
+  min-height: 3rem;
+  border: 0;
+  border-bottom: 2px solid $nhs-black;
+  @include border-radius(0);
+  -webkit-appearance: none;
+
+  color: $nhs-black;
+  background-color: $button-colour;
+
+  cursor: pointer;
+
+  &:link,
+  &:hover,
+  &:focus,
+  &:visited{
+    color: $nhs-pure-black;
+    background-color: $button-colour;
+  }
   /* to be fixed */
   text-decoration: none !important;
-  @include media (mobile) {
-    width: 100%;
+
+  @include media (tablet) {
+    width: auto;
   }
 }
 
@@ -35,11 +54,11 @@
 
 // Start now buttons
 .button-get-started {
-  //@include bold-24;
+  font-weight: bold;
+  padding-right: 3rem;
   background-image: url("/public/images/icon-pointer.png");
   background-repeat: no-repeat;
   background-position: 100% 50%;
-  padding: em(7) em(41) em(4) em(16);
 
   @include device-pixel-ratio {
     background-image: url("/public/images/icon-pointer-2x.png");

@@ -10,15 +10,15 @@
 <main id="content" role="main">
 
   <h1 class="heading-xlarge">
-    Your personal details
+    Personal details
   </h1>
 
   <form action="" method="get" class="form">
 
     {{
       form_macros.text_field({
-        id: 'Full name',
-        label: 'Your name'
+        id: 'name',
+        label: 'Full name'
       })
     }}
 
@@ -30,12 +30,41 @@
       })
     }}
 
-    {% include "includes/forms/gp-practice.html" with {
-      label: "Current GP practice or doctor"
-    } %}
+    {{
+      form_macros.address_fields({
+        id: 'address-1',
+        label: 'Address',
+        hint: 'As you’d write it on an envelope'
+      })
+    }}
+
+    {{
+      form_macros.text_field({
+        id: 'email',
+        label: 'Email address'
+      })
+    }}
+
+    {{
+      form_macros.text_field({
+        id: 'telephone',
+        label: 'Telephone number (optional)'
+      })
+    }}
 
     <div class="form-group">
-      <a href="application-complete" class="button">Register</a>
+      <label class="form-label-bold" for="nhs-number">
+        NHS number (optional)
+        <span class="form-hint">
+          If you know it &mdash; for example 943 476 5919
+        </span>
+      </label>
+      <!-- 8 digits -->
+      <input type="text" id="nhs-number" class="form-control form-control-1-4" value="">
+    </div>
+
+    <div class="form-group">
+      <a href="your-existing-gp-details" class="button">Next</a>
     </div>
 
   </form>

@@ -1,0 +1,51 @@
+{% extends 'templates/nhs_transaction_layout.html' %}
+{% import 'includes/form_macros.html' as form_macros %}
+
+{% block afterHeader %}
+  {% include "includes/service-headers/register-with-a-gp.html" %}
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <h1 class="heading-xlarge">
+    Blood donation
+  </h1>
+
+  <form action="" method="get" class="form text">
+
+    <fieldset class="form-group">
+      <legend class="form-label-bold">Would you be prepared to give blood?</legend>
+      <input type="radio" id="blood-yes" name="blood">
+      <label class="form-control-radio js-toggle" for="blood-yes" data-show="#blood-donor">
+        Yes
+      </label>
+      <input type="radio" id="blood-no" name="blood">
+      <label class="form-control-radio js-toggle" for="blood-no" data-hide="#blood-donor">
+        No
+      </label>
+    </fieldset>
+
+    <div class="js-hidden panel-indent" id="blood-donor">
+      <fieldset class="form-group">
+        <legend>Have you given blood in the last 3 years?</legend>
+        <input type="radio" id="blood-given-yes" name="blood-given">
+        <label class="form-control-radio js-toggle" for="blood-given-yes">
+          Yes
+        </label>
+        <input type="radio" id="blood-given-no" name="blood-given">
+        <label class="form-control-radio js-toggle" for="blood-given-no">
+          No
+        </label>
+      </fieldset>
+    </div>
+
+    <div class="form-group expand-top">
+      <a href="donor-organs" class="button">Next</a>
+    </div>
+
+  </form>
+</main>
+
+{% endblock %}
