@@ -72,12 +72,12 @@ h1, h2, h3, h4, h5, h6 {
 
 // Heading level 2.
 .heading-xlarge {
-  @include sassline(x-large, $headingtype, 4, 4, all);
+  @include sassline(x-large, $headingtype, 5, 4, all);
 }
 
 // Heading level 3.
 .heading-large {
-  @include sassline(large, $headingtype, 3, 2, all);
+  @include sassline(large, $headingtype, 4, 2, all);
   //margin-top: 2rem;
 }
 
@@ -99,7 +99,7 @@ p {
   -o-font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
   font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
 
-  @include baseline($fontsize: small, $font: $bodytype, $lineheight: 2, $below: 2, $breakpoint: all);
+  @include sassline($fontsize: small, $font: $bodytype, $lineheight: 2, $below: 2, $breakpoint: all);
 }
 
 .lede {
@@ -107,9 +107,9 @@ p {
 }
 
 .bold-large {
-  @include fontsize(x-large, all);
+  //display: block;
+  @include sassline(large, $bodytype, 3, 1, all);
   font-weight: bold;
-  line-height: inherit;
 }
 
 .font-xsmall {
@@ -140,11 +140,17 @@ ul, ol {
 .list-number {
   list-style-type: decimal;
   margin-left: 1.5rem;
+  li {
+    margin-bottom: 1rem;
+  }
 }
 
 .list-bullet {
   list-style-type: disc;
   margin-left: 1.5rem;
+  li {
+    margin-bottom: 1rem;
+  }
 }
 
 // Definition lists.
