@@ -10,21 +10,21 @@
 <main id="content" role="main">
 
   <h1 class="heading-xlarge">
-    Your personal details
+    Personal details
   </h1>
 
   <form action="" method="get" class="form">
 
     {{
       form_macros.text_field({
-        id: 'Full name',
-        label: 'Your name'
+        id: 'name',
+        label: 'Full name'
       })
     }}
 
     {{
       form_macros.date_field({
-        label: 'Your date of birth',
+        label: 'Date of birth',
         hint_date: '31 7 1961',
         id_prefix: 'dob-'
       })
@@ -33,7 +33,7 @@
     {{
       form_macros.address_fields({
         id: 'address-1',
-        label: 'Your address',
+        label: 'Address',
         hint: 'As you’d write it on a envelope'
       })
     }}
@@ -41,14 +41,14 @@
     {{
       form_macros.text_field({
         id: 'email',
-        label: 'Your email address'
+        label: 'Email address'
       })
     }}
 
     {{
       form_macros.text_field({
         id: 'telephone',
-        label: 'Your telephone number (optional)'
+        label: 'Telephone number (optional)'
       })
     }}
 
