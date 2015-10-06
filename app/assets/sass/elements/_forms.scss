@@ -19,7 +19,6 @@ fieldset {
   float: left;
   width: 100%;
   @extend %contain-floats;
-  margin-bottom: $gutter-half;
   margin-bottom: 2rem;
 }
 
@@ -79,11 +78,12 @@ fieldset {
   display: block;
   width: 100%;
   @include box-sizing(border-box);
-  height: 3rem;
-  padding: 0 0.65rem;
-  margin: 0.375rem 0 1rem 0;
+  height: 4rem;
+  line-height: 4rem;
+  padding: 0 1rem;
   background-color: $white;
-  border: 1px solid $nhs-grey-1;
+  outline: 1px solid $nhs-black;
+  border: 1px solid $nhs-grey-3;
 
   // Disable webkit appearance and remove rounded corners
   -webkit-appearance: none;

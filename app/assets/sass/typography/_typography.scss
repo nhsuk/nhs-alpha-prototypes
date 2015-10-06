@@ -290,11 +290,6 @@ label,
   font-weight: 800;
 }
 
-// Form controls (ie text boxes)
-.form-control {
-  @include fontsize(small, all);
-}
-
 .button {
   @include fontsize(small, all);
 }
