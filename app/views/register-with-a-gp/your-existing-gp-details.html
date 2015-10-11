@@ -17,26 +17,30 @@
 
   <form action="" method="get" class="form">
 
-    <fieldset class="form-group">
+    <fieldset>
       <legend class="form-label-bold">Are you currently registered with a GP practice?</legend>
-      <input type="radio" id="current-gp-yes" name="current-gp">
-      <label class="form-control-radio js-toggle" for="current-gp-yes" data-show="#current-gp">
-        Yes
-      </label>
-      <input type="radio" id="current-gp-no" name="current-gp">
-      <label class="form-control-radio js-toggle" for="current-gp-no" data-hide="#current-gp">
-        No
-      </label>
+      <div class="inline-form-groups">
+        <div class="form-group">
+          <input type="radio" id="current-gp-yes" name="current-gp">
+          <label class="form-control-radio js-toggle" for="current-gp-yes" data-show="#current-gp">
+            Yes
+          </label>
+        </div>
+        <div class="form-group">
+          <input type="radio" id="current-gp-no" name="current-gp">
+          <label class="form-control-radio js-toggle" for="current-gp-no" data-hide="#current-gp">
+            No
+          </label>
+        </div>
+      </div>
     </fieldset>
 
     <div class="js-hidden panel-indent" id="current-gp">
-
       {% include "includes/forms/gp-practice.html" with
         {
           label: "Your current GP practice or doctor"
         }
       %}
-
       {{
         form_macros.address_fields({
           id: 'address-1',
@@ -44,19 +48,24 @@
           hint: 'When you were registered with this GP practice'
         })
       }}
-
     </div>
 
-    <fieldset class="form-group">
+    <fieldset>
       <legend class="form-label-bold">Have you recently left the armed forces?</legend>
-      <input type="radio" id="armed-forces-yes" name="armed-forces">
-      <label class="form-control-radio js-toggle" for="armed-forces-yes" data-show="#armed-forces">
-        Yes
-      </label>
-      <input type="radio" id="armed-forces-no" name="armed-forces">
-      <label class="form-control-radio js-toggle" for="armed-forces-no" data-hide="#armed-forces">
-        No
-      </label>
+      <div class="inline-form-groups">
+        <div class="form-group">
+          <input type="radio" id="armed-forces-yes" name="armed-forces">
+          <label class="form-control-radio js-toggle" for="armed-forces-yes" data-show="#armed-forces">
+            Yes
+          </label>
+        </div>
+        <div class="form-group">
+          <input type="radio" id="armed-forces-no" name="armed-forces">
+          <label class="form-control-radio js-toggle" for="armed-forces-no" data-hide="#armed-forces">
+            No
+          </label>
+        </div>
+      </div>
     </fieldset>
 
     <div class="js-hidden panel-indent" id="armed-forces">
@@ -82,16 +91,22 @@
       }}
     </div>
 
-    <fieldset class="form-group">
+    <fieldset>
       <legend class="form-label-bold">Are you moving to the UK from abroad?</legend>
-      <input type="radio" id="abroad-yes" name="abroad">
-      <label class="form-control-radio js-toggle" for="abroad-yes" data-show="#abroad">
-        Yes
-      </label>
-      <input type="radio" id="abroad-no" name="abroad">
-      <label class="form-control-radio js-toggle" for="abroad-no" data-hide="#abroad">
-        No
-      </label>
+      <div class="inline-form-groups">
+        <div class="form-group">
+          <input type="radio" id="abroad-yes" name="abroad">
+          <label class="form-control-radio js-toggle" for="abroad-yes" data-show="#abroad">
+            Yes
+          </label>
+        </div>
+        <div class="form-group">
+          <input type="radio" id="abroad-no" name="abroad">
+          <label class="form-control-radio js-toggle" for="abroad-no" data-hide="#abroad">
+            No
+          </label>
+        </div>
+      </div>
     </fieldset>
 
     <div class="js-hidden panel-indent" id="abroad">

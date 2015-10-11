@@ -12,41 +12,41 @@
     Your details
   </h1>
 
-    <form action="/" method="post" class="form">
+  <form action="/" method="post" class="form">
 
-      {{
-        form_macros.text_field({
-          id: 'name',
-          label: 'Name'
-        })
-      }}
+    {{
+      form_macros.text_field({
+        id: 'name',
+        label: 'Name'
+      })
+    }}
 
-      {{
-        form_macros.date_field({
-          label: 'Date of birth',
-          hint_date: '31 7 1961',
-          id_prefix: 'dob-'
-        })
-      }}
+    {{
+      form_macros.date_field({
+        label: 'Date of birth',
+        hint_date: '31 7 1961',
+        id_prefix: 'dob-'
+      })
+    }}
 
-      {% include "includes/forms/gp-practice.html" %}
+    {% include "includes/forms/gp-practice.html" %}
 
-      {{
-        form_macros.date_field({
-          label: 'Date of appointment',
-          hint_date: '31 7 2015',
-          id_prefix: 'appointment-'
-        })
-      }}
+    {{
+      form_macros.date_field({
+        label: 'Date of appointment',
+        hint_date: '31 7 2015',
+        id_prefix: 'appointment-'
+      })
+    }}
 
-      <!-- Submit -->
-      <div class="form-group">
-        <a class="button" href="existing-appointment-details">Find existing appointment</a>
-      </div>
+    {{
+      form_macros.button({
+        href: 'existing-appointment-details',
+        label: 'Find existing appointment'
+      })
+    }}
 
   </form>
-
-
 
 </main>
 {% endblock %}

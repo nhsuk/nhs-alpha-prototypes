@@ -9,12 +9,14 @@
 
 <main id="content" role="main">
 
-  <h1 class="heading-xlarge">
-    Find a GP practice near you
-  </h1>
+  <div class="text">
+    <h1 class="heading-xlarge">
+      Find a GP practice near you
+    </h1>
+  </div>
 
   <div class="text">
-    <form action="/" method="post" class="form">
+    <form method="get" class="form">
 
       {{
         form_macros.text_field({
@@ -23,9 +25,13 @@
         })
       }}
 
-      <div class="form-group">
-        <a class="button" href="suggested-gps">Search</a>
-      </div>
+      {{
+        form_macros.button({
+          href: 'suggested-gps',
+          label: 'Search'
+        })
+      }}
+
     </form>
   </div>
 </main>

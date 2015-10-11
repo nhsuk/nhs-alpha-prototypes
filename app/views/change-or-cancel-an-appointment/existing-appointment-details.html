@@ -34,23 +34,34 @@
 
   <form action="path-handler" method="get" class="form">
     <fieldset>
-      <legend class="heading-medium">Would you like to:</legend>
-      <div class="form-group">
-        <input type="radio" id="appointment-change" name="appointment" value="change">
-        <label class="form-label form-control-radio" for="appointment-change">
-          Change this appointment
-        </label>
-      </div>
-      <div class="form-group">
-        <input type="radio" id="appointment-cancel" name="appointment" value="cancel">
-        <label class="form-label form-control-radio" for="appointment-cancel">
-          Cancel this appointment
-        </label>
-      </div>
+      <legend class="form-label-bold">Would you like to:</legend>
+
+      {{
+        form_macros.radio_button_single({
+          id: 'appointment-change',
+          name: 'appointment',
+          value: 'change',
+          label: 'Change this appointment'
+        })
+      }}
+
+      {{
+        form_macros.radio_button_single({
+          id: 'appointment-cancel',
+          name: 'appointment',
+          value: 'cancel',
+          label: 'Cancel this appointment'
+        })
+      }}
+
     </fieldset>
-    <div class="form-group">
-      <button type="submit" class="button">Next</button>
-    </div>
+
+    {{
+      form_macros.button({
+        label: 'Next'
+      })
+    }}
+
   </form>
 
 </main>

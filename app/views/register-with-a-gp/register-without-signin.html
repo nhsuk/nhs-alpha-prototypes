@@ -52,20 +52,21 @@
       })
     }}
 
-    <div class="form-group">
-      <label class="form-label-bold" for="nhs-number">
-        NHS number (optional)
-        <span class="form-hint">
-          If you know it &mdash; for example 943 476 5919
-        </span>
-      </label>
-      <!-- 8 digits -->
-      <input type="text" id="nhs-number" class="form-control form-control-1-4" value="">
-    </div>
+    {{
+      form_macros.text_field({
+        id: 'nhs-number',
+        label: 'NHS number (optional)',
+        hint: 'If you know it &mdash; for example 943 476 5919',
+        class: 'form-control-1-4'
+      })
+    }}
 
-    <div class="form-group">
-      <a href="your-existing-gp-details" class="button">Next</a>
-    </div>
+    {{
+      form_macros.button({
+        href: 'your-existing-gp-details',
+        label: 'Next'
+      })
+    }}
 
   </form>
 </main>

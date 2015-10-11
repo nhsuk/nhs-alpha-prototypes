@@ -1,4 +1,5 @@
 {% extends 'templates/nhs_transaction_layout.html' %}
+{% import 'includes/form_macros.html' as form_macros %}
 {% import 'includes/ui_element_macros.html' as ui_element_macros %}
 
 {% block afterHeader %}
@@ -31,11 +32,13 @@
     NW13 9HJ
   </p>
 
-  <div class="form-group">
-    <a class="button button-warning" href="appointment-cancelled">
-      Cancel this appointment
-    </a>
-  </div>
+
+  {{
+    form_macros.button({
+      href: 'appointment-cancelled',
+      label: 'Cancel this appointment'
+    })
+  }}
 
 </main>
 {% endblock %}

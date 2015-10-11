@@ -8,9 +8,9 @@
 {% block content %}
 <main id="content" role="main">
 
-  <h1 class="heading-xlarge">
-    Your details
-  </h1>
+    <h1 class="heading-xlarge">
+      Your details
+    </h1>
 
     <form action="/" method="post" class="form">
 
@@ -20,7 +20,6 @@
           label: 'Name'
         })
       }}
-
 
       {{
         form_macros.date_field({
@@ -32,14 +31,14 @@
 
       {% include "includes/forms/gp-practice.html" %}
 
-      <!-- Submit -->
-      <div class="form-group">
-        <a class="button" href="next-available-appointment">Find appointment</a>
-      </div>
+      {{
+        form_macros.button({
+          href: 'next-available-appointment',
+          label: 'Find appointment'
+        })
+      }}
 
   </form>
-
-
 
 </main>
 {% endblock %}
