@@ -2,21 +2,19 @@
 // ==========================================================================
 
 .button {
-  @include box-sizing (border-box);
+  //@include box-sizing (border-box);
   @include inline-block;
-
   width: 100%;
-  padding: 0.5rem 1rem;
-  min-height: 3rem;
+  height: 4rem;
+  line-height: 4rem;
+  padding: 0 2rem;
   border: 0;
-  border-bottom: 2px solid $nhs-black;
-  @include border-radius(0);
-  -webkit-appearance: none;
-
   color: $nhs-black;
   background-color: $button-colour;
-
   cursor: pointer;
+
+  @include border-radius(0);
+  -webkit-appearance: none;
 
   &:link,
   &:hover,
@@ -25,6 +23,11 @@
     color: $nhs-pure-black;
     background-color: $button-colour;
   }
+
+  &:hover {
+    outline: 1px solid $nhs-black;
+  }
+
   /* to be fixed */
   text-decoration: none !important;
 

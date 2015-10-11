@@ -1,13 +1,19 @@
-<div class="form-group">
-  <label class="form-label-bold" for="gp-practice-search">
-    {{ label | default('GP practice or doctor') }}
-  </label>
-
-  <p>Enter one of:</p>
-  <ul class="list-bullet">
-    <li>the name of the GP practice</li>
-    <li>the street where the GP practice is based</li>
-    <li>the name of the doctor</li>
-  </ul>
-  <input type="text" id="gp-practice-search" name="gp-practice-search" class="form-control">
+<div class="form-item-wrapper">
+  <div class="form-group" id="gp-practice-finder">
+    <label class="form-label-bold" for="gp-practice-search">
+      {{ label | default('GP practice or doctor') }}
+    </label>
+    {% include "includes/nhs.uk/gp-practices-select.html" %}
+  </div>
 </div>
+
+<script>
+  (function($){
+    $(function(){
+      $('#gp-practice-finder > select').selectToAutocomplete({
+        'alternative-spellings': false,
+        'delay': 300
+      });
+    });
+  })(jQuery);
+</script>
