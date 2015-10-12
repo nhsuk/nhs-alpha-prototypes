@@ -1,6 +1,7 @@
 var path = require('path'),
     express = require('express'),
     swig = require('swig'),
+    swig_extras = require('swig-extras'),
     session = require('express-session'),
     routes = require(__dirname + '/app/routes.js'),
     app = express(),
@@ -29,6 +30,9 @@ swig.setDefaults({ cache: false });
 
 // Set base directory for Swig templates and includes
 swig.setDefaults({ loader: swig.loaders.fs(__dirname + '/app/views' )});
+
+// Set up markdown
+swig_extras.useTag(swig, 'markdown');
 
 
 // Middleware to serve static assets
