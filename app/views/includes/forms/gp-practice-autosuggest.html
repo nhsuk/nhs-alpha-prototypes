@@ -1,0 +1,19 @@
+<div class="form-item-wrapper">
+  <div class="form-group" id="gp-practice-finder">
+    <label class="form-label-bold" for="gp-practice-search">
+      {{ label | default('GP practice or doctor') }}
+    </label>
+    {% include "includes/nhs.uk/gp-practices-select.html" %}
+  </div>
+</div>
+
+<script>
+  (function($){
+    $(function(){
+      $('#gp-practice-finder > select').selectToAutocomplete({
+        'alternative-spellings': false,
+        'delay': 300
+      });
+    });
+  })(jQuery);
+</script>
