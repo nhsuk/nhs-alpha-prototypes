@@ -1,3 +1,7 @@
+@import '../typography/variables';
+@import '../typography/modular-scale';
+@import '../typography/mixins';
+
 // Panels
 // ==========================================================================
 
@@ -25,6 +29,70 @@
 
 // NHS Panels
 // ==========================================================================
+
+// Appointment option links
+.appointment-option,
+.appointment-option:link,
+.appointment-option:active,
+.appointment-option:hover,
+.appointment-option:visited {
+  color: $nhs-black;
+  text-decoration: none;
+}
+.appointment-option {
+  display: block;
+  @include box-sizing(border-box);
+  padding: 0.82rem 1rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  border: 2px solid $nhs-blue;
+  outline: 1px solid $nhs-black;
+  @extend %contain-floats;
+
+  transition: background-color 0.2s ease-out;
+
+  .details {
+    float: left;
+  }
+
+  .mugshot {
+    float: left;
+    width: 8rem;
+    height: 8rem;
+    margin-right: 2rem;
+  }
+  img {
+    max-width: 100%;
+    border-radius: 100%;
+    box-shadow: 0px 0px 2px 0px rgba($nhs-black,0.5);
+  }
+
+  h3 {
+    @include sassline($fontsize: medium, $font: $bodytype, $lineheight: 2, $below: 1, $breakpoint: all);
+    color: $nhs-blue;
+    text-decoration: underline;
+  }
+
+  p {
+    @include sassline($fontsize: small, $font: $bodytype, $lineheight: 2, $below: 1, $breakpoint: all);
+  }
+
+  p.appointment-type {
+    line-height: 3rem;
+    padding-left: 3rem;
+    &.telephone {
+      background: url('/public/images/icon-telephone.svg') no-repeat left 1rem;
+    }
+    &.face-to-face {
+      background: url('/public/images/icon-face-to-face.svg') no-repeat left 1rem;
+    }
+  }
+}
+
+.appointment-option:hover,
+.appointment-option:focus {
+  background-color: rgba($nhs-blue, 0.1);
+}
 
 // Appointment summary panels
 .appointment-summary {

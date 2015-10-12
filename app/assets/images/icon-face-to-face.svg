@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="24px" height="25px" viewBox="0 0 24 25" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3.3 (12081) - http://www.bohemiancoding.com/sketch -->
+    <title>Imported Layers</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Imported-Layers" sketch:type="MSLayerGroup">
+            <path d="M24,12 C24,18.627 18.627,24 12,24 C5.373,24 0,18.627 0,12 C0,5.373 5.373,0 12,0 C18.627,0 24,5.373 24,12" id="Mask" fill="#000000" sketch:type="MSShapeGroup"></path>
+            <path d="M13.427,16.547 L13.427,15.369 C15.002,14.483 16.285,12.271 16.285,10.06 C16.285,6.51 16.285,3.633 11.999,3.633 C7.715,3.633 7.715,6.51 7.715,10.06 C7.715,12.271 8.998,14.483 10.571,15.369 L10.571,16.547 C5.725,16.943 2,21.323 2,24.202 L22,24.202 C22,21.325 18.273,16.943 13.427,16.547 L13.427,16.547 Z" id="Fill-2" fill="#FFFFFF" sketch:type="MSShapeGroup"></path>
+        </g>
+    </g>
+</svg>
