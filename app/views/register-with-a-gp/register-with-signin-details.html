@@ -53,9 +53,12 @@
       })
     }}
 
-    <div class="form-group">
-      <a href="application-complete" class="button">Confirm</a>
-    </div>
+    {{
+      form_macros.button({
+        href: 'application-complete',
+        label: 'Confirm'
+      })
+    }}
 
   </form>
 </main>

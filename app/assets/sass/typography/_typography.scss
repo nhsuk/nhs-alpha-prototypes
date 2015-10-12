@@ -276,8 +276,17 @@ label,
 }
 
 /*label,*/
-.form-label,
+//.form-label,
 .form-label-bold {
+  @include sassline(medium, $bodytype, 3, 1, all);
+  font-weight: bold;
+}
+
+.form-label {
+  @include sassline(small, $bodytype, 2, 1, all);
+}
+
+.form-hint {
   @include sassline(small, $bodytype, 2, 1, all);
 }
 
@@ -286,15 +295,7 @@ label,
   @include fontsize(small, all);
 }
 
-.form-label-bold {
-  font-weight: 800;
-}
-
-// Form controls (ie text boxes)
-.form-control {
-  @include fontsize(small, all);
-}
-
 .button {
   @include fontsize(small, all);
+  font-weight: bold;
 }

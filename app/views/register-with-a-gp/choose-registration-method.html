@@ -1,4 +1,5 @@
 {% extends 'templates/nhs_transaction_layout.html' %}
+{% import 'includes/form_macros.html' as form_macros %}
 
 {% block afterHeader %}
   {% include "includes/service-headers/register-with-a-gp.html" %}
@@ -8,30 +9,40 @@
 
 <main id="content" role="main">
 
+  <div class="text">
+    <h1 class="heading-xlarge">
+      Do you have an NHS login?
+    </h1>
+  </div>
+
   <form action="choose-registration-method-handler" method="get" class="form">
     <fieldset>
-      <legend class="heading-xlarge">
-        <h1 class="heading-xlarge">
-          Do you have an NHS login?
-        </h1>
-      </legend>
-      <div class="form-group">
-        <input type="radio" id="sign-in-to-register" name="registration_method" value="with-signin">
-        <label class="form-control-radio" for="sign-in-to-register">
-          <strong>Yes,</strong> I will sign in to register
-        </label>
-      </div>
-      <div class="form-group">
-        <input type="radio" id="register-without-signing-in" name="registration_method" value="without-signin">
-        <label class="form-control-radio" for="register-without-signing-in">
-          <strong>No I do not,</strong> I will register without signing in
-        </label>
-      </div>
+
+      {{
+        form_macros.radio_button_single({
+          id: 'sign-in-to-register',
+          name: 'registration_method',
+          value: 'with-signin',
+          label: '<strong>Yes,</strong> I will sign in to register'
+        })
+      }}
+
+      {{
+        form_macros.radio_button_single({
+          id: 'register-without-signing-in',
+          name: 'registration_method',
+          value: 'without-signin',
+          label: '<strong>No I do not,</strong> I will register without signing in'
+        })
+      }}
+
     </fieldset>
 
-    <div class="form-group">
-      <button type="submit" class="button">Next</button>
-    </div>
+    {{
+      form_macros.button({
+        label: 'Next'
+      })
+    }}
   </form>
 </main>
 

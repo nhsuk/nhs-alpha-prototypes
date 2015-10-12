@@ -15,16 +15,22 @@
       Dispensing medicines and appliances
     </h1>
 
-    <fieldset class="form-group">
+    <fieldset>
       <legend class="form-label-bold">Do you need your GP practice to dispense medicines and appliances?</legend>
-      <input type="radio" id="dispense-yes" name="dispense">
-      <label class="form-control-radio js-toggle" for="dispense-yes">
-        Yes
-      </label>
-      <input type="radio" id="dispense-no" name="dispense">
-      <label class="form-control-radio js-toggle" for="dispense-no">
-        No
-      </label>
+      <div class="inline-form-groups">
+        <div class="form-group">
+          <input type="radio" id="dispense-yes" name="dispense">
+          <label class="form-control-radio" for="dispense-yes">
+            Yes
+          </label>
+        </div>
+        <div class="form-group">
+          <input type="radio" id="dispense-no" name="dispense">
+          <label class="form-control-radio" for="dispense-no">
+            No
+          </label>
+        </div>
+      </div>
     </fieldset>
 
     <details>
@@ -39,9 +45,12 @@
       </div>
     </details>
 
-    <div class="form-group expand-top">
-      <a href="donor-blood" class="button">Next</a>
-    </div>
+    {{
+      form_macros.button({
+        href: 'donor-blood',
+        label: 'Next'
+      })
+    }}
 
   </form>
 </main>

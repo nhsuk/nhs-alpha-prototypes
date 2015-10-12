@@ -1,17 +1,49 @@
 {% extends 'templates/nhs_transaction_layout.html' %}
-{% import 'includes/form_macros.html' as form %}
+{% import 'includes/form_macros.html' as form_macros %}
 
 {% block content %}
-<main id="content" role="main" class="new-styles">
+<main id="content" role="main">
 
   <h1 class="heading-xlarge">Example form questions</h1>
 
     <form action="/" method="post" class="form">
 
 
-      {% include "includes/forms/name.html" %}
+      <div class="form-item-wrapper">
+        <fieldset>
+          <legend class="form-label-bold">Overall group title</legend>
+          <div class="form-group">
+            <label class="form-label" for="first-label">
+              First label
+            </label>
+            <input type="text" id="first-label" class="form-control">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="last-label">
+              Second label
+            </label>
+            <p class="form-hint">Second label hint</p>
+            <input type="text" id="last-label" class="form-control">
+          </div>
+        </fieldset>
+      </div>
 
-      {% include "includes/forms/address.html" %}
+      <div class="form-item-wrapper">
+        <div class="form-group">
+          <label class="form-label-bold" for="textarea">
+            Textarea
+          </label>
+          <textarea class="form-control" rows="6"></textarea>
+        </div>
+      </div>
+
+      {{
+        form_macros.address_fields({
+          id: 'address',
+          label: 'Address',
+          hint: 'As you’d write it on an envelope'
+        })
+      }}
 
       {{
         form_macros.date_field({
@@ -21,24 +53,52 @@
         })
       }}
 
+      <div class="form-item-wrapper">
+        <fieldset>
+          <legend class="form-label-bold">A binary question?</legend>
+          <div class="inline-form-groups">
+            <div class="form-group">
+              <input type="radio" id="binary-yes" name="binary">
+              <label class="form-control-radio" for="binary-yes">
+                Yes
+              </label>
+            </div>
+            <div class="form-group">
+              <input type="radio" id="binary-no" name="binary">
+              <label class="form-control-radio" for="binary-no">
+                No
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <div class="form-item-wrapper">
+        <div class="form-group">
+          <input type="radio" id="radio-minor" name="minor">
+          <label class="form-control-radio minor" for="radio-minor">
+            “Minor” radio button
+          </label>
+        </div>
+      </div>
+
+      <div class="form-item-wrapper">
+        <div class="form-group">
+          <input type="checkbox" id="checkbox-minor" name="minor">
+          <label class="form-control-checkbox minor" for="checkbox-minor">
+            “Minor” checkbox
+          </label>
+        </div>
+      </div>
+
       {% include "includes/forms/preferred-contact-method.html" %}
 
       {% include "includes/forms/create-a-password.html" %}
 
-      {% include "includes/forms/radios-binary.html" %}
-
-      {% include "includes/forms/pounds-per-time-period.html" %}
-
-      {% include "includes/forms/checkboxes-fruit.html" %}
-
-      {% include "includes/forms/radios-fruit.html" %}
-
-      {% include "includes/forms/textarea-fruit.html" %}
-
-      {% include "includes/forms/side-filters.html" %}
+      {% include "includes/forms/gp-practice.html" %}
 
       <!-- Submit -->
-      <div class="form-group">
+      <div class="form-item-wrapper">
         <a class="button" href="activate-account">Continue</a>
       </div>
 

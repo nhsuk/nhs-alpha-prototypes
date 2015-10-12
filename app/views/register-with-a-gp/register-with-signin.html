@@ -29,9 +29,12 @@
       })
     }}
 
-    <div class="form-group">
-      <a href="register-with-signin-details" class="button">Sign in</a>
-    </div>
+    {{
+      form_macros.button({
+        href: 'register-with-signin-details',
+        label: 'Sign in'
+      })
+    }}
 
   </form>
 </main>

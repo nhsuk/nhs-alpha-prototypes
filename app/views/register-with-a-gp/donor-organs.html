@@ -15,21 +15,27 @@
 
   <form action="" method="get" class="form text">
 
-    <fieldset class="form-group">
+    <fieldset>
       <legend class="form-label-bold">Are you willing to donate your organs for transplantation after your death?</legend>
-      <input type="radio" id="organs-yes" name="organs">
-      <label class="form-control-radio js-toggle" for="organs-yes" data-show="#organ-donor">
-        Yes
-      </label>
-      <input type="radio" id="organs-no" name="organs">
-      <label class="form-control-radio js-toggle" for="organs-no" data-hide="#organ-donor">
-        No
-      </label>
+      <div class="inline-form-groups">
+        <div class="form-group">
+          <input type="radio" id="organs-yes" name="organs">
+          <label class="form-control-radio js-toggle" for="organs-yes" data-show="#organs-donor">
+            Yes
+          </label>
+        </div>
+        <div class="form-group">
+          <input type="radio" id="organs-no" name="organs">
+          <label class="form-control-radio js-toggle" for="organs-no" data-hide="#organs-donor">
+            No
+          </label>
+        </div>
+      </div>
     </fieldset>
 
-    <div class="js-hidden panel-indent" id="organ-donor">
+    <div class="js-hidden panel-indent" id="organs-donor">
       <fieldset>
-        <legend>I will donate</legend>
+        <legend class="form-label">I will donate</legend>
 
         <div class="form-group">
           <input type="checkbox" id="any-part-of-my-body" checked="checked">
