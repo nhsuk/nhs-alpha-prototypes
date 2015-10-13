@@ -28,6 +28,14 @@ module.exports = {
       }
     });
 
+    // Register with a GP - suggested GP practices
+    app.get('/register-with-a-gp/suggested-gps', function(req, res) {
+      res.render(
+        'register-with-a-gp/suggested-gps',
+        { practices: app.locals.gp_practices }
+      );
+    });
+
     // Register with a GP - practice details
     app.get('/register-with-a-gp/practices/:practice', function(req, res) {
       var practice = find_gp_practice(req.params.practice);
@@ -37,8 +45,14 @@ module.exports = {
     });
 
     // Register with a GP - choose a practice to register with
-    app.get('/register-with-a-gp/:practice/register', function(req, res) {
-      req.session.practice = practice_details_for_slug(req.params.practice);
+    app.get('/register-with-a-gp/practices/:practice/register', function(req, res) {
+      var practice = find_gp_practice(req.params.practice);
+
+      req.session.practice = {
+        name: practice.name,
+        address: practice.address.join(', ')
+      };
+
       res.redirect('/register-with-a-gp/choose-registration-method');
     });
 
@@ -85,26 +99,6 @@ module.exports = {
 
   }
 };
-
-function practice_details_for_slug(slug) {
-  switch(slug) {
-    case 'lakeside-surgery':
-      return {
-        name: 'Lakeside Surgery',
-        address: '22 Castelnau, London, NW13 9HJ'
-      };
-    case 'shrewsbottom-surgery':
-      return {
-        name: 'Shrewsbottom Surgery',
-        address: '15 Pound Lane, London, NW12 9AT'
-      };
-    case 'victoria-medical-centre':
-      return {
-        name: 'Victoria Medical Centre',
-        address: '48 Buttoy, London, NW13 9HT'
-      };
-  }
-}
 
 function practitioner_details_for_slug(slug) {
   switch(slug) {

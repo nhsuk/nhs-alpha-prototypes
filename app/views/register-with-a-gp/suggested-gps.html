@@ -14,130 +14,41 @@
 
   <div class="text">
 
-    <p class="lede">Your 3 nearest GP practices for NW13 9HL:</p>
+    <p class="lede">Your {{ practices.length }} nearest GP practices for NW13 9HL:</p>
 
-    <div style="border-top: 1px solid #b9d2dc; padding-bottom: 1rem;">
+    {% for practice in practices %}
+      <div style="border-top: 1px solid #b9d2dc; padding-bottom: 1rem;">
 
-      <h2 class="heading-medium">
-        <a href="lakeside-surgery">Lakeside Surgery</a>
-      </h2>
+        <h2 class="heading-medium">
+          <a href="practices/{{ practice.slug }}">{{ practice.name }}</a>
+        </h2>
 
-      <p>
-        <b>22 Castelnau<br>
-        London<br>
-        NW13 9HJ</b>
-      </p>
+        <p><b>
+          {{ practice.address.join('<br>') }}
+        </b></p>
 
-      <p class="font-xsmall">
-        About a 6 minute walk
-      </p>
+        <p class="font-xsmall">
+          {{ practice.travel_time }}
+        </p>
 
-      <h3 class="heading-small">Appointment hours:</h3>
+        <h3 class="heading-small">Appointment hours:</h3>
 
-      <table>
-        <tr>
-          <td>Monday</td>
-          <td>9am &ndash; 4.50pm</td>
-        </tr>
-        <tr>
-          <td>Tuesday</td>
-          <td>7.30am &ndash; 7.20pm</td>
-        </tr>
-        <tr>
-          <td>Wednesday</td>
-          <td>9am &ndash; 4.50pm</td>
-        </tr>
-        <tr>
-          <td>Thursday</td>
-          <td>9am &ndash; 4.50pm</td>
-        </tr>
-        <tr>
-          <td>Friday</td>
-          <td>7.30am &ndash; 7.20pm</td>
-        </tr>
-      </table>
+        <table>
+          {% for hours in practice.appointment_hours %}
+            <tr>
+              <td>{{ loop.key }}</td>
+              <td>{{ hours }}</td>
+            </tr>
+          {% endfor %}
+        </table>
 
-      <p>
-        <b>82%</b>
-        of patients recommend this GP practice
-      </p>
+        <p>
+          <b>{{ practice.ratings.would_recommend }}</b>
+          of patients recommend this GP practice
+        </p>
 
-    </div>
-    <div style="border-top: 1px solid #b9d2dc; padding-bottom: 1rem;">
-
-      <h2 class="heading-medium">
-        <a href="shrewsbottom-surgery">Shrewsbottom Surgery</a>
-      </h2>
-
-      <p>
-        <b>15 Pound Lane<br>
-        London<br>
-        NW12 9AT</b>
-      </p>
-
-      <p class="font-xsmall">
-        About a 20 minute walk
-      </p>
-
-      <h3 class="heading-small">Appointment hours:</h3>
-      <table>
-        <tr>
-          <td>Monday to Friday</td>
-          <td>9am &ndash; 5pm</td>
-        </tr>
-      </table>
-
-      <p>
-        <b>89%</b>
-        of patients recommend this GP practice
-      </p>
-
-    </div>
-    <div style="border-top: 1px solid #b9d2dc; padding-bottom: 1rem;">
-
-      <h2 class="heading-medium">
-        <a href="victoria-medical-centre">Victoria Medical Centre</a>
-      </h2>
-
-      <p>
-        <b>48 Buttoy<br>
-        London<br>
-        NW13 9HT</b>
-      </p>
-
-      <p class="font-xsmall">
-        About a 25 minute walk
-      </p>
-
-      <h3 class="heading-small">Appointment hours:</h3>
-      <table>
-        <tr>
-          <td>Monday</td>
-          <td>9am &ndash; 5pm</td>
-        <tr>
-        <tr>
-          <td>Tuesday</td>
-          <td>9am &ndash; 5pm</td>
-        <tr>
-        </tr>
-          <td>Wednesday</td>
-          <td>9am &ndash; 9pm</td>
-        <tr>
-        </tr>
-          <td>Thursday</td>
-          <td>9am &ndash; 5pm</td>
-        </tr>
-        </tr>
-          <td>Friday</td>
-          <td>9am &ndash; 5pm</td>
-        </tr>
-      </table>
-
-      <p>
-        <b>74%</b> of patients recommend this GP practice
-      </p>
-
-    </div>
+      </div>
+    {% endfor %}
 
     <div style="border-top: 1px solid #b9d2dc; padding-bottom: 1rem; padding-top: 1rem">
       <p>
