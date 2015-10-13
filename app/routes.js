@@ -1,5 +1,12 @@
 module.exports = {
   bind : function (app) {
+    function find_gp_practice(slug) {
+      return app.locals.gp_practices.filter(
+        function(p) {
+          return p.slug === slug;
+        }
+      )[0];
+    }
 
     app.get('/', function (req, res) {
       res.render('index');
@@ -19,6 +26,14 @@ module.exports = {
       } else {
         res.redirect('/change-or-cancel-an-appointment/cancel-appointment');
       }
+    });
+
+    // Register with a GP - practice details
+    app.get('/register-with-a-gp/practices/:practice', function(req, res) {
+      var practice = find_gp_practice(req.params.practice);
+
+      res.render('register-with-a-gp/practice-details',
+                 {'practice': practice});
     });
 
     // Register with a GP - choose a practice to register with
