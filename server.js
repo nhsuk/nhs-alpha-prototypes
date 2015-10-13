@@ -4,6 +4,7 @@ var path = require('path'),
     swig_extras = require('swig-extras'),
     session = require('express-session'),
     routes = require(__dirname + '/app/routes.js'),
+    db = require(__dirname + '/db/load.js'),
     app = express(),
     port = (process.env.PORT || 3000),
 
@@ -59,6 +60,9 @@ app.use(function(req, res, next){
   res.locals.session = req.session;
   next();
 });
+
+// make everything in db/*.json available in app.locals
+db.load(app);
 
 // routes (found in app/routes.js)
 
