@@ -1,24 +1,69 @@
 <!-- Appointment link block -->
-{% macro appointment_summary(i) %}
-  {% if i.link_url %}
-    <a href="{{ i.link_url }}" class="appointment-summary {{ i.modifier_css_classes }}">
-  {% else %}
-    <div class="appointment-summary {{ i.modifier_css_classes }}">
-  {% endif %}
-      <h3 class="heading-medium">{{ i.appointment_date }} at {{ i.appointment_time }}</h3>
-      <img src="{{ i.avatar_img_path }}" class="appointment-summary__avatar">
-      <div class="appointment-summary__info">
-        <div>{{ i.name }}</div>
-        <div class="font-xsmall">{{ i.appointment_type }}</div>
-        {% if i.appointment_length %}
-          <div class="font-xsmall">{{ i.appointment_length }} minutes</div>
-        {% endif %}
-      </div>
-  {% if i.link_url %}
-    </a>
-  {% else %}
+{% macro appointment_option(i) %}
+  <a href="{{ i.link_url }}" class="appointment-option">
+    <div class="mugshot">
+      <img src="{{ i.avatar_img_path }}">
     </div>
-  {% endif %}
+    <div class="details">
+      <h3>
+        {% if i.appointment_date %}
+          {{ i.appointment_date }} at
+        {% endif %}
+        {{ i.appointment_time }}
+      </h3>
+      <p>
+        <b>{{ i.name }}</b><br>
+        {{ i.position }}, {{ i.gender }}
+      </p>
+      <p class="appointment-type {{ i.appointment_type_class }}">
+        {{ i.appointment_length }} minute <b>{{ i.appointment_type }}</b> appointment
+      </p>
+      {% if i.address %}
+        <p class="appointment-address">
+          {{ i.address|safe }}
+        </p>
+      {% endif %}
+    </div>
+  </a>
+{% endmacro %}
+
+{% macro appointment_summary(i) %}
+  <div class="appointment-summary">
+    <div class="mugshot">
+      <img src="{{ i.avatar_img_path }}">
+    </div>
+    <div class="details">
+      <h3>
+        {% if i.appointment_date %}
+          {{ i.appointment_date }} at
+        {% endif %}
+        {{ i.appointment_time }}
+      </h3>
+      <p>
+        <b>{{ i.name }}</b><br>
+        {{ i.position }}, {{ i.gender }}
+      </p>
+      <p class="appointment-type {{ i.appointment_type_class }}">
+        {{ i.appointment_length }} minute <b>{{ i.appointment_type }}</b> appointment
+      </p>
+      <p class="appointment-address">
+        {% if i.address %}
+          {{ i.address|safe }}
+        {% else %}
+          Lakeside Surgery<br>
+          22 Castelnau<br>
+          London<br>
+          NW13 9HJ
+        {% endif %}
+      </p>
+      {% if i.tools %}
+        <ul class="inline">
+          <li><a href="#">Set reminders</a></li>
+          <li><a href="#" class="danger">Change or cancel</a></li>
+        </ul>
+      {% endif %}
+    </div>
+  </div>
 {% endmacro %}
 
 <!-- Apointment confirmation block -->
@@ -33,4 +78,16 @@
       </p>
     </div>
   </div>
+{% endmacro %}
+
+{% macro practitioner_link(i) %}
+  <a href="{{ i.link_url }}" class="practioner-link">
+    <div class="mugshot">
+      <img src="{{ i.avatar_img_path }}">
+    </div>
+    <div class="details">
+      <h3>{{ i.name }}</h3>
+      <p>{{ i.position }}{% if i.gender %}, {{ i.gender }}{% endif %}</p>
+    </div>
+  </a>
 {% endmacro %}

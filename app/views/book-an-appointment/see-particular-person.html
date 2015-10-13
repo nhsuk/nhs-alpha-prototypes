@@ -12,105 +12,94 @@
   <a href="next-available-appointment" class="back-to-previous">Back</a>
 
   <h1 class="heading-xlarge">
-    See a particular person
+    Appointments
   </h1>
-    <div class="column-half">
 
-      <style>
-        .list-test {
-          margin-bottom: 30px;
-        }
-        .list-test li {
-          clear: both;
-          margin-bottom: 15px;
-        }
-        .list-test img {
-          width: 75px;
-          margin-right: 15px;
-          float: left;
-        }
-        .list-test p {
-          float: left;
-          margin-top: 8px;
-        }
-      </style>
+  <div class="grid-row">
+    <div class="column-third column-switch-right">
+      <p>
+        Lakeside Surgery<br>
+        22 Castelnau<br>
+        London<br>
+        NW13 9HJ
+      </p>
+    </div>
+    <div class="column-two-thirds">
 
-      <h3 class="heading-medium collapse-top">General practitioners (GPs)</h3>
-      <ul class="list-test">
-        <li class="clearfix">
-          <a href="appointments-with-practitioner?practitioner=helen-leaf">
-            <img src="/public/images/icon-avatar-helen-leaf.png">
-            <p>
-              Dr Helen Leaf<br>
-              <span class="font-xsmall">female</span>
-            </p>
-          </a>
-        </li>
-        <li class="clearfix">
-          <a href="appointments-with-practitioner?practitioner=mike-johnson">
-            <img src="/public/images/icon-avatar-mike-johnson.png">
-            <p>
-              Dr Mike Johnson<br>
-              <span class="font-xsmall">male</span>
-            </p>
-          </a>
-        </li>
-        <li class="clearfix">
-          <a href="appointments-with-practitioner?practitioner=emma-stace">
-            <img src="/public/images/icon-avatar.svg">
-            <p>
-              Dr Emma Stace<br>
-              <span class="font-xsmall">female</span>
-            </p>
-          </a>
-        </li>
-        <li class="clearfix">
-          <a href="appointments-with-practitioner?practitioner=malcolm-branch">
-            <img src="/public/images/icon-avatar-malcolm-branch.png">
-            <p>
-              Dr Malcolm Branch<br>
-              <span class="font-xsmall">male</span>
-            </p>
-          </a>
-        </li>
-      </ul>
+      <h2 class="heading-small">See a particular person:</h2>
 
-      <h3 class="heading-medium collapse-top">Nurse practitioners</h3>
-      <ul class="list-test">
-        <li class="clearfix">
-          <a href="appointments-with-practitioner?practitioner=sasheika-wrench">
-            <img src="/public/images/icon-avatar.svg">
-            <p>
-              Sasheika Wrench<br>
-              <span class="font-xsmall">female</span>
-            </p>
-          </a>
-        </li>
-        <li class="clearfix">
-          <a href="appointments-with-practitioner?practitioner=jonathon-hope">
-            <img src="/public/images/icon-avatar-jonathon-hope.png">
-            <p>
-              Jonathan Hope<br>
-              <span class="font-xsmall">male</span>
-            </p>
-          </a>
-        </li>
-      </ul>
+      {{
+        ui_element_macros.practitioner_link({
+          link_url: 'appointments-with-practitioner?practitioner=helen-leaf',
+          avatar_img_path: '/public/images/icon-avatar-helen-leaf.png',
+          name: 'Dr Helen Leaf',
+          position: 'GP',
+          gender: 'female'
+        })
+      }}
 
-      <h3 class="heading-medium collapse-top">Practice nurses</h3>
-      <ul class="list-test">
-        <li class="clearfix">
-          <a href="appointments-with-practitioner?practitioner=alison-wylde">
-            <img src="/public/images/icon-avatar-alison-wylde.png">
-            <p>
-              Alison Wylde<br>
-              <span class="font-xsmall">female</span>
-            </p>
-          </a>
-        </li>
-        </ul>
+      {{
+        ui_element_macros.practitioner_link({
+          link_url: 'appointments-with-practitioner?practitioner=mike-johnson',
+          avatar_img_path: '/public/images/icon-avatar-mike-johnson.png',
+          name: 'Dr Mike Johnson',
+          position: 'GP',
+          gender: 'male'
+        })
+      }}
+
+      {{
+        ui_element_macros.practitioner_link({
+          link_url: 'appointments-with-practitioner?practitioner=emma-stace',
+          avatar_img_path: '/public/images/icon-avatar.svg',
+          name: 'Dr Emma Stace',
+          position: 'GP',
+          gender: 'female'
+        })
+      }}
+
+      {{
+        ui_element_macros.practitioner_link({
+          link_url: 'appointments-with-practitioner?practitioner=malcolm-branch',
+          avatar_img_path: '/public/images/icon-avatar-malcolm-branch.png',
+          name: 'Dr Malcolm Branch',
+          position: 'GP',
+          gender: 'male'
+        })
+      }}
+
+      {{
+        ui_element_macros.practitioner_link({
+          link_url: 'appointments-with-practitioner?practitioner=sasheika-wrench',
+          avatar_img_path: '/public/images/icon-avatar.svg',
+          name: 'Sasheika Wrench',
+          position: 'Nurse practioner',
+          gender: 'female'
+        })
+      }}
+
+      {{
+        ui_element_macros.practitioner_link({
+          link_url: 'appointments-with-practitioner?practitioner=jonathon-hope',
+          avatar_img_path: '/public/images/icon-avatar-jonathon-hope.png',
+          name: 'Jonathan Hope',
+          position: 'Nurse practioner',
+          gender: 'male'
+        })
+      }}
+
+      {{
+        ui_element_macros.practitioner_link({
+          link_url: 'appointments-with-practitioner?practitioner=alison-wylde',
+          avatar_img_path: '/public/images/icon-avatar-alison-wylde.png',
+          name: 'Alison Wylde',
+          position: 'Nurse',
+          gender: 'female'
+        })
+      }}
 
     </div>
+  </div>
 
 </main>
 {% endblock %}

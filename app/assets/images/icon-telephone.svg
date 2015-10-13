@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3.3 (12081) - http://www.bohemiancoding.com/sketch -->
+    <title>Slice 1</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <path d="M12,0 C5.373,0 0,5.373 0,12 C0,18.627 5.373,24 12,24 C18.627,24 24,18.627 24,12 C24,5.373 18.627,0 12,0 L12,0 Z M16.79,20.035 C14.627,20.035 10.242,17.813 8.139,15.709 C6.035,13.605 3.813,9.22 3.813,7.057 C3.813,7.057 5.976,3.813 7.057,3.813 C8.139,3.813 11.383,7.057 10.301,8.139 C9.22,9.22 8.139,9.22 8.139,10.301 C8.139,11.383 9.22,12.465 10.301,13.546 C11.383,14.627 12.464,15.709 13.546,15.709 C14.627,15.709 14.627,14.627 15.709,13.546 C16.79,12.465 20.035,15.709 20.035,16.79 C20.035,17.872 16.79,20.035 16.79,20.035 L16.79,20.035 Z" id="Imported-Layers" fill="#000000" sketch:type="MSShapeGroup"></path>
+    </g>
+</svg>

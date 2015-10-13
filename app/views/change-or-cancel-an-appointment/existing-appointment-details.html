@@ -16,21 +16,18 @@
   </h1>
 
   {{
-    ui_element_macros.appointment_confirmation({
-      appointment_date: 'Friday 29th January 2016',
-      appointment_time: '16:30',
+    ui_element_macros.appointment_summary({
+      appointment_date: 'Wednesday 3rd February 2016',
+      appointment_time: '08:30',
       avatar_img_path: '/public/images/icon-avatar-helen-leaf.png',
       name: 'Dr Helen Leaf',
-      appointment_type: 'Face to face'
+      position: 'GP',
+      gender: 'female',
+      appointment_length: '10',
+      appointment_type: 'face to face',
+      appointment_type_class: 'face-to-face'
     })
   }}
-
-  <p>
-    Lakeside Surgery<br>
-    22 Castelnau<br>
-    London<br>
-    NW13 9HJ
-  </p>
 
   <form action="path-handler" method="get" class="form">
     <fieldset>

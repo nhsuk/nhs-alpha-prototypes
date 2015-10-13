@@ -12,202 +12,248 @@
   <a href="next-available-appointment" class="back-to-previous">Back</a>
 
   <h1 class="heading-xlarge">
-    Available appointments
+    Appointments
   </h1>
 
-  <h2 class="heading-medium">Tuesday 26th January</h2>
+  <div class="grid-row">
+    <div class="column-third column-switch-right">
+      <p>
+        Lakeside Surgery<br>
+        22 Castelnau<br>
+        London<br>
+        NW13 9HJ
+      </p>
+    </div>
+    <div class="column-two-thirds">
 
-  {{
-    ui_element_macros.appointment_summary({
-      modifier_css_classes: 'appointment-summary--secondary',
-      link_url: 'appointment-confirmed',
-      appointment_date: 'Tuesday 26th January 2016',
-      appointment_time: '10:20',
-      avatar_img_path: '/public/images/icon-avatar-alison-wylde.png',
-      name: 'Nurse Alison Wylde',
-      appointment_type: 'Telephone'
-    })
-  }}
+      <h2 class="heading-medium sticky" style="background-color:rgba(255,255,255,1);">Tuesday 26th January 2016</h2>
 
-  <h2 class="heading-medium">Wednesday 27th January</h2>
-  {{
-    ui_element_macros.appointment_summary({
-      modifier_css_classes: 'appointment-summary--secondary',
-      link_url: 'appointment-confirmed',
-      appointment_date: 'Wednesday 27th January 2016',
-      appointment_time: '13:10',
-      avatar_img_path: '/public/images/icon-avatar-alison-wylde.png',
-      name: 'Nurse Alison Wylde',
-      appointment_type: 'Face to face'
-    })
-  }}
+      {{
+        ui_element_macros.appointment_option({
+          link_url: 'appointment-confirmed',
+          appointment_time: '10:20',
+          avatar_img_path: '/public/images/icon-avatar-alison-wylde.png',
+          name: 'Alison Wylde',
+          position: 'Nurse',
+          gender: 'female',
+          appointment_length: '10',
+          appointment_type: 'telephone',
+          appointment_type_class: 'telephone'
+        })
+      }}
 
-  <h2 class="heading-medium">Thursday 28th January</h2>
+      <h2 class="heading-medium sticky" style="background-color:rgba(255,255,255,1);">Wednesday 27th January 2016</h2>
 
-  {{
-    ui_element_macros.appointment_summary({
-      modifier_css_classes: 'appointment-summary--secondary',
-      link_url: 'appointment-confirmed',
-      appointment_date: 'Thursday 28th January 2016',
-      appointment_time: '11:30',
-      avatar_img_path: '/public/images/icon-avatar-mike-johnson.png',
-      name: 'Dr Mike Johnson',
-      appointment_type: 'Face to face'
-    })
-  }}
+      {{
+        ui_element_macros.appointment_option({
+          link_url: 'appointment-confirmed',
+          appointment_time: '13:10',
+          avatar_img_path: '/public/images/icon-avatar-alison-wylde.png',
+          name: 'Alison Wylde',
+          position: 'Nurse',
+          gender: 'female',
+          appointment_length: '10',
+          appointment_type: 'face to face',
+          appointment_type_class: 'face-to-face'
+        })
+      }}
 
-  {{
-    ui_element_macros.appointment_summary({
-      modifier_css_classes: 'appointment-summary--secondary',
-      link_url: 'appointment-confirmed',
-      appointment_date: 'Thursday 28th January 2016',
-      appointment_time: '16:10',
-      avatar_img_path: '/public/images/icon-avatar-jonathon-hope.png',
-      name: 'Nurse Practitioner Jonathon Hope',
-      appointment_type: 'Face to face'
-    })
-  }}
+      <h2 class="heading-medium sticky" style="background-color:rgba(255,255,255,1);">Thursday 28th January 2016</h2>
 
+      {{
+        ui_element_macros.appointment_option({
+          link_url: 'appointment-confirmed',
+          appointment_time: '11:30',
+          avatar_img_path: '/public/images/icon-avatar-mike-johnson.png',
+          name: 'Dr Mike Johnson',
+          position: 'GP',
+          gender: 'male',
+          appointment_length: '10',
+          appointment_type: 'face to face',
+          appointment_type_class: 'face-to-face'
+        })
+      }}
 
-  <h2 class="heading-medium">Friday 29th January</h2>
-
-  {{
-    ui_element_macros.appointment_summary({
-      modifier_css_classes: 'appointment-summary--secondary',
-      link_url: 'appointment-confirmed',
-      appointment_date: 'Friday 29th January 2016',
-      appointment_time: '16:10',
-      avatar_img_path: '/public/images/icon-avatar-malcolm-branch.png',
-      name: 'Dr. Malcolm Branch',
-      appointment_type: 'Telephone appointment'
-    })
-  }}
-
-  {{
-    ui_element_macros.appointment_summary({
-      modifier_css_classes: 'appointment-summary--secondary',
-      link_url: 'appointment-confirmed',
-      appointment_date: 'Friday 29th January 2016',
-      appointment_time: '14:40',
-      avatar_img_path: '/public/images/icon-avatar-alison-wylde.png',
-      name: 'Nurse Alison Wylde',
-      appointment_type: 'Face to face'
-    })
-  }}
+      {{
+        ui_element_macros.appointment_option({
+          link_url: 'appointment-confirmed',
+          appointment_time: '16:10',
+          avatar_img_path: '/public/images/icon-avatar-jonathon-hope.png',
+          name: 'Jonathon Hope',
+          position: 'Nurse practitioner',
+          gender: 'male',
+          appointment_length: '10',
+          appointment_type: 'face to face',
+          appointment_type_class: 'face-to-face'
+        })
+      }}
 
 
-  <h2 class="heading-medium">Tuesday 2nd February</h2>
-  {{
-    ui_element_macros.appointment_summary({
-      modifier_css_classes: 'appointment-summary--secondary',
-      link_url: 'appointment-confirmed',
-      appointment_date: 'Tuesday 2nd February 2016',
-      appointment_time: '11:30',
-      avatar_img_path: '/public/images/icon-avatar-mike-johnson.png',
-      name: 'Dr. Mike Johnson',
-      appointment_type: 'Face to face'
-    })
-  }}
+      <h2 class="heading-medium sticky" style="background-color:rgba(255,255,255,1);">Friday 29th January 2016</h2>
 
-  {{
-    ui_element_macros.appointment_summary({
-      modifier_css_classes: 'appointment-summary--secondary',
-      link_url: 'appointment-confirmed',
-      appointment_date: 'Tuesday 2nd February 2016',
-      appointment_time: '13:10',
-      avatar_img_path: '/public/images/icon-avatar-alison-wylde.png',
-      name: 'Nurse Alison Wylde',
-      appointment_type: 'Face to face'
-    })
-  }}
+      {{
+        ui_element_macros.appointment_option({
+          link_url: 'appointment-confirmed',
+          appointment_time: '16:10',
+          avatar_img_path: '/public/images/icon-avatar-malcolm-branch.png',
+          name: 'Dr Malcolm Branch',
+          position: 'GP',
+          gender: 'male',
+          appointment_length: '5',
+          appointment_type: 'telephone',
+          appointment_type_class: 'telephone'
+        })
+      }}
 
-  {{
-    ui_element_macros.appointment_summary({
-      modifier_css_classes: 'appointment-summary--secondary',
-      link_url: 'appointment-confirmed',
-      appointment_date: 'Tuesday 2nd February 2016',
-      appointment_time: '16:10',
-      avatar_img_path: '/public/images/icon-avatar-jonathon-hope.png',
-      name: 'Nurse Practitioner Jonathon Hope',
-      appointment_type: 'Face to face'
-    })
-  }}
+      {{
+        ui_element_macros.appointment_option({
+          link_url: 'appointment-confirmed',
+          appointment_time: '14:40',
+          avatar_img_path: '/public/images/icon-avatar-alison-wylde.png',
+          name: 'Alison Wylde',
+          position: 'Nurse',
+          gender: 'female',
+          appointment_length: '10',
+          appointment_type: 'face to face',
+          appointment_type_class: 'face-to-face'
+        })
+      }}
 
-  {{
-    ui_element_macros.appointment_summary({
-      modifier_css_classes: 'appointment-summary--secondary',
-      link_url: 'appointment-confirmed',
-      appointment_date: 'Tuesday 26th January 2016',
-      appointment_time: '16:10',
-      avatar_img_path: '/public/images/icon-avatar-malcolm-branch.png',
-      name: 'Dr Malcolm Branch',
-      appointment_type: 'Telephone appointment'
-    })
-  }}
 
-  <h2 class="heading-medium">Wednesday 3rd February</h2>
-  {{
-    ui_element_macros.appointment_summary({
-      modifier_css_classes: 'appointment-summary--secondary',
-      link_url: 'appointment-confirmed',
-      appointment_date: 'Wednesday 3rd February 2016',
-      appointment_time: '08:30',
-      avatar_img_path: '/public/images/icon-avatar-helen-leaf.png',
-      name: 'Dr. Helen Leaf',
-      appointment_type: 'Face to face'
-    })
-  }}
+      <h2 class="heading-medium sticky" style="background-color:rgba(255,255,255,1);">Tuesday 2nd February 2016</h2>
+      {{
+        ui_element_macros.appointment_option({
+          link_url: 'appointment-confirmed',
+          appointment_time: '11:30',
+          avatar_img_path: '/public/images/icon-avatar-mike-johnson.png',
+          name: 'Dr Mike Johnson',
+          position: 'GP',
+          gender: 'male',
+          appointment_length: '10',
+          appointment_type: 'face to face',
+          appointment_type_class: 'face-to-face'
+        })
+      }}
 
-  {{
-    ui_element_macros.appointment_summary({
-      modifier_css_classes: 'appointment-summary--secondary',
-      link_url: 'appointment-confirmed',
-      appointment_date: 'Wednesday 3rd February 2016',
-      appointment_time: '11:30',
-      avatar_img_path: '/public/images/icon-avatar-mike-johnson.png',
-      name: 'Dr. Mike Johnson',
-      appointment_type: 'Face to face'
-    })
-  }}
+      {{
+        ui_element_macros.appointment_option({
+          link_url: 'appointment-confirmed',
+          appointment_time: '13:10',
+          avatar_img_path: '/public/images/icon-avatar-alison-wylde.png',
+          name: 'Alison Wylde',
+          position: 'Nurse',
+          gender: 'female',
+          appointment_length: '10',
+          appointment_type: 'face to face',
+          appointment_type_class: 'face-to-face'
+        })
+      }}
 
-  {{
-    ui_element_macros.appointment_summary({
-      modifier_css_classes: 'appointment-summary--secondary',
-      link_url: 'appointment-confirmed',
-      appointment_date: 'Wednesday 3rd February 2016',
-      appointment_time: '13:10',
-      avatar_img_path: '/public/images/icon-avatar-alison-wylde.png',
-      name: 'Nurse Alison Wylde',
-      appointment_type: 'Face to face'
-    })
-  }}
+      {{
+        ui_element_macros.appointment_option({
+          link_url: 'appointment-confirmed',
+          appointment_time: '16:10',
+          avatar_img_path: '/public/images/icon-avatar-jonathon-hope.png',
+          name: 'Jonathon Hope',
+          position: 'Nurse practitioner',
+          gender: 'male',
+          appointment_length: '10',
+          appointment_type: 'face to face',
+          appointment_type_class: 'face-to-face'
+        })
+      }}
 
-  {{
-    ui_element_macros.appointment_summary({
-      modifier_css_classes: 'appointment-summary--secondary',
-      link_url: 'appointment-confirmed',
-      appointment_date: 'Wednesday 3rd February 2016',
-      appointment_time: '16:10',
-      avatar_img_path: '/public/images/icon-avatar-jonathon-hope.png',
-      name: 'Nurse Practitioner Jonathon Hope',
-      appointment_type: 'Face to face'
-    })
-  }}
+      {{
+        ui_element_macros.appointment_option({
+          link_url: 'appointment-confirmed',
+          appointment_time: '16:10',
+          avatar_img_path: '/public/images/icon-avatar-malcolm-branch.png',
+          name: 'Dr Malcolm Branch',
+          position: 'GP',
+          gender: 'male',
+          appointment_length: '5',
+          appointment_type: 'telephone',
+          appointment_type_class: 'telephone'
+        })
+      }}
 
-  {{
-    ui_element_macros.appointment_summary({
-      modifier_css_classes: 'appointment-summary--secondary',
-      link_url: 'appointment-confirmed',
-      appointment_date: 'Tuesday 26th January 2016',
-      appointment_time: '15:10',
-      avatar_img_path: '/public/images/icon-avatar-malcolm-branch.png',
-      name: 'Dr Malcolm Branch',
-      appointment_type: 'Telephone appointment'
-    })
-  }}
-  <p>
-    or <a href="next-available-appointment">see next available appointment</a>
-  </p>
+      <h2 class="heading-medium sticky" style="background-color:rgba(255,255,255,1);">Wednesday 3rd February 2016</h2>
+
+      {{
+        ui_element_macros.appointment_option({
+          link_url: 'appointment-confirmed',
+          appointment_time: '08:30',
+          avatar_img_path: '/public/images/icon-avatar-helen-leaf.png',
+          name: 'Dr Helen Leaf',
+          position: 'GP',
+          gender: 'female',
+          appointment_length: '10',
+          appointment_type: 'face to face',
+          appointment_type_class: 'face-to-face'
+        })
+      }}
+
+      {{
+        ui_element_macros.appointment_option({
+          link_url: 'appointment-confirmed',
+          appointment_time: '11:30',
+          avatar_img_path: '/public/images/icon-avatar-mike-johnson.png',
+          name: 'Dr Mike Johnson',
+          position: 'GP',
+          gender: 'male',
+          appointment_length: '10',
+          appointment_type: 'face to face',
+          appointment_type_class: 'face-to-face'
+        })
+      }}
+
+      {{
+        ui_element_macros.appointment_option({
+          link_url: 'appointment-confirmed',
+          appointment_time: '13:10',
+          avatar_img_path: '/public/images/icon-avatar-alison-wylde.png',
+          name: 'Alison Wylde',
+          position: 'Nurse',
+          gender: 'female',
+          appointment_length: '10',
+          appointment_type: 'face to face',
+          appointment_type_class: 'face-to-face'
+        })
+      }}
+
+      {{
+        ui_element_macros.appointment_option({
+          link_url: 'appointment-confirmed',
+          appointment_time: '16:10',
+          avatar_img_path: '/public/images/icon-avatar-jonathon-hope.png',
+          name: 'Jonathon Hope',
+          position: 'Nurse practitioner',
+          gender: 'male',
+          appointment_length: '10',
+          appointment_type: 'face to face',
+          appointment_type_class: 'face-to-face'
+        })
+      }}
+
+      {{
+        ui_element_macros.appointment_option({
+          link_url: 'appointment-confirmed',
+          appointment_time: '15:10',
+          avatar_img_path: '/public/images/icon-avatar-malcolm-branch.png',
+          name: 'Dr Malcolm Branch',
+          position: 'GP',
+          gender: 'male',
+          appointment_length: '5',
+          appointment_type: 'telephone',
+          appointment_type_class: 'telephone'
+        })
+      }}
+
+      <p>
+        or <a href="next-available-appointment">see next available appointment</a>
+      </p>
+    </div>
+  </div>
 
 </main>
 {% endblock %}
