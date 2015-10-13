@@ -96,36 +96,50 @@ function practitioner_details_for_slug(slug) {
     case 'helen-leaf':
       return {
         name: 'Dr Helen Leaf',
+        position: 'GP',
+        gender: 'female',
         avatar: '/public/images/icon-avatar-helen-leaf.png'
       };
     case 'mike-johnson':
       return {
         name: 'Dr Mike Johnson',
+        position: 'GP',
+        gender: 'male',
         avatar: '/public/images/icon-avatar-mike-johnson.png'
       };
     case 'emma-stace':
       return {
         name: 'Dr Emma Stace',
+        position: 'GP',
+        gender: 'female',
         avatar: '/public/images/icon-avatar.svg'
       };
     case 'malcolm-branch':
       return {
         name: 'Dr Malcolm Branch',
+        position: 'GP',
+        gender: 'male',
         avatar: '/public/images/icon-avatar-malcolm-branch.png'
       };
     case 'sasheika-wrench':
       return {
-        name: 'Nurse Practitioner Sasheika Wrench',
+        name: 'Sasheika Wrench',
+        position: 'Nurse practitioner',
+        gender: 'female',
         avatar: '/public/images/icon-avatar.svg'
       };
     case 'jonathon-hope':
       return {
-        name: 'Nurse Practioner Jonathon Hope',
+        name: 'Jonathon Hope',
+        position: 'Nurse practitioner',
+        gender: 'male',
         avatar: '/public/images/icon-avatar-jonathon-hope.png'
       };
     case 'alison-wylde':
       return {
-        name: 'Nurse Alison Wylde',
+        name: 'Alison Wylde',
+        position: 'Nurse',
+        gender: 'female',
         avatar: '/public/images/icon-avatar-alison-wylde.png'
       };
   }
@@ -137,8 +151,8 @@ function appointment_details_for_service(slug) {
     case 'diabetes-blood-glucose-test' :
       return {
         name: 'Blood sugar test',
-        triage_hint: 'In your GP practice, blood sugar test appointments ' +
-                       'are carried out by a practice nurse.',
+        triage_hint: '<p>In your GP practice, blood sugar test appointments ' +
+                       'are carried out by a practice nurse.</p>',
         confirmation_hint: "<p>The glycated haemoglobin (HbA1c) test gives your average blood glucose levels over the previous two to three months. The results can indicate whether the measures you're taking to control your diabetes are working.</p>" +
           "<p>Unlike other tests the HbA1c test can be carried out at any time of day and it doesn't require any special preparation, such as fasting.</p>" +
           "<p>The test will involve taking a small sample of blood from a vein.</p>",
@@ -148,10 +162,14 @@ function appointment_details_for_service(slug) {
           appointment_date: 'Tuesday 26th January 2016',
           appointment_time: '16:10',
           avatar_img_path: '/public/images/icon-avatar-alison-wylde.png',
-          name: 'Nurse Alison Wylde',
-          appointment_type: 'Face to face',
-          appointment_length: 5,
-          address: 'Lakeside Surgery<br>22 Castelnau<br>London<br>NW13 9HJ'
+          name: 'Alison Wylde',
+          position: 'Nurse',
+          gender: 'female',
+          appointment_length: '5',
+          appointment_type: 'face to face',
+          appointment_type_class: 'face-to-face',
+          address: 'Lakeside Surgery<br>22 Castelnau<br>London<br>NW13 9HJ',
+          tools: 'true'
         }
 
       };
@@ -159,8 +177,8 @@ function appointment_details_for_service(slug) {
     case 'diabetes-foot-check' :
       return {
         name: 'Diabetes foot check',
-        triage_hint: 'In your GP practice, diabetes foot checks are carried ' +
-                     'out by a practice nurse.',
+        triage_hint: '<p>In your GP practice, diabetes foot checks are carried ' +
+                     'out by a practice nurse.</p>',
         confirmation_hint: "<p>People with diabetes have a much greater risk of " +
           "developing problems with their feet. It is therefore important to " +
           "have your feet examined regularly or if you have cuts or bruises.</p>" +
@@ -172,10 +190,14 @@ function appointment_details_for_service(slug) {
           appointment_date: 'Tuesday 26th January 2016',
           appointment_time: '16:10',
           avatar_img_path: '/public/images/icon-avatar-alison-wylde.png',
-          name: 'Nurse Alison Wylde',
-          appointment_type: 'Face to face',
-          appointment_length: 20,
-          address: 'Lakeside Surgery<br>22 Castelnau<br>London<br>NW13 9HJ'
+          name: 'Alison Wylde',
+          position: 'Nurse',
+          gender: 'female',
+          appointment_length: '20',
+          appointment_type: 'face to face',
+          appointment_type_class: 'face-to-face',
+          address: 'Lakeside Surgery<br>22 Castelnau<br>London<br>NW13 9HJ',
+          tools: 'true'
         }
 
       };
@@ -183,9 +205,9 @@ function appointment_details_for_service(slug) {
     case 'diabetes-eye-screening' :
       return {
         name: 'Diabetes eye screening',
-        triage_hint: 'For your GP practice, diabetic eye screening is ' +
-                     'carried out at: ' +
-                     '<br>The Royal Hospital<br>34 Queen\'s Avenue<br>SW14 4JR',
+        triage_hint: '<p>For your GP practice, diabetic eye screening is ' +
+                     'carried out at:</p>' +
+                     '<p>The Royal Hospital<br>34 Queen\'s Avenue<br>SW14 4JR</p>',
         confirmation_hint: '<p>People with diabetes are at risk of eye damage from diabetic retinopathy. Screening is a way of detecting the condition early before you notice any changes to your vision.</p>' +
           '<p>The check takes about half an hour and involves examining the back of the eyes and taking photographs of the retina.</p>' +
           '<p>If you wear glasses, bring these with you to the appointment.</p>' +
@@ -196,10 +218,14 @@ function appointment_details_for_service(slug) {
           appointment_date: 'Tuesday 26th January 2016',
           appointment_time: '16:10',
           avatar_img_path: '/public/images/icon-avatar-ravi-aggarwal.png',
-          name: 'Nurse Ravi Aggarwal',
-          appointment_type: 'Face to face',
-          appointment_length: 30,
-          address: "The Royal Hospital<br>34 Queen's Avenue<br>London<br>NW13 9HJ"
+          name: 'Ravi Aggarwal',
+          position: 'Nurse',
+          gender: 'male',
+          appointment_length: '30',
+          appointment_type: 'face to face',
+          appointment_type_class: 'face-to-face',
+          address: 'The Royal Hospital<br>34 Queen’s Avenue<br>London<br>NW13 9HJ',
+          tools: 'true'
         }
 
       };
@@ -207,8 +233,8 @@ function appointment_details_for_service(slug) {
     case 'diabetes-annual-review' :
       return {
         name: 'Diabetes annual review',
-        triage_hint: 'In your GP practice, diabetes annual reviews are ' +
-                     'carried out by a nurse practitioner.',
+        triage_hint: '<p>In your GP practice, diabetes annual reviews are ' +
+                     'carried out by a nurse practitioner.</p>',
         confirmation_hint: '<p>Your diabetic review will allow your doctors to monitor your health and assess aspects such as your long term blood glucose control, cholesterol levels and blood pressure.</p>' +
           '<p>Because the review covers a lot of different things, it can be useful to bring a notebook and pen.</p>' +
           '<p>The charity Diabetes UK have <a href="http://www.diabetes.co.uk/nhs/diabetes-annual-care-review.html">information about the diabetes annual review.</a></p>',
@@ -217,10 +243,14 @@ function appointment_details_for_service(slug) {
           appointment_date: 'Monday 25th January 2016',
           appointment_time: '11.20',
           avatar_img_path: '/public/images/icon-avatar-jonathon-hope.png',
-          name: 'Nurse Practitioner Jonathon Hope',
-          appointment_type: 'Face to face',
-          appointment_length: 25,
-          address: 'Lakeside Surgery<br>22 Castelnau<br>London<br>NW13 9HJ'
+          name: 'Jonathon Hope',
+          position: 'Nurse practitioner',
+          gender: 'male',
+          appointment_length: '25',
+          appointment_type: 'face to face',
+          appointment_type_class: 'face-to-face',
+          address: 'Lakeside Surgery<br>22 Castelnau<br>London<br>NW13 9HJ',
+          tools: 'true'
         }
 
       };

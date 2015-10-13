@@ -8,26 +8,32 @@
 
 {% block content %}
 <main id="content" role="main">
-  <h1 class="heading-xlarge">
-    {{ service_context.name }} appointments
-  </h1>
 
   <div class="text">
-    <p>
-      {{ service_context.triage_hint|safe }}
-    </p>
+    <h1 class="heading-xlarge">
+      {{ service_context.name }} appointments
+    </h1>
+    {{ service_context.triage_hint|safe }}
+  </div>
 
-    <h2 class="heading-medium">Next available appointment:</h2>
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h2 class="heading-small" style="font-weight:normal;">First available appointment:</h2>
 
-    {{ ui_element_macros.appointment_summary(service_context.appointment)  }}
+      {{ ui_element_macros.appointment_option(service_context.appointment) }}
 
-    <ul class="list-bullet">
-      <li><a href="next-appointment-early-morning">I'd like an early morning appointment</a></li>
-    </ul>
+      <h3 class="heading-medium">More appointment options:</h3>
 
-    <p>
-      or <a href="#">see all appointments</a>
-    </p>
+      <ul class="list-bullet">
+        <li><a href="#">I’d prefer to see a woman</a></li>
+        <li><a href="#">I’d like an early morning appointment</a></li>
+        <li><a href="#">I’d like to see a particular person</a></li>
+      </ul>
+
+      <p>
+        or <a href="all-appointments">see all appointments</a>
+      </p>
+    </div>
   </div>
 
 </main>

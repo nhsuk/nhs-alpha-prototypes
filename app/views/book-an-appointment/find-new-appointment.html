@@ -29,7 +29,12 @@
         })
       }}
 
-      {% include "includes/forms/gp-practice.html" %}
+      {% include
+        "includes/forms/gp-practice.html"
+        with {
+          label: "Your GP practice"
+        }
+      %}
 
       {{
         form_macros.button({

@@ -13,43 +13,31 @@
     Appointment confirmed
   </h1>
 
-  {{ ui_element_macros.appointment_confirmation(service_context.appointment) }}
+  {{ ui_element_macros.appointment_summary(service_context.appointment) }}
 
-  <p>
-    {{ service_context.appointment.address|safe }}
-  </p>
-
-  <ul>
-    <li>
-      <a href="#" class="font-xsmall icomoon icomoon-calendar">Add to your calendar</a>
-    </li>
-    <li>
-      <a href="#" class="font-xsmall icomoon icomoon-location">Show a map</a>
-    </li>
-    <li>
-      <a href="#" class="font-xsmall icomoon icomoon-printer">Print this page</a>
-    </li>
-  </ul>
-
-  <hr>
-
-  <p>
-    A copy of this page has been sent to your email address.
-  </p>
-
-  <div class="font-xsmall">
-    <p>
-      We will send you SMS reminders of your appointment. <a href="#">Change reminders</a>
-    </p>
-  </div>
-
-  <h2 class="heading-large">
-      About your {{ service_context.name|lower }}
-  </h2>
 
   <div class="text">
+    <h2 class="heading-large">
+        About your {{ service_context.name|lower }}
+    </h2>
     <p>
     {{ service_context.confirmation_hint|safe }}
+    </p>
+
+    <ul>
+      <li>
+        <a href="#" class="icomoon icomoon-calendar">Add to your calendar</a>
+      </li>
+      <!--<li>
+        <a href="#" class="icomoon icomoon-location">Show a map</a>
+      </li>-->
+      <li>
+        <a href="#" class="icomoon icomoon-printer">Print this page</a>
+      </li>
+    </ul>
+
+    <p>
+      A copy of this page has been sent to your email address.
     </p>
   </div>
 

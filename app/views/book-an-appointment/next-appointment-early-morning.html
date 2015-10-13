@@ -12,62 +12,84 @@
   <a href="next-available-appointment" class="back-to-previous">Back</a>
 
   <h1 class="heading-xlarge">
-    Available appointments
+    Appointments
   </h1>
 
-  <p>
-    Lakeside Surgery<br>
-    22 Castelnau<br>
-    London<br>
-    NW13 9HJ
-  </p>
+  <div class="grid-row">
+    <div class="column-third column-switch-right">
+      <p>
+        Lakeside Surgery<br>
+        22 Castelnau<br>
+        London<br>
+        NW13 9HJ
+      </p>
+    </div>
+    <div class="column-two-thirds">
 
-  <h2 class="heading-medium">Next available early-morning appointment:</h2>
+      <h3 class="heading-small" style="font-weight:normal;">First available <b>early morning</b> appointment:</h3>
 
-  {{
-    ui_element_macros.appointment_summary({
-      link_url: 'appointment-confirmed',
-      appointment_date: 'Friday 29th January 2016',
-      appointment_time: '08:30',
-      avatar_img_path: '/public/images/icon-avatar-malcolm-branch.png',
-      name: 'Dr. Malcolm Branch',
-      appointment_type: 'Face to face'
-    })
-  }}
+      {{
+        ui_element_macros.appointment_option({
+          link_url: 'appointment-confirmed',
+          appointment_date: 'Friday 29th January 2016',
+          appointment_time: '08:30',
+          avatar_img_path: '/public/images/icon-avatar-malcolm-branch.png',
+          name: 'Dr Malcolm Branch',
+          position: 'GP',
+          gender: 'male',
+          appointment_length: '10',
+          appointment_type: 'face to face',
+          appointment_type_class: 'face-to-face'
+        })
+      }}
 
-  <h2 class="heading-small">Next available appointments:</h2>
+      <h3 class="heading-small" style="font-weight:normal;">First available <b>face to face</b> appointment:</h3>
 
-  {{
-    ui_element_macros.appointment_summary({
-      modifier_css_classes: 'appointment-summary--secondary',
-      link_url: 'appointment-confirmed',
-      appointment_date: 'Tuesday 26th January 2016',
-      appointment_time: '16:10',
-      avatar_img_path: '/public/images/icon-avatar-malcolm-branch.png',
-      name: 'Dr. Malcolm Branch',
-      appointment_type: 'Telephone appointment'
-    })
-  }}
+      {{
+        ui_element_macros.appointment_option({
+          link_url: 'appointment-confirmed',
+          appointment_date: 'Thursday 28th January 2016',
+          appointment_time: '11:30',
+          avatar_img_path: '/public/images/icon-avatar-mike-johnson.png',
+          name: 'Dr Mike Johnson',
+          position: 'GP',
+          gender: 'male',
+          appointment_length: '10',
+          appointment_type: 'face to face',
+          appointment_type_class: 'face-to-face'
+        })
+      }}
 
-  {{
-    ui_element_macros.appointment_summary({
-      modifier_css_classes: 'appointment-summary--secondary',
-      link_url: 'appointment-confirmed',
-      appointment_date: 'Thursday 28th January 2016',
-      appointment_time: '11:30',
-      avatar_img_path: '/public/images/icon-avatar-mike-johnson.png',
-      name: 'Dr. Mike Johnson',
-      appointment_type: 'Face to face'
-    })
-  }}
-  <ul class="list-bullet">
-    <li><a href="next-appointment-with-woman-early-morning">I'd prefer to see a woman</a></li>
-    <li><a href="see-particular-person">I'd like to see a particular person</a></li>
-  </ul>
+      <h3 class="heading-small" style="font-weight:normal;">First available appointment:</h3>
 
-  <p>
-    or <a href="all-appointments">see all appointments</a>
-  </p>
+      {{
+        ui_element_macros.appointment_option({
+          link_url: 'appointment-confirmed',
+          appointment_date: 'Tuesday 26th January 2016',
+          appointment_time: '16:10',
+          avatar_img_path: '/public/images/icon-avatar-malcolm-branch.png',
+          name: 'Dr Malcolm Branch',
+          position: 'GP',
+          gender: 'male',
+          appointment_length: '5',
+          appointment_type: 'telephone',
+          appointment_type_class: 'telephone'
+        })
+      }}
+
+      <h3 class="heading-medium">More appointment options:</h3>
+
+      <ul class="list-bullet">
+        <li><a href="next-appointment-with-woman-early-morning">I’d prefer to see a woman</a></li>
+        <li><a href="see-particular-person">I’d like to see a particular person</a></li>
+      </ul>
+
+      <p>
+        or <a href="all-appointments">see all appointments</a>
+      </p>
+
+    </div>
+  </div>
 
 </main>
 {% endblock %}

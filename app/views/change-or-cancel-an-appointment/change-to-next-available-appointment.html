@@ -12,39 +12,55 @@
   <a href="existing-appointment-details" class="back-to-previous">Back</a>
 
   <h1 class="heading-xlarge">
-    Available appointments
+    Appointments
   </h1>
 
-    <p>
-    Lakeside Surgery<br>
-    22 Castelnau<br>
-    London<br>
-    NW13 9HJ
-    </p>
+  <div class="grid-row">
+    <div class="column-third column-switch-right">
+      <p>
+        Lakeside Surgery<br>
+        22 Castelnau<br>
+        London<br>
+        NW13 9HJ
+      </p>
+    </div>
+    <div class="column-two-thirds">
 
-    <h2 class="heading-medium">Next available appointments:</h2>
+    <h2 class="heading-small" style="font-weight:normal;">First available appointment:</h2>
 
-  {{
-    ui_element_macros.appointment_summary({
-      link_url: 'change-appointment',
-      appointment_date: 'Monday 1st February 2016',
-      appointment_time: '11:00',
-      avatar_img_path: '/public/images/icon-avatar-malcolm-branch.png',
-      name: 'Dr Malcolm Branch',
-      appointment_type: 'Face to face'
-    })
-  }}
+    {{
+      ui_element_macros.appointment_option({
+        link_url: 'change-appointment',
+        appointment_date: 'Monday 1st February 2016',
+        appointment_time: '11:00',
+        avatar_img_path: '/public/images/icon-avatar-malcolm-branch.png',
+        name: 'Dr Malcolm Branch',
+        position: 'GP',
+        gender: 'male',
+        appointment_length: '10',
+        appointment_type: 'face to face',
+        appointment_type_class: 'face-to-face'
+      })
+    }}
 
-  {{
-    ui_element_macros.appointment_summary({
-      link_url: 'change-appointment',
-      appointment_date: 'Thursday 4th February 2016',
-      appointment_time: '17:00',
-      avatar_img_path: '/public/images/icon-avatar-helen-leaf.png',
-      name: 'Dr Helen Leaf',
-      appointment_type: 'Face to face'
-    })
-  }}
+    <h3 class="heading-small" style="font-weight:normal;">First available <b>evening</b> appointment:</h3>
+
+    {{
+      ui_element_macros.appointment_option({
+        link_url: 'change-appointment',
+        appointment_date: 'Thursday 4th February 2016',
+        appointment_time: '17:00',
+        avatar_img_path: '/public/images/icon-avatar-helen-leaf.png',
+        name: 'Dr Helen Leaf',
+        position: 'GP',
+        gender: 'female',
+        appointment_length: '10',
+        appointment_type: 'face to face',
+        appointment_type_class: 'face-to-face'
+      })
+    }}
+
+    <h3 class="heading-medium">More appointment options:</h3>
 
     <ul class="list-bullet">
       <li><a href="#">I'd like an early morning appointment</a></li>
@@ -52,7 +68,7 @@
     </ul>
 
     <p>
-    or <a href="#">see all appointments</a>
+      or <a href="#">see all appointments</a>
     </p>
 
 </main>

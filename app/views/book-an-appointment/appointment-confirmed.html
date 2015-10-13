@@ -14,41 +14,31 @@
   </h1>
 
   {{
-    ui_element_macros.appointment_confirmation({
-      appointment_date: 'Friday 29th January 2016',
-      appointment_time: '16:30',
+    ui_element_macros.appointment_summary({
+      appointment_date: 'Wednesday 3rd February 2016',
+      appointment_time: '08:30',
       avatar_img_path: '/public/images/icon-avatar-helen-leaf.png',
       name: 'Dr Helen Leaf',
-      appointment_type: 'Face to face'
+      position: 'GP',
+      gender: 'female',
+      appointment_length: '10',
+      appointment_type: 'face to face',
+      appointment_type_class: 'face-to-face',
+      tools: 'true'
     })
   }}
 
-  <p>
-    Lakeside Surgery<br>
-    22 Castelnau<br>
-    London<br>
-    NW13 9HJ
-  </p>
-
   <ul>
     <li>
-      <a href="#" class="font-xsmall icomoon icomoon-calendar">Add to your calendar</a>
+      <a href="#" class="icomoon icomoon-calendar">Add to your calendar</a>
     </li>
+    <!--<li>
+      <a href="#" class="icomoon icomoon-location">Show a map</a>
+    </li>-->
     <li>
-      <a href="#" class="font-xsmall icomoon icomoon-location">Show a map</a>
-    </li>
-    <li>
-      <a href="#" class="font-xsmall icomoon icomoon-printer">Print this page</a>
+      <a href="#" class="icomoon icomoon-printer">Print this page</a>
     </li>
   </ul>
-
-  <hr>
-
-  <div class="font-xsmall">
-    <p>
-      We will send you SMS reminders of your appointment. <a href="#">Change reminders</a>
-    </p>
-  </div>
 
 </main>
 {% endblock %}
