@@ -153,6 +153,13 @@ ul, ol {
   }
 }
 
+.inline {
+  li {
+    display: inline-block;
+    margin-right: 2rem;
+  }
+}
+
 // Definition lists.
 dl {
   @include baseline(small, $bodytype, 2, 2, all);
@@ -224,6 +231,19 @@ a:hover,
 }
 a:active,
 .link:active {
+  color: $link-colour;
+}
+
+a.danger:link {
+  color: $nhs-dark-red;
+}
+a.danger:visited {
+  color: $nhs-dark-red;
+}
+a.danger:hover {
+  color: $nhs-dark-red;
+}
+a.danger:active {
   color: $link-colour;
 }
 
