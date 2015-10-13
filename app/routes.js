@@ -68,10 +68,34 @@ module.exports = {
     // Book an appointment (with a particular pracitioner)
 
     app.get('/book-an-appointment/appointments-with-practitioner', function(req, res) {
-      console.log(req.query.practitioner);
       var practitioner = practitioner_details_for_slug(req.query.practitioner);
-      res.render('book-an-appointment/appointments-with-practitioner',
-                 {"practitioner": practitioner});
+
+      res.render(
+        'book-an-appointment/appointments-with-practitioner',
+        {
+          practice: app.locals.gp_practices[0],
+          practitioner: practitioner,
+        }
+      );
+    });
+
+    app.get(/^\/(book-an-appointment\/[^.]+)$/, function (req, res) {
+      var path = (req.params[0]);
+
+      res.render(
+        path,
+        {
+          practice: app.locals.gp_practices[0]
+        },
+        function(err, html) {
+          if (err) {
+            console.log(err);
+            res.send(404);
+          } else {
+            res.end(html);
+          }
+        }
+      );
     });
 
     // Booking with context - pass through "service" query parameter
@@ -96,7 +120,6 @@ module.exports = {
       res.render('booking-with-context/appointment-confirmed',
                  {"service_context": service_context});
     });
-
   }
 };
 
