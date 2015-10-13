@@ -72,7 +72,7 @@ module.exports = function(grunt){
       dev: {
         script: 'server.js',
         options: {
-          ext: 'js',
+          ext: 'js,json',
           ignore: ['node_modules/**', 'app/assets/**', 'public/**'],
           args: grunt.option.flags()
         }
