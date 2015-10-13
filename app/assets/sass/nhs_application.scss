@@ -44,3 +44,14 @@
 @import "typography/modular-scale";
 @import "typography/mixins";
 @import "typography/typography";
+
+// Default content stuff
+
+.markdown-content {
+  h1 { @extend .heading-xlarge; }
+  h2 { @extend .heading-large; }
+  h3 { @extend .heading-medium; }
+
+  ul { @extend .list-bullet; }
+  ol { @extend .list-number; }
+}
