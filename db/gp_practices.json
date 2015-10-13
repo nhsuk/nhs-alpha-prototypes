@@ -1,11 +1,12 @@
 [
   {
-    "slug": "lakeside-surgery",
-    "name": "Lakeside Surgery",
+    "slug": "street-lane-practice",
+    "name": "Street Lane Practice",
     "address": [
-      "22 Castelnau",
-      "London",
-      "NW13 9HJ"
+      "12 Devonshire Avenue",
+      "Roundly",
+      "Leeds",
+      "LS8 1AY"
     ],
     "distance_away": "0.4 miles away",
     "travel_time": "About a 6 minute walk",
@@ -82,12 +83,14 @@
     }
   },
   {
-    "slug": "shrewsbottom-surgery",
-    "name": "Shrewsbottom Surgery",
+    "slug": "church-view-surgery",
+    "name": "Church View Surgery",
     "address": [
-      "15 Pound Lane",
-      "London",
-      "NW12 9AT"
+      "Crossgates Medical Centre",
+      "Church View Surgery",
+      "Station Road",
+      "Leeds",
+      "LS15 8BZ"
     ],
     "distance_away": "1.1 miles away",
     "travel_time": "About a 20 minute walk",
@@ -160,12 +163,12 @@
     }
   },
   {
-    "slug": "victoria-medical-centre",
-    "name": "Victoria Medical Centre",
+    "slug": "york-street-health-centre",
+    "name": "York Street Health Centre",
     "address": [
-      "48 Buttoy",
-      "London",
-      "NW13 9HT"
+      "68 York Street",
+      "Leeds",
+      "LS9 8AA"
     ],
     "distance_away": "1.5 miles away",
     "travel_time": "About a 25 minute walk",
