@@ -1,5 +1,12 @@
 module.exports = {
   bind : function (app) {
+    function find_gp_practice(slug) {
+      return app.locals.gp_practices.filter(
+        function(p) {
+          return p.slug === slug;
+        }
+      )[0];
+    }
 
     app.get('/', function (req, res) {
       res.render('index');
@@ -21,9 +28,31 @@ module.exports = {
       }
     });
 
+    // Register with a GP - suggested GP practices
+    app.get('/register-with-a-gp/suggested-gps', function(req, res) {
+      res.render(
+        'register-with-a-gp/suggested-gps',
+        { practices: app.locals.gp_practices }
+      );
+    });
+
+    // Register with a GP - practice details
+    app.get('/register-with-a-gp/practices/:practice', function(req, res) {
+      var practice = find_gp_practice(req.params.practice);
+
+      res.render('register-with-a-gp/practice-details',
+                 {'practice': practice});
+    });
+
     // Register with a GP - choose a practice to register with
-    app.get('/register-with-a-gp/:practice/register', function(req, res) {
-      req.session.practice = practice_details_for_slug(req.params.practice);
+    app.get('/register-with-a-gp/practices/:practice/register', function(req, res) {
+      var practice = find_gp_practice(req.params.practice);
+
+      req.session.practice = {
+        name: practice.name,
+        address: practice.address.join(', ')
+      };
+
       res.redirect('/register-with-a-gp/choose-registration-method');
     });
 
@@ -39,10 +68,34 @@ module.exports = {
     // Book an appointment (with a particular pracitioner)
 
     app.get('/book-an-appointment/appointments-with-practitioner', function(req, res) {
-      console.log(req.query.practitioner);
       var practitioner = practitioner_details_for_slug(req.query.practitioner);
-      res.render('book-an-appointment/appointments-with-practitioner',
-                 {"practitioner": practitioner});
+
+      res.render(
+        'book-an-appointment/appointments-with-practitioner',
+        {
+          practice: app.locals.gp_practices[0],
+          practitioner: practitioner,
+        }
+      );
+    });
+
+    app.get(/^\/(book-an-appointment\/[^.]+)$/, function (req, res) {
+      var path = (req.params[0]);
+
+      res.render(
+        path,
+        {
+          practice: app.locals.gp_practices[0]
+        },
+        function(err, html) {
+          if (err) {
+            console.log(err);
+            res.send(404);
+          } else {
+            res.end(html);
+          }
+        }
+      );
     });
 
     // Booking with context - pass through "service" query parameter
@@ -67,29 +120,8 @@ module.exports = {
       res.render('booking-with-context/appointment-confirmed',
                  {"service_context": service_context});
     });
-
   }
 };
-
-function practice_details_for_slug(slug) {
-  switch(slug) {
-    case 'lakeside-surgery':
-      return {
-        name: 'Lakeside Surgery',
-        address: '22 Castelnau, London, NW13 9HJ'
-      };
-    case 'shrewsbottom-surgery':
-      return {
-        name: 'Shrewsbottom Surgery',
-        address: '15 Pound Lane, London, NW12 9AT'
-      };
-    case 'victoria-medical-centre':
-      return {
-        name: 'Victoria Medical Centre',
-        address: '48 Buttoy, London, NW13 9HT'
-      };
-  }
-}
 
 function practitioner_details_for_slug(slug) {
   switch(slug) {

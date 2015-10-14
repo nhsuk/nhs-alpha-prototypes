@@ -18,10 +18,8 @@
   <div class="grid-row">
     <div class="column-third column-switch-right">
       <p>
-        Lakeside Surgery<br>
-        22 Castelnau<br>
-        London<br>
-        NW13 9HJ
+        {{ practice.name }}<br>
+        {{ practice.address.join('<br>') }}
       </p>
     </div>
     <div class="column-two-thirds">

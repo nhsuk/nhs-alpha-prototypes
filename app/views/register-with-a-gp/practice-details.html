@@ -1,0 +1,160 @@
+{% extends 'templates/nhs_transaction_layout.html' %}
+
+{% block afterHeader %}
+  {% include "includes/service-headers/register-with-a-gp.html" %}
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main" class="">
+  <!-- TODO: This will be weird if the user came from full results list -->
+  <p><a href="suggested-gps" class="back-to-previous">Back to results</a></p>
+
+  <h1 class="heading-xlarge">
+    {{ practice.name }}
+  </h1>
+
+  <div class="grid-row">
+    <div class="column-third">
+      <p><b>
+        {{ practice.address.join('<br>') }}
+      </b></p>
+      <p class="font-xsmall">
+      {{ practice.distance_away }}, {{ practice.travel_time | lower }}
+      </p>
+      <ul>
+        <li>{{ practice.staff.count }} staff members</li>
+        <li>{{ practice.list_size }}</li>
+      </ul>
+
+      <p>
+        <a href="{{ practice.slug }}/register">Register now</a>
+      </p>
+    </div>
+    <div class="column-third">
+      <img src="/public/images/gp-map.png" style="display:block; height: 22rem; margin-top: 1rem;">
+    </div>
+  </div>
+
+
+
+  <div class="grid-row expand-top" style="margin-bottom: 1.5rem;">
+    <div class="column-third">
+      <div class="panel-indent">
+        <p>
+          <span class="bold-large">{{ practice.ratings.would_recommend }}</span>
+          of patients would recommend this surgery
+        </p>
+      </div>
+    </div>
+    <div class="column-third">
+      <div class="panel-indent">
+        <p>
+          <span class="bold-large">{{ practice.ratings.feel_listened_to }}</span>
+          of patients feel they are listened to
+        </p>
+      </div>
+    </div>
+    <div class="column-third">
+      <div class="panel-indent">
+        <p>
+          <span class="bold-large">{{ practice.ratings.wait_time }}</span>
+          average wait time for routine appointments
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid-row">
+    <div class="column-third">
+      <h2 class="heading-medium">Appointment hours</h3>
+      <table>
+        {% for hours in practice.appointment_hours %}
+          <tr>
+            <td>{{ loop.key }}</td>
+            <td>{{ hours }}</td>
+          </tr>
+        {% endfor %}
+      </table>
+    </div>
+    <div class="column-third">
+      <h2 class="heading-medium">Services offered</h2>
+      <ul class="list-bullet">
+        {% for service in practice.services %}
+          <li>{{ service }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+
+  <style>
+    .list-test {
+      padding-top: 0;
+    }
+    .list-test li {
+      clear: both;
+      margin-bottom: 2rem;
+    }
+    .list-test img {
+      float: left;
+      height: 5rem;
+      margin-right: 1rem;
+    }
+    .list-test div {
+      float: left;
+      padding-top: 1rem;
+      line-height: 1.4rem;
+    }
+  </style>
+
+  <h2 class="heading-medium">Staff members</h2>
+  <div class="grid-row">
+    <div class="column-third">
+      <ul class="list-test">
+        {% for person in practice.staff.doctors %}
+          <li class="clearfix">
+            <img src="{{ person.photo }}">
+            <div>
+              {{ person.name }}<br>
+              <span class="font-xsmall">{{ person.role }}, {{ person.gender }}</span>
+            </div>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="column-third">
+      <ul class="list-test">
+        {% for person in practice.staff.nurse_practitioners %}
+          <li class="clearfix">
+            <img src="{{ person.photo }}">
+            <div>
+              {{ person.name }}<br>
+              <span class="font-xsmall">{{ person.role }}, {{ person.gender }}</span>
+            </div>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="column-third">
+      <ul class="list-test">
+        {% for person in practice.staff.nurses %}
+          <li class="clearfix">
+            <img src="{{ person.photo }}">
+            <div>
+              {{ person.name }}<br>
+              <span class="font-xsmall">{{ person.role }}, {{ person.gender }}</span>
+            </div>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+
+
+  <div style="padding-top: 1rem;">
+    <a class="button" href="{{ practice.slug }}/register">Register with {{ practice.name }}</a>
+  </div>
+
+</main>
+
+{% endblock %}
