@@ -66,29 +66,48 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 // Heading level 1.
-.heading-xxlarge {
+/*.heading-xxlarge {
   @include sassline($fontsize: xx-large, $font: $headingtype, $lineheight: 6, $below: 4, $breakpoint: all);
-}
+}*/
 
 // Heading level 2.
 .heading-xlarge {
-  @include sassline(x-large, $headingtype, 5, 4, all);
+  @include fontsize($fontsize: x-large, $breakpoint: 0);
+  @include baseline($fontsize: x-large, $font: $headingtype, $lineheight: 3, $below: 3, $breakpoint: 0);
+  @include breakpoint(break-1) {
+    @include fontsize(x-large, 1);
+    @include baseline(x-large, $headingtype, 5, 4, 1);
+  }
 }
 
 // Heading level 3.
 .heading-large {
-  @include sassline(large, $headingtype, 4, 2, all);
-  //margin-top: 2rem;
+  @include fontsize(large, 0);
+  @include baseline(large, $headingtype, 3, 2, 0);
+  @include breakpoint(break-1) {
+    @include fontsize(large, 1);
+    @include baseline(large, $headingtype, 4, 2, 1);
+  }
 }
 
 // Heading level 4.
 .heading-medium {
-  @include sassline(medium, $headingtype, 3, 2, all);
+  @include fontsize(medium, 0);
+  @include baseline(medium, $headingtype, 3, 2, 0);
+  @include breakpoint(break-1) {
+    @include fontsize(medium, 1);
+    @include baseline(medium, $headingtype, 3, 2, 1);
+  }
 }
 
 // Heading level 5.
 .heading-small {
-  @include sassline(small, $headingtype, 2, 1, all);
+  @include fontsize(small, 0);
+  @include baseline(small, $headingtype, 2, 1, 0);
+  @include breakpoint(break-1) {
+    @include fontsize(small, 1);
+    @include baseline(small, $headingtype, 2, 1, 1);
+  }
 }
 
 // Paragraphs. OpenType ligatures and oldstyle figures enabled if available.
@@ -103,7 +122,12 @@ p {
 }
 
 .lede {
-  @include sassline(medium, $bodytype, 3, 2, all);
+  @include fontsize(medium, 0);
+  @include baseline(medium, $bodytype, 3, 2, 0);
+  @include breakpoint(break-1) {
+    @include fontsize(medium, 1);
+    @include baseline(medium, $bodytype, 3, 2, 1);
+  }
 }
 
 .bold-large {
