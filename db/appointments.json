@@ -56,6 +56,17 @@
   },
   {
     "appointment_date": "Friday 29th January 2016",
+    "appointment_time": "08:30",
+    "photo": "icon-avatar-malcolm-branch.png",
+    "name": "Dr Malcolm Branch",
+    "role": "GP",
+    "gender": "male",
+    "appointment_length": "10",
+    "appointment_type": "face to face",
+    "appointment_type_class": "face-to-face"
+  },
+  {
+    "appointment_date": "Friday 29th January 2016",
     "appointment_time": "14:40",
     "photo": "icon-avatar-alison-wylde.png",
     "name": "Alison Wylde",
