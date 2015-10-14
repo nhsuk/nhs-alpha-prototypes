@@ -8,6 +8,14 @@ module.exports = {
       )[0];
     }
 
+    function find_appointment(uuid) {
+      return app.locals.appointments.filter(
+        function(a) {
+          return a.uuid === uuid;
+        }
+      )[0];
+    }
+
     app.get('/', function (req, res) {
       res.render('index');
     });
@@ -135,6 +143,27 @@ module.exports = {
             next: app.locals.appointments[0],
             face_to_face: app.locals.appointments[3]
           }
+        }
+      );
+    });
+
+    app.get('/book-an-appointment/all-appointments', function(req, res) {
+      res.render(
+        'book-an-appointment/all-appointments',
+        {
+          practice: app.locals.gp_practices[0],
+          appointments: app.locals.appointments
+        }
+      );
+    });
+
+    app.get('/book-an-appointment/appointment-confirmed/:uuid', function(req, res) {
+      res.render(
+        'book-an-appointment/appointment-confirmed',
+        {
+          practice: app.locals.gp_practices[0],
+          // TODO this is a bit weird, make it better
+          appointment: find_appointment(req.params.uuid)
         }
       );
     });

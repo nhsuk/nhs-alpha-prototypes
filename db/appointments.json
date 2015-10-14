@@ -1,5 +1,6 @@
 [
   {
+    "uuid": "fb673682-cd97-41e7-9200-9567694e8f2d",
     "appointment_date": "Tuesday 26th January 2016",
     "appointment_time": "16:10",
     "photo": "icon-avatar-malcolm-branch.png",
@@ -11,6 +12,7 @@
     "appointment_type_class": "telephone"
   },
   {
+    "uuid": "954c2263-c737-4a76-a8e0-e7c44010529a",
     "appointment_date": "Tuesday 26th January 2016",
     "appointment_time": "16:30",
     "photo": "icon-avatar-alison-wylde.png",
@@ -22,6 +24,7 @@
     "appointment_type_class": "telephone"
   },
   {
+    "uuid": "0e26582a-d984-4d43-ab74-13a2e9418499",
     "appointment_date": "Wednesday 27th January 2016",
     "appointment_time": "13:10",
     "photo": "icon-avatar-alison-wylde.png",
@@ -33,6 +36,7 @@
     "appointment_type_class": "telephone"
   },
   {
+    "uuid": "514c03d8-2342-4878-b367-162acbef821a",
     "appointment_date": "Thursday 28th January 2016",
     "appointment_time": "11:30",
     "photo": "icon-avatar-mike-johnson.png",
@@ -44,6 +48,7 @@
     "appointment_type_class": "face-to-face"
   },
   {
+    "uuid": "8061a84d-99de-479f-b95e-749ee9a16764",
     "appointment_date": "Thursday 28th January 2016",
     "appointment_time": "16:10",
     "photo": "icon-avatar-jonathon-hope.png",
@@ -55,6 +60,7 @@
     "appointment_type_class": "face-to-face"
   },
   {
+    "uuid": "7f52fa78-2446-44d0-99d4-0d8bba02b8b9",
     "appointment_date": "Friday 29th January 2016",
     "appointment_time": "08:30",
     "photo": "icon-avatar-malcolm-branch.png",
@@ -66,6 +72,7 @@
     "appointment_type_class": "face-to-face"
   },
   {
+    "uuid": "5fd5c800-69dd-4ac8-b38d-903ec5a83740",
     "appointment_date": "Friday 29th January 2016",
     "appointment_time": "14:40",
     "photo": "icon-avatar-alison-wylde.png",
@@ -77,6 +84,7 @@
     "appointment_type_class": "face-to-face"
   },
   {
+    "uuid": "6ad52229-75da-4694-9c9d-a1803338637c",
     "appointment_date": "Friday 29th January 2016",
     "appointment_time": "16:10",
     "photo": "icon-avatar-malcolm-branch.png",
@@ -88,6 +96,7 @@
     "appointment_type_class": "telephone"
   },
   {
+    "uuid": "030faee3-ce8b-435e-a0da-2feaed676a8c",
     "appointment_date": "Friday 29th January 2016",
     "appointment_time": "16:30",
     "photo": "icon-avatar-helen-leaf.png",
@@ -99,6 +108,7 @@
     "appointment_type_class": "face-to-face"
   },
   {
+    "uuid": "9adacdae-9110-4b90-b047-5e0a4e6f5523",
     "appointment_date": "Tuesday 2nd February 2016",
     "appointment_time": "11:30",
     "photo": "icon-avatar-mike-johnson.png",
@@ -110,6 +120,7 @@
     "appointment_type_class": "face-to-face"
   },
   {
+    "uuid": "48258b48-a682-4e75-95f6-2b4c0618731d",
     "appointment_date": "Tuesday 2nd February 2016",
     "appointment_time": "13:10",
     "photo": "icon-avatar-alison-wylde.png",
@@ -121,6 +132,7 @@
     "appointment_type_class": "face-to-face"
   },
   {
+    "uuid": "ec6324e8-321b-42dd-a16c-20a626905d05",
     "appointment_date": "Tuesday 2nd February 2016",
     "appointment_time": "16:10",
     "photo": "icon-avatar-jonathon-hope.png",
@@ -132,6 +144,7 @@
     "appointment_type_class": "face-to-face"
   },
   {
+    "uuid": "e7030644-fc92-4afb-917d-6c5e7672de99",
     "appointment_date": "Tuesday 2nd February 2016",
     "appointment_time": "16:10",
     "photo": "icon-avatar-malcolm-branch.png",
@@ -143,6 +156,7 @@
     "appointment_type_class": "telephone"
   },
   {
+    "uuid": "1a15390f-857e-4b5b-a311-9024f26fcfd7",
     "appointment_date": "Wednesday 3rd February 2016",
     "appointment_time": "08:30",
     "photo": "icon-avatar-helen-leaf.png",
@@ -154,6 +168,7 @@
     "appointment_type_class": "face-to-face"
   },
   {
+    "uuid": "eee7f992-607c-4d43-bca2-41ff51311840",
     "appointment_date": "Wednesday 3rd February 2016",
     "appointment_time": "11:30",
     "photo": "icon-avatar-mike-johnson.png",
@@ -165,6 +180,7 @@
     "appointment_type_class": "face-to-face"
   },
   {
+    "uuid": "939db37a-60b1-47c4-b005-672fddbbb62c",
     "appointment_date": "Wednesday 3rd February 2016",
     "appointment_time": "13:10",
     "photo": "icon-avatar-alison-wylde.png",
@@ -176,6 +192,7 @@
     "appointment_type_class": "face-to-face"
   },
   {
+    "uuid": "7e28899f-857e-4de3-91dd-8216d8836c92",
     "appointment_date": "Wednesday 3rd February 2016",
     "appointment_time": "16:10",
     "photo": "icon-avatar-jonathon-hope.png",
@@ -187,6 +204,7 @@
     "appointment_type_class": "face-to-face"
   },
   {
+    "uuid": "dbc9d1a1-4b78-47c4-937f-1c5e460491ec",
     "appointment_date": "Wednesday 3rd February 2016",
     "appointment_time": "15:10",
     "photo": "icon-avatar-malcolm-branch.png",
