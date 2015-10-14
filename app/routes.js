@@ -79,6 +79,20 @@ module.exports = {
       );
     });
 
+    app.get('/book-an-appointment/next-available-appointment', function(req, res) {
+      res.render(
+        'book-an-appointment/next-available-appointment',
+        {
+          practice: app.locals.gp_practices[0],
+          // TODO this is a bit weird, make it better
+          appointments: {
+            next: app.locals.appointments[0],
+            face_to_face: app.locals.appointments[3]
+          }
+        }
+      );
+    });
+
     app.get(/^\/(book-an-appointment\/[^.]+)$/, function (req, res) {
       var path = (req.params[0]);
 
