@@ -51,6 +51,16 @@
   },
   {
     "appointment_date": "Friday 29th January 2016",
+    "appointment_time": "14:40",
+    "photo": "icon-avatar-alison-wylde.png",
+    "name": "Alison Wylde",
+    "role": "Nurse",
+    "gender": "female",
+    "appointment_length": "10",
+    "appointment_type": "face to face"
+  },
+  {
+    "appointment_date": "Friday 29th January 2016",
     "appointment_time": "16:10",
     "photo": "icon-avatar-malcolm-branch.png",
     "name": "Dr Malcolm Branch",
@@ -61,10 +71,10 @@
   },
   {
     "appointment_date": "Friday 29th January 2016",
-    "appointment_time": "14:40",
-    "photo": "icon-avatar-alison-wylde.png",
-    "name": "Alison Wylde",
-    "role": "Nurse",
+    "appointment_time": "16:30",
+    "photo": "icon-avatar-helen-leaf.png",
+    "name": "Dr Helen Leaf",
+    "role": "GP",
     "gender": "female",
     "appointment_length": "10",
     "appointment_type": "face to face"

@@ -79,6 +79,21 @@ module.exports = {
       );
     });
 
+    app.get('/book-an-appointment/next-appointment-with-woman', function(req, res) {
+      res.render(
+        'book-an-appointment/next-appointment-with-woman',
+        {
+          practice: app.locals.gp_practices[0],
+          // TODO this is a bit weird, make it better
+          appointments: {
+            next: app.locals.appointments[0],
+            face_to_face: app.locals.appointments[3],
+            female_gp: app.locals.appointments[7]
+          }
+        }
+      );
+    });
+
     app.get('/book-an-appointment/next-available-appointment', function(req, res) {
       res.render(
         'book-an-appointment/next-available-appointment',
