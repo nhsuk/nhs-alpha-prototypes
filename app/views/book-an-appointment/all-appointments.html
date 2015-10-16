@@ -27,7 +27,7 @@
       {% for appointment in appointments %}
         {{
           ui_element_macros.appointment_option({
-            link_url: 'appointment-confirmed/' + appointment.uuid,
+            link_url: 'confirm-appointment/' + appointment.uuid,
             appointment_date: appointment.appointment_date,
             appointment_time: appointment.appointment_time,
             avatar_img_path: '/public/images/' + appointment.photo,
