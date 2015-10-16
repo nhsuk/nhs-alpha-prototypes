@@ -8,6 +8,14 @@ module.exports = {
       )[0];
     }
 
+    function find_appointment(uuid) {
+      return app.locals.appointments.filter(
+        function(a) {
+          return a.uuid === uuid;
+        }
+      )[0];
+    }
+
     app.get('/', function (req, res) {
       res.render('index');
     });
@@ -75,6 +83,87 @@ module.exports = {
         {
           practice: app.locals.gp_practices[0],
           practitioner: practitioner,
+        }
+      );
+    });
+
+    app.get('/book-an-appointment/next-appointment-early-morning', function(req, res) {
+      res.render(
+        'book-an-appointment/next-appointment-early-morning',
+        {
+          practice: app.locals.gp_practices[0],
+          // TODO this is a bit weird, make it better
+          appointments: {
+            next: app.locals.appointments[0],
+            face_to_face: app.locals.appointments[3],
+            early: app.locals.appointments[5]
+          }
+        }
+      );
+    });
+
+    app.get('/book-an-appointment/next-appointment-with-woman', function(req, res) {
+      res.render(
+        'book-an-appointment/next-appointment-with-woman',
+        {
+          practice: app.locals.gp_practices[0],
+          // TODO this is a bit weird, make it better
+          appointments: {
+            next: app.locals.appointments[0],
+            face_to_face: app.locals.appointments[3],
+            female_gp: app.locals.appointments[8]
+          }
+        }
+      );
+    });
+
+    app.get('/book-an-appointment/next-appointment-with-woman-early-morning', function(req, res) {
+      res.render(
+        'book-an-appointment/next-appointment-with-woman-early-morning',
+        {
+          practice: app.locals.gp_practices[0],
+          // TODO this is a bit weird, make it better
+          appointments: {
+            next: app.locals.appointments[0],
+            face_to_face: app.locals.appointments[3],
+            female_gp: app.locals.appointments[8],
+            early_female_gp: app.locals.appointments[13]
+          }
+        }
+      );
+    });
+
+    app.get('/book-an-appointment/next-available-appointment', function(req, res) {
+      res.render(
+        'book-an-appointment/next-available-appointment',
+        {
+          practice: app.locals.gp_practices[0],
+          // TODO this is a bit weird, make it better
+          appointments: {
+            next: app.locals.appointments[0],
+            face_to_face: app.locals.appointments[3]
+          }
+        }
+      );
+    });
+
+    app.get('/book-an-appointment/all-appointments', function(req, res) {
+      res.render(
+        'book-an-appointment/all-appointments',
+        {
+          practice: app.locals.gp_practices[0],
+          appointments: app.locals.appointments
+        }
+      );
+    });
+
+    app.get('/book-an-appointment/appointment-confirmed/:uuid', function(req, res) {
+      res.render(
+        'book-an-appointment/appointment-confirmed',
+        {
+          practice: app.locals.gp_practices[0],
+          // TODO this is a bit weird, make it better
+          appointment: find_appointment(req.params.uuid)
         }
       );
     });
