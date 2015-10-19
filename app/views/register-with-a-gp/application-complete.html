@@ -1,4 +1,5 @@
 {% extends 'templates/nhs_transaction_layout.html' %}
+{% import 'includes/form_macros.html' as form_macros %}
 
 {% block afterHeader %}
   {% include "includes/service-headers/register-with-a-gp.html" %}
@@ -34,6 +35,138 @@
     <strong>{{ session.practice.name | default('Practice Name') }}</strong>
     on 020 7946 0319.</p>
   </div>
+
+  {% if hideDonorQuestions == 'true' %}
+
+  <p>
+  Your blood and organ donation preferences were recorded.
+  </p>
+
+  {% else %}
+
+  <form action="" method="get" class="form text">
+
+    <fieldset>
+      <legend class="form-label-bold">Would you be prepared to give blood?</legend>
+      <div class="inline-form-groups">
+        <div class="form-group">
+          <input type="radio" id="blood-yes" name="blood">
+          <label class="form-control-radio js-toggle" for="blood-yes" data-show="#blood-donor">
+            Yes
+          </label>
+        </div>
+        <div class="form-group">
+          <input type="radio" id="blood-no" name="blood">
+          <label class="form-control-radio js-toggle" for="blood-no" data-hide="#blood-donor">
+            No
+          </label>
+        </div>
+      </div>
+    </fieldset>
+
+    <div class="js-hidden panel-indent" id="blood-donor">
+      <fieldset>
+        <legend class="form-label">Have you given blood in the last 3 years?</legend>
+        <div class="inline-form-groups">
+          <div class="form-group">
+            <input type="radio" id="blood-given-yes" name="blood-given">
+            <label class="form-control-radio" for="blood-given-yes">
+              Yes
+            </label>
+          </div>
+          <div class="form-group">
+            <input type="radio" id="blood-given-no" name="blood-given">
+            <label class="form-control-radio" for="blood-given-no">
+              No
+            </label>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+
+    <fieldset>
+      <legend class="form-label-bold">Are you willing to donate your organs for transplantation after your death?</legend>
+      <div class="inline-form-groups">
+        <div class="form-group">
+          <input type="radio" id="organs-yes" name="organs">
+          <label class="form-control-radio js-toggle" for="organs-yes" data-show="#organs-donor">
+            Yes
+          </label>
+        </div>
+        <div class="form-group">
+          <input type="radio" id="organs-no" name="organs">
+          <label class="form-control-radio js-toggle" for="organs-no" data-hide="#organs-donor">
+            No
+          </label>
+        </div>
+      </div>
+    </fieldset>
+
+    <div class="js-hidden panel-indent" id="organs-donor">
+      <fieldset>
+        <legend class="form-label">I will donate</legend>
+
+        <div class="form-group">
+          <input type="checkbox" id="any-part-of-my-body" checked="checked">
+          <label class="form-control-checkbox" for="any-part-of-my-body">
+            Any part of my body
+          </label>
+        </div>
+
+        <div class="form-group">
+          <input type="checkbox" id="corneas">
+          <label class="form-control-checkbox" for="corneas" tabindex="0" role="checkbox">
+            Corneas
+          </label>
+        </div>
+
+        <div class="form-group">
+          <input type="checkbox" id="heart">
+          <label class="form-control-checkbox" for="heart">
+            Heart
+          </label>
+        </div>
+
+        <div class="form-group">
+          <input type="checkbox" id="kidneys">
+          <label class="form-control-checkbox" for="kidneys">
+            Kidneys
+          </label>
+        </div>
+
+        <div class="form-group">
+          <input type="checkbox" id="liver">
+          <label class="form-control-checkbox" for="liver">
+            Liver
+          </label>
+        </div>
+
+        <div class="form-group">
+          <input type="checkbox" id="lungs">
+          <label class="form-control-checkbox" for="lungs">
+            Lungs
+          </label>
+        </div>
+
+        <div class="form-group">
+          <input type="checkbox" id="pancreas">
+          <label class="form-control-checkbox" for="pancreas">
+            Pancreas
+          </label>
+        </div>
+      </fieldset>
+    </div>
+
+    {{
+      form_macros.button({
+        href: '?hideDonorQuestions=true',
+        label: 'Save'
+      })
+    }}
+
+  </form>
+
+  {% endif %}
 </main>
 
 {% endblock %}

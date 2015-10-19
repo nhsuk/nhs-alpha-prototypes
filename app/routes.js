@@ -73,6 +73,14 @@ module.exports = {
       }
     });
 
+    app.get('/register-with-a-gp/application-complete', function(req, res) {
+      res.render(
+        'register-with-a-gp/application-complete',
+        {
+          hideDonorQuestions: req.query.hideDonorQuestions
+        }
+      )
+    });
     // Book an appointment (with a particular pracitioner)
 
     app.get('/book-an-appointment/appointments-with-practitioner', function(req, res) {
