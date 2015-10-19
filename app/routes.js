@@ -165,6 +165,17 @@ module.exports = {
       );
     });
 
+    app.get('/book-an-appointment/confirm-appointment/:uuid', function(req, res) {
+      res.render(
+        'book-an-appointment/confirm-appointment',
+        {
+          practice: app.locals.gp_practices[0],
+          // TODO this is a bit weird, make it better
+          appointment: find_appointment(req.params.uuid)
+        }
+      );
+    });
+
     app.get('/book-an-appointment/appointment-confirmed/:uuid', function(req, res) {
       res.render(
         'book-an-appointment/appointment-confirmed',
