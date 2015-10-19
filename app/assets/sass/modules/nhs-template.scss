@@ -6,6 +6,7 @@ body {
 
 #global-header {
   background-color: $nhs-blue;
+  border-bottom: 6px solid #e5f0f9;
 
   @extend %contain-floats;
 
@@ -130,22 +131,29 @@ body {
 .service-header .service-name {
   max-width: 960px;
 	margin: 0 15px;
-  padding: 8px 0;
+  padding: 2px 0 8px 0;
 
   @include media(tablet) {
     margin: 0 auto;
-    padding: 15px 30px;
+    padding: 9px 30px 15px 30px;
   }
 }
 
-//html,
+html,
 #footer {
-  background-color: rgba($nhs-black, 0.1);
+  background-color: $nhs-black;
 }
 
 #footer {
+  color: #d9dbdd;
+  padding: 2rem 0;
+  border-top: 6px solid $nhs-grey-1;
 
   @extend %contain-floats;
+
+  a {
+    color: #d9dbdd;
+  }
 
   .footer-wrapper {
     max-width: 960px;
