@@ -10,9 +10,9 @@
   padding: 0 1rem;
   border: 0;
   color: $white;
-  background-color: $nhs-green;
+  background-color: $nhs-dark-green;
   cursor: pointer;
-  border: 3px solid $nhs-dark-green;
+  border: 3px solid $nhs-websafe-dark-green;
 
   @include border-radius(0);
   -webkit-appearance: none;
@@ -22,11 +22,11 @@
   &:focus,
   &:visited{
     color: $white;
-    background-color: $nhs-green;
+    background-color: $nhs-dark-green;
   }
 
   &:hover {
-    outline: 1px solid $nhs-dark-green;
+    outline: 1px solid $nhs-websafe-dark-green;
   }
 
   /* to be fixed */
@@ -90,7 +90,7 @@
 .button-secondary {
   background-color: $nhs-grey-3;
   border-color: $nhs-grey-3;
-  color: $nhs-grey-1;
+  color: $nhs-black;
 
   &:link,
   &:hover,
