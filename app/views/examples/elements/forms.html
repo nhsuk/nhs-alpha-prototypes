@@ -97,10 +97,36 @@
 
       {% include "includes/forms/gp-practice.html" %}
 
-      <!-- Submit -->
-      <div class="form-item-wrapper">
-        <a class="button" href="activate-account">Continue</a>
-      </div>
+      {{
+        form_macros.button({
+          href: '#',
+          label: 'Button'
+        })
+      }}
+
+      {{
+        form_macros.button({
+          classes: 'button-get-started',
+          href: '#',
+          label: 'Button (start)'
+        })
+      }}
+
+      {{
+        form_macros.button({
+          classes: 'button-cancel',
+          href: '#',
+          label: 'Button (cancel)'
+        })
+      }}
+
+      {{
+        form_macros.button({
+          classes: 'button-secondary',
+          href: '#',
+          label: 'Button (secondary)'
+        })
+      }}
 
   </form>
 
