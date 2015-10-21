@@ -7,11 +7,12 @@
   width: 100%;
   height: 4rem;
   line-height: 4rem;
-  padding: 0 2rem;
+  padding: 0 1rem;
   border: 0;
-  color: $nhs-black;
-  background-color: $button-colour;
+  color: $white;
+  background-color: $nhs-dark-green;
   cursor: pointer;
+  border: 3px solid $nhs-websafe-dark-green;
 
   @include border-radius(0);
   -webkit-appearance: none;
@@ -20,12 +21,12 @@
   &:hover,
   &:focus,
   &:visited{
-    color: $nhs-pure-black;
-    background-color: $button-colour;
+    color: $white;
+    background-color: $nhs-dark-green;
   }
 
   &:hover {
-    outline: 1px solid $nhs-black;
+    outline: 1px solid $nhs-websafe-dark-green;
   }
 
   /* to be fixed */
@@ -59,16 +60,47 @@
 .button-get-started {
   font-weight: bold;
   padding-right: 3rem;
-  background-image: url("/public/images/icon-pointer.png");
+  background-image: url("/public/images/icon-button-start.svg");
   background-repeat: no-repeat;
-  background-position: 100% 50%;
+  background-position: 95% 55%;
+}
 
-  @include device-pixel-ratio {
-    background-image: url("/public/images/icon-pointer-2x.png");
-    background-size: 30px 19px;
+// Cancel buttons
+.button-cancel {
+  padding-right: 3rem;
+  background-image: url("/public/images/icon-button-cancel.svg");
+  background-repeat: no-repeat;
+  background-position: 92% 50%;
+  background-color: $nhs-dark-pink;
+  border-color: $nhs-dark-red;
+
+  &:link,
+  &:hover,
+  &:focus,
+  &:visited{
+    background-color: $nhs-dark-pink;
   }
 
-  @include ie(6) {
-    background-image: url("/public/images/icon-pointer-2x.png");
+  &:hover {
+    outline: 1px solid $nhs-dark-red;
+  }
+}
+
+// Secondary buttons
+.button-secondary {
+  background-color: $nhs-grey-3;
+  border-color: $nhs-grey-3;
+  color: $nhs-black;
+
+  &:link,
+  &:hover,
+  &:focus,
+  &:visited{
+    color: $nhs-black;
+    background-color: $nhs-grey-3;
+  }
+
+  &:hover {
+    outline: 1px solid $nhs-grey-3;
   }
 }
