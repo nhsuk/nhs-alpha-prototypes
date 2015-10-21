@@ -11,7 +11,7 @@
 
   <div class="text">
     <h1 class="heading-xlarge">
-      {{ service_context.name }} appointments
+      Choose a {{ service_context.name|lower }} appointment
     </h1>
     {{ service_context.triage_hint|safe }}
   </div>

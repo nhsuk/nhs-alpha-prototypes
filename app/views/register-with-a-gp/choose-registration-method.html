@@ -11,12 +11,14 @@
 
   <div class="text">
     <h1 class="heading-xlarge">
-      Do you have an NHS login?
+      Find your personal details
     </h1>
+
   </div>
 
-  <form action="choose-registration-method-handler" method="get" class="form">
+  <form action="choose-registration-method-handler" method="get" class="form text">
     <fieldset>
+      <legend class="form-label-bold">Do you have an NHS login?</legend>
 
       {{
         form_macros.radio_button_single({
