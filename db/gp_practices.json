@@ -36,25 +36,25 @@
           "name": "Dr Helen Leaf",
           "role": "GP",
           "gender": "female",
-          "photo": "/public/images/icon-avatar-helen-leaf.png"
+          "photo": "icon-avatar-helen-leaf.png"
         },
         {
           "name": "Dr Mike Johnson",
           "role": "GP",
           "gender": "male",
-          "photo": "/public/images/icon-avatar-mike-johnson.png"
+          "photo": "icon-avatar-mike-johnson.png"
         },
         {
           "name": "Dr Emma Stace",
           "role": "GP",
           "gender": "female",
-          "photo": "/public/images/icon-avatar.svg"
+          "photo": "icon-avatar.svg"
         },
         {
           "name": "Dr Malcolm Branch",
           "role": "GP",
           "gender": "male",
-          "photo": "/public/images/icon-avatar-malcolm-branch.png"
+          "photo": "icon-avatar-malcolm-branch.png"
         }
       ],
       "nurse_practitioners": [
@@ -62,13 +62,13 @@
           "name": "Sasheika Wrench",
           "role": "Nurse practitioner",
           "gender": "female",
-          "photo": "/public/images/icon-avatar.svg"
+          "photo": "icon-avatar.svg"
         },
         {
           "name": "Jonathan Hope",
           "role": "Nurse practitioner",
           "gender": "male",
-          "photo": "/public/images/icon-avatar-jonathon-hope.png"
+          "photo": "icon-avatar-jonathon-hope.png"
         }
       ],
       "nurses": [
@@ -76,7 +76,7 @@
           "name": "Alison Wylde",
           "role": "Nurse",
           "gender": "female",
-          "photo": "/public/images/icon-avatar-alison-wylde.png"
+          "photo": "icon-avatar-alison-wylde.png"
         }
       ]
     }
@@ -114,25 +114,25 @@
           "name": "Dr Helen Leaf",
           "role": "GP",
           "gender": "female",
-          "photo": "/public/images/icon-avatar-helen-leaf.png"
+          "photo": "icon-avatar-helen-leaf.png"
         },
         {
           "name": "Dr Mike Johnson",
           "role": "GP",
           "gender": "male",
-          "photo": "/public/images/icon-avatar-mike-johnson.png"
+          "photo": "icon-avatar-mike-johnson.png"
         },
         {
           "name": "Dr Emma Stace",
           "role": "GP",
           "gender": "female",
-          "photo": "/public/images/icon-avatar.svg"
+          "photo": "icon-avatar.svg"
         },
         {
           "name": "Dr Malcolm Branch",
           "role": "GP",
           "gender": "male",
-          "photo": "/public/images/icon-avatar-malcolm-branch.png"
+          "photo": "icon-avatar-malcolm-branch.png"
         }
       ],
       "nurse_practitioners": [
@@ -140,13 +140,13 @@
           "name": "Sasheika Wrench",
           "role": "Nurse practitioner",
           "gender": "female",
-          "photo": "/public/images/icon-avatar.svg"
+          "photo": "icon-avatar.svg"
         },
         {
           "name": "Jonathan Hope",
           "role": "Nurse practitioner",
           "gender": "male",
-          "photo": "/public/images/icon-avatar-jonathon-hope.png"
+          "photo": "icon-avatar-jonathon-hope.png"
         }
       ],
       "nurses": [
@@ -154,7 +154,7 @@
           "name": "Alison Wylde",
           "role": "Nurse",
           "gender": "female",
-          "photo": "/public/images/icon-avatar-alison-wylde.png"
+          "photo": "icon-avatar-alison-wylde.png"
         }
       ]
     }
@@ -196,25 +196,25 @@
           "name": "Dr Helen Leaf",
           "role": "GP",
           "gender": "female",
-          "photo": "/public/images/icon-avatar-helen-leaf.png"
+          "photo": "icon-avatar-helen-leaf.png"
         },
         {
           "name": "Dr Mike Johnson",
           "role": "GP",
           "gender": "male",
-          "photo": "/public/images/icon-avatar-mike-johnson.png"
+          "photo": "icon-avatar-mike-johnson.png"
         },
         {
           "name": "Dr Emma Stace",
           "role": "GP",
           "gender": "female",
-          "photo": "/public/images/icon-avatar.svg"
+          "photo": "icon-avatar.svg"
         },
         {
           "name": "Dr Malcolm Branch",
           "role": "GP",
           "gender": "male",
-          "photo": "/public/images/icon-avatar-malcolm-branch.png"
+          "photo": "icon-avatar-malcolm-branch.png"
         }
       ],
       "nurse_practitioners": [
@@ -222,13 +222,13 @@
           "name": "Sasheika Wrench",
           "role": "Nurse practitioner",
           "gender": "female",
-          "photo": "/public/images/icon-avatar.svg"
+          "photo": "icon-avatar.svg"
         },
         {
           "name": "Jonathan Hope",
           "role": "Nurse practitioner",
           "gender": "male",
-          "photo": "/public/images/icon-avatar-jonathon-hope.png"
+          "photo": "icon-avatar-jonathon-hope.png"
         }
       ],
       "nurses": [
@@ -236,7 +236,7 @@
           "name": "Alison Wylde",
           "role": "Nurse",
           "gender": "female",
-          "photo": "/public/images/icon-avatar-alison-wylde.png"
+          "photo": "icon-avatar-alison-wylde.png"
         }
       ]
     }

@@ -113,7 +113,7 @@
       <ul class="list-test">
         {% for person in practice.staff.doctors %}
           <li class="clearfix">
-            <img src="{{ person.photo }}">
+            <img src="/public/images/{{ person.photo }}">
             <div>
               {{ person.name }}<br>
               <span class="font-xsmall">{{ person.role }}, {{ person.gender }}</span>
@@ -126,7 +126,7 @@
       <ul class="list-test">
         {% for person in practice.staff.nurse_practitioners %}
           <li class="clearfix">
-            <img src="{{ person.photo }}">
+            <img src="/public/images/{{ person.photo }}">
             <div>
               {{ person.name }}<br>
               <span class="font-xsmall">{{ person.role }}, {{ person.gender }}</span>
@@ -139,7 +139,7 @@
       <ul class="list-test">
         {% for person in practice.staff.nurses %}
           <li class="clearfix">
-            <img src="{{ person.photo }}">
+            <img src="/public/images/{{ person.photo }}">
             <div>
               {{ person.name }}<br>
               <span class="font-xsmall">{{ person.role }}, {{ person.gender }}</span>
