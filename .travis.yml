@@ -1,0 +1,8 @@
+language: node_js
+node_js:
+  - "0.10"
+before_script:
+  - npm install
+  - npm install -g grunt-cli
+script:
+  - ./node_modules/grunt-cli/bin/grunt --gruntfile Gruntfile.js generate-assets
