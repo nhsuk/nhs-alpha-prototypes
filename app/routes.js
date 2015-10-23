@@ -18,7 +18,7 @@ module.exports = {
 
     function find_matching_appointment(filter_functions) {
       return filter_functions.reduce(function(filtered_appointments, filter_func) {
-        return filter_func(filtered_appointments);
+        return filtered_appointments.filter(filter_func);
       }, app.locals.appointments)[0];
     }
 
@@ -231,25 +231,17 @@ module.exports = {
   }
 };
 
-
-var filterFaceToFace = function(appointments) {
-  return appointments.filter(function(app) {
-    return app.appointment_type == 'face to face';
-  });
+var filterFaceToFace = function(appointment) {
+  return appointment.appointment_type == 'face to face';
 };
 
-var filterFemaleGP = function(appointments) {
-  return appointments.filter(function(app) {
-    return app.practitioner.gender == 'female' && app.practitioner.role == 'GP';
-  });
+var filterFemaleGP = function(appointment) {
+  return appointment.practitioner.gender == 'female' && appointment.practitioner.role == 'GP';
 };
 
-var filterBefore10 = function(appointments) {
-  return appointments.filter(function(app) {
-    var hour = parseInt(app.appointment_time.split(':')[0]);
-    console.log('hour: ' + hour);
-    return hour < 10;
-  });
+var filterBefore10 = function(appointment) {
+  var hour = parseInt(appointment.appointment_time.split(':')[0]);
+  return hour < 10;
 };
 
 
