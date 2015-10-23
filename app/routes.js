@@ -103,7 +103,7 @@ module.exports = {
           // TODO this is a bit weird, make it better
           appointments: {
             next: app.locals.appointments[0],
-            face_to_face: app.locals.appointments[3],
+            face_to_face: filterFaceToFace(app.locals.appointments)[0],
             early: app.locals.appointments[5]
           }
         }
@@ -118,7 +118,7 @@ module.exports = {
           // TODO this is a bit weird, make it better
           appointments: {
             next: app.locals.appointments[0],
-            face_to_face: app.locals.appointments[3],
+            face_to_face: filterFaceToFace(app.locals.appointments)[0],
             female_gp: app.locals.appointments[8]
           }
         }
@@ -133,7 +133,7 @@ module.exports = {
           // TODO this is a bit weird, make it better
           appointments: {
             next: app.locals.appointments[0],
-            face_to_face: app.locals.appointments[3],
+            face_to_face: filterFaceToFace(app.locals.appointments)[0],
             female_gp: app.locals.appointments[8],
             early_female_gp: app.locals.appointments[13]
           }
@@ -149,7 +149,7 @@ module.exports = {
           // TODO this is a bit weird, make it better
           appointments: {
             next: app.locals.appointments[0],
-            face_to_face: app.locals.appointments[3]
+            face_to_face: filterFaceToFace(app.locals.appointments)[0],
           }
         }
       );
@@ -230,6 +230,14 @@ module.exports = {
     });
   }
 };
+
+
+var filterFaceToFace = function(appointments) {
+  return appointments.filter(function(app) {
+    return app.appointment_type == 'face to face';
+  });
+};
+
 
 function practitioner_details_for_slug(slug) {
   switch(slug) {
