@@ -5,31 +5,29 @@
 <style>
 	.shadow {
 		height: 2rem;
-		background: -moz-linear-gradient(top,  rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
-		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0)), color-stop(100%,rgba(255,255,255,1)));
-		background: -webkit-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%);
-		background: -o-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%);
-		background: -ms-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%);
-		background: linear-gradient(to bottom,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%);
+		background: -moz-linear-gradient(top,  rgba(255,255,255,0) 0%, rgba(255,255,255,1) 80%);
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0)), color-stop(80%,rgba(255,255,255,1)));
+		background: -webkit-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 80%);
+		background: -o-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 80%);
+		background: -ms-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 80%);
+		background: linear-gradient(to bottom,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 80%);
 		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=0 );
 	}
-	
+
 	.item {
 		position: relative;
 		margin-bottom: -2rem;
-		cursor: pointer;
 
 		-webkit-transform: translateZ(0);
 		-ms-transform: translateZ(0);
 		transform: translateZ(0);
 
-		-webkit-transition: margin 0.3s ease-in-out;
-		transition: margin 0.3s ease-in-out;
+		-webkit-transition: margin 0.25s ease-in-out;
+		transition: margin 0.25s ease-in-out;
 	}
 	.item-open {
-		margin-top: 2rem;
+		margin-top: 0;
 		margin-bottom: 0;
-		cursor: default;
 	}
 	.item-1.item-open {
 		margin-top: 0;
@@ -37,11 +35,18 @@
 	.item-content {
 		padding: 1rem;
 		background-color: #fff;
-		border: 1px solid #ccc;
+		border: 1px solid #bbb;
+		cursor: pointer;
+	}
+	.item-open .item-content {
+		cursor: default;
 	}
 	.item-header {
 		background-color: #eee;
 		margin-bottom: 1rem;
+	}
+	.item-header .item-collapse-link {
+		display: block;
 	}
 	.item-leadin {
 		background-color: #eee;
@@ -49,7 +54,7 @@
 	}
 	.item-body {
 		background-color: #eee;
-		overflow: auto;
+		overflow: hidden;
 		max-height: 400px;
 
 		-webkit-transform: translateZ(0);
@@ -99,7 +104,7 @@
 					• Collapse the "body" area
 					• Then shunt the card back into the deck
 				*/
-				if (event.target.className === 'item-collapse-link') {
+				if ($(event.target).hasClass('item-collapse-link')) {
 					$itemBody.addClass('item-body-collapsed');
 					$itemBody.one(transEndEventName, function(event) {
 						/*
@@ -107,7 +112,7 @@
 							• Disable close link
 							• Shunt the card back
 						*/
-						$item.find('.item-collapse').hide();
+						$itemBody.find('.item-collapse').hide();
 						$item.removeClass('item-open');
 					});
 				} else {
@@ -119,10 +124,14 @@
 					• Activate 'collapse' links
 					• Animate body area expanding in height
 					• Animate card shifting
+					• Animate scrolling to centre the card
 				*/
 				$item.addClass('item-open');
-				$item.find('.item-collapse').show();
+				$itemBody.find('.item-collapse').show();
 				$itemBody.removeClass('item-body-collapsed');
+				$('html,body').animate({
+          scrollTop: $item.offset().top
+        }, 1000, 'easeInOutQuad');
 			}
 		});
 	});
@@ -133,11 +142,11 @@
 		<div class="shadow"></div>
 		<div class="item-content">
 			<div class="item-header">
-				<a href="#{{ i.index }}">Header {{ i.index }}</a>
+				<a href="#{{ i.index }}" class="item-collapse-link">Header {{ i.index }}</a>
 			</div>
 			{% if i.leadin %}
 			<div class="item-leadin">
-				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+				<p>{{ i.leadin }}</p>
 			</div>
 			{% endif %}
 			<div class="item-body item-body-collapsed">
