@@ -100,7 +100,6 @@ module.exports = {
         'book-an-appointment/next-appointment-early-morning',
         {
           practice: app.locals.gp_practices[0],
-          // TODO this is a bit weird, make it better
           appointments: {
             next: app.locals.appointments[0],
             face_to_face: filterFaceToFace(app.locals.appointments)[0],
@@ -115,7 +114,6 @@ module.exports = {
         'book-an-appointment/next-appointment-with-woman',
         {
           practice: app.locals.gp_practices[0],
-          // TODO this is a bit weird, make it better
           appointments: {
             next: app.locals.appointments[0],
             face_to_face: filterFaceToFace(app.locals.appointments)[0],
@@ -130,7 +128,6 @@ module.exports = {
         'book-an-appointment/next-appointment-with-woman-early-morning',
         {
           practice: app.locals.gp_practices[0],
-          // TODO this is a bit weird, make it better
           appointments: {
             next: app.locals.appointments[0],
             face_to_face: filterFaceToFace(app.locals.appointments)[0],
@@ -146,7 +143,6 @@ module.exports = {
         'book-an-appointment/next-available-appointment',
         {
           practice: app.locals.gp_practices[0],
-          // TODO this is a bit weird, make it better
           appointments: {
             next: app.locals.appointments[0],
             face_to_face: filterFaceToFace(app.locals.appointments)[0],
@@ -170,7 +166,6 @@ module.exports = {
         'book-an-appointment/confirm-appointment',
         {
           practice: app.locals.gp_practices[0],
-          // TODO this is a bit weird, make it better
           appointment: find_appointment(req.params.uuid)
         }
       );
@@ -181,7 +176,6 @@ module.exports = {
         'book-an-appointment/appointment-confirmed',
         {
           practice: app.locals.gp_practices[0],
-          // TODO this is a bit weird, make it better
           appointment: find_appointment(req.params.uuid)
         }
       );
