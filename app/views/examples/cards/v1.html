@@ -3,6 +3,10 @@
 {% block content %}
 
 <style>
+	.items-container {
+		border: 1px solid red;
+		padding-bottom: 2rem;
+	}
 	.shadow {
 		height: 2rem;
 		background: -moz-linear-gradient(top,  rgba(255,255,255,0) 0%, rgba(255,255,255,1) 80%);
@@ -12,6 +16,9 @@
 		background: -ms-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 80%);
 		background: linear-gradient(to bottom,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 80%);
 		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=0 );
+	}
+	.item-1 .shadow {
+		display: none;
 	}
 
 	.item {
@@ -142,7 +149,7 @@
 		<div class="shadow"></div>
 		<div class="item-content">
 			<div class="item-header">
-				<a href="#{{ i.index }}" class="item-collapse-link">Header {{ i.index }}</a>
+				<a href="#item-{{ i.index }}" class="item-collapse-link">Header {{ i.index }}</a>
 			</div>
 			{% if i.leadin %}
 			<div class="item-leadin">
@@ -151,7 +158,6 @@
 			{% endif %}
 			<div class="item-body item-body-collapsed">
 				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-
 				<div class="item-collapse">
 					<a href="#" class="item-collapse-link" tabindex="0">Show less</a>
 				</div>
@@ -162,31 +168,62 @@
 
 <main id="content" role="main">
 
-	{{ card({
-		index: 1
-		})
-	}}
+	<div class="items-container">
 
-	{{ card({
-		index: 2,
-		leadin: true
-		})
-	}}
+		{{ card({
+			index: 1
+			})
+		}}
 
-	{{ card({
-		index: 3
-		})
-	}}
+		{{ card({
+			index: 2,
+			leadin: "This is a lead-in"
+			})
+		}}
 
-	{{ card({
-		index: 4
-		})
-	}}
+		{{ card({
+			index: 3
+			})
+		}}
 
-	{{ card({
-		index: 5
-		})
-	}}
+		<div class="item item-4" id="item-4">
+			<div class="shadow"></div>
+			<div class="item-content">
+				<div class="item-header">
+					<a href="#item-4" class="item-collapse-link">Header 4</a>
+				</div>
+				<div class="item-body item-body-collapsed">
+					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+					<details>
+						<summary>So what is this thing?</summary>
+						<div>
+							<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+						</div>
+					</details>
+					<div class="item-collapse">
+						<a href="#" class="item-collapse-link" tabindex="0">Show less</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+	<div>TEST A CTA VERSION</div>
+
+	<div class="items-container">
+
+		{{ card({
+			index: 5
+			})
+		}}
+
+		{{ card({
+			index: 6
+			})
+		}}
+
+	</div>
 
 </main>
 
