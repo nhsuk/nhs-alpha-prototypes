@@ -26,75 +26,17 @@
 
       <h2 class="heading-small">See a particular person:</h2>
 
-      {{
-        ui_element_macros.practitioner_link({
-          link_url: 'appointments-with-practitioner?practitioner=helen-leaf',
-          avatar_img_path: '/public/images/icon-avatar-helen-leaf.png',
-          name: 'Dr Helen Leaf',
-          position: 'GP',
-          gender: 'female'
-        })
-      }}
-
-      {{
-        ui_element_macros.practitioner_link({
-          link_url: 'appointments-with-practitioner?practitioner=mike-johnson',
-          avatar_img_path: '/public/images/icon-avatar-mike-johnson.png',
-          name: 'Dr Mike Johnson',
-          position: 'GP',
-          gender: 'male'
-        })
-      }}
-
-      {{
-        ui_element_macros.practitioner_link({
-          link_url: 'appointments-with-practitioner?practitioner=emma-stace',
-          avatar_img_path: '/public/images/icon-avatar.svg',
-          name: 'Dr Emma Stace',
-          position: 'GP',
-          gender: 'female'
-        })
-      }}
-
-      {{
-        ui_element_macros.practitioner_link({
-          link_url: 'appointments-with-practitioner?practitioner=malcolm-branch',
-          avatar_img_path: '/public/images/icon-avatar-malcolm-branch.png',
-          name: 'Dr Malcolm Branch',
-          position: 'GP',
-          gender: 'male'
-        })
-      }}
-
-      {{
-        ui_element_macros.practitioner_link({
-          link_url: 'appointments-with-practitioner?practitioner=sasheika-wrench',
-          avatar_img_path: '/public/images/icon-avatar.svg',
-          name: 'Sasheika Wrench',
-          position: 'Nurse practioner',
-          gender: 'female'
-        })
-      }}
-
-      {{
-        ui_element_macros.practitioner_link({
-          link_url: 'appointments-with-practitioner?practitioner=jonathon-hope',
-          avatar_img_path: '/public/images/icon-avatar-jonathon-hope.png',
-          name: 'Jonathan Hope',
-          position: 'Nurse practioner',
-          gender: 'male'
-        })
-      }}
-
-      {{
-        ui_element_macros.practitioner_link({
-          link_url: 'appointments-with-practitioner?practitioner=alison-wylde',
-          avatar_img_path: '/public/images/icon-avatar-alison-wylde.png',
-          name: 'Alison Wylde',
-          position: 'Nurse',
-          gender: 'female'
-        })
-      }}
+      {% for practitioner in practitioners %}
+        {{
+          ui_element_macros.practitioner_link({
+            link_url: 'appointments-with-practitioner?practitioner=' + practitioner.uuid,
+            avatar_img_path: '/public/images/' + practitioner.photo,
+            name: practitioner.name,
+            position: practitioner.role,
+            gender: practitioner.gender
+          })
+        }}
+      {% endfor %}
 
     </div>
   </div>

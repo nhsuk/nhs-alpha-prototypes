@@ -26,50 +26,22 @@
 
       <h2 class="heading-small" style="font-weight:normal;">Available appointments with <b>{{ practitioner.name }}</b>:</h2>
 
-      {{
-        ui_element_macros.appointment_option({
-          link_url: 'confirm-appointment',
-          appointment_date: 'Tuesday 26th January 2016',
-          appointment_time: '10:20',
-          avatar_img_path: practitioner.avatar,
-          name: practitioner.name,
-          position: practitioner.position,
-          gender: practitioner.gender,
-          appointment_length: '5',
-          appointment_type: 'telephone',
-          appointment_type_class: 'telephone'
-        })
-      }}
-
-      {{
-        ui_element_macros.appointment_option({
-          link_url: 'confirm-appointment',
-          appointment_date: 'Thursday 28th January 2016',
-          appointment_time: '11:30',
-          avatar_img_path: practitioner.avatar,
-          name: practitioner.name,
-          position: practitioner.position,
-          gender: practitioner.gender,
-          appointment_length: '5',
-          appointment_type: 'face to face',
-          appointment_type_class: 'face-to-face'
-        })
-      }}
-
-      {{
-        ui_element_macros.appointment_option({
-          link_url: 'confirm-appointment',
-          appointment_date: 'Wednesday 3rd February 2016',
-          appointment_time: '08:30',
-          avatar_img_path: practitioner.avatar,
-          name: practitioner.name,
-          position: practitioner.position,
-          gender: practitioner.gender,
-          appointment_length: '5',
-          appointment_type: 'face to face',
-          appointment_type_class: 'face-to-face'
-        })
-      }}
+      {% for appointment in appointments %}
+        {{
+          ui_element_macros.appointment_option({
+            link_url: 'confirm-appointment/' + appointment.uuid,
+            appointment_date: appointment.appointment_date,
+            appointment_time: appointment.appointment_time,
+            avatar_img_path: '/public/images/' + appointment.practitioner.photo,
+            name: appointment.practitioner.name,
+            position: appointment.practitioner.role,
+            gender: appointment.practitioner.gender,
+            appointment_length: appointment.appointment_length,
+            appointment_type: appointment.appointment_type,
+            appointment_type_class: appointment.appointment_type_class
+          })
+        }}
+      {% endfor %}
 
       <h3 class="heading-medium">More appointment options</h3>
 
