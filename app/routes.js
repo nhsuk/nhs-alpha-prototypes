@@ -16,6 +16,12 @@ module.exports = {
       )[0];
     }
 
+    function find_matching_appointment(filter_functions) {
+      return filter_functions.reduce(function(filtered_appointments, filter_func) {
+        return filtered_appointments.filter(filter_func);
+      }, app.locals.appointments)[0];
+    }
+
     app.get('/', function (req, res) {
       res.render('index');
     });
@@ -100,11 +106,10 @@ module.exports = {
         'book-an-appointment/next-appointment-early-morning',
         {
           practice: app.locals.gp_practices[0],
-          // TODO this is a bit weird, make it better
           appointments: {
-            next: app.locals.appointments[0],
-            face_to_face: app.locals.appointments[3],
-            early: app.locals.appointments[5]
+            next: find_matching_appointment([]),
+            face_to_face: find_matching_appointment([filterFaceToFace]),
+            early: find_matching_appointment([filterBefore10]),
           }
         }
       );
@@ -115,11 +120,10 @@ module.exports = {
         'book-an-appointment/next-appointment-with-woman',
         {
           practice: app.locals.gp_practices[0],
-          // TODO this is a bit weird, make it better
           appointments: {
-            next: app.locals.appointments[0],
-            face_to_face: app.locals.appointments[3],
-            female_gp: app.locals.appointments[8]
+            next: find_matching_appointment([]),
+            face_to_face: find_matching_appointment([filterFaceToFace]),
+            female_gp: find_matching_appointment([filterFemaleGP])
           }
         }
       );
@@ -130,12 +134,11 @@ module.exports = {
         'book-an-appointment/next-appointment-with-woman-early-morning',
         {
           practice: app.locals.gp_practices[0],
-          // TODO this is a bit weird, make it better
           appointments: {
-            next: app.locals.appointments[0],
-            face_to_face: app.locals.appointments[3],
-            female_gp: app.locals.appointments[8],
-            early_female_gp: app.locals.appointments[13]
+            next: find_matching_appointment([]),
+            face_to_face: find_matching_appointment([filterFaceToFace]),
+            female_gp: find_matching_appointment([filterFemaleGP]),
+            early_female_gp: find_matching_appointment([filterFemaleGP, filterBefore10])
           }
         }
       );
@@ -146,10 +149,9 @@ module.exports = {
         'book-an-appointment/next-available-appointment',
         {
           practice: app.locals.gp_practices[0],
-          // TODO this is a bit weird, make it better
           appointments: {
-            next: app.locals.appointments[0],
-            face_to_face: app.locals.appointments[3]
+            next: find_matching_appointment([]),
+            face_to_face: find_matching_appointment([filterFaceToFace]),
           }
         }
       );
@@ -170,7 +172,6 @@ module.exports = {
         'book-an-appointment/confirm-appointment',
         {
           practice: app.locals.gp_practices[0],
-          // TODO this is a bit weird, make it better
           appointment: find_appointment(req.params.uuid)
         }
       );
@@ -181,7 +182,6 @@ module.exports = {
         'book-an-appointment/appointment-confirmed',
         {
           practice: app.locals.gp_practices[0],
-          // TODO this is a bit weird, make it better
           appointment: find_appointment(req.params.uuid)
         }
       );
@@ -230,6 +230,20 @@ module.exports = {
     });
   }
 };
+
+var filterFaceToFace = function(appointment) {
+  return appointment.appointment_type == 'face to face';
+};
+
+var filterFemaleGP = function(appointment) {
+  return appointment.practitioner.gender == 'female' && appointment.practitioner.role == 'GP';
+};
+
+var filterBefore10 = function(appointment) {
+  var hour = parseInt(appointment.appointment_time.split(':')[0]);
+  return hour < 10;
+};
+
 
 function practitioner_details_for_slug(slug) {
   switch(slug) {
