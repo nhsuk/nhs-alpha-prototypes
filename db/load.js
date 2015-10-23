@@ -10,13 +10,12 @@ module.exports = {
 }
 
 function load_data_files(app) {
-  fs.readdir(__dirname, function(err, file_names) {
-    json_files = file_names.filter(function(name) {
-      return name.match(/\.json$/);
-    });
-
-    json_files.forEach(function(file_name) {
-      fs.readFileAsync(__dirname + '/' + file_name, 'utf8')
+  return fs.readdirAsync(__dirname)
+    .filter(function(file_name) {
+      return file_name.match(/\.json$/);
+    })
+    .map(function(file_name) {
+      return fs.readFileAsync(__dirname + '/' + file_name, 'utf8')
         .then(JSON.parse)
         .then(function(data) {
           var dataset_name = file_name.replace(/\.json$/, '');
@@ -31,5 +30,4 @@ function load_data_files(app) {
           throw(e);
         });
     });
-  });
 }
