@@ -87,16 +87,29 @@ module.exports = {
         }
       )
     });
-    // Book an appointment (with a particular pracitioner)
+
+    app.get('/book-an-appointment/see-particular-person', function(req, res) {
+      res.render(
+        'book-an-appointment/see-particular-person',
+        {
+          practice: app.locals.gp_practices[0],
+          practitioners: app.locals.practitioners
+        }
+      );
+    });
 
     app.get('/book-an-appointment/appointments-with-practitioner', function(req, res) {
-      var practitioner = practitioner_details_for_slug(req.query.practitioner);
+      var practitioner_uuid = req.query.practitioner,
+          practitioner = app.locals.practitioners.filter(function(p) {
+            return p.uuid === practitioner_uuid;
+          })[0];
 
       res.render(
         'book-an-appointment/appointments-with-practitioner',
         {
           practice: app.locals.gp_practices[0],
           practitioner: practitioner,
+          appointments: app.locals.appointments.filter(filterByPractitionerUuid(practitioner_uuid))
         }
       );
     });
@@ -243,6 +256,12 @@ var filterBefore10 = function(appointment) {
   var hour = parseInt(appointment.appointment_time.split(':')[0]);
   return hour < 10;
 };
+
+var filterByPractitionerUuid = function(uuid) {
+  return function(appointment) {
+    return appointment.practitioner_uuid === uuid;
+  }
+}
 
 
 function practitioner_details_for_slug(slug) {

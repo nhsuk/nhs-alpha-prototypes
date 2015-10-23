@@ -1,24 +1,69 @@
-var fs = require('fs');
+var fs = require('fs'),
+    Promise = require('bluebird'),
+    util = require('util');
+
+Promise.promisifyAll(fs);
 
 module.exports = {
   load: function(app) {
-    fs.readdir(__dirname, function(err, file_names) {
-      json_files = file_names.filter(function(name) {
-        return name.match(/\.json$/);
-      });
-
-      json_files.forEach(function(file_name) {
-        fs.readFile(__dirname + '/' + file_name, 'utf8', function(err, data) {
-          if (err) {
-            console.log('Could not load data from ' + file_name);
-            throw(err);
-          }
-          else {
-            var dataset_name = file_name.replace(/\.json$/, '');
-            app.locals[dataset_name] = JSON.parse(data);
-          }
+    load_data_files()
+      .then(expand_practitioners)
+      .done(function(data) {
+        Object.keys(data).forEach(function(key) {
+          app.locals[key] = data[key];
         });
       });
-    });
   }
+}
+
+function load_data_files() {
+  return fs.readdirAsync(__dirname)
+    .filter(function(file_name) {
+      return file_name.match(/\.json$/);
+    })
+    .map(function(file_name) {
+      return fs.readFileAsync(__dirname + '/' + file_name, 'utf8')
+        .then(JSON.parse)
+        .then(function(data) {
+          var dataset_name = file_name.replace(/\.json$/, ''),
+              o = {};
+
+          o[dataset_name] = data;
+
+          return o;
+        })
+        .catch(SyntaxError, function(e) {
+          console.error('invalid JSON in file ' + file_name);
+          throw(e);
+        })
+        .catch(function(e) {
+          console.log('unable to read file ' + file_name);
+          throw(e);
+        });
+    })
+    .reduce(function(a, b) {
+      return util._extend(a, b);
+    });
+}
+
+function expand_practitioners(data) {
+  // TODO this mutates, which is a bit nasty, but probably fine for now
+  Object.keys(data).forEach(function(key) {
+    data[key].forEach(function(item) {
+      if ('practitioner_uuid' in item) {
+        item.practitioner = find_practitioner(
+          item.practitioner_uuid, 
+          data['practitioners']
+        );
+      }
+    });
+  });
+
+  return data;
+}
+
+function find_practitioner(uuid, practitioners) {
+  return practitioners.filter(function(practitioner) {
+    return practitioner.uuid === uuid;
+  })[0];
 }
