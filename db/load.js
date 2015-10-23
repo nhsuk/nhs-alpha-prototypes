@@ -1,4 +1,7 @@
-var fs = require('fs');
+var fs = require('fs'),
+    Promise = require('bluebird');
+
+Promise.promisifyAll(fs);
 
 module.exports = {
   load: function(app) {
@@ -13,16 +16,20 @@ function load_data_files(app) {
     });
 
     json_files.forEach(function(file_name) {
-      fs.readFile(__dirname + '/' + file_name, 'utf8', function(err, data) {
-        if (err) {
-          console.log('Could not load data from ' + file_name);
-          throw(err);
-        }
-        else {
+      fs.readFileAsync(__dirname + '/' + file_name, 'utf8')
+        .then(JSON.parse)
+        .then(function(data) {
           var dataset_name = file_name.replace(/\.json$/, '');
-          app.locals[dataset_name] = JSON.parse(data);
-        }
-      });
+          app.locals[dataset_name] = data;
+        })
+        .catch(SyntaxError, function(e) {
+          console.error('invalid JSON in file ' + file_name);
+          throw(e);
+        })
+        .catch(function(e) {
+          console.log('unable to read file ' + file_name);
+          throw(e);
+        });
     });
   });
 }
