@@ -1,0 +1,184 @@
+{% extends 'templates/nhs_transaction_layout.html' %}
+
+{% block content %}
+
+<style>
+	.shadow {
+		height: 2rem;
+		background: -moz-linear-gradient(top,  rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0)), color-stop(100%,rgba(255,255,255,1)));
+		background: -webkit-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%);
+		background: -o-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%);
+		background: -ms-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%);
+		background: linear-gradient(to bottom,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=0 );
+	}
+	
+	.item {
+		position: relative;
+		margin-bottom: -2rem;
+		cursor: pointer;
+
+		-webkit-transform: translateZ(0);
+		-ms-transform: translateZ(0);
+		transform: translateZ(0);
+
+		-webkit-transition: margin 0.3s ease-in-out;
+		transition: margin 0.3s ease-in-out;
+	}
+	.item-open {
+		margin-top: 2rem;
+		margin-bottom: 0;
+		cursor: default;
+	}
+	.item-1.item-open {
+		margin-top: 0;
+	}
+	.item-content {
+		padding: 1rem;
+		background-color: #fff;
+		border: 1px solid #ccc;
+	}
+	.item-header {
+		background-color: #eee;
+		margin-bottom: 1rem;
+	}
+	.item-leadin {
+		background-color: #eee;
+		margin-bottom: 1rem;
+	}
+	.item-body {
+		background-color: #eee;
+		overflow: auto;
+		max-height: 400px;
+
+		-webkit-transform: translateZ(0);
+		-ms-transform: translateZ(0);
+		transform: translateZ(0);
+
+		-webkit-transition: max-height 0.75s ease-in-out;
+		transition: max-height 0.75s ease-in-out;
+	}
+	.item-body-collapsed {
+		overflow: hidden;
+		max-height: 0;
+	}
+	.item-collapse {
+		margin-top: 1rem;
+	}
+</style>
+
+<script>
+	function whichTransitionEvent() {
+		var el = document.createElement('fake'),
+		transEndEventNames = {
+			'WebkitTransition' : 'webkitTransitionEnd',// Saf 6, Android Browser
+			'MozTransition'    : 'transitionend',      // only for FF < 15
+			'transition'       : 'transitionend'       // IE10, Opera, Chrome, FF 15+, Saf 7+
+		};
+
+		for(var t in transEndEventNames){
+			if( el.style[t] !== undefined ){
+				return transEndEventNames[t];
+			}
+		}
+	}
+	var transEndEventName = whichTransitionEvent();
+
+	$(function() {
+		$('#content').on('click', '.item', function(event) {
+
+			event.preventDefault();
+			$item = $(this);
+			$itemBody = $item.find('.item-body');
+
+			if ($item.hasClass('item-open')) {
+				/*
+					It's open.
+					• Check the click has come from a "close" control
+					• Collapse the "body" area
+					• Then shunt the card back into the deck
+				*/
+				if (event.target.className === 'item-collapse-link') {
+					$itemBody.addClass('item-body-collapsed');
+					$itemBody.one(transEndEventName, function(event) {
+						/*
+							Body has collapsed.
+							• Disable close link
+							• Shunt the card back
+						*/
+						$item.find('.item-collapse').hide();
+						$item.removeClass('item-open');
+					});
+				} else {
+					return false;
+				}
+			} else {
+				/*
+					It's not open.
+					• Activate 'collapse' links
+					• Animate body area expanding in height
+					• Animate card shifting
+				*/
+				$item.addClass('item-open');
+				$item.find('.item-collapse').show();
+				$itemBody.removeClass('item-body-collapsed');
+			}
+		});
+	});
+</script>
+
+{% macro card(i) %}
+	<div class="item item-{{ i.index }} {{ i.extra_classes }}" id="item-{{ i.index }}">
+		<div class="shadow"></div>
+		<div class="item-content">
+			<div class="item-header">
+				<a href="#{{ i.index }}">Header {{ i.index }}</a>
+			</div>
+			{% if i.leadin %}
+			<div class="item-leadin">
+				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+			</div>
+			{% endif %}
+			<div class="item-body item-body-collapsed">
+				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+
+				<div class="item-collapse">
+					<a href="#" class="item-collapse-link" tabindex="0">Show less</a>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endmacro %}
+
+<main id="content" role="main">
+
+	{{ card({
+		index: 1
+		})
+	}}
+
+	{{ card({
+		index: 2,
+		leadin: true
+		})
+	}}
+
+	{{ card({
+		index: 3
+		})
+	}}
+
+	{{ card({
+		index: 4
+		})
+	}}
+
+	{{ card({
+		index: 5
+		})
+	}}
+
+</main>
+
+{% endblock %}
