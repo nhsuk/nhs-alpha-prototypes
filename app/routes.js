@@ -119,7 +119,7 @@ module.exports = {
           appointments: {
             next: app.locals.appointments[0],
             face_to_face: filterFaceToFace(app.locals.appointments)[0],
-            female_gp: app.locals.appointments[8]
+            female_gp: filterFemaleGP(app.locals.appointments)[0]
           }
         }
       );
@@ -134,7 +134,7 @@ module.exports = {
           appointments: {
             next: app.locals.appointments[0],
             face_to_face: filterFaceToFace(app.locals.appointments)[0],
-            female_gp: app.locals.appointments[8],
+            female_gp: filterFemaleGP(app.locals.appointments)[0],
             early_female_gp: app.locals.appointments[13]
           }
         }
@@ -235,6 +235,12 @@ module.exports = {
 var filterFaceToFace = function(appointments) {
   return appointments.filter(function(app) {
     return app.appointment_type == 'face to face';
+  });
+};
+
+var filterFemaleGP = function(appointments) {
+  return appointments.filter(function(app) {
+    return app.practitioner.gender == 'female' && app.practitioner.role == 'GP';
   });
 };
 
