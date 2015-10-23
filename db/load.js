@@ -7,6 +7,7 @@ Promise.promisifyAll(fs);
 module.exports = {
   load: function(app) {
     load_data_files()
+      .then(expand_practitioners)
       .done(function(data) {
         Object.keys(data).forEach(function(key) {
           app.locals[key] = data[key];
@@ -43,4 +44,26 @@ function load_data_files() {
     .reduce(function(a, b) {
       return util._extend(a, b);
     });
+}
+
+function expand_practitioners(data) {
+  // TODO this mutates, which is a bit nasty, but probably fine for now
+  Object.keys(data).forEach(function(key) {
+    data[key].forEach(function(item) {
+      if ('practitioner_uuid' in item) {
+        item.practitioner = find_practitioner(
+          item.practitioner_uuid, 
+          data['practitioners']
+        );
+      }
+    });
+  });
+
+  return data;
+}
+
+function find_practitioner(uuid, practitioners) {
+  return practitioners.filter(function(practitioner) {
+    return practitioner.uuid === uuid;
+  })[0];
 }
