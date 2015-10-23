@@ -16,6 +16,12 @@ module.exports = {
       )[0];
     }
 
+    function find_matching_appointment(filter_functions) {
+      return filter_functions.reduce(function(filtered_appointments, filter_func) {
+        return filter_func(filtered_appointments);
+      }, app.locals.appointments)[0];
+    }
+
     app.get('/', function (req, res) {
       res.render('index');
     });
@@ -101,9 +107,9 @@ module.exports = {
         {
           practice: app.locals.gp_practices[0],
           appointments: {
-            next: app.locals.appointments[0],
-            face_to_face: filterFaceToFace(app.locals.appointments)[0],
-            early: filterBefore10(app.locals.appointments)[0]
+            next: find_matching_appointment([]),
+            face_to_face: find_matching_appointment([filterFaceToFace]),
+            early: find_matching_appointment([filterBefore10]),
           }
         }
       );
@@ -115,9 +121,9 @@ module.exports = {
         {
           practice: app.locals.gp_practices[0],
           appointments: {
-            next: app.locals.appointments[0],
-            face_to_face: filterFaceToFace(app.locals.appointments)[0],
-            female_gp: filterFemaleGP(app.locals.appointments)[0]
+            next: find_matching_appointment([]),
+            face_to_face: find_matching_appointment([filterFaceToFace]),
+            female_gp: find_matching_appointment([filterFemaleGP])
           }
         }
       );
@@ -129,10 +135,10 @@ module.exports = {
         {
           practice: app.locals.gp_practices[0],
           appointments: {
-            next: app.locals.appointments[0],
-            face_to_face: filterFaceToFace(app.locals.appointments)[0],
-            female_gp: filterFemaleGP(app.locals.appointments)[0],
-            early_female_gp: filterFemaleGP(filterBefore10(app.locals.appointments))[0]
+            next: find_matching_appointment([]),
+            face_to_face: find_matching_appointment([filterFaceToFace]),
+            female_gp: find_matching_appointment([filterFemaleGP]),
+            early_female_gp: find_matching_appointment([filterFemaleGP, filterBefore10])
           }
         }
       );
@@ -144,8 +150,8 @@ module.exports = {
         {
           practice: app.locals.gp_practices[0],
           appointments: {
-            next: app.locals.appointments[0],
-            face_to_face: filterFaceToFace(app.locals.appointments)[0],
+            next: find_matching_appointment([]),
+            face_to_face: find_matching_appointment([filterFaceToFace]),
           }
         }
       );
