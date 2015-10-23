@@ -98,10 +98,10 @@
 	var transEndEventName = whichTransitionEvent();
 
 	$(function() {
-		$('#content').on('click', '.item', function(event) {
+		$('.item').on('click', '.item-collapse-link', function(event) {
 
 			event.preventDefault();
-			$item = $(this);
+			$item = $(this).parents('.item');
 			$itemBody = $item.find('.item-body');
 
 			if ($item.hasClass('item-open')) {
@@ -109,16 +109,12 @@
 					It's open.
 					• Check the click has come from a "close" control
 					• Collapse the "body" area
+					• Disable the (now hidden) "show less" link
 					• Then shunt the card back into the deck
 				*/
 				if ($(event.target).hasClass('item-collapse-link')) {
 					$itemBody.addClass('item-body-collapsed');
 					$itemBody.one(transEndEventName, function(event) {
-						/*
-							Body has collapsed.
-							• Disable close link
-							• Shunt the card back
-						*/
 						$itemBody.find('.item-collapse').hide();
 						$item.removeClass('item-open');
 					});
