@@ -1,51 +1,53 @@
-[
-  {
-    "uuid": "0195855d-0659-468b-ae41-43338b5d8fe5",
-    "name": "Dr Helen Leaf",
-    "role": "GP",
-    "gender": "female",
-    "photo": "icon-avatar-helen-leaf.png"
-  },
-  {
-    "uuid": "82cd2168-bae8-444c-aeaf-068ffb319118",
-    "name": "Dr Mike Johnson",
-    "role": "GP",
-    "gender": "male",
-    "photo": "icon-avatar-mike-johnson.png"
-  },
-  {
-    "uuid": "ae6c5edc-e16b-4230-a4d9-94d02cd64884",
-    "name": "Dr Emma Stace",
-    "role": "GP",
-    "gender": "female",
-    "photo": "icon-avatar.svg"
-  },
-  {
-    "uuid": "880ea4b2-696c-4c75-87cb-80cdcdd9ac1c",
-    "name": "Dr Malcolm Branch",
-    "role": "GP",
-    "gender": "male",
-    "photo": "icon-avatar-malcolm-branch.png"
-  },
-  {
-    "uuid": "29316adc-ea1d-408f-8180-0eb64073dbd9",
-    "name": "Sasheika Wrench",
-    "role": "Nurse practitioner",
-    "gender": "female",
-    "photo": "icon-avatar.svg"
-  },
-  {
-    "uuid": "b5d1ce2e-fe9a-482f-b5d6-25dcac96e0dc",
-    "name": "Jonathan Hope",
-    "role": "Nurse practitioner",
-    "gender": "male",
-    "photo": "icon-avatar-jonathon-hope.png"
-  },
-  {
-    "uuid": "0f0332bf-abd0-44cb-af1c-2663e132a5ec",
-    "name": "Alison Wylde",
-    "role": "Nurse",
-    "gender": "female",
-    "photo": "icon-avatar-alison-wylde.png"
-  }
-]
+{
+  "practitioners": [
+    {
+      "uuid": "0195855d-0659-468b-ae41-43338b5d8fe5",
+      "name": "Dr Helen Leaf",
+      "role": "GP",
+      "gender": "female",
+      "photo": "icon-avatar-helen-leaf.png"
+    },
+    {
+      "uuid": "82cd2168-bae8-444c-aeaf-068ffb319118",
+      "name": "Dr Mike Johnson",
+      "role": "GP",
+      "gender": "male",
+      "photo": "icon-avatar-mike-johnson.png"
+    },
+    {
+      "uuid": "ae6c5edc-e16b-4230-a4d9-94d02cd64884",
+      "name": "Dr Emma Stace",
+      "role": "GP",
+      "gender": "female",
+      "photo": "icon-avatar.svg"
+    },
+    {
+      "uuid": "880ea4b2-696c-4c75-87cb-80cdcdd9ac1c",
+      "name": "Dr Malcolm Branch",
+      "role": "GP",
+      "gender": "male",
+      "photo": "icon-avatar-malcolm-branch.png"
+    },
+    {
+      "uuid": "29316adc-ea1d-408f-8180-0eb64073dbd9",
+      "name": "Sasheika Wrench",
+      "role": "Nurse practitioner",
+      "gender": "female",
+      "photo": "icon-avatar.svg"
+    },
+    {
+      "uuid": "b5d1ce2e-fe9a-482f-b5d6-25dcac96e0dc",
+      "name": "Jonathan Hope",
+      "role": "Nurse practitioner",
+      "gender": "male",
+      "photo": "icon-avatar-jonathon-hope.png"
+    },
+    {
+      "uuid": "0f0332bf-abd0-44cb-af1c-2663e132a5ec",
+      "name": "Alison Wylde",
+      "role": "Nurse",
+      "gender": "female",
+      "photo": "icon-avatar-alison-wylde.png"
+    }
+  ]
+}

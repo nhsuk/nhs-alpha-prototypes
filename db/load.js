@@ -22,27 +22,19 @@ function load_data_files() {
       return file_name.match(/\.json$/);
     })
     .map(function(file_name) {
-      return fs.readFileAsync(__dirname + '/' + file_name, 'utf8')
-        .then(JSON.parse)
-        .then(function(data) {
-          var dataset_name = file_name.replace(/\.json$/, ''),
-              o = {};
-
-          o[dataset_name] = data;
-
-          return o;
-        })
-        .catch(SyntaxError, function(e) {
-          console.error('invalid JSON in file ' + file_name);
-          throw(e);
-        })
-        .catch(function(e) {
-          console.log('unable to read file ' + file_name);
-          throw(e);
-        });
+      return fs.readFileAsync(__dirname + '/' + file_name, 'utf8');
     })
+    .map(JSON.parse)
     .reduce(function(a, b) {
       return util._extend(a, b);
+    })
+    .catch(SyntaxError, function(e) {
+      console.error('invalid JSON in file ' + file_name);
+      throw(e);
+    })
+    .catch(function(e) {
+      console.log('unable to read file ' + file_name);
+      throw(e);
     });
 }
 

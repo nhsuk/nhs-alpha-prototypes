@@ -1,244 +1,246 @@
-[
-  {
-    "slug": "lakeside-surgery",
-    "name": "Lakeside Surgery",
-    "address": [
-      "22 Castelnau",
-      "London",
-      "NW13 9HJ"
-    ],
-    "distance_away": "0.4 miles away",
-    "travel_time": "About a 6 minute walk",
-    "appointment_hours": {
-      "Monday": "9am – 4.50pm",
-      "Tuesday": "7.30am – 7.20pm",
-      "Wednesday": "9am – 4.50pm",
-      "Thursday": "9am – 4.50pm",
-      "Friday": "7.30am – 7.20pm"
-    },
-    "list_size": "2,000 patients",
-    "ratings": {
-      "would_recommend": "82%",
-      "feel_listened_to": "88%",
-      "wait_time": "8 days"
-    },
-    "services": [
-      "Travel vaccinations",
-      "Over 40 health check",
-      "Diabetes clinic",
-      "Childhood vaccinations",
-      "Quit smoking"
-    ],
-    "staff": {
-      "count": 7,
-      "doctors": [
-        {
-          "name": "Dr Helen Leaf",
-          "role": "GP",
-          "gender": "female",
-          "photo": "icon-avatar-helen-leaf.png"
-        },
-        {
-          "name": "Dr Mike Johnson",
-          "role": "GP",
-          "gender": "male",
-          "photo": "icon-avatar-mike-johnson.png"
-        },
-        {
-          "name": "Dr Emma Stace",
-          "role": "GP",
-          "gender": "female",
-          "photo": "icon-avatar.svg"
-        },
-        {
-          "name": "Dr Malcolm Branch",
-          "role": "GP",
-          "gender": "male",
-          "photo": "icon-avatar-malcolm-branch.png"
-        }
+{
+  "gp_practices": [
+    {
+      "slug": "lakeside-surgery",
+      "name": "Lakeside Surgery",
+      "address": [
+        "22 Castelnau",
+        "London",
+        "NW13 9HJ"
       ],
-      "nurse_practitioners": [
-        {
-          "name": "Sasheika Wrench",
-          "role": "Nurse practitioner",
-          "gender": "female",
-          "photo": "icon-avatar.svg"
-        },
-        {
-          "name": "Jonathan Hope",
-          "role": "Nurse practitioner",
-          "gender": "male",
-          "photo": "icon-avatar-jonathon-hope.png"
-        }
+      "distance_away": "0.4 miles away",
+      "travel_time": "About a 6 minute walk",
+      "appointment_hours": {
+        "Monday": "9am – 4.50pm",
+        "Tuesday": "7.30am – 7.20pm",
+        "Wednesday": "9am – 4.50pm",
+        "Thursday": "9am – 4.50pm",
+        "Friday": "7.30am – 7.20pm"
+      },
+      "list_size": "2,000 patients",
+      "ratings": {
+        "would_recommend": "82%",
+        "feel_listened_to": "88%",
+        "wait_time": "8 days"
+      },
+      "services": [
+        "Travel vaccinations",
+        "Over 40 health check",
+        "Diabetes clinic",
+        "Childhood vaccinations",
+        "Quit smoking"
       ],
-      "nurses": [
-        {
-          "name": "Alison Wylde",
-          "role": "Nurse",
-          "gender": "female",
-          "photo": "icon-avatar-alison-wylde.png"
-        }
-      ]
+      "staff": {
+        "count": 7,
+        "doctors": [
+          {
+            "name": "Dr Helen Leaf",
+            "role": "GP",
+            "gender": "female",
+            "photo": "icon-avatar-helen-leaf.png"
+          },
+          {
+            "name": "Dr Mike Johnson",
+            "role": "GP",
+            "gender": "male",
+            "photo": "icon-avatar-mike-johnson.png"
+          },
+          {
+            "name": "Dr Emma Stace",
+            "role": "GP",
+            "gender": "female",
+            "photo": "icon-avatar.svg"
+          },
+          {
+            "name": "Dr Malcolm Branch",
+            "role": "GP",
+            "gender": "male",
+            "photo": "icon-avatar-malcolm-branch.png"
+          }
+        ],
+        "nurse_practitioners": [
+          {
+            "name": "Sasheika Wrench",
+            "role": "Nurse practitioner",
+            "gender": "female",
+            "photo": "icon-avatar.svg"
+          },
+          {
+            "name": "Jonathan Hope",
+            "role": "Nurse practitioner",
+            "gender": "male",
+            "photo": "icon-avatar-jonathon-hope.png"
+          }
+        ],
+        "nurses": [
+          {
+            "name": "Alison Wylde",
+            "role": "Nurse",
+            "gender": "female",
+            "photo": "icon-avatar-alison-wylde.png"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "shrewsbottom-surgery",
+      "name": "Shrewsbottom Surgery",
+      "address": [
+        "15 Pound Lane",
+        "London",
+        "NW12 9AT"
+      ],
+      "distance_away": "1.1 miles away",
+      "travel_time": "About a 20 minute walk",
+      "appointment_hours": {
+        "Monday to Friday": "9am – 5pm"
+      },
+      "list_size": "2,000 patients",
+      "ratings": {
+        "would_recommend": "89%",
+        "feel_listened_to": "88%",
+        "wait_time": "5 days"
+      },
+      "services": [
+        "Travel vaccinations",
+        "Over 40 health check",
+        "Diabetes clinic",
+        "Childhood vaccinations",
+        "Quit smoking"
+      ],
+      "staff": {
+        "count": 7,
+        "doctors": [
+          {
+            "name": "Dr Helen Leaf",
+            "role": "GP",
+            "gender": "female",
+            "photo": "icon-avatar-helen-leaf.png"
+          },
+          {
+            "name": "Dr Mike Johnson",
+            "role": "GP",
+            "gender": "male",
+            "photo": "icon-avatar-mike-johnson.png"
+          },
+          {
+            "name": "Dr Emma Stace",
+            "role": "GP",
+            "gender": "female",
+            "photo": "icon-avatar.svg"
+          },
+          {
+            "name": "Dr Malcolm Branch",
+            "role": "GP",
+            "gender": "male",
+            "photo": "icon-avatar-malcolm-branch.png"
+          }
+        ],
+        "nurse_practitioners": [
+          {
+            "name": "Sasheika Wrench",
+            "role": "Nurse practitioner",
+            "gender": "female",
+            "photo": "icon-avatar.svg"
+          },
+          {
+            "name": "Jonathan Hope",
+            "role": "Nurse practitioner",
+            "gender": "male",
+            "photo": "icon-avatar-jonathon-hope.png"
+          }
+        ],
+        "nurses": [
+          {
+            "name": "Alison Wylde",
+            "role": "Nurse",
+            "gender": "female",
+            "photo": "icon-avatar-alison-wylde.png"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "victoria-medical-centre",
+      "name": "Victoria Medical Centre",
+      "address": [
+        "48 Buttoy",
+        "London",
+        "NW13 9HT"
+      ],
+      "distance_away": "1.5 miles away",
+      "travel_time": "About a 25 minute walk",
+      "appointment_hours": {
+        "Monday": "9am – 5pm",
+        "Tuesday": "9am – 5pm",
+        "Wednesday": "9am – 9pm",
+        "Thursday": "9am – 5pm",
+        "Friday": "9am – 5pm"
+      },
+      "list_size": "2,000 patients",
+      "ratings": {
+        "would_recommend": "74%",
+        "feel_listened_to": "88%",
+        "wait_time": "13 days"
+      },
+      "services": [
+        "Travel vaccinations",
+        "Over 40 health check",
+        "Diabetes clinic",
+        "Childhood vaccinations",
+        "Quit smoking"
+      ],
+      "staff": {
+        "count": 7,
+        "doctors": [
+          {
+            "name": "Dr Helen Leaf",
+            "role": "GP",
+            "gender": "female",
+            "photo": "icon-avatar-helen-leaf.png"
+          },
+          {
+            "name": "Dr Mike Johnson",
+            "role": "GP",
+            "gender": "male",
+            "photo": "icon-avatar-mike-johnson.png"
+          },
+          {
+            "name": "Dr Emma Stace",
+            "role": "GP",
+            "gender": "female",
+            "photo": "icon-avatar.svg"
+          },
+          {
+            "name": "Dr Malcolm Branch",
+            "role": "GP",
+            "gender": "male",
+            "photo": "icon-avatar-malcolm-branch.png"
+          }
+        ],
+        "nurse_practitioners": [
+          {
+            "name": "Sasheika Wrench",
+            "role": "Nurse practitioner",
+            "gender": "female",
+            "photo": "icon-avatar.svg"
+          },
+          {
+            "name": "Jonathan Hope",
+            "role": "Nurse practitioner",
+            "gender": "male",
+            "photo": "icon-avatar-jonathon-hope.png"
+          }
+        ],
+        "nurses": [
+          {
+            "name": "Alison Wylde",
+            "role": "Nurse",
+            "gender": "female",
+            "photo": "icon-avatar-alison-wylde.png"
+          }
+        ]
+      }
     }
-  },
-  {
-    "slug": "shrewsbottom-surgery",
-    "name": "Shrewsbottom Surgery",
-    "address": [
-      "15 Pound Lane",
-      "London",
-      "NW12 9AT"
-    ],
-    "distance_away": "1.1 miles away",
-    "travel_time": "About a 20 minute walk",
-    "appointment_hours": {
-      "Monday to Friday": "9am – 5pm"
-    },
-    "list_size": "2,000 patients",
-    "ratings": {
-      "would_recommend": "89%",
-      "feel_listened_to": "88%",
-      "wait_time": "5 days"
-    },
-    "services": [
-      "Travel vaccinations",
-      "Over 40 health check",
-      "Diabetes clinic",
-      "Childhood vaccinations",
-      "Quit smoking"
-    ],
-    "staff": {
-      "count": 7,
-      "doctors": [
-        {
-          "name": "Dr Helen Leaf",
-          "role": "GP",
-          "gender": "female",
-          "photo": "icon-avatar-helen-leaf.png"
-        },
-        {
-          "name": "Dr Mike Johnson",
-          "role": "GP",
-          "gender": "male",
-          "photo": "icon-avatar-mike-johnson.png"
-        },
-        {
-          "name": "Dr Emma Stace",
-          "role": "GP",
-          "gender": "female",
-          "photo": "icon-avatar.svg"
-        },
-        {
-          "name": "Dr Malcolm Branch",
-          "role": "GP",
-          "gender": "male",
-          "photo": "icon-avatar-malcolm-branch.png"
-        }
-      ],
-      "nurse_practitioners": [
-        {
-          "name": "Sasheika Wrench",
-          "role": "Nurse practitioner",
-          "gender": "female",
-          "photo": "icon-avatar.svg"
-        },
-        {
-          "name": "Jonathan Hope",
-          "role": "Nurse practitioner",
-          "gender": "male",
-          "photo": "icon-avatar-jonathon-hope.png"
-        }
-      ],
-      "nurses": [
-        {
-          "name": "Alison Wylde",
-          "role": "Nurse",
-          "gender": "female",
-          "photo": "icon-avatar-alison-wylde.png"
-        }
-      ]
-    }
-  },
-  {
-    "slug": "victoria-medical-centre",
-    "name": "Victoria Medical Centre",
-    "address": [
-      "48 Buttoy",
-      "London",
-      "NW13 9HT"
-    ],
-    "distance_away": "1.5 miles away",
-    "travel_time": "About a 25 minute walk",
-    "appointment_hours": {
-      "Monday": "9am – 5pm",
-      "Tuesday": "9am – 5pm",
-      "Wednesday": "9am – 9pm",
-      "Thursday": "9am – 5pm",
-      "Friday": "9am – 5pm"
-    },
-    "list_size": "2,000 patients",
-    "ratings": {
-      "would_recommend": "74%",
-      "feel_listened_to": "88%",
-      "wait_time": "13 days"
-    },
-    "services": [
-      "Travel vaccinations",
-      "Over 40 health check",
-      "Diabetes clinic",
-      "Childhood vaccinations",
-      "Quit smoking"
-    ],
-    "staff": {
-      "count": 7,
-      "doctors": [
-        {
-          "name": "Dr Helen Leaf",
-          "role": "GP",
-          "gender": "female",
-          "photo": "icon-avatar-helen-leaf.png"
-        },
-        {
-          "name": "Dr Mike Johnson",
-          "role": "GP",
-          "gender": "male",
-          "photo": "icon-avatar-mike-johnson.png"
-        },
-        {
-          "name": "Dr Emma Stace",
-          "role": "GP",
-          "gender": "female",
-          "photo": "icon-avatar.svg"
-        },
-        {
-          "name": "Dr Malcolm Branch",
-          "role": "GP",
-          "gender": "male",
-          "photo": "icon-avatar-malcolm-branch.png"
-        }
-      ],
-      "nurse_practitioners": [
-        {
-          "name": "Sasheika Wrench",
-          "role": "Nurse practitioner",
-          "gender": "female",
-          "photo": "icon-avatar.svg"
-        },
-        {
-          "name": "Jonathan Hope",
-          "role": "Nurse practitioner",
-          "gender": "male",
-          "photo": "icon-avatar-jonathon-hope.png"
-        }
-      ],
-      "nurses": [
-        {
-          "name": "Alison Wylde",
-          "role": "Nurse",
-          "gender": "female",
-          "photo": "icon-avatar-alison-wylde.png"
-        }
-      ]
-    }
-  }
-]
+  ]
+}
