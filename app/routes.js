@@ -366,62 +366,6 @@ var filterByPractitionerUuid = function(uuid) {
   }
 }
 
-
-function practitioner_details_for_slug(slug) {
-  switch(slug) {
-    case 'helen-leaf':
-      return {
-        name: 'Dr Helen Leaf',
-        position: 'GP',
-        gender: 'female',
-        avatar: '/public/images/icon-avatar-helen-leaf.png'
-      };
-    case 'mike-johnson':
-      return {
-        name: 'Dr Mike Johnson',
-        position: 'GP',
-        gender: 'male',
-        avatar: '/public/images/icon-avatar-mike-johnson.png'
-      };
-    case 'emma-stace':
-      return {
-        name: 'Dr Emma Stace',
-        position: 'GP',
-        gender: 'female',
-        avatar: '/public/images/icon-avatar.svg'
-      };
-    case 'malcolm-branch':
-      return {
-        name: 'Dr Malcolm Branch',
-        position: 'GP',
-        gender: 'male',
-        avatar: '/public/images/icon-avatar-malcolm-branch.png'
-      };
-    case 'sasheika-wrench':
-      return {
-        name: 'Sasheika Wrench',
-        position: 'Nurse practitioner',
-        gender: 'female',
-        avatar: '/public/images/icon-avatar.svg'
-      };
-    case 'jonathon-hope':
-      return {
-        name: 'Jonathon Hope',
-        position: 'Nurse practitioner',
-        gender: 'male',
-        avatar: '/public/images/icon-avatar-jonathon-hope.png'
-      };
-    case 'alison-wylde':
-      return {
-        name: 'Alison Wylde',
-        position: 'Nurse',
-        gender: 'female',
-        avatar: '/public/images/icon-avatar-alison-wylde.png'
-      };
-  }
-}
-
-
 function appointment_details_for_service(slug) {
   switch(slug) {
     case 'diabetes-blood-glucose-test' :
