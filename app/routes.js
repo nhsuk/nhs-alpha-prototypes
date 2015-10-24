@@ -356,7 +356,7 @@ var filterFemaleGP = function(appointment) {
 };
 
 var filterBefore10 = function(appointment) {
-  var hour = parseInt(appointment.appointment_time.split(':')[0]);
+  var hour = parseInt(appointment.appointment_time.split(':')[0], 10);
   return hour < 10;
 };
 
