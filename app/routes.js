@@ -1,3 +1,5 @@
+var querystring = require('querystring');
+
 module.exports = {
   bind : function (app) {
     function find_gp_practice(slug) {
@@ -222,8 +224,20 @@ module.exports = {
     // Booking with context - pass through "service" query parameter
     // ie ?service=diabetes-foot-test
     app.get('/booking-with-context/your-details', function(req, res) {
-      var service = req.query.service;
-      res.render('booking-with-context/your-details', {"service": service});
+      var service_slug = req.query.service,
+          offramp = req.session.service_booking_offramp &&
+                    req.session.service_booking_offramp[service_slug];
+
+      if (offramp) {
+        delete req.session.service_booking_offramp[service_slug];
+      }
+
+      res.render(
+        'booking-with-context/your-details',
+        {
+          service: service_slug
+        }
+      );
     });
 
     // Booking with context - from "service" query parameter, pass in details
@@ -236,10 +250,23 @@ module.exports = {
     });
 
     app.get('/booking-with-context/appointment-confirmed', function(req, res) {
-      var service_context = appointment_details_for_service(req.query.service);
+      var service_slug = req.query.service,
+          service_context = appointment_details_for_service(service_slug),
+          offramp = req.session.service_booking_offramp &&
+                    req.session.service_booking_offramp[service_slug];
 
-      res.render('booking-with-context/appointment-confirmed',
-                 {"service_context": service_context});
+      if (offramp) {
+        delete req.session.service_booking_offramp[service_slug];
+        res.redirect(offramp);
+      }
+      else {
+        res.render(
+          'booking-with-context/appointment-confirmed',
+          {
+            service_context: service_context
+          }
+        );
+      }
     });
 
     app.get('/planner', function(req, res) {
@@ -271,8 +298,29 @@ module.exports = {
       res.render(
         'planner/index',
         {
-          cards: cards
+          cards: cards,
+          querystring: querystring.stringify(req.query)
         }
+      );
+    });
+
+    app.get('/planner/book-eye-test', function(req, res) {
+      var query = req.query,
+          service_slug = 'diabetes-eye-screening';
+
+      // work out a return URL
+      query.booked_eye_test = 'true';
+      var return_url = '/planner?' + querystring.stringify(query);
+
+      // set the return URL in the session
+      if (!req.session.service_booking_offramp) {
+        req.session.service_booking_offramp = {};
+      }
+      req.session.service_booking_offramp[service_slug] = return_url;
+
+      // redirect to the service booking journey, skipping log in
+      res.redirect(
+        '/booking-with-context/next-available-appointment?service=' + service_slug
       );
     });
   }
