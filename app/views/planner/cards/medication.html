@@ -1,0 +1,44 @@
+{% extends 'templates/planner_card.html' %}
+
+{% block id %}metformin-info-card{% endblock %}
+
+{% block heading %}
+  Your Metformin medication
+{% endblock %}
+
+{% block body %}
+  <p>You picked up your latest prescription on 19 October 2015</p>
+
+  <dl>
+    <dt>You're on:</dt>
+    <dd>Metformin</dd>
+    <dt>How much:</dt>
+    <dd>1 tablet a day</dd>
+    <dt>When to take it:</dt>
+    <dd>after food, with water <small>(don't chew the tablets)</small></dd>
+  </dl>
+
+  <p>Metformin helps keep your blood sugar levels under control.</p>
+
+  <details>
+    <summary>More about Metformin</summary>
+
+    <p>Metformin works by:</p>
+
+    <ul class="list-bullet">
+      <li>reducing the amount of glucose released into your blood</li>
+      <li>helping the cells remove glucose from the blood</li>
+      <li>reducing the amount of glucose you absorb from your food</li>
+    </ul>
+
+    <p><a href="https://www.diabetes.org.uk/biguanide">Read more about Metformin at <strong>diabetes.org.uk</strong></a></p>
+  </details>
+
+  <p>It can cause side effects. Speak to your GP if you have:</p>
+
+  <ul class="list-bullet">
+    <li>bloating</li>
+    <li>diarrhoea</li>
+    <li>feeling sick</li>
+  </ul>
+{% endblock %}
