@@ -241,6 +241,35 @@ module.exports = {
       res.render('booking-with-context/appointment-confirmed',
                  {"service_context": service_context});
     });
+
+    app.get('/planner', function(req, res) {
+      var booked_eye_test = !!req.query.booked_eye_test,
+          cards;
+
+      if (booked_eye_test) {
+        cards = [
+          'medication',
+          'apply-for-free-prescriptions',
+          'your-eye-test-appointment',
+          'repeat-prescription'
+        ];
+      }
+      else {
+        cards = [
+          'medication',
+          'book-your-first-eye-test',
+          'apply-for-free-prescriptions',
+          'repeat-prescription'
+        ];
+      }
+
+      res.render(
+        'planner/index',
+        {
+          cards: cards
+        }
+      );
+    });
   }
 };
 

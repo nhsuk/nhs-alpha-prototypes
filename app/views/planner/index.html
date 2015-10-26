@@ -11,9 +11,10 @@
 {% block content %}
   <main id="content" role="main">
     <div class="js-cards items-container">
-      {% include 'planner/cards/medication.html' %}
-      {% include 'planner/cards/apply-for-free-prescriptions.html' %}
-      {% include 'planner/cards/repeat-prescription.html' %}
+      {% for card in cards %}
+        {% set template = 'planner/cards/' + card + '.html' %}
+        {% include template %}
+      {% endfor %}
     </div>
   </main>
 {% endblock %}
