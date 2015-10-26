@@ -1,0 +1,41 @@
+{% extends 'templates/planner_card.html' %}
+
+{% block id %}your-eye-test-appointment{% endblock %}
+
+{% block heading %}
+  Your eye test appointment
+{% endblock %}
+
+{% block leadin %}
+  <p>Thursday 5 November 2015 from 11:20am to 11:50am</p>
+{% endblock %}
+
+{% block body %}
+  <p>Hodd Barnes Dickins Opticians<br>
+  94 High Holborn<br>
+  London<br>
+  WC1V 6LF</p>
+
+  <ul>
+    <li><a href="#">Send me a text reminder the day before</a></li>
+    <li><a href="#">Change appointment</a></li>
+  </ul>
+
+  <details>
+    <summary>Why do I need an eye test?</summary>
+
+    <p>Diabetes can damage your blood vessels which can cause sight problems
+    (diabetic retinopathy) and blindness. Eye check can detect damage before
+    you notice changes to your sight. Treating damaged blood vessels early can
+    stop them affecting your sight.</p>
+  </details>
+
+  <p><strong>Prepare for your appointment:</strong></p>
+
+  <ul class="list-bullet">
+    <li>wear your glasses or contact lenses</li>
+    <li>bring sunglasses (the drops can make your eyes sensitive to light)</li>
+    <li>plan how you’ll get home - your eyes can be blurry and you shouldn’t
+    drive or travel on your own</li>
+  </ul>
+{% endblock %}
