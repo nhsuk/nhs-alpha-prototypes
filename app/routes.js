@@ -244,24 +244,29 @@ module.exports = {
 
     app.get('/planner', function(req, res) {
       var booked_eye_test = !!req.query.booked_eye_test,
-          cards;
+          booked_diabetes_review = !!req.query.booked_diabetes_review,
+          cards = [];
 
+      // historic stuff
+      cards.push('medication');
+
+      // actions to take
+      if (!booked_diabetes_review) {
+        cards.push('book-your-first-diabetes-review');
+      }
+      if (!booked_eye_test) {
+        cards.push('book-your-first-eye-test');
+      }
+      cards.push('apply-for-free-prescriptions');
+
+      // upcoming stuff
+      if (booked_diabetes_review) {
+        cards.push('your-diabetes-review-appointment');
+      }
       if (booked_eye_test) {
-        cards = [
-          'medication',
-          'apply-for-free-prescriptions',
-          'your-eye-test-appointment',
-          'repeat-prescription'
-        ];
+        cards.push('your-eye-test-appointment');
       }
-      else {
-        cards = [
-          'medication',
-          'book-your-first-eye-test',
-          'apply-for-free-prescriptions',
-          'repeat-prescription'
-        ];
-      }
+      cards.push('repeat-prescription');
 
       res.render(
         'planner/index',
