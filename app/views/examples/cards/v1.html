@@ -1,0 +1,110 @@
+{% extends 'templates/nhs_content_layout.html' %}
+
+{% block afterHeader %}
+	<div class="service-header">
+		<div class="service-name">
+			Name for this thing
+		</div>
+	</div>
+{% endblock %}
+
+{% block content %}
+
+{% macro card(i) %}
+	<div class="item item-{{ i.index }} {{ i.extra_classes }}" id="item-{{ i.index }}">
+		<div class="shadow"></div>
+		<div class="item-content">
+			<div class="item-header">
+				<a href="#item-{{ i.index }}" class="item-collapse-link">Header {{ i.index }}</a>
+			</div>
+			{% if i.leadin %}
+			<div class="item-leadin">
+				<p>{{ i.leadin }}</p>
+			</div>
+			{% endif %}
+			<div class="item-body item-body-collapsed">
+				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+				<p><a href="#" class="button button-get-started">I am a call to action!</a></p>
+				<div class="item-collapse">
+					<a href="#" class="item-collapse-link" tabindex="0">Show less</a>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endmacro %}
+
+<main id="content" role="main">
+
+	<div class="js-cards items-container">
+
+		{{ card({
+			index: 1
+			})
+		}}
+
+		{{ card({
+			index: 2,
+			leadin: "This is a lead-in"
+			})
+		}}
+
+		{{ card({
+			index: 3
+			})
+		}}
+
+		<div class="item item-4" id="item-4">
+			<div class="shadow"></div>
+			<div class="item-content">
+				<div class="item-header">
+					<a href="#item-4" class="item-collapse-link">Header 4 (details)</a>
+				</div>
+				<div class="item-body item-body-collapsed">
+					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+					<details>
+						<summary>So what is this thing?</summary>
+						<div>
+							<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+						</div>
+					</details>
+					<div class="item-collapse">
+						<a href="#" class="item-collapse-link" tabindex="0">Show less</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="item item-5" id="item-5">
+			<div class="shadow"></div>
+			<div class="item-content">
+				<div class="item-header">
+					<a href="#item-5" class="item-collapse-link">Header 5 (CTA)</a>
+				</div>
+				<div class="item-leadin">
+					This is a lead-in area with a <a href="#" class="button item-permanent-cta">CTA</a>
+				</div>
+				<div class="item-body item-body-collapsed">
+					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+					<div class="item-collapse">
+						<a href="#" class="item-collapse-link" tabindex="0">Show less</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		{{ card({
+			index: 6
+			})
+		}}
+
+		{{ card({
+			index: 7
+			})
+		}}
+
+		<div class="shadow"></div>
+	</div>
+
+</main>
+
+{% endblock %}
