@@ -18,7 +18,6 @@ fieldset {
 .form-item-wrapper {
   padding: 1rem 0 0 0;
   @extend %contain-floats;
-  //outline: 1px dotted red;
 }
 
 // Form group is used to wrap label and input pairs
@@ -84,8 +83,10 @@ fieldset {
   line-height: 4rem;
   padding: 0 1rem;
   background-color: $white;
-  outline: 1px solid $nhs-black;
-  border: 2px solid $nhs-grey-2;
+  border: 1px solid $nhs-black;
+  -webkit-box-shadow: inset 0px 0px 0px 2px $nhs-grey-2;
+  -moz-box-shadow: inset 0px 0px 0px 2px $nhs-grey-2;
+  box-shadow: inset 0px 0px 0px 2px $nhs-grey-2;
 
   // Disable webkit appearance and remove rounded corners
   -webkit-appearance: none;
@@ -93,6 +94,12 @@ fieldset {
 
   @include media(tablet) {
     width: 50%;
+  }
+
+  &:focus {
+    -webkit-box-shadow: inset 0px 0px 0px 2px $nhs-black;
+    -moz-box-shadow: inset 0px 0px 0px 2px $nhs-black;
+    box-shadow: inset 0px 0px 0px 2px $nhs-black;
   }
 }
 
