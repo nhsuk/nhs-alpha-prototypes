@@ -25,9 +25,9 @@
     background-color: $nhs-dark-green;
   }
 
-  &:hover {
+  /*&:hover {
     outline: 1px solid $nhs-websafe-dark-green;
-  }
+  }*/
 
   /* to be fixed */
   text-decoration: none !important;
@@ -81,9 +81,9 @@
     background-color: $nhs-dark-pink;
   }
 
-  &:hover {
+  /*&:hover {
     outline: 1px solid $nhs-dark-red;
-  }
+  }*/
 }
 
 // Secondary buttons
@@ -100,7 +100,37 @@
     background-color: $nhs-grey-3;
   }
 
-  &:hover {
+  /*&:hover {
     outline: 1px solid $nhs-grey-3;
+  }*/
+}
+
+// Secondary CTA buttons (NHS blue)
+.button-secondary-cta {
+  background-color: $nhs-blue;
+  border-color: $nhs-dark-blue;
+  color: $white;
+
+  height: 3rem;
+  line-height: 3rem;
+
+  font-size: 16px;
+  font-weight: bold;
+
+  padding-right: 2.5rem;
+  background-image: url("/public/images/icon-button-start.svg");
+  background-repeat: no-repeat;
+  background-position: 97.5% 57.5%;
+
+  &:link,
+  &:hover,
+  &:focus,
+  &:visited{
+    color: $white;
+    background-color: $nhs-blue;
   }
+
+  /*&:hover {
+    outline: 1px solid $nhs-grey-3;
+  }*/
 }
