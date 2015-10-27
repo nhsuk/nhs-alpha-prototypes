@@ -1,6 +1,70 @@
 {
   "appointments": [
     {
+      "uuid": "e1293fe5-a238-4fc5-8a3c-1fd330602826",
+      "service": "diabetes-blood-glucose-test",
+      "appointment_date": "Tuesday 26th January 2016",
+      "appointment_time": "16:10",
+      "practitioner_uuid": "0f0332bf-abd0-44cb-af1c-2663e132a5ec",
+      "appointment_length": "5",
+      "appointment_type": "face to face",
+      "appointment_type_class": "face-to-face",
+      "address": [
+        "Lakeside Surgery",
+        "22 Castelnau",
+        "London",
+        "NW13 9HJ"
+      ]
+    },
+    {
+      "uuid": "2ec97e1a-cf25-422c-af3f-d1ea33ba1a2a",
+      "service": "diabetes-foot-check",
+      "appointment_date": "Wednesday 27th January 2016",
+      "appointment_time": "15:45",
+      "practitioner_uuid": "0f0332bf-abd0-44cb-af1c-2663e132a5ec",
+      "appointment_length": "20",
+      "appointment_type": "face to face",
+      "appointment_type_class": "face-to-face",
+      "address": [
+        "Lakeside Surgery",
+        "22 Castelnau",
+        "London",
+        "NW13 9HJ"
+      ]
+    },
+    {
+      "uuid": "e729d1e7-4e24-463b-b1cb-195bfc9de60a",
+      "service": "diabetes-annual-review",
+      "appointment_date": "Tuesday 26th January 2016",
+      "appointment_time": "16:10",
+      "practitioner_uuid": "b47c7963-bf48-4f6c-b906-1017325eaa05",
+      "appointment_length": "25",
+      "appointment_type": "face to face",
+      "appointment_type_class": "face-to-face",
+      "address": [
+        "Lakeside Surgery",
+        "22 Castelnau",
+        "London",
+        "NW13 9HJ"
+      ]
+    },
+    {
+      "uuid": "c835c21d-afd2-468b-8e36-99449a265af5",
+      "service": "diabetes-eye-screening",
+      "appointment_date": "Tuesday 26th January 2016",
+      "appointment_time": "10:20",
+      "practitioner_uuid": "599029f6-3c7b-44ea-a82c-1547936cef20",
+      "appointment_length": "30",
+      "appointment_type": "face to face",
+      "appointment_type_class": "face-to-face",
+      "address": [
+        "The Royal Hospital",
+        "34 Queen’s Avenue",
+        "London",
+        "NW13 9HJ"
+      ]
+    },
+    {
       "uuid": "fb673682-cd97-41e7-9200-9567694e8f2d",
       "service": "general-practice",
       "appointment_date": "Tuesday 26th January 2016",

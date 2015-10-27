@@ -48,6 +48,20 @@
       "role": "Nurse",
       "gender": "female",
       "photo": "icon-avatar-alison-wylde.png"
+    },
+    {
+      "uuid": "599029f6-3c7b-44ea-a82c-1547936cef20",
+      "name": "Ravi Aggarwal",
+      "role": "Nurse",
+      "gender": "male",
+      "photo": "icon-avatar-ravi-aggarwal.png"
+    },
+    {
+      "uuid": "b47c7963-bf48-4f6c-b906-1017325eaa05",
+      "name": "Jonathon Hope",
+      "role": "Nurse Practitioner",
+      "gender": "male",
+      "photo": "icon-avatar-jonathon-hope.png"
     }
   ]
 }
