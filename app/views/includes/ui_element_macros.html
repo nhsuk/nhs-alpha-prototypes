@@ -20,7 +20,7 @@
       </p>
       {% if i.address %}
         <p class="appointment-address">
-          {{ i.address|safe }}
+          {{ i.address.join('<br>') }}
         </p>
       {% endif %}
     </div>

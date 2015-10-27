@@ -159,21 +159,26 @@ module.exports = {
       );
     });
 
+    app.get('/book-an-appointment/:service_slug?/find-new-appointment', function(req, res) {
+      res.render('book-an-appointment/find-new-appointment');
+    });
+
     app.get('/book-an-appointment/:service_slug?/next-available-appointment', function(req, res) {
 
-      var service_slug = req.params.service_slug,
+      var service_slug = req.params.service_slug || 'general-practice',
           service = app.locals.services.filter(function(service) {
             return service.slug === service_slug;
-          })[0];
+          })[0],
+          practice = service_slug === 'general-practice' ? app.locals.gp_practices[0] : null;
 
       res.render(
         'book-an-appointment/next-available-appointment',
         {
-          practice: app.locals.gp_practices[0],
+          practice: practice,
           service: service,
           appointments: {
-            next: find_matching_appointment([filterByService('general-practice')]),
-            face_to_face: find_matching_appointment([filterByService('general-practice'),filterFaceToFace]),
+            next: find_matching_appointment([filterByService(service_slug)]),
+            face_to_face: find_matching_appointment([filterByService(service_slug),filterFaceToFace]),
           }
         }
       );
@@ -189,7 +194,7 @@ module.exports = {
       );
     });
 
-    app.get('/book-an-appointment/confirm-appointment/:uuid', function(req, res) {
+    app.get('/book-an-appointment/:service_slug?/confirm-appointment/:uuid', function(req, res) {
       res.render(
         'book-an-appointment/confirm-appointment',
         {
@@ -199,7 +204,7 @@ module.exports = {
       );
     });
 
-    app.get('/book-an-appointment/appointment-confirmed/:uuid', function(req, res) {
+    app.get('/book-an-appointment/:service_slug?/appointment-confirmed/:uuid', function(req, res) {
       res.render(
         'book-an-appointment/appointment-confirmed',
         {
