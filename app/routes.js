@@ -205,10 +205,16 @@ module.exports = {
     });
 
     app.get('/book-an-appointment/:service_slug?/appointment-confirmed/:uuid', function(req, res) {
+      var service_slug = req.params.service_slug || 'general-practice',
+          service = app.locals.services.filter(function(service) {
+            return service.slug === service_slug;
+          })[0];
+
       res.render(
         'book-an-appointment/appointment-confirmed',
         {
           practice: app.locals.gp_practices[0],
+          service: service,
           appointment: find_appointment(req.params.uuid)
         }
       );
