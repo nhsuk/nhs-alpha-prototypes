@@ -1,7 +1,72 @@
 {
   "appointments": [
     {
+      "uuid": "e1293fe5-a238-4fc5-8a3c-1fd330602826",
+      "service": "diabetes-blood-glucose-test",
+      "appointment_date": "Tuesday 26th January 2016",
+      "appointment_time": "16:10",
+      "practitioner_uuid": "0f0332bf-abd0-44cb-af1c-2663e132a5ec",
+      "appointment_length": "5",
+      "appointment_type": "face to face",
+      "appointment_type_class": "face-to-face",
+      "address": [
+        "Lakeside Surgery",
+        "22 Castelnau",
+        "London",
+        "NW13 9HJ"
+      ]
+    },
+    {
+      "uuid": "2ec97e1a-cf25-422c-af3f-d1ea33ba1a2a",
+      "service": "diabetes-foot-check",
+      "appointment_date": "Wednesday 27th January 2016",
+      "appointment_time": "15:45",
+      "practitioner_uuid": "0f0332bf-abd0-44cb-af1c-2663e132a5ec",
+      "appointment_length": "20",
+      "appointment_type": "face to face",
+      "appointment_type_class": "face-to-face",
+      "address": [
+        "Lakeside Surgery",
+        "22 Castelnau",
+        "London",
+        "NW13 9HJ"
+      ]
+    },
+    {
+      "uuid": "e729d1e7-4e24-463b-b1cb-195bfc9de60a",
+      "service": "diabetes-annual-review",
+      "appointment_date": "Tuesday 26th January 2016",
+      "appointment_time": "16:10",
+      "practitioner_uuid": "b47c7963-bf48-4f6c-b906-1017325eaa05",
+      "appointment_length": "25",
+      "appointment_type": "face to face",
+      "appointment_type_class": "face-to-face",
+      "address": [
+        "Lakeside Surgery",
+        "22 Castelnau",
+        "London",
+        "NW13 9HJ"
+      ]
+    },
+    {
+      "uuid": "c835c21d-afd2-468b-8e36-99449a265af5",
+      "service": "diabetes-eye-screening",
+      "appointment_date": "Tuesday 26th January 2016",
+      "appointment_time": "10:20",
+      "practitioner_uuid": "599029f6-3c7b-44ea-a82c-1547936cef20",
+      "appointment_length": "30",
+      "appointment_type": "face to face",
+      "appointment_type_class": "face-to-face",
+      "address": [
+        "The Royal Hospital",
+        "34 Queen’s Avenue",
+        "London",
+        "NW13 9HJ"
+      ]
+    },
+    {
       "uuid": "fb673682-cd97-41e7-9200-9567694e8f2d",
+      "service": "general-practice",
       "appointment_date": "Tuesday 26th January 2016",
       "appointment_time": "16:10",
       "practitioner_uuid": "880ea4b2-696c-4c75-87cb-80cdcdd9ac1c",
@@ -11,6 +76,7 @@
     },
     {
       "uuid": "954c2263-c737-4a76-a8e0-e7c44010529a",
+      "service": "general-practice",
       "appointment_date": "Tuesday 26th January 2016",
       "appointment_time": "16:30",
       "practitioner_uuid": "0f0332bf-abd0-44cb-af1c-2663e132a5ec",
@@ -20,6 +86,7 @@
     },
     {
       "uuid": "0e26582a-d984-4d43-ab74-13a2e9418499",
+      "service": "general-practice",
       "appointment_date": "Wednesday 27th January 2016",
       "appointment_time": "13:10",
       "practitioner_uuid": "0f0332bf-abd0-44cb-af1c-2663e132a5ec",
@@ -29,6 +96,7 @@
     },
     {
       "uuid": "514c03d8-2342-4878-b367-162acbef821a",
+      "service": "general-practice",
       "appointment_date": "Thursday 28th January 2016",
       "appointment_time": "11:30",
       "practitioner_uuid": "82cd2168-bae8-444c-aeaf-068ffb319118",
@@ -38,6 +106,7 @@
     },
     {
       "uuid": "8061a84d-99de-479f-b95e-749ee9a16764",
+      "service": "general-practice",
       "appointment_date": "Thursday 28th January 2016",
       "appointment_time": "16:10",
       "practitioner_uuid": "b5d1ce2e-fe9a-482f-b5d6-25dcac96e0dc",
@@ -47,6 +116,7 @@
     },
     {
       "uuid": "7f52fa78-2446-44d0-99d4-0d8bba02b8b9",
+      "service": "general-practice",
       "appointment_date": "Friday 29th January 2016",
       "appointment_time": "08:30",
       "practitioner_uuid": "880ea4b2-696c-4c75-87cb-80cdcdd9ac1c",
@@ -56,6 +126,7 @@
     },
     {
       "uuid": "5fd5c800-69dd-4ac8-b38d-903ec5a83740",
+      "service": "general-practice",
       "appointment_date": "Friday 29th January 2016",
       "appointment_time": "14:40",
       "practitioner_uuid": "0f0332bf-abd0-44cb-af1c-2663e132a5ec",
@@ -65,6 +136,7 @@
     },
     {
       "uuid": "6ad52229-75da-4694-9c9d-a1803338637c",
+      "service": "general-practice",
       "appointment_date": "Friday 29th January 2016",
       "appointment_time": "16:10",
       "practitioner_uuid": "880ea4b2-696c-4c75-87cb-80cdcdd9ac1c",
@@ -74,6 +146,7 @@
     },
     {
       "uuid": "030faee3-ce8b-435e-a0da-2feaed676a8c",
+      "service": "general-practice",
       "appointment_date": "Friday 29th January 2016",
       "appointment_time": "16:30",
       "practitioner_uuid": "0195855d-0659-468b-ae41-43338b5d8fe5",
@@ -83,6 +156,7 @@
     },
     {
       "uuid": "9adacdae-9110-4b90-b047-5e0a4e6f5523",
+      "service": "general-practice",
       "appointment_date": "Tuesday 2nd February 2016",
       "appointment_time": "11:30",
       "practitioner_uuid": "82cd2168-bae8-444c-aeaf-068ffb319118",
@@ -92,6 +166,7 @@
     },
     {
       "uuid": "48258b48-a682-4e75-95f6-2b4c0618731d",
+      "service": "general-practice",
       "appointment_date": "Tuesday 2nd February 2016",
       "appointment_time": "13:10",
       "practitioner_uuid": "0f0332bf-abd0-44cb-af1c-2663e132a5ec",
@@ -101,6 +176,7 @@
     },
     {
       "uuid": "ec6324e8-321b-42dd-a16c-20a626905d05",
+      "service": "general-practice",
       "appointment_date": "Tuesday 2nd February 2016",
       "appointment_time": "16:10",
       "practitioner_uuid": "b5d1ce2e-fe9a-482f-b5d6-25dcac96e0dc",
@@ -110,6 +186,7 @@
     },
     {
       "uuid": "e7030644-fc92-4afb-917d-6c5e7672de99",
+      "service": "general-practice",
       "appointment_date": "Tuesday 2nd February 2016",
       "appointment_time": "16:10",
       "practitioner_uuid": "880ea4b2-696c-4c75-87cb-80cdcdd9ac1c",
@@ -119,6 +196,7 @@
     },
     {
       "uuid": "1a15390f-857e-4b5b-a311-9024f26fcfd7",
+      "service": "general-practice",
       "appointment_date": "Wednesday 3rd February 2016",
       "appointment_time": "08:30",
       "practitioner_uuid": "0195855d-0659-468b-ae41-43338b5d8fe5",
@@ -128,6 +206,7 @@
     },
     {
       "uuid": "eee7f992-607c-4d43-bca2-41ff51311840",
+      "service": "general-practice",
       "appointment_date": "Wednesday 3rd February 2016",
       "appointment_time": "11:30",
       "practitioner_uuid": "82cd2168-bae8-444c-aeaf-068ffb319118",
@@ -137,6 +216,7 @@
     },
     {
       "uuid": "939db37a-60b1-47c4-b005-672fddbbb62c",
+      "service": "general-practice",
       "appointment_date": "Wednesday 3rd February 2016",
       "appointment_time": "13:10",
       "practitioner_uuid": "0f0332bf-abd0-44cb-af1c-2663e132a5ec",
@@ -146,6 +226,7 @@
     },
     {
       "uuid": "7e28899f-857e-4de3-91dd-8216d8836c92",
+      "service": "general-practice",
       "appointment_date": "Wednesday 3rd February 2016",
       "appointment_time": "16:10",
       "practitioner_uuid": "b5d1ce2e-fe9a-482f-b5d6-25dcac96e0dc",
@@ -155,6 +236,7 @@
     },
     {
       "uuid": "dbc9d1a1-4b78-47c4-937f-1c5e460491ec",
+      "service": "general-practice",
       "appointment_date": "Wednesday 3rd February 2016",
       "appointment_time": "15:10",
       "practitioner_uuid": "880ea4b2-696c-4c75-87cb-80cdcdd9ac1c",

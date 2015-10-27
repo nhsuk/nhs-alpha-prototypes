@@ -11,9 +11,16 @@
 
   <a href="find-new-appointment" class="back-to-previous">Back</a>
 
-  <h1 class="heading-xlarge">
-    Choose an appointment
-  </h1>
+  <div class="text">
+    {% if service.name %}
+    <h1 class="heading-xlarge">
+      Choose a {{ service.name|lower }} appointment
+    </h1>
+      {{ service.triage_hint|safe }}
+    {% else %}
+    <h1 class="heading-xlarge">Choose an appointment</h1>
+    {% endif %}
+  </div>
 
   <div class="grid-row">
     <div class="column-third column-switch-right">
@@ -37,7 +44,8 @@
           gender: appointments.next.practitioner.gender,
           appointment_length: appointments.next.appointment_length,
           appointment_type: appointments.next.appointment_type,
-          appointment_type_class: appointments.next.appointment_type_class
+          appointment_type_class: appointments.next.appointment_type_class,
+          address: appointments.next.address
         })
       }}
 
@@ -54,7 +62,8 @@
           gender: appointments.face_to_face.practitioner.gender,
           appointment_length: appointments.face_to_face.appointment_length,
           appointment_type: appointments.face_to_face.appointment_type,
-          appointment_type_class: appointments.face_to_face.appointment_type_class
+          appointment_type_class: appointments.face_to_face.appointment_type_class,
+          address: appointments.face_to_face.address
         })
       }}
 
