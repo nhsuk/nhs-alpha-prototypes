@@ -11,13 +11,16 @@
 
   <a href="find-new-appointment" class="back-to-previous">Back</a>
 
-  <h1 class="heading-xlarge">
+  <div class="text">
     {% if service.name %}
-    Choose a {{ service.name|lower }} appointment
+    <h1 class="heading-xlarge">
+      Choose a {{ service.name|lower }} appointment
+    </h1>
+      {{ service.triage_hint|safe }}
     {% else %}
-    Choose an appointment
+    <h1 class="heading-xlarge">Choose an appointment</h1>
     {% endif %}
-  </h1>
+  </div>
 
   <div class="grid-row">
     <div class="column-third column-switch-right">
