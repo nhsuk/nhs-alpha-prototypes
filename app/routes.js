@@ -122,9 +122,9 @@ module.exports = {
         {
           practice: app.locals.gp_practices[0],
           appointments: {
-            next: find_matching_appointment([]),
-            face_to_face: find_matching_appointment([filterFaceToFace]),
-            early: find_matching_appointment([filterBefore10]),
+            next: find_matching_appointment([filterByService('general-practice')]),
+            face_to_face: find_matching_appointment([filterByService('general-practice'),filterFaceToFace]),
+            early: find_matching_appointment([filterByService('general-practice'),filterBefore10]),
           }
         }
       );
@@ -136,9 +136,9 @@ module.exports = {
         {
           practice: app.locals.gp_practices[0],
           appointments: {
-            next: find_matching_appointment([]),
-            face_to_face: find_matching_appointment([filterFaceToFace]),
-            female_gp: find_matching_appointment([filterFemaleGP])
+            next: find_matching_appointment([filterByService('general-practice')]),
+            face_to_face: find_matching_appointment([filterByService('general-practice'),filterFaceToFace]),
+            female_gp: find_matching_appointment([filterByService('general-practice'),filterFemaleGP])
           }
         }
       );
@@ -150,10 +150,10 @@ module.exports = {
         {
           practice: app.locals.gp_practices[0],
           appointments: {
-            next: find_matching_appointment([]),
-            face_to_face: find_matching_appointment([filterFaceToFace]),
-            female_gp: find_matching_appointment([filterFemaleGP]),
-            early_female_gp: find_matching_appointment([filterFemaleGP, filterBefore10])
+            next: find_matching_appointment([filterByService('general-practice')]),
+            face_to_face: find_matching_appointment([filterByService('general-practice'),filterFaceToFace]),
+            female_gp: find_matching_appointment([filterByService('general-practice'),filterFemaleGP]),
+            early_female_gp: find_matching_appointment([filterByService('general-practice'),filterFemaleGP, filterBefore10])
           }
         }
       );
@@ -165,8 +165,8 @@ module.exports = {
         {
           practice: app.locals.gp_practices[0],
           appointments: {
-            next: find_matching_appointment([]),
-            face_to_face: find_matching_appointment([filterFaceToFace]),
+            next: find_matching_appointment([filterByService('general-practice')]),
+            face_to_face: find_matching_appointment([filterByService('general-practice'),filterFaceToFace]),
           }
         }
       );
@@ -357,6 +357,12 @@ module.exports = {
     });
   }
 };
+
+var filterByService = function(service_slug) {
+  return function(appointment) {
+    return appointment.service === service_slug;
+  }
+}
 
 var filterFaceToFace = function(appointment) {
   return appointment.appointment_type == 'face to face';
