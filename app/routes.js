@@ -304,6 +304,26 @@ module.exports = {
       );
     });
 
+    app.get('/planner/book-diabetes-review', function(req, res) {
+      var query = req.query,
+          service_slug = 'diabetes-annual-review';
+
+      // work out a return URL
+      query.booked_diabetes_review = 'true';
+      var return_url = '/planner?' + querystring.stringify(query);
+
+      // set the return URL in the session
+      if (!req.session.service_booking_offramp) {
+        req.session.service_booking_offramp = {};
+      }
+      req.session.service_booking_offramp[service_slug] = return_url;
+
+      // redirect to the service booking journey, skipping log in
+      res.redirect(
+        '/booking-with-context/next-available-appointment?service=' + service_slug
+      );
+    });
+
     app.get('/planner/book-eye-test', function(req, res) {
       var query = req.query,
           service_slug = 'diabetes-eye-screening';
