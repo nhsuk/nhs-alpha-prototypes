@@ -269,7 +269,7 @@ module.exports = {
       }
     });
 
-    app.get('/planner', function(req, res) {
+    app.get('/planner/main', function(req, res) {
       var booked_eye_test = !!req.query.booked_eye_test,
           booked_diabetes_review = !!req.query.booked_diabetes_review,
           cards = [];
@@ -297,7 +297,7 @@ module.exports = {
       cards.push('repeat-prescription');
 
       res.render(
-        'planner/index',
+        'planner/main',
         {
           cards: cards,
           querystring: querystring.stringify(req.query)
@@ -311,7 +311,7 @@ module.exports = {
 
       // work out a return URL
       query.booked_diabetes_review = 'true';
-      var return_url = '/planner?' + querystring.stringify(query);
+      var return_url = '/planner/main?' + querystring.stringify(query);
 
       // set the return URL in the session
       if (!req.session.service_booking_offramp) {
@@ -331,7 +331,7 @@ module.exports = {
 
       // work out a return URL
       query.booked_eye_test = 'true';
-      var return_url = '/planner?' + querystring.stringify(query);
+      var return_url = '/planner/main?' + querystring.stringify(query);
 
       // set the return URL in the session
       if (!req.session.service_booking_offramp) {
