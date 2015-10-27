@@ -275,6 +275,7 @@ module.exports = {
           cards = [];
 
       // historic stuff
+      cards.push('about-diabetes');
       cards.push('medication');
 
       // actions to take
