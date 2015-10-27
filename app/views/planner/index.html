@@ -1,20 +1,3 @@
-{% extends 'templates/nhs_transaction_layout.html' %}
-
-{% block afterHeader %}
-  <div class="service-header">
-    <div class="service-name">
-      Your planner for type 2 diabetes
-    </div>
-  </div>
-{% endblock %}
-
-{% block content %}
-  <main id="content" role="main">
-    <div class="js-cards items-container">
-      {% for card in cards %}
-        {% set template = 'planner/cards/' + card + '.html' %}
-        {% include template %}
-      {% endfor %}
-    </div>
-  </main>
-{% endblock %}
+<html>
+<meta http-equiv="refresh" content="0; url=/planner/start">
+</html>
