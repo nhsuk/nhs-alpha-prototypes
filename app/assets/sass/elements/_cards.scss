@@ -3,10 +3,9 @@
 
 .items-container {
   margin: 0 auto;
-  @include measure(0);
+  max-width: 600px;
   padding-bottom: 2rem;
   @include breakpoint(break-1) {
-    @include measure(1);
     padding-top: 3rem;
   }
 }
@@ -118,22 +117,35 @@
 }
 
 .item-leadin {
-  @include fontsize(13, 0);
-  padding: 0 1rem;
   background-color: rgba($nhs-yellow, 0.1);
   border-top: 1px solid $white;
+}
+
+.item-leadin-content {
+  @include fontsize(13, 0);
+  @include measure(0);
+  padding: 0 1rem;
 
   @include breakpoint(break-1) {
     @include fontsize(14, 1);
+    @include measure(1);
   }
 
   & * {
     font-size: 1em;
   }
 }
+
 .item-body {
-  padding: 0;
   overflow: hidden;
+}
+
+.item-body-content {
+  padding: 0 1rem;
+  @include measure(0);
+  @include breakpoint(break-1) {
+    @include measure(1);
+  }
 }
 
 .item-collapse {
