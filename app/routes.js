@@ -297,7 +297,8 @@ module.exports = {
 
       // work out a return URL
       query.booked_diabetes_review = 'true';
-      var return_url = '/planner/main?' + querystring.stringify(query);
+      var return_url = '/planner/main?' + querystring.stringify(query)
+          + '#your-diabetes-review-appointment';
 
       // set the return URL in the session
       if (!req.session.service_booking_offramp) {
@@ -317,7 +318,8 @@ module.exports = {
 
       // work out a return URL
       query.booked_eye_test = 'true';
-      var return_url = '/planner/main?' + querystring.stringify(query);
+      var return_url = '/planner/main?' + querystring.stringify(query)
+          + '#your-eye-test-appointment';
 
       // set the return URL in the session
       if (!req.session.service_booking_offramp) {
