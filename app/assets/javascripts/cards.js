@@ -4,6 +4,8 @@
   • A forked jquery.transit.js - https://github.com/NV/jquery.transit (allows for 'auto' css values)
 */
 $(function() {
+  var hash = window.location.hash || false;
+
   if ($('.js-cards').length > 0) {
     $('.item-body').css('height', 0);
 
@@ -55,5 +57,9 @@ $(function() {
         }
       }
     });
+
+    if(hash) {
+      $(hash).click();
+    }
   }
 });
