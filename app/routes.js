@@ -160,6 +160,14 @@ module.exports = {
     });
 
     app.get('/book-an-appointment/:service_slug?/find-new-appointment', function(req, res) {
+      var service_slug = req.params.service_slug,
+          offramp = req.session.service_booking_offramp &&
+                    req.session.service_booking_offramp[service_slug];
+
+      if (offramp) {
+        delete req.session.service_booking_offramp[service_slug];
+      }
+
       res.render('book-an-appointment/find-new-appointment');
     });
 
@@ -208,16 +216,24 @@ module.exports = {
       var service_slug = req.params.service_slug || 'general-practice',
           service = app.locals.services.filter(function(service) {
             return service.slug === service_slug;
-          })[0];
+          })[0],
+          offramp = req.session.service_booking_offramp &&
+                    req.session.service_booking_offramp[service_slug];
 
-      res.render(
-        'book-an-appointment/appointment-confirmed',
-        {
-          practice: app.locals.gp_practices[0],
-          service: service,
-          appointment: find_appointment(req.params.uuid)
-        }
-      );
+      if (offramp) {
+        delete req.session.service_booking_offramp[service_slug];
+        res.redirect(offramp);
+      }
+      else {
+        res.render(
+          'book-an-appointment/appointment-confirmed',
+          {
+            practice: app.locals.gp_practices[0],
+            service: service,
+            appointment: find_appointment(req.params.uuid)
+          }
+        );
+      }
     });
 
     app.get(/^\/(book-an-appointment\/[^.]+)$/, function (req, res) {
@@ -237,65 +253,6 @@ module.exports = {
           }
         }
       );
-    });
-
-    // Booking with context - pass through "service" query parameter
-    // ie ?service=diabetes-foot-test
-    app.get('/booking-with-context/your-details', function(req, res) {
-      var service_slug = req.query.service,
-          offramp = req.session.service_booking_offramp &&
-                    req.session.service_booking_offramp[service_slug];
-
-      if (offramp) {
-        delete req.session.service_booking_offramp[service_slug];
-      }
-
-      res.render(
-        'booking-with-context/your-details',
-        {
-          service: service_slug
-        }
-      );
-    });
-
-    // Booking with context - from "service" query parameter, pass in details
-    // about the session.
-    app.get('/booking-with-context/next-available-appointment', function(req, res) {
-      var service_slug = req.query.service,
-          service = app.locals.services.filter(function(service) {
-            return service.slug === service_slug;
-          })[0];
-
-      res.render(
-        'booking-with-context/next-available-appointment',
-        {
-          service_context: service,
-          appointment: appointment_for_service(service_slug)
-        }
-      );
-    });
-
-    app.get('/booking-with-context/appointment-confirmed', function(req, res) {
-      var service_slug = req.query.service,
-          service = app.locals.services.filter(function(service) {
-            return service.slug === service_slug;
-          })[0],
-          offramp = req.session.service_booking_offramp &&
-                    req.session.service_booking_offramp[service_slug];
-
-      if (offramp) {
-        delete req.session.service_booking_offramp[service_slug];
-        res.redirect(offramp);
-      }
-      else {
-        res.render(
-          'booking-with-context/appointment-confirmed',
-          {
-            service_context: service,
-            appointment: appointment_for_service(service_slug)
-          }
-        );
-      }
     });
 
     app.get('/planner/main', function(req, res) {
@@ -350,7 +307,7 @@ module.exports = {
 
       // redirect to the service booking journey, skipping log in
       res.redirect(
-        '/booking-with-context/next-available-appointment?service=' + service_slug
+        '/book-an-appointment/' + service_slug + '/next-available-appointment'
       );
     });
 
@@ -370,7 +327,7 @@ module.exports = {
 
       // redirect to the service booking journey, skipping log in
       res.redirect(
-        '/booking-with-context/next-available-appointment?service=' + service_slug
+        '/book-an-appointment/' + service_slug + '/next-available-appointment'
       );
     });
   }
