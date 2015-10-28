@@ -258,7 +258,8 @@ module.exports = {
     app.get('/planner/main', function(req, res) {
       var booked_eye_test = req.query.booked_eye_test &&
                             find_appointment(req.query.booked_eye_test),
-          booked_diabetes_review = !!req.query.booked_diabetes_review,
+          booked_diabetes_review = req.query.booked_diabetes_review &&
+                                   find_appointment(req.query.booked_diabetes_review),
           cards = [];
 
       // historic stuff
@@ -288,6 +289,7 @@ module.exports = {
         {
           cards: cards,
           booked_eye_test: booked_eye_test,
+          booked_diabetes_review: booked_diabetes_review,
           querystring: querystring.stringify(req.query)
         }
       );
