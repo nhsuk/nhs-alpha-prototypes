@@ -9,7 +9,7 @@
 {% endblock %}
 
 {% block content %}
-  <main id="content" role="main">
+  <main id="content" role="main" class="show-grid">
     <div class="js-cards items-container">
       {% for card in cards %}
         {% set template = 'planner/cards/' + card + '.html' %}

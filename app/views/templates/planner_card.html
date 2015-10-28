@@ -2,8 +2,11 @@
   <div class="shadow"></div>
   <div class="item-content">
     <div class="item-header">
-      <a href="#{% block id %}{% endblock %}" class="item-collapse-link">
-	{% block heading %}{% endblock %}
+      <span class="item-heading">
+        {% block heading %}{% endblock %}
+      </span>
+      <a href="#" class="item-collapse-link">
+        Show more
       </a>
     </div>
 
@@ -12,10 +15,11 @@
     </div>
 
     <div class="item-body item-body-collapsed">
-      {% block body %}{% endblock %}
-
+      <div class="item-body-content">
+        {% block body %}{% endblock %}
+      </div>
       <div class="item-collapse">
-	<a href="#" class="item-collapse-link" tabindex="0">Show less</a>
+	       <a href="#" class="item-collapse-link" tabindex="0">Show less</a>
       </div>
     </div>
   </div>
