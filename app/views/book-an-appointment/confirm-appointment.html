@@ -13,37 +13,20 @@
     Confirm appointment
   </h1>
 
-  {% if appointment %}
-    {{
-      ui_element_macros.appointment_summary({
-        appointment_date: appointment.appointment_date,
-        appointment_time: appointment.appointment_time,
-        avatar_img_path: '/public/images/' + appointment.practitioner.photo,
-        name: appointment.practitioner.name,
-        position: appointment.practitioner.role,
-        gender: appointment.practitioner.gender,
-        appointment_length: appointment.appointment_length,
-        appointment_type: appointment.appointment_type,
-        appointment_type_class: appointment.appointment_type_class,
-        address: practice.name + '<br>' + practice.address.join('<br>')
-      })
-    }}
-  {% else %}
-    {{
-      ui_element_macros.appointment_summary({
-        appointment_date: 'Wednesday 3rd February 2016',
-        appointment_time: '08:30',
-        avatar_img_path: '/public/images/icon-avatar-helen-leaf.png',
-        name: 'Dr Helen Leaf',
-        position: 'GP',
-        gender: 'female',
-        appointment_length: '10',
-        appointment_type: 'face to face',
-        appointment_type_class: 'face-to-face',
-        address: practice.name + '<br>' + practice.address.join('<br>')
-      })
-    }}
-  {% endif %}
+  {{
+    ui_element_macros.appointment_summary({
+      appointment_date: appointment.appointment_date,
+      appointment_time: appointment.appointment_time,
+      avatar_img_path: '/public/images/' + appointment.practitioner.photo,
+      name: appointment.practitioner.name,
+      position: appointment.practitioner.role,
+      gender: appointment.practitioner.gender,
+      appointment_length: appointment.appointment_length,
+      appointment_type: appointment.appointment_type,
+      appointment_type_class: appointment.appointment_type_class,
+      address: practice.name + '<br>' + practice.address.join('<br>')
+    })
+  }}
 
   {{
     form_macros.button({
