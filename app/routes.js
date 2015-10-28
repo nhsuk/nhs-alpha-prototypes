@@ -222,7 +222,7 @@ module.exports = {
 
       if (offramp) {
         delete req.session.service_booking_offramp[service_slug];
-        res.redirect(offramp);
+        res.redirect(offramp.replace('UUID', req.params.uuid));
       }
       else {
         res.render(
@@ -296,7 +296,7 @@ module.exports = {
           service_slug = 'diabetes-annual-review';
 
       // work out a return URL
-      query.booked_diabetes_review = 'true';
+      query.booked_diabetes_review = 'UUID';
       var return_url = '/planner/main?' + querystring.stringify(query)
           + '#your-diabetes-review-appointment';
 
@@ -317,7 +317,7 @@ module.exports = {
           service_slug = 'diabetes-eye-screening';
 
       // work out a return URL
-      query.booked_eye_test = 'true';
+      query.booked_eye_test = 'UUID';
       var return_url = '/planner/main?' + querystring.stringify(query)
           + '#your-eye-test-appointment';
 
