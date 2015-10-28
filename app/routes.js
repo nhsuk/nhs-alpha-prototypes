@@ -255,65 +255,6 @@ module.exports = {
       );
     });
 
-    // Booking with context - pass through "service" query parameter
-    // ie ?service=diabetes-foot-test
-    app.get('/booking-with-context/your-details', function(req, res) {
-      var service_slug = req.query.service,
-          offramp = req.session.service_booking_offramp &&
-                    req.session.service_booking_offramp[service_slug];
-
-      if (offramp) {
-        delete req.session.service_booking_offramp[service_slug];
-      }
-
-      res.render(
-        'booking-with-context/your-details',
-        {
-          service: service_slug
-        }
-      );
-    });
-
-    // Booking with context - from "service" query parameter, pass in details
-    // about the session.
-    app.get('/booking-with-context/next-available-appointment', function(req, res) {
-      var service_slug = req.query.service,
-          service = app.locals.services.filter(function(service) {
-            return service.slug === service_slug;
-          })[0];
-
-      res.render(
-        'booking-with-context/next-available-appointment',
-        {
-          service_context: service,
-          appointment: appointment_for_service(service_slug)
-        }
-      );
-    });
-
-    app.get('/booking-with-context/appointment-confirmed', function(req, res) {
-      var service_slug = req.query.service,
-          service = app.locals.services.filter(function(service) {
-            return service.slug === service_slug;
-          })[0],
-          offramp = req.session.service_booking_offramp &&
-                    req.session.service_booking_offramp[service_slug];
-
-      if (offramp) {
-        delete req.session.service_booking_offramp[service_slug];
-        res.redirect(offramp);
-      }
-      else {
-        res.render(
-          'booking-with-context/appointment-confirmed',
-          {
-            service_context: service,
-            appointment: appointment_for_service(service_slug)
-          }
-        );
-      }
-    });
-
     app.get('/planner/main', function(req, res) {
       var booked_eye_test = !!req.query.booked_eye_test,
           booked_diabetes_review = !!req.query.booked_diabetes_review,
