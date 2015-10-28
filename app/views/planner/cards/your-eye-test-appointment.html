@@ -1,4 +1,5 @@
 {% extends 'templates/planner_card.html' %}
+{% import 'includes/ui_element_macros.html' as ui_element_macros %}
 
 {% block id %}your-eye-test-appointment{% endblock %}
 
@@ -6,20 +7,22 @@
   Your eye test appointment
 {% endblock %}
 
-{% block leadin %}
-  <p>Thursday 5 November 2015 from 11:20am to 11:50am</p>
-{% endblock %}
-
 {% block body %}
-  <p>Hodd Barnes Dickins Opticians<br>
-  94 High Holborn<br>
-  London<br>
-  WC1V 6LF</p>
-
-  <ul>
-    <li><a href="#">Send me a text reminder the day before</a></li>
-    <li><a href="#">Change appointment</a></li>
-  </ul>
+  {{
+    ui_element_macros.appointment_summary({
+      appointment_date: booked_eye_test.appointment_date,
+      appointment_time: booked_eye_test.appointment_time,
+      avatar_img_path: '/public/images/' + booked_eye_test.practitioner.photo,
+      name: booked_eye_test.practitioner.name,
+      position: booked_eye_test.practitioner.role,
+      gender: booked_eye_test.practitioner.gender,
+      appointment_length: booked_eye_test.appointment_length,
+      appointment_type: booked_eye_test.appointment_type,
+      appointment_type_class: booked_eye_test.appointment_type_class,
+      address: booked_eye_test.address.join('<br>'),
+      tools: 'true'
+    })
+  }}
 
   <details>
     <summary>Why do I need an eye test?</summary>
