@@ -10,8 +10,14 @@
   <p>You’re entitled to free prescriptions but you must apply for this. Keep
   the receipts for money you spend on medication now. You can claim it back
   once you’ve applied.</p>
+{% endblock %}
 
-  <p><a href="#" class="button item-permanent-cta button-get-started">
-    Apply for free prescriptions
-  </a></p>
+{% block leadin-cta %}
+  <a href="#" class="button item-permanent-cta button-get-started">
+    Apply <span class="visuallyhidden">for free prescriptions</span> now
+  </a>
+{% endblock %}
+
+{% block body %}
+  <p>&nbsp;</p>
 {% endblock %}
