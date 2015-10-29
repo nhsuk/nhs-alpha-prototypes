@@ -141,6 +141,16 @@
 
 .item-leadin-cta {
   padding: 1rem;
+
+  .button {
+    @include breakpoint(break-1) {
+      position: absolute;
+      top: 1.2rem;
+      right: 2px;
+      height: 3rem;
+      line-height: 3rem;
+    }
+  }
 }
 
 .item-body {
