@@ -118,6 +118,13 @@
   }
 }
 
+.item-cta {
+  .item-header .item-heading {
+    background-color: $nhs-black;
+  }
+  .item-header .item-collapse-link { display: none; }
+}
+
 .item-leadin {
   background-color: rgba($nhs-yellow, 0.1);
   border-top: 1px solid $white;
