@@ -260,13 +260,18 @@ module.exports = {
                             find_appointment(req.query.booked_eye_test),
           booked_diabetes_review = req.query.booked_diabetes_review &&
                                    find_appointment(req.query.booked_diabetes_review),
+          booked_blood_test = req.query.booked_blood_test &&
+                              find_appointment(req.query.booked_blood_test),
           cards = [];
 
       // historic stuff
-      cards.push('about-diabetes');
+      cards.push('test-results');
       cards.push('medication');
 
       // actions to take
+      if (!booked_blood_test) {
+        cards.push('book-your-blood-test');
+      }
       if (!booked_diabetes_review) {
         cards.push('book-your-first-diabetes-review');
       }
@@ -276,6 +281,9 @@ module.exports = {
       cards.push('apply-for-free-prescriptions');
 
       // upcoming stuff
+      if (booked_blood_test) {
+        cards.push('your-blood-test-appointment');
+      }
       if (booked_diabetes_review) {
         cards.push('your-diabetes-review-appointment');
       }
@@ -290,6 +298,7 @@ module.exports = {
           cards: cards,
           booked_eye_test: booked_eye_test,
           booked_diabetes_review: booked_diabetes_review,
+          booked_blood_test: booked_blood_test,
           querystring: querystring.stringify(req.query)
         }
       );
@@ -324,6 +333,27 @@ module.exports = {
       query.booked_eye_test = 'UUID';
       var return_url = '/planner/main?' + querystring.stringify(query)
           + '#your-eye-test-appointment';
+
+      // set the return URL in the session
+      if (!req.session.service_booking_offramp) {
+        req.session.service_booking_offramp = {};
+      }
+      req.session.service_booking_offramp[service_slug] = return_url;
+
+      // redirect to the service booking journey, skipping log in
+      res.redirect(
+        '/book-an-appointment/' + service_slug + '/next-available-appointment'
+      );
+    });
+
+    app.get('/planner/book-blood-test', function(req, res) {
+      var query = req.query,
+          service_slug = 'diabetes-blood-glucose-test';
+
+      // work out a return URL
+      query.booked_blood_test = 'UUID';
+      var return_url = '/planner/main?' + querystring.stringify(query)
+          + '#your-blood-test-appointment';
 
       // set the return URL in the session
       if (!req.session.service_booking_offramp) {

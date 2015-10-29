@@ -3,31 +3,26 @@
 {% block id %}book-your-first-eye-test{% endblock %}
 
 {% block heading %}
-  Book your first eye test
+  Book your annual diabetes eye check now
 {% endblock %}
 
-{% block leadin %}
-  <p>This checks if there's damage to your eyes which can lead to sight
-  problems and possibly blindness.</p>
+{% block body %}
+  <details>
+    <summary>What’s a diabetes eye check?</summary>
+
+    <p>A diabetes eye check looks for damage to your eyes which can lead to
+    sight problems and possibly blindness:</p>
+
+    <ul class="list-bullet">
+      <li>you get drops in your eyes to enlarge your pupils (temporarily)</li>
+      <li>a photo will be taken of the back of your eye</li>
+    </ul>
+  </details>
+
+  <p>Plan how you’ll get home after the check. Drops can make your eyes can be
+  blurry and you shouldn’t drive for a couple of hours afterwards.</p>
 
   <p><a href="book-eye-test?{{ querystring }}" class="button item-permanent-cta button-get-started">
     Book your eye test now
   </a></p>
-
-  <p>Your eyes might be blurry after the test so you should plan how you will
-  get home.</p>
-{% endblock %}
-
-{% block body %}
-  <p>Diabetes can damage your blood vessels which can cause sight problems
-  (diabetic retinopathy) and blindness. An eye check can detect damage before
-  you notice changes to your sight. Treating damaged blood vessels early can
-  stop them affecting your sight.</p>
-
-  <p>You should book your first eye test as soon as you are diagnosed with type
-  2 diabetes. After that, you should have another eye test every year.</p>
-
-  <p>At the test the optician will put drops in your eyes to enlarge your
-  pupils, and will then take a photo of the back of your eye. The whole test
-  should take around 30 minutes.</p>
 {% endblock %}

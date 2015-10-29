@@ -3,31 +3,33 @@
 {% block id %}book-your-first-diabetes-review{% endblock %}
 
 {% block heading %}
-  Book your first diabetes review
+  Book your annual diabetes review now
 {% endblock %}
 
-{% block leadin %}
-  <p>The review checks your average blood sugar levels and how close they are
-  to normal. It also checks your general health.</p>
+{% block body %}
+  <details>
+    <summary>What’s an annual diabetes review?</summary>
+
+    <p>Your GP will go over your blood test results and discuss your:</p>
+
+    <ul class="list-bullet">
+      <li>blood sugar levels from the past 12 months and set a target with you for the next 3 months</li>
+      <li>blood fats (cholesterol) level</li>
+      <li>liver function</li>
+    </ul>
+
+    <p>The review is also a general health check. You’ll have:</p>
+
+    <ul class="list-bullet">
+      <li>your blood pressure taken</li>
+      <li>a urine test for kidney function</li>
+      <li>your weight measured</li>
+    </ul>
+
+    <p><a href="/diabetes-content/health-problems-caused-by-diabetes-type-2">Health problems caused by type 2 diabetes</a></p>
+  </details>
 
   <p><a href="book-diabetes-review?{{ querystring }}" class="button item-permanent-cta button-get-started">
     Book your diabetes review now
   </a></p>
-{% endblock %}
-
-{% block body %}
-  <p>You should book your first diabetes review as soon as you are diagnosed
-  with type 2 diabetes. Until your blood sugar levels are healthy you should
-  have your blood sugar levels checked every 3 months.</p>
-
-  <p>At the review you’ll have:</p>
-
-  <ul class="list-bullet">
-    <li>a blood test for blood sugar and cholesterol levels</li>
-    <li>your blood pressure taken</li>
-    <li>a urine test for kidney function</li>
-    <li>your weight and height measured</li>
-  </ul>
-
-  <p><a href="#">Health problems caused by type 2 diabetes</a></p>
 {% endblock %}
