@@ -266,6 +266,7 @@ module.exports = {
 
       // historic stuff
       cards.push('about-diabetes');
+      cards.push('test-results');
       cards.push('medication');
 
       // actions to take
