@@ -13,6 +13,7 @@ $(function() {
 
       $item = $(this);
       $itemBody = $item.find('.item-body');
+      $toggleLink = $item.find('.item-header .item-collapse-link');
 
       if ($item.hasClass('item-open')) {
         /*
@@ -30,6 +31,7 @@ $(function() {
           }, 750, function() {
             $itemBody.find('.item-collapse').hide();
             $item.removeClass('item-open');
+            $toggleLink.text('Show more');
           });
         }
       } else {
@@ -44,6 +46,7 @@ $(function() {
         if (!$(event.target).hasClass('item-permanent-cta')) {
           event.preventDefault();
           $item.addClass('item-open');
+          $toggleLink.text('Show less');
           $itemBody.find('.item-collapse').show();
 
           $itemBody.transition({
