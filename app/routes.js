@@ -281,6 +281,9 @@ module.exports = {
       cards.push('apply-for-free-prescriptions');
 
       // upcoming stuff
+      if (booked_blood_test) {
+        cards.push('your-blood-test-appointment');
+      }
       if (booked_diabetes_review) {
         cards.push('your-diabetes-review-appointment');
       }
@@ -295,6 +298,7 @@ module.exports = {
           cards: cards,
           booked_eye_test: booked_eye_test,
           booked_diabetes_review: booked_diabetes_review,
+          booked_blood_test: booked_blood_test,
           querystring: querystring.stringify(req.query)
         }
       );
