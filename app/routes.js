@@ -222,7 +222,7 @@ module.exports = {
 
       if (offramp) {
         delete req.session.service_booking_offramp[service_slug];
-        res.redirect(offramp);
+        res.redirect(offramp.replace('UUID', req.params.uuid));
       }
       else {
         res.render(
@@ -256,8 +256,10 @@ module.exports = {
     });
 
     app.get('/planner/main', function(req, res) {
-      var booked_eye_test = !!req.query.booked_eye_test,
-          booked_diabetes_review = !!req.query.booked_diabetes_review,
+      var booked_eye_test = req.query.booked_eye_test &&
+                            find_appointment(req.query.booked_eye_test),
+          booked_diabetes_review = req.query.booked_diabetes_review &&
+                                   find_appointment(req.query.booked_diabetes_review),
           cards = [];
 
       // historic stuff
@@ -286,6 +288,8 @@ module.exports = {
         'planner/main',
         {
           cards: cards,
+          booked_eye_test: booked_eye_test,
+          booked_diabetes_review: booked_diabetes_review,
           querystring: querystring.stringify(req.query)
         }
       );
@@ -296,7 +300,7 @@ module.exports = {
           service_slug = 'diabetes-annual-review';
 
       // work out a return URL
-      query.booked_diabetes_review = 'true';
+      query.booked_diabetes_review = 'UUID';
       var return_url = '/planner/main?' + querystring.stringify(query)
           + '#your-diabetes-review-appointment';
 
@@ -317,7 +321,7 @@ module.exports = {
           service_slug = 'diabetes-eye-screening';
 
       // work out a return URL
-      query.booked_eye_test = 'true';
+      query.booked_eye_test = 'UUID';
       var return_url = '/planner/main?' + querystring.stringify(query)
           + '#your-eye-test-appointment';
 
@@ -357,73 +361,5 @@ var filterBefore10 = function(appointment) {
 var filterByPractitionerUuid = function(uuid) {
   return function(appointment) {
     return appointment.practitioner_uuid === uuid;
-  }
-}
-
-function appointment_for_service(slug) {
-  switch(slug) {
-    case 'diabetes-blood-glucose-test' :
-      return {
-        link_url: 'appointment-confirmed?service=' + slug,
-        appointment_date: 'Tuesday 26th January 2016',
-        appointment_time: '16:10',
-        avatar_img_path: '/public/images/icon-avatar-alison-wylde.png',
-        name: 'Alison Wylde',
-        position: 'Nurse',
-        gender: 'female',
-        appointment_length: '5',
-        appointment_type: 'face to face',
-        appointment_type_class: 'face-to-face',
-        address: 'Lakeside Surgery<br>22 Castelnau<br>London<br>NW13 9HJ',
-        tools: 'true'
-      };
-
-    case 'diabetes-foot-check' :
-      return {
-        link_url: 'appointment-confirmed?service=' + slug,
-        appointment_date: 'Tuesday 26th January 2016',
-        appointment_time: '16:10',
-        avatar_img_path: '/public/images/icon-avatar-alison-wylde.png',
-        name: 'Alison Wylde',
-        position: 'Nurse',
-        gender: 'female',
-        appointment_length: '20',
-        appointment_type: 'face to face',
-        appointment_type_class: 'face-to-face',
-        address: 'Lakeside Surgery<br>22 Castelnau<br>London<br>NW13 9HJ',
-        tools: 'true'
-      };
-
-    case 'diabetes-eye-screening' :
-      return {
-        link_url: 'appointment-confirmed?service=' + slug,
-        appointment_date: 'Tuesday 26th January 2016',
-        appointment_time: '16:10',
-        avatar_img_path: '/public/images/icon-avatar-ravi-aggarwal.png',
-        name: 'Ravi Aggarwal',
-        position: 'Nurse',
-        gender: 'male',
-        appointment_length: '30',
-        appointment_type: 'face to face',
-        appointment_type_class: 'face-to-face',
-        address: 'The Royal Hospital<br>34 Queen’s Avenue<br>London<br>NW13 9HJ',
-        tools: 'true'
-      };
-
-    case 'diabetes-annual-review' :
-      return {
-        link_url: 'appointment-confirmed?service=' + slug,
-        appointment_date: 'Monday 25th January 2016',
-        appointment_time: '11.20',
-        avatar_img_path: '/public/images/icon-avatar-jonathon-hope.png',
-        name: 'Jonathon Hope',
-        position: 'Nurse practitioner',
-        gender: 'male',
-        appointment_length: '25',
-        appointment_type: 'face to face',
-        appointment_type_class: 'face-to-face',
-        address: 'Lakeside Surgery<br>22 Castelnau<br>London<br>NW13 9HJ',
-        tools: 'true'
-      };
   }
 }

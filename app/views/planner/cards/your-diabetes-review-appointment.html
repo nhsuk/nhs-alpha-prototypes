@@ -1,4 +1,5 @@
 {% extends 'templates/planner_card.html' %}
+{% import 'includes/ui_element_macros.html' as ui_element_macros %}
 
 {% block id %}your-diabetes-review-appointment{% endblock %}
 
@@ -6,21 +7,20 @@
   Your diabetes review appointment
 {% endblock %}
 
-{% block leadin %}
-  <p>Wednesday 28 October 2015 from 9:00am to 9:30am</p>
-{% endblock %}
-
 {% block body %}
-  <p>Covent Garden Medical Centre<br>
-  47 Shorts Gardens<br>
-  London<br>
-  WC2H 9AA</p>
-
-  <p>Sasheika Wrench<br>
-  Nurse practitioner, female</p>
-
-  <ul>
-    <li><a href="#">Send me a text reminder the day before</a></li>
-    <li><a href="#">Change appointment</a></li>
-  </ul>
+  {{
+    ui_element_macros.appointment_summary({
+      appointment_date: booked_diabetes_review.appointment_date,
+      appointment_time: booked_diabetes_review.appointment_time,
+      avatar_img_path: '/public/images/' + booked_diabetes_review.practitioner.photo,
+      name: booked_diabetes_review.practitioner.name,
+      position: booked_diabetes_review.practitioner.role,
+      gender: booked_diabetes_review.practitioner.gender,
+      appointment_length: booked_diabetes_review.appointment_length,
+      appointment_type: booked_diabetes_review.appointment_type,
+      appointment_type_class: booked_diabetes_review.appointment_type_class,
+      address: booked_diabetes_review.address.join('<br>'),
+      tools: 'true'
+    })
+  }}
 {% endblock %}
