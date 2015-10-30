@@ -8,13 +8,7 @@
       "practitioner_uuid": "0f0332bf-abd0-44cb-af1c-2663e132a5ec",
       "appointment_length": "5",
       "appointment_type": "face to face",
-      "appointment_type_class": "face-to-face",
-      "address": [
-        "Lakeside Surgery",
-        "22 Castelnau",
-        "London",
-        "NW13 9HJ"
-      ]
+      "appointment_type_class": "face-to-face"
     },
     {
       "uuid": "130d0b76-3a80-4781-9bac-7e7f9acc16a8",
@@ -24,13 +18,7 @@
       "practitioner_uuid": "0f0332bf-abd0-44cb-af1c-2663e132a5ec",
       "appointment_length": "5",
       "appointment_type": "face to face",
-      "appointment_type_class": "face-to-face",
-      "address": [
-        "Lakeside Surgery",
-        "22 Castelnau",
-        "London",
-        "NW13 9HJ"
-      ]
+      "appointment_type_class": "face-to-face"
     },
     {
       "uuid": "2ec97e1a-cf25-422c-af3f-d1ea33ba1a2a",
@@ -40,13 +28,7 @@
       "practitioner_uuid": "0f0332bf-abd0-44cb-af1c-2663e132a5ec",
       "appointment_length": "20",
       "appointment_type": "face to face",
-      "appointment_type_class": "face-to-face",
-      "address": [
-        "Lakeside Surgery",
-        "22 Castelnau",
-        "London",
-        "NW13 9HJ"
-      ]
+      "appointment_type_class": "face-to-face"
     },
     {
       "uuid": "f9b2b565-bfdc-4399-8ac2-364618ab84a1",
@@ -56,13 +38,7 @@
       "practitioner_uuid": "0f0332bf-abd0-44cb-af1c-2663e132a5ec",
       "appointment_length": "20",
       "appointment_type": "face to face",
-      "appointment_type_class": "face-to-face",
-      "address": [
-        "Lakeside Surgery",
-        "22 Castelnau",
-        "London",
-        "NW13 9HJ"
-      ]
+      "appointment_type_class": "face-to-face"
     },
     {
       "uuid": "e729d1e7-4e24-463b-b1cb-195bfc9de60a",
@@ -72,13 +48,7 @@
       "practitioner_uuid": "b47c7963-bf48-4f6c-b906-1017325eaa05",
       "appointment_length": "25",
       "appointment_type": "face to face",
-      "appointment_type_class": "face-to-face",
-      "address": [
-        "Lakeside Surgery",
-        "22 Castelnau",
-        "London",
-        "NW13 9HJ"
-      ]
+      "appointment_type_class": "face-to-face"
     },
     {
       "uuid": "2938864b-63d4-4d2b-b271-2bf09202210e",
@@ -88,13 +58,7 @@
       "practitioner_uuid": "b47c7963-bf48-4f6c-b906-1017325eaa05",
       "appointment_length": "25",
       "appointment_type": "face to face",
-      "appointment_type_class": "face-to-face",
-      "address": [
-        "Lakeside Surgery",
-        "22 Castelnau",
-        "London",
-        "NW13 9HJ"
-      ]
+      "appointment_type_class": "face-to-face"
     },
     {
       "uuid": "c835c21d-afd2-468b-8e36-99449a265af5",
