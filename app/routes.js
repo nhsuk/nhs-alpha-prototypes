@@ -212,11 +212,16 @@ module.exports = {
     });
 
     app.get('/book-an-appointment/:service_slug?/confirm-appointment/:uuid', function(req, res) {
+      var appointment = find_appointment(req.params.uuid),
+          practice = app.locals.gp_practices[0],
+          address = appointment.address || [practice.name].concat(practice.address);
+
       res.render(
         'book-an-appointment/confirm-appointment',
         {
-          practice: app.locals.gp_practices[0],
-          appointment: find_appointment(req.params.uuid)
+          practice: practice,
+          appointment: appointment,
+          address: address
         }
       );
     });
