@@ -278,7 +278,6 @@ module.exports = {
       if (!booked_eye_test) {
         cards.push('book-your-first-eye-test');
       }
-      cards.push('apply-for-free-prescriptions');
 
       // upcoming stuff
       if (booked_blood_test) {
