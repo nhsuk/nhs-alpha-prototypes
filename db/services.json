@@ -4,24 +4,47 @@
       "slug": "diabetes-blood-glucose-test",
       "name": "Blood sugar test",
       "triage_hint": "<p>In your GP practice, blood sugar test appointments are carried out by a practice nurse.</p>",
-      "confirmation_hint": "<p>The glycated haemoglobin (HbA1c) test gives your average blood glucose levels over the previous two to three months. The results can indicate whether the measures you're taking to control your diabetes are working.</p><p>Unlike other tests the HbA1c test can be carried out at any time of day and it doesn't require any special preparation, such as fasting.</p><p>The test will involve taking a small sample of blood from a vein.</p>"
+      "confirmation_hint": "<p>The glycated haemoglobin (HbA1c) test gives your average blood glucose levels over the previous two to three months. The results can indicate whether the measures you're taking to control your diabetes are working.</p><p>Unlike other tests the HbA1c test can be carried out at any time of day and it doesn't require any special preparation, such as fasting.</p><p>The test will involve taking a small sample of blood from a vein.</p>",
+      "filters": {
+        "time_of_day": true,
+        "person": true
+      }
     },
     {
       "slug": "diabetes-foot-check",
       "name": "Diabetes foot check",
       "triage_hint": "<p>In your GP practice, diabetes foot checks are carried out by a practice nurse.</p>",
-      "confirmation_hint": "<p>People with diabetes have a much greater risk of developing problems with their feet. It is therefore important to have your feet examined regularly or if you have cuts or bruises.</p><p>You will be asked to remove any footwear and the healthcare professional will examine your feet.</p><p>The charity Diabetes UK has information on <a href='https://www.diabetes.org.uk/Documents/Guide%20to%20diabetes/monitoring/What-to-expect-at-annual-foot-check.pdf'>what to expect at your annual foot check.</a></p>"
+      "confirmation_hint": "<p>People with diabetes have a much greater risk of developing problems with their feet. It is therefore important to have your feet examined regularly or if you have cuts or bruises.</p><p>You will be asked to remove any footwear and the healthcare professional will examine your feet.</p><p>The charity Diabetes UK has information on <a href='https://www.diabetes.org.uk/Documents/Guide%20to%20diabetes/monitoring/What-to-expect-at-annual-foot-check.pdf'>what to expect at your annual foot check.</a></p>",
+      "filters": {
+        "time_of_day": true,
+        "person": true
+      }
     },
     {
       "slug": "diabetes-eye-screening",
       "name": "Diabetes eye check",
-      "confirmation_hint": "<p>People with diabetes are at risk of eye damage from diabetic retinopathy. Eye checks are a way of detecting the condition early before you notice any changes to your vision.</p><p>The check takes about half an hour and involves examining the back of the eyes and taking photographs of the retina.</p><p>If you wear glasses, bring these with you to the appointment.</p><p>It is also advisable to bring sunglasses with you to help on the way home. When your pupils expand, lights will become brighter.</p><p>The charity Diabetes UK have further <a href=\"http://www.diabetes.co.uk/diabetes-complications/retinopathy-screening.html\">information about diabetes eye check appointments.</a></p>"
+      "confirmation_hint": "<p>People with diabetes are at risk of eye damage from diabetic retinopathy. Eye checks are a way of detecting the condition early before you notice any changes to your vision.</p><p>The check takes about half an hour and involves examining the back of the eyes and taking photographs of the retina.</p><p>If you wear glasses, bring these with you to the appointment.</p><p>It is also advisable to bring sunglasses with you to help on the way home. When your pupils expand, lights will become brighter.</p><p>The charity Diabetes UK have further <a href=\"http://www.diabetes.co.uk/diabetes-complications/retinopathy-screening.html\">information about diabetes eye check appointments.</a></p>",
+      "filters": {
+        "time_of_day": true
+      }
     },
     {
       "slug": "diabetes-annual-review",
       "name": "Diabetes annual review",
       "triage_hint": "<p>In your GP practice, diabetes annual reviews are carried out by a nurse practitioner.</p>",
-      "confirmation_hint": "<p>Your diabetic review will allow your doctors to monitor your health and assess aspects such as your long term blood glucose control, cholesterol levels and blood pressure.</p><p>Because the review covers a lot of different things, it can be useful to bring a notebook and pen.</p><p>The charity Diabetes UK have <a href=\"http://www.diabetes.co.uk/nhs/diabetes-annual-care-review.html\">information about the diabetes annual review.</a></p>"
+      "confirmation_hint": "<p>Your diabetic review will allow your doctors to monitor your health and assess aspects such as your long term blood glucose control, cholesterol levels and blood pressure.</p><p>Because the review covers a lot of different things, it can be useful to bring a notebook and pen.</p><p>The charity Diabetes UK have <a href=\"http://www.diabetes.co.uk/nhs/diabetes-annual-care-review.html\">information about the diabetes annual review.</a></p>",
+      "filters": {
+        "time_of_day": true,
+        "person": true
+      }
+    },
+    {
+      "slug": "general-practice",
+      "filters": {
+        "time_of_day": true,
+        "gender": true,
+        "person": true
+      }
     }
   ]
 }
