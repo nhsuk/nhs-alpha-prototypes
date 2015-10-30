@@ -23,15 +23,22 @@ $(function() {
           • Disable the (now hidden) "show less" link
           • Then shunt the card back into the deck
         */
-        if ($(event.target).hasClass('item-collapse-link')) {
+        var e = $(event.target).attr('class');
+        if (e === 'item-heading' || e === 'item-collapse-link') {
           event.preventDefault();
+
+          $item.removeClass('item-open');
 
           $itemBody.transition({
             height: 0
           }, 750, function() {
-            $itemBody.find('.item-collapse').hide();
-            $item.removeClass('item-open');
             $toggleLink.text('Show more');
+            $itemBody.find('.item-collapse').hide();
+
+            // scroll back up a bit more to imply a proper close
+            $('html,body').animate({
+              scrollTop: ($item.offset().top - 30)
+            }, 1000, 'easeInOutQuad');
           });
         }
       } else {
