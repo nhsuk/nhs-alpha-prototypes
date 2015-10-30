@@ -34,12 +34,13 @@ $(function() {
           }, 750, function() {
             $toggleLink.text('Show more');
             $itemBody.find('.item-collapse').hide();
-
-            // scroll back up a bit more to imply a proper close
-            $('html,body').animate({
-              scrollTop: ($item.offset().top - 30)
-            }, 1000, 'easeInOutQuad');
           });
+
+          // scroll back up at the same time
+          $('html,body').animate({
+            scrollTop: ($item.offset().top - 5)
+          }, 1000, 'easeInOutQuad');
+
         }
       } else {
         /*
