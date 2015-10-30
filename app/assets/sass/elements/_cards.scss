@@ -61,8 +61,9 @@
 }
 
 .item-header {
-  box-sizing: border-box;
-  position: relative;
+  @include breakpoint(break-1) {
+    position: relative;
+  }
 
   .item-heading {
     display: block;
@@ -122,7 +123,15 @@
   .item-header .item-heading {
     background-color: $nhs-black;
   }
-  .item-header .item-collapse-link { display: none; }
+  .item-header .item-collapse-link {
+    position: absolute;
+    bottom: 2px;
+    left: 2px;
+    right: 2px;
+    @include breakpoint(break-1) {
+      display: none;
+    }
+  }
 }
 
 .item-leadin {
