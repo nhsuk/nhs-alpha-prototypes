@@ -1,9 +1,16 @@
 {% extends 'templates/planner_card.html' %}
 
 {% block id %}book-your-blood-test{% endblock %}
+{% block css-class %}item-cta{% endblock %}
 
 {% block heading %}
   Book your 3-monthly blood sugar test now
+{% endblock %}
+
+{% block leadin-cta %}
+  <a href="book-blood-test?{{ querystring }}" class="button item-permanent-cta button-get-started">
+    Book <span class="visuallyhidden">your blood sugar test</span> now
+  </a>
 {% endblock %}
 
 {% block body %}
@@ -13,8 +20,4 @@
     <p>You need to have your blood sugar level checked every 3 months so your
     medication can be adjusted if needed.</p>
   </details>
-
-  <p><a href="book-blood-test?{{ querystring }}" class="button item-permanent-cta button-get-started">
-    Book blood sugar test
-  </a></p>
 {% endblock %}

@@ -1,28 +1,39 @@
 {% extends 'templates/planner_card.html' %}
 
 {% block id %}book-your-first-eye-test{% endblock %}
+{% block css-class %}item-cta{% endblock %}
 
 {% block heading %}
   Book your annual diabetes eye check now
+{% endblock %}
+
+{% block leadin %}
+  <p>
+    This checks if there's damage to your eyes which can lead to sight problems
+    and possibly blindness.<br>
+    Plan how you’ll get home after the check. Drops can make your eyes can be
+    blurry and you shouldn’t drive for a couple of hours afterwards.
+  </p>
+{% endblock %}
+
+{% block leadin-cta %}
+  <a href="book-eye-test?{{ querystring }}" class="button item-permanent-cta button-get-started">
+    Book <span class="visuallyhidden">your eye test</span> now
+  </a>
 {% endblock %}
 
 {% block body %}
   <details>
     <summary>What’s a diabetes eye check?</summary>
 
-    <p>A diabetes eye check looks for damage to your eyes which can lead to
-    sight problems and possibly blindness:</p>
+    <div>
+      <p>A diabetes eye check looks for damage to your eyes which can lead to
+      sight problems and possibly blindness:</p>
 
-    <ul class="list-bullet">
-      <li>you get drops in your eyes to enlarge your pupils (temporarily)</li>
-      <li>a photo will be taken of the back of your eye</li>
-    </ul>
+      <ul class="list-bullet">
+        <li>you get drops in your eyes to enlarge your pupils (temporarily)</li>
+        <li>a photo will be taken of the back of your eye</li>
+      </ul>
+    </div>
   </details>
-
-  <p>Plan how you’ll get home after the check. Drops can make your eyes can be
-  blurry and you shouldn’t drive for a couple of hours afterwards.</p>
-
-  <p><a href="book-eye-test?{{ querystring }}" class="button item-permanent-cta button-get-started">
-    Book your eye test now
-  </a></p>
 {% endblock %}

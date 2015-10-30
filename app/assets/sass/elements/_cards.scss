@@ -1,15 +1,17 @@
+//@import '../typography/variables';
+//@import '../typography/mixins';
+
 .items-container {
   margin: 0 auto;
-  @include measure(0);
+  max-width: 600px;
   padding-bottom: 2rem;
   @include breakpoint(break-1) {
-    @include measure(1);
     padding-top: 3rem;
   }
 }
 
 .shadow {
-  height: 2rem;
+  height: 1rem;
   background: -moz-linear-gradient(top,  rgba($white,0) 0%, rgba($white,1) 80%);
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba($white,0)), color-stop(80%,rgba($white,1)));
   background: -webkit-linear-gradient(top,  rgba($white,0) 0%,rgba($white,1) 80%);
@@ -49,10 +51,9 @@
 }
 
 .item-content {
-  padding: 2px;
+  padding: 1px;
   background-color: $white;
-  border: 1px solid $nhs-grey-1;
-  border-bottom-width: 2px;
+  border: 1px solid $nhs-black;
   cursor: pointer;
 }
 .item-open .item-content {
@@ -61,23 +62,148 @@
 
 .item-header {
   box-sizing: border-box;
-  padding: 0.5rem;
-  min-height: 36px;
-  margin-bottom: 1rem;
-  background-color: $nhs-grey-4;
-  .item-collapse-link {
+  position: relative;
+
+  .item-heading {
     display: block;
+    color: $white;
+    font-weight: bold;
+    padding: 0.75rem 1rem;
+    background-color: $nhs-blue;
+
+    @include breakpoint(break-1) {
+      padding-right: 7rem;
+    }
+  }
+
+  .item-collapse-link {
+    border-top: 1px solid $white;
+
+    &:before {
+      background-image: url('/public/images/icon-triangle-closed-black.svg');
+    }
+    .item-open &:before {
+      background-image: url('/public/images/icon-triangle-open-black.svg');
+    }
+
+    @include breakpoint(break-1) {
+      position: absolute;
+      right: 0;
+      top: 0;
+      color: $white;
+      background-color: transparent;
+      border-top: none;
+      &:link,
+      &:active,
+      &:visited,
+      &:hover {
+        color: $white;
+      }
+      &:focus {
+        background-color: transparent;
+      }
+      &:before {
+        content: '';
+        display: block;
+        float: left;
+        width: 1rem;
+        height: 2rem;
+        margin-right: 0.25rem;
+        background-image: url('/public/images/icon-triangle-closed-white.svg');
+      }
+      .item-open &:before {
+        background-image: url('/public/images/icon-triangle-open-white.svg');
+      }
+    }
   }
 }
 
-.item-leadin {
-  padding: 0 0.5rem;
-  margin-bottom: 1rem;
+.item-cta {
+  .item-header .item-heading {
+    background-color: $nhs-black;
+  }
+  .item-header .item-collapse-link { display: none; }
 }
+
+.item-leadin {
+  background-color: tint($nhs-yellow, 75);
+  border-top: 1px solid $white;
+  border-bottom: 1px solid $white;
+}
+
+.item-leadin-content {
+  @include fontsize(13, 0);
+  @include measure(0);
+  padding: 0 1rem;
+
+  @include breakpoint(break-1) {
+    @include fontsize(14, 1);
+    @include measure(1);
+  }
+
+  & * {
+    font-size: 1em;
+  }
+}
+
+.item-leadin-cta {
+  padding: 1rem;
+
+  .button {
+    @include breakpoint(break-1) {
+      position: absolute;
+      top: 1.2rem;
+      right: 2px;
+      height: 3rem;
+      line-height: 3rem;
+    }
+  }
+}
+
 .item-body {
-  padding: 0 0.5rem;
   overflow: hidden;
 }
+
+.item-body-content {
+  padding: 0 1rem;
+  @include measure(0);
+  @include breakpoint(break-1) {
+    @include measure(1);
+  }
+}
+
 .item-collapse {
   margin-top: 1rem;
+}
+
+.item-collapse-link {
+  @include fontsize(14, all);
+  display: block;
+  padding: 0.5rem 1rem;
+  font-weight: normal;
+  white-space: nowrap;
+  color: $nhs-black;
+  background-color: tint($nhs-blue, 90);
+  border-top: 2px solid tint($nhs-blue, 80);
+
+  &:link,
+  &:active,
+  &:visited,
+  &:hover {
+    color: $nhs-black;
+  }
+
+  &:focus {
+    background-color: tint($nhs-blue, 90);
+  }
+
+  &:before {
+    content: '';
+    display: block;
+    float: left;
+    width: 1rem;
+    height: 2rem;
+    margin-right: 0.25rem;
+    background: url('/public/images/icon-triangle-close-black.svg') center no-repeat;
+  }
 }

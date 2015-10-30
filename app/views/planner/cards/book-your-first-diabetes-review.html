@@ -1,35 +1,45 @@
 {% extends 'templates/planner_card.html' %}
 
 {% block id %}book-your-first-diabetes-review{% endblock %}
+{% block css-class %}item-cta{% endblock %}
 
 {% block heading %}
   Book your annual diabetes review now
+{% endblock %}
+
+{% block leadin %}
+  <p>The review checks your average blood sugar levels and how close they are
+  to normal. It also checks your general health.</p>
+{% endblock %}
+
+{% block leadin-cta %}
+  <a href="book-diabetes-review?{{ querystring }}" class="button item-permanent-cta button-get-started">
+    Book <span class="visuallyhidden">your diabetes review</span> now
+  </a>
 {% endblock %}
 
 {% block body %}
   <details>
     <summary>What’s an annual diabetes review?</summary>
 
-    <p>Your GP will go over your blood test results and discuss your:</p>
+    <div>
+      <p>Your GP will go over your blood test results and discuss your:</p>
 
-    <ul class="list-bullet">
-      <li>blood sugar levels from the past 12 months and set a target with you for the next 3 months</li>
-      <li>blood fats (cholesterol) level</li>
-      <li>liver function</li>
-    </ul>
+      <ul class="list-bullet">
+        <li>blood sugar levels from the past 12 months and set a target with you for the next 3 months</li>
+        <li>blood fats (cholesterol) level</li>
+        <li>liver function</li>
+      </ul>
 
-    <p>The review is also a general health check. You’ll have:</p>
+      <p>The review is also a general health check. You’ll have:</p>
 
-    <ul class="list-bullet">
-      <li>your blood pressure taken</li>
-      <li>a urine test for kidney function</li>
-      <li>your weight measured</li>
-    </ul>
+      <ul class="list-bullet">
+        <li>your blood pressure taken</li>
+        <li>a urine test for kidney function</li>
+        <li>your weight measured</li>
+      </ul>
 
-    <p><a href="/diabetes-content/health-problems-caused-by-diabetes-type-2">Health problems caused by type 2 diabetes</a></p>
+      <p><a href="/diabetes-content/health-problems-caused-by-diabetes-type-2">Health problems caused by type 2 diabetes</a></p>
+    </div>
   </details>
-
-  <p><a href="book-diabetes-review?{{ querystring }}" class="button item-permanent-cta button-get-started">
-    Book your diabetes review now
-  </a></p>
 {% endblock %}
