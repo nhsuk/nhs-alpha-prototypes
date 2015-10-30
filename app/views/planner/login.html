@@ -1,0 +1,41 @@
+{% extends 'templates/nhs_transaction_layout.html' %}
+{% import 'includes/form_macros.html' as form_macros %}
+
+{% block afterHeader %}
+  <div class="service-header">
+    <div class="service-name">
+      Your planner for type 2 diabetes
+    </div>
+  </div>
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main">
+    <h1 class="heading-xlarge">Sign in</h1>
+
+    <p>You have been sent these details in a text message.</p>
+
+    <form action="main" method="post" class="form">
+      {{
+        form_macros.text_field({
+          id: 'username',
+          label: 'Username'
+        })
+      }}
+
+      {{
+        form_macros.password_field({
+          id: 'password',
+          label: 'Password'
+        })
+      }}
+
+      {{
+        form_macros.button({
+          href: 'main',
+          label: 'Sign in'
+        })
+      }}
+    </form>
+  </main>
+{% endblock %}
