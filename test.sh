@@ -32,5 +32,13 @@ kill_test_server() {
     fi
 }
 
+test_for_diabetes_type_2_wording() {
+  if grep -Rin 'diabetes type 2' "${THIS_DIR}/app/"; then
+      echo "Found 'diabetes type 2' - should be 'type 2 diabetes'"
+      exit 3
+  fi
+}
+
+test_for_diabetes_type_2_wording
 test_generate_assets
 test_run_server
