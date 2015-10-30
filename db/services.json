@@ -14,8 +14,8 @@
     },
     {
       "slug": "diabetes-eye-screening",
-      "name": "Diabetes eye screening",
-      "confirmation_hint": "<p>People with diabetes are at risk of eye damage from diabetic retinopathy. Screening is a way of detecting the condition early before you notice any changes to your vision.</p><p>The check takes about half an hour and involves examining the back of the eyes and taking photographs of the retina.</p><p>If you wear glasses, bring these with you to the appointment.</p><p>It is also advisable to bring sunglasses with you to help on the way home. When your pupils expand, lights will become brighter.</p><p>The charity Diabetes UK have further <a href=\"http://www.diabetes.co.uk/diabetes-complications/retinopathy-screening.html\">information about eye screening appointments.</a></p>"
+      "name": "Diabetes eye check",
+      "confirmation_hint": "<p>People with diabetes are at risk of eye damage from diabetic retinopathy. Eye checks are a way of detecting the condition early before you notice any changes to your vision.</p><p>The check takes about half an hour and involves examining the back of the eyes and taking photographs of the retina.</p><p>If you wear glasses, bring these with you to the appointment.</p><p>It is also advisable to bring sunglasses with you to help on the way home. When your pupils expand, lights will become brighter.</p><p>The charity Diabetes UK have further <a href=\"http://www.diabetes.co.uk/diabetes-complications/retinopathy-screening.html\">information about diabetes eye check appointments.</a></p>"
     },
     {
       "slug": "diabetes-annual-review",
