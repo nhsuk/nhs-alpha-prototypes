@@ -276,34 +276,38 @@ module.exports = {
                                    find_appointment(req.query.booked_diabetes_review),
           booked_blood_test = req.query.booked_blood_test &&
                               find_appointment(req.query.booked_blood_test),
-          cards = [];
+          cards = {
+            past: [],
+            present: [],
+            future: []
+          };
 
       // historic stuff
-      cards.push('test-results');
-      cards.push('medication');
+      cards.past.push('test-results');
+      cards.past.push('medication');
 
       // actions to take
       if (!booked_blood_test) {
-        cards.push('book-your-blood-test');
+        cards.present.push('book-your-blood-test');
       }
       if (!booked_diabetes_review) {
-        cards.push('book-your-first-diabetes-review');
+        cards.present.push('book-your-first-diabetes-review');
       }
       if (!booked_eye_test) {
-        cards.push('book-your-first-eye-test');
+        cards.present.push('book-your-first-eye-test');
       }
 
       // upcoming stuff
       if (booked_blood_test) {
-        cards.push('your-blood-test-appointment');
+        cards.future.push('your-blood-test-appointment');
       }
       if (booked_diabetes_review) {
-        cards.push('your-diabetes-review-appointment');
+        cards.future.push('your-diabetes-review-appointment');
       }
       if (booked_eye_test) {
-        cards.push('your-eye-test-appointment');
+        cards.future.push('your-eye-test-appointment');
       }
-      cards.push('repeat-prescription');
+      cards.future.push('repeat-prescription');
 
       res.render(
         'planner/main',

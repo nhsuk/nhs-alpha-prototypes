@@ -10,11 +10,43 @@
 
 {% block content %}
   <main id="content" role="main">
-    <div class="js-cards items-container">
-      {% for card in cards %}
-        {% set template = 'planner/cards/' + card + '.html' %}
-        {% include template %}
-      {% endfor %}
-    </div>
+    <section>
+      <header>
+        <h2>Previously on NHS Planner</h2>
+      </header>
+
+      <div class="js-cards items-container">
+        {% for card in cards.past %}
+          {% set template = 'planner/cards/' + card + '.html' %}
+          {% include template %}
+        {% endfor %}
+      </div>
+    </section>
+
+    <section>
+      <header>
+        <h2>Things for you to do</h2>
+      </header>
+
+      <div class="js-cards items-container">
+        {% for card in cards.present %}
+          {% set template = 'planner/cards/' + card + '.html' %}
+          {% include template %}
+        {% endfor %}
+      </div>
+    </section>
+
+    <section>
+      <header>
+        <h2>Next time on NHS Planner</h2>
+      </header>
+
+      <div class="js-cards items-container">
+        {% for card in cards.future %}
+          {% set template = 'planner/cards/' + card + '.html' %}
+          {% include template %}
+        {% endfor %}
+      </div>
+    </section>
   </main>
 {% endblock %}
