@@ -15,10 +15,15 @@
   padding: 1px;
   background-color: $white;
   border: 1px solid $nhs-black;
+  border-bottom: 1px solid $white;
   cursor: pointer;
+  @include breakpoint(break-1) {
+    padding-bottom: 1rem;
+  }
 }
 .item-open .item-content {
   cursor: default;
+  border-bottom: 1px solid $nhs-black;
 }
 
 .item-header {
@@ -99,7 +104,7 @@
 .item-leadin-content {
   @include fontsize(13, 0);
   @include measure(0);
-  padding: 0 1rem;
+  padding: 1rem;
 
   @include breakpoint(break-1) {
     @include fontsize(14, 1);
@@ -116,7 +121,7 @@
   .button {
     display: block;
     width: auto;
-    margin: 1rem 1rem 2rem 1rem;
+    margin: 1rem;
     @include breakpoint(break-1) {
       position: absolute;
       top: 0;
@@ -132,16 +137,23 @@
   overflow: hidden;
 }
 
+.item-open .item-body {
+  overflow: visible;
+}
+
+.item-collapse {
+  @include breakpoint(break-1) {
+    position: relative;
+    top: 1rem;
+  }
+}
+
 .item-body-content {
-  padding: 0 1rem;
+  padding: 1rem 1rem 0 1rem;
   @include measure(0);
   @include breakpoint(break-1) {
     @include measure(1);
   }
-}
-
-.item-collapse {
-  margin-top: 1rem;
 }
 
 .item-collapse-link {
@@ -178,7 +190,7 @@
 
 .shadow {
   height: 1rem;
-  margin-top: -2rem;
+  margin-top: -1rem;
   background: -moz-linear-gradient(top,  rgba($white,0) 0%, rgba($white,1) 100%);
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba($white,0)), color-stop(100%,rgba($white,1)));
   background: -webkit-linear-gradient(top,  rgba($white,0) 0%,rgba($white,1) 100%);
