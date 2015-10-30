@@ -85,14 +85,15 @@
     background-color: $nhs-black;
   }
   .item-header .item-collapse-link {
-    display: none;
+    @include breakpoint(break-1) {
+      display: none;
+    }
   }
 }
 
 .item-leadin {
   background-color: tint($nhs-yellow, 75);
   border-top: 1px solid $white;
-  border-bottom: 1px solid $white;
 }
 
 .item-leadin-content {
@@ -111,19 +112,18 @@
 }
 
 .item-leadin-cta {
-  padding: 1rem 1rem 2rem 1rem;
-
-  @include breakpoint(break-1) {
-    padding: 1rem;
-  }
 
   .button {
+    display: block;
+    width: auto;
+    margin: 1rem 1rem 2rem 1rem;
     @include breakpoint(break-1) {
       position: absolute;
-      top: 2px;
-      right: 2px;
+      top: 0;
+      right: 0;
       height: 3rem;
       line-height: 3rem;
+      margin: 0;
     }
   }
 }
