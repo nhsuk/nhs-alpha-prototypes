@@ -38,7 +38,7 @@ $(function() {
 
           // scroll back up at the same time
           $('html,body').animate({
-            scrollTop: ($item.offset().top - 5)
+            scrollTop: ($item.offset().top - 36)
           }, 1000, 'easeInOutQuad');
 
         }
