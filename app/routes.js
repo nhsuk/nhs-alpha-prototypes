@@ -18,10 +18,14 @@ module.exports = {
       )[0];
     }
 
-    function find_matching_appointment(filter_functions) {
+    function find_matching_appointments(filter_functions) {
       return filter_functions.reduce(function(filtered_appointments, filter_func) {
         return filtered_appointments.filter(filter_func);
-      }, app.locals.appointments)[0];
+      }, app.locals.appointments);
+    }
+
+    function find_matching_appointment(filter_functions) {
+      return find_matching_appointments(filter_functions)[0]
     }
 
     app.get('/', function (req, res) {
@@ -192,12 +196,17 @@ module.exports = {
       );
     });
 
-    app.get('/book-an-appointment/all-appointments', function(req, res) {
+    app.get('/book-an-appointment/:service_slug?/all-appointments', function(req, res) {
+      var service_slug = req.params.service_slug || 'general-practice',
+          service = app.locals.services.filter(function(service) {
+            return service.slug === service_slug;
+          })[0],
+          practice = service_slug === 'general-practice' ? app.locals.gp_practices[0] : null;
       res.render(
         'book-an-appointment/all-appointments',
         {
-          practice: app.locals.gp_practices[0],
-          appointments: app.locals.appointments
+          practice: practice,
+          appointments: find_matching_appointments([filterByService(service_slug)]),
         }
       );
     });
