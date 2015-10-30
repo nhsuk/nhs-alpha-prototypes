@@ -68,9 +68,17 @@
       <h3 class="heading-medium">More appointment options:</h3>
 
       <ul class="list-bullet">
-        <li><a href="next-appointment-with-woman">I’d like to see a woman</a></li>
-        <li><a href="next-appointment-early-morning">I’d like an early morning appointment</a></li>
-        <li><a href="see-particular-person">I’d like to see a particular person</a></li>
+        {% if service.filters.gender %}
+          <li><a href="next-appointment-with-woman">I’d like to see a woman</a></li>
+        {% endif %}
+
+        {% if service.filters.time_of_day %}
+          <li><a href="next-appointment-early-morning">I’d like an early morning appointment</a></li>
+        {% endif %}
+
+        {% if service.filters.person %}
+          <li><a href="see-particular-person">I’d like to see a particular person</a></li>
+        {% endif %}
       </ul>
 
       <p>
