@@ -61,7 +61,7 @@ $(function() {
           }, 750);
 
           $('html,body').animate({
-            scrollTop: $item.offset().top
+            scrollTop: $item.offset().top - 5
           }, 1000, 'easeInOutQuad');
 
         }
