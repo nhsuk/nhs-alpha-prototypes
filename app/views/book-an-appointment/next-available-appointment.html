@@ -33,24 +33,6 @@
 
       {{
         ui_element_macros.appointment_option({
-          link_url: 'confirm-appointment/' + appointments.next.uuid,
-          appointment_date: appointments.next.appointment_date,
-          appointment_time: appointments.next.appointment_time,
-          avatar_img_path: '/public/images/' + appointments.next.practitioner.photo,
-          name: appointments.next.practitioner.name,
-          position: appointments.next.practitioner.role,
-          gender: appointments.next.practitioner.gender,
-          appointment_length: appointments.next.appointment_length,
-          appointment_type: appointments.next.appointment_type,
-          appointment_type_class: appointments.next.appointment_type_class,
-          address: appointments.next.address
-        })
-      }}
-
-      <h3 class="heading-small" style="font-weight:normal;">First available <b>face to face</b> appointment:</h3>
-
-      {{
-        ui_element_macros.appointment_option({
           link_url: 'confirm-appointment/' + appointments.face_to_face.uuid,
           appointment_date: appointments.face_to_face.appointment_date,
           appointment_time: appointments.face_to_face.appointment_time,
