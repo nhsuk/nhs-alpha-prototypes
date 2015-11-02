@@ -38,47 +38,6 @@
   .button-secondary-cta {
     @include fontsize(16, all);
   }
-
-  /*
-  display: block;
-  padding: 0.85rem 1rem 1rem 1rem;
-  margin-bottom: 2rem;
-  box-shadow: inset 0px 0px 0px 1px rgba($nhs-blue, 0.2);
-  border-left: 5px solid rgba($nhs-blue, 0.2);
-
-  transition: background-color 0.2s ease-out;
-
-  .details {
-    float: left;
-    width: 80%;
-    @include breakpoint(break-1) {
-      width: auto;
-    }
-  }
-
-  .mugshot {
-    float: left;
-    width: 15%;
-    margin-right: 5%;
-    @include breakpoint(break-1) {
-      width: 8rem;
-      height: 8rem;
-      margin-right: 2rem;
-    }
-  }
-  img {
-    max-width: none;
-    width: 100%;
-    border-radius: 100%;
-    box-shadow: 0px 0px 2px 0px rgba($nhs-black,0.5);
-  }
-
-  h3 {
-    @include sassline($fontsize: medium, $font: $bodytype, $lineheight: 2, $below: 1, $breakpoint: all);
-    color: $nhs-blue;
-    text-decoration: underline;
-  }
-  */
 }
 
 .appointment-distance {
@@ -198,7 +157,7 @@
 }
 
 // Practitioner link panels
-/*.practioner-link {
+.practioner-link {
   display: block;
   padding: 0.85rem 1rem 1rem 1rem;
   margin-bottom: 2rem;
@@ -242,7 +201,7 @@
     color: $nhs-blue;
     text-decoration: underline;
   }
-}*/
+}
 
 // Shared styles
 /*.appointment-option,
