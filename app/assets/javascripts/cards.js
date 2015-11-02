@@ -38,7 +38,7 @@ $(function() {
 
           // scroll back up at the same time
           $('html,body').animate({
-            scrollTop: ($item.offset().top - 5)
+            scrollTop: ($item.offset().top - 36)
           }, 1000, 'easeInOutQuad');
 
         }
@@ -53,13 +53,14 @@ $(function() {
         */
         if (!$(event.target).hasClass('item-permanent-cta')) {
           event.preventDefault();
-          $item.addClass('item-open');
           $toggleLink.text('Show less');
           $itemBody.find('.item-collapse').show();
 
           $itemBody.transition({
             height: 'auto'
-          }, 750);
+          }, 750, function() {
+            $item.addClass('item-open');
+          });
 
           $('html,body').animate({
             scrollTop: $item.offset().top - 5
