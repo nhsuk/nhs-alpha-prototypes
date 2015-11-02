@@ -3,28 +3,57 @@
 {% block id %}test-results{% endblock %}
 
 {% block heading %}
-  Your latest test results
+  Your latest blood sugar test results
 {% endblock %}
 
 {% block body %}
-  <h2>Blood sugar test:</h2>
 
-  <dl>
-    <dt>Result from 10 July 2015:</dt>
-    <dd>55mmol/mol</dd>
-    <dt>Target for 10 October 2015:</dt>
-    <dd>48mmol/mol</dd>
-  </dl>
+  <style type="text/css">
+    .test-results {
+      background-color: red;
+    }
+    .test-results .primary .result {
+      font-size: 72px;
+      line-height: 72px;
+    }
+    .test-results .primary .result span {
+      font-size: 36px;
+    }
+    .test-results .secondary .result {
+      font-size: 50px;
+      line-height: 50px;
+    }
+    .test-results .secondary .result span {
+      font-size: 25px;
+    }
+  </style>
 
-  <h2>What you can do now</h2>
+  <div class="test-results">
 
-  <p>As discussed with your GP you should:</p>
+    <div class="primary">
+      Result from 10 July 2015
+      <div class="result">55<span>mmol/mol</span></div>
+    </div>
 
-  <ul class="list-bullet">
-    <li>continue to take 500mg metformin a day</li>
-    <li>eat smaller portions at mealtimes </li>
-    <li>increase the time you’re active each week by 20 minutes </li>
-  </ul>
+    <div class="secondary">
+      Target for 10 October 2015
+      <div class="result">48<span>mmol/mol</span></div>
+    </div>
 
-  <p><a href="#">See older test results</a></p>
+  </div>
+
+  <div class="item-body-content">
+    <h2>What to do now</h2>
+
+    <p>As discussed with your GP you should:</p>
+
+    <ul class="list-bullet">
+      <li>continue to take 500mg metformin a day</li>
+      <li>eat smaller portions at mealtimes </li>
+      <li>increase the time you’re active each week by 20 minutes </li>
+    </ul>
+
+    <p><a href="#">See older test results</a></p>
+  </div>
+
 {% endblock %}
