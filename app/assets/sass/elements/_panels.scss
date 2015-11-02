@@ -32,6 +32,14 @@
 
 // Appointment option links
 .appointment-option {
+
+  max-width: 600px;
+
+  .button-secondary-cta {
+    @include fontsize(16, all);
+  }
+
+  /*
   display: block;
   padding: 0.85rem 1rem 1rem 1rem;
   margin-bottom: 2rem;
@@ -69,6 +77,81 @@
     @include sassline($fontsize: medium, $font: $bodytype, $lineheight: 2, $below: 1, $breakpoint: all);
     color: $nhs-blue;
     text-decoration: underline;
+  }
+  */
+}
+
+.appointment-distance {
+  color: $white;
+  font-weight: bold;
+  padding: 0.75rem 2rem;
+  background-color: $nhs-black;
+}
+
+.appointment-time {
+  margin-top: 2px;
+  padding: 0.75rem 2rem;
+  background-color: tint($nhs-blue, 75);
+  border-top: 2px solid tint($nhs-blue, 50);
+}
+
+.appointment-location {
+  margin-top: 2px;
+  padding: 0.5rem 2rem;
+  background-color: tint($nhs-blue, 90);
+
+  @extend %contain-floats;
+
+  .appointment-address {
+    float: left;
+    @include fontsize(14, all);
+  }
+
+  .appointment-map-link {
+    float: right;
+    @include fontsize(14, all);
+  }
+}
+
+.appointment-telephone-alert {
+  @include fontsize(14, all);
+  padding: 0.5rem 2rem 0.5rem 4rem;
+  background: url('/public/images/icon-telephone.svg') no-repeat 2rem center tint($nhs-yellow, 75);
+  background-size: auto 16px;
+}
+
+.appointment-details {
+  padding: 1rem 2rem;
+
+  @extend %contain-floats;
+
+  .mugshot {
+    float: left;
+    width: 60px;
+    height: 60px;
+    margin-right: 18px;
+
+    & > img {
+      max-width: 100%;
+    }
+  }
+
+  .details {
+    float: left;
+  }
+
+  .practioner-name {
+    font-weight: bold;
+  }
+  .practioner-details,
+  .appointment-type {
+    @include fontsize(16, all);
+    line-height: 1.2
+  }
+
+  .cta {
+    float: right;
+    padding-top: 0.75rem;
   }
 }
 
@@ -108,7 +191,7 @@
 }
 
 // Practitioner link panels
-.practioner-link {
+/*.practioner-link {
   display: block;
   padding: 0.85rem 1rem 1rem 1rem;
   margin-bottom: 2rem;
@@ -152,10 +235,10 @@
     color: $nhs-blue;
     text-decoration: underline;
   }
-}
+}*/
 
 // Shared styles
-.appointment-option,
+/*.appointment-option,
 .appointment-option:link,
 .appointment-option:active,
 .appointment-option:hover,
@@ -202,4 +285,4 @@
   .appointment-address {
     @include fontsize(16, all);
   }
-}
+}*/

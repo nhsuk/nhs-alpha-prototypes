@@ -1,5 +1,55 @@
 <!-- Appointment link block -->
 {% macro appointment_option(i) %}
+  <div class="appointment-option">
+
+    <div class="appointment-distance">
+      In 3 days’ time
+    </div>
+
+    <div class="appointment-time">
+      {% if i.appointment_date %}
+        <b>{{ i.appointment_date }}</b> at
+      {% endif %}
+      <b>{{ i.appointment_time }}</b>
+    </div>
+
+    {% if i.address %}
+      <div class="appointment-location">
+        <div class="appointment-address">
+          {{ i.address.join(', ') }}
+        </div>
+        <div class="appointment-map-link">
+          <a href="#">Show a map</a>
+        </div>
+      </div>
+    {% endif %}
+
+    {% if i.appointment_type|lower === 'telephone' %}
+      <div class="appointment-telephone-alert">
+        This is a <b>{{ i.appointment_length }} minute telephone call</b>.
+        You do <b>not</b> need to visit the surgery.
+      </div>
+    {% endif %}
+
+    <div class="appointment-details">
+      <div class="mugshot">
+        <img src="{{ i.avatar_img_path }}">
+      </div>
+      <div class="details">
+        <div class="practioner-name">{{ i.name }}</div>
+        <div class="practioner-details">{{ i.position }}, {{ i.gender }}</div>
+        <div class="appointment-type {{ i.appointment_type_class }}">
+          {{ i.appointment_length }} minutes {{ i.appointment_type }}
+        </div>
+      </div>
+      <div class="cta">
+        <a href="{{ i.link_url }}" class="button button-secondary-cta">Book this appointment</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!--
   <a href="{{ i.link_url }}" class="appointment-option">
     <div class="mugshot">
       <img src="{{ i.avatar_img_path }}">
@@ -25,6 +75,7 @@
       {% endif %}
     </div>
   </a>
+-->
 {% endmacro %}
 
 {% macro appointment_summary(i) %}
