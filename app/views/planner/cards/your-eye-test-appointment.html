@@ -8,37 +8,40 @@
 {% endblock %}
 
 {% block body %}
-  {{
-    ui_element_macros.appointment_summary({
-      appointment_date: booked_eye_test.appointment_date,
-      appointment_time: booked_eye_test.appointment_time,
-      avatar_img_path: '/public/images/' + booked_eye_test.practitioner.photo,
-      name: booked_eye_test.practitioner.name,
-      position: booked_eye_test.practitioner.role,
-      gender: booked_eye_test.practitioner.gender,
-      appointment_length: booked_eye_test.appointment_length,
-      appointment_type: booked_eye_test.appointment_type,
-      appointment_type_class: booked_eye_test.appointment_type_class,
-      address: booked_eye_test.address.join('<br>'),
-      tools: 'true'
-    })
-  }}
+  <div class="item-body-content">
+    {{
+      ui_element_macros.appointment_summary({
+        appointment_date: booked_eye_test.appointment_date,
+        appointment_time: booked_eye_test.appointment_time,
+        avatar_img_path: '/public/images/' + booked_eye_test.practitioner.photo,
+        name: booked_eye_test.practitioner.name,
+        position: booked_eye_test.practitioner.role,
+        gender: booked_eye_test.practitioner.gender,
+        appointment_length: booked_eye_test.appointment_length,
+        appointment_type: booked_eye_test.appointment_type,
+        appointment_type_class: booked_eye_test.appointment_type_class,
+        address: booked_eye_test.address.join('<br>'),
+        tools: 'true'
+      })
+    }}
 
-  <p><strong>Prepare for your appointment:</strong></p>
+    <p><strong>Prepare for your appointment:</strong></p>
 
-  <ul class="list-bullet">
-    <li>wear your glasses or contact lenses</li>
-    <li>bring sunglasses (the drops can make your eyes sensitive to light)</li>
-    <li>plan how you’ll get home - your eyes can be blurry and you shouldn’t
-    drive or travel on your own</li>
-  </ul>
+    <ul class="list-bullet">
+      <li>wear your glasses or contact lenses</li>
+      <li>bring sunglasses (the drops can make your eyes sensitive to light)</li>
+      <li>plan how you’ll get home - your eyes can be blurry and you shouldn’t
+      drive or travel on your own</li>
+    </ul>
 
-  <details>
-    <summary>What’s a diabetes eye check?</summary>
-
-    <p>Diabetes can damage your blood vessels which can cause sight problems
-    (diabetic retinopathy) and blindness. Eye checks can detect damage before
-    you notice changes to your sight. Treating damaged blood vessels early can
-    stop them affecting your sight.</p>
-  </details>
+    <details>
+      <summary>What’s a diabetes eye check?</summary>
+      <div>
+        <p>Diabetes can damage your blood vessels which can cause sight problems
+        (diabetic retinopathy) and blindness. Eye checks can detect damage before
+        you notice changes to your sight. Treating damaged blood vessels early can
+        stop them affecting your sight.</p>
+      </div>
+    </details>
+  </div>
 {% endblock %}

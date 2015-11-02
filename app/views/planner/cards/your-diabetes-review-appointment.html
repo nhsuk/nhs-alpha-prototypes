@@ -8,41 +8,44 @@
 {% endblock %}
 
 {% block body %}
-  {{
-    ui_element_macros.appointment_summary({
-      appointment_date: booked_diabetes_review.appointment_date,
-      appointment_time: booked_diabetes_review.appointment_time,
-      avatar_img_path: '/public/images/' + booked_diabetes_review.practitioner.photo,
-      name: booked_diabetes_review.practitioner.name,
-      position: booked_diabetes_review.practitioner.role,
-      gender: booked_diabetes_review.practitioner.gender,
-      appointment_length: booked_diabetes_review.appointment_length,
-      appointment_type: booked_diabetes_review.appointment_type,
-      appointment_type_class: booked_diabetes_review.appointment_type_class,
-      address: booked_diabetes_review.address.join('<br>'),
-      tools: 'true'
-    })
-  }}
+  <div class="item-body-content">
+    {{
+      ui_element_macros.appointment_summary({
+        appointment_date: booked_diabetes_review.appointment_date,
+        appointment_time: booked_diabetes_review.appointment_time,
+        avatar_img_path: '/public/images/' + booked_diabetes_review.practitioner.photo,
+        name: booked_diabetes_review.practitioner.name,
+        position: booked_diabetes_review.practitioner.role,
+        gender: booked_diabetes_review.practitioner.gender,
+        appointment_length: booked_diabetes_review.appointment_length,
+        appointment_type: booked_diabetes_review.appointment_type,
+        appointment_type_class: booked_diabetes_review.appointment_type_class,
+        address: booked_diabetes_review.address.join('<br>'),
+        tools: 'true'
+      })
+    }}
 
-  <details>
-    <summary>What’s a diabetes review?</summary>
+    <details>
+      <summary>What’s a diabetes review?</summary>
+      <div>
+        <p>Your GP will go over your blood test results and discuss your:</p>
 
-    <p>Your GP will go over your blood test results and discuss your:</p>
+        <ul class="list-bullet">
+          <li>blood sugar levels from the past 12 months and set a target with you for the next 3 months</li>
+          <li>blood fats (cholesterol) level</li>
+          <li>liver function</li>
+        </ul>
 
-    <ul class="list-bullet">
-      <li>blood sugar levels from the past 12 months and set a target with you for the next 3 months</li>
-      <li>blood fats (cholesterol) level</li>
-      <li>liver function</li>
-    </ul>
+        <p>The review is also a general health check. You’ll have:</p>
 
-    <p>The review is also a general health check. You’ll have:</p>
+        <ul class="list-bullet">
+          <li>your blood pressure taken</li>
+          <li>a urine test for kidney function</li>
+          <li>your weight measured</li>
+        </ul>
 
-    <ul class="list-bullet">
-      <li>your blood pressure taken</li>
-      <li>a urine test for kidney function</li>
-      <li>your weight measured</li>
-    </ul>
-
-    <p><a href="/diabetes-content/health-problems-caused-by-diabetes-type-2">Health problems caused by type 2 diabetes</a></p>
-  </details>
+        <p><a href="/diabetes-content/health-problems-caused-by-diabetes-type-2">Health problems caused by type 2 diabetes</a></p>
+      </div>
+    </details>
+  </div>
 {% endblock %}

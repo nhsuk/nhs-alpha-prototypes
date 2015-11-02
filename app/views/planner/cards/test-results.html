@@ -3,28 +3,33 @@
 {% block id %}test-results{% endblock %}
 
 {% block heading %}
-  Your latest test results
+  Your latest blood sugar test results
 {% endblock %}
 
 {% block body %}
-  <h2>Blood sugar test:</h2>
+  <div class="test-results">
+    <div class="primary">
+      Result from 10 July 2015
+      <div class="result">55<span>mmol/mol</span></div>
+    </div>
+    <div class="secondary">
+      Target for 10 October 2015
+      <div class="result">48<span>mmol/mol</span></div>
+    </div>
+  </div>
 
-  <dl>
-    <dt>Result from 10 July 2015:</dt>
-    <dd>55mmol/mol</dd>
-    <dt>Target for 10 October 2015:</dt>
-    <dd>48mmol/mol</dd>
-  </dl>
+  <div class="item-body-content">
+    <h2>What to do now</h2>
 
-  <h2>What you can do now</h2>
+    <p>As discussed with your GP you should:</p>
 
-  <p>As discussed with your GP you should:</p>
+    <ul class="list-bullet">
+      <li>continue to take 500mg metformin a day</li>
+      <li>eat smaller portions at mealtimes </li>
+      <li>increase the time you’re active each week by 20 minutes </li>
+    </ul>
 
-  <ul class="list-bullet">
-    <li>continue to take 500mg metformin a day</li>
-    <li>eat smaller portions at mealtimes </li>
-    <li>increase the time you’re active each week by 20 minutes </li>
-  </ul>
+    <p><a href="#">See older test results</a></p>
+  </div>
 
-  <p><a href="#">See older test results</a></p>
 {% endblock %}
