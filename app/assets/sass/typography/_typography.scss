@@ -350,7 +350,7 @@ label,
 .appointment-section-heading {
   @include fontsize(23, all);
   font-weight: normal;
-  margin-bottom: 2rem;
+  margin: 2rem 0;
 
   &.more {
     margin-top: 2rem;
