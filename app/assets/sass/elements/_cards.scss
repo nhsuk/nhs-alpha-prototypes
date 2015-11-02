@@ -2,13 +2,15 @@
   margin: 0 auto;
   max-width: 600px;
   padding-bottom: 1rem;
-  @include breakpoint(break-1) {
-    padding-top: 3rem;
-  }
 }
 
 .planner header {
   padding-bottom: 1rem;
+}
+
+.planner h2 {
+  @extend .lede;
+  font-weight: normal;
 }
 
 .item {
