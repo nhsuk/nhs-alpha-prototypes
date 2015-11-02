@@ -8,26 +8,29 @@
 {% endblock %}
 
 {% block body %}
-  {{
-    ui_element_macros.appointment_summary({
-      appointment_date: booked_blood_test.appointment_date,
-      appointment_time: booked_blood_test.appointment_time,
-      avatar_img_path: '/public/images/' + booked_blood_test.practitioner.photo,
-      name: booked_blood_test.practitioner.name,
-      position: booked_blood_test.practitioner.role,
-      gender: booked_blood_test.practitioner.gender,
-      appointment_length: booked_blood_test.appointment_length,
-      appointment_type: booked_blood_test.appointment_type,
-      appointment_type_class: booked_blood_test.appointment_type_class,
-      address: booked_blood_test.address.join('<br>'),
-      tools: 'true'
-    })
-  }}
+  <div class="item-body-content">
+    {{
+      ui_element_macros.appointment_summary({
+        appointment_date: booked_blood_test.appointment_date,
+        appointment_time: booked_blood_test.appointment_time,
+        avatar_img_path: '/public/images/' + booked_blood_test.practitioner.photo,
+        name: booked_blood_test.practitioner.name,
+        position: booked_blood_test.practitioner.role,
+        gender: booked_blood_test.practitioner.gender,
+        appointment_length: booked_blood_test.appointment_length,
+        appointment_type: booked_blood_test.appointment_type,
+        appointment_type_class: booked_blood_test.appointment_type_class,
+        address: booked_blood_test.address.join('<br>'),
+        tools: 'true'
+      })
+    }}
 
-  <details>
-    <summary>What’s a blood sugar test?</summary>
-
-    <p>You need to have your blood sugar level checked every 3 months so your
-    medication can be adjusted if needed.</p>
-  </details>
+    <details>
+      <summary>What’s a blood sugar test?</summary>
+      <div>
+        <p>You need to have your blood sugar level checked every 3 months so your
+        medication can be adjusted if needed.</p>
+      </div>
+    </details>
+  </div>
 {% endblock %}
