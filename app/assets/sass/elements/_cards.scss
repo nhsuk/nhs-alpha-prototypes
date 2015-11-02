@@ -196,3 +196,30 @@
 .item-open .shadow {
   margin-top: 0;
 }
+
+
+/* Test details card */
+.test-results {
+  padding: 1rem 1rem 0;
+  margin-bottom: 1rem;
+  background-color: tint($nhs-yellow, 75);
+
+  .primary .result {
+    font-size: 72px;
+    line-height: 78px;
+    font-weight: bold;
+
+    span {
+      font-size: 36px;
+    }
+  }
+
+  .secondary .result {
+    font-size: 50px;
+    line-height: 56px;
+
+    span {
+      font-size: 25px;
+    }
+  }
+}
