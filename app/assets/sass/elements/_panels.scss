@@ -150,8 +150,15 @@
   }
 
   .cta {
-    float: right;
+    clear: both;
     padding-top: 0.75rem;
+    margin: 0 -2rem;
+
+    @include breakpoint(break-1) {
+      clear: none;
+      float: right;
+      margin: 0;
+    }
   }
 }
 
