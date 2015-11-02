@@ -26,7 +26,7 @@
     </div>
     <div class="column-two-thirds">
 
-    <h2 class="heading-small" style="font-weight:normal;">First available appointment:</h2>
+    <h2 class="appointment-section-heading">First available appointment:</h2>
 
     {{
       ui_element_macros.appointment_option({
@@ -43,7 +43,7 @@
       })
     }}
 
-    <h3 class="heading-small" style="font-weight:normal;">First available <b>evening</b> appointment:</h3>
+    <h3 class="appointment-section-heading">First available evening appointment:</h3>
 
     {{
       ui_element_macros.appointment_option({
@@ -60,16 +60,16 @@
       })
     }}
 
-    <h3 class="heading-medium">More appointment options:</h3>
+    <h3 class="appointment-section-heading more">More appointment options</h3>
 
-    <ul class="list-bullet">
+    <ul>
       <li><a href="#">I'd like an early morning appointment</a></li>
       <li><a href="#">I'd like to see a particular person</a></li>
     </ul>
 
-    <p>
-      or <a href="#">see all appointments</a>
-    </p>
+    <div class="appointment-section-heading all">
+      <a href="#">See all appointments</a>
+    </div>
 
 </main>
 {% endblock %}
