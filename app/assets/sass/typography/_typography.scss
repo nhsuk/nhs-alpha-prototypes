@@ -153,6 +153,7 @@ ul, ol {
     -o-font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
     font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
     margin-left: 0;
+    margin-bottom: 0.75rem;
 
     ol, ul {
       padding-top: 1rem;
@@ -342,4 +343,25 @@ label,
 
 .button {
   @include fontsize(small, all);
+}
+
+// Various styles for various things :S
+
+.appointment-section-heading {
+  @include fontsize(23, all);
+  font-weight: normal;
+  margin-bottom: 2rem;
+
+  &.more {
+    margin-top: 2rem;
+    margin-bottom: 0;
+    padding: 2rem 0 1rem;
+    border-top: 4px solid tint($nhs-blue, 75);
+  }
+
+  &.all {
+    margin-top: 5rem;
+    padding: 2rem 0 1rem;
+    border-top: 2px solid tint($nhs-blue, 75);
+  }
 }
