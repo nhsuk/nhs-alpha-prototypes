@@ -303,16 +303,16 @@ module.exports = {
       }
 
       // upcoming stuff
+      cards.future.push('repeat-prescription');
+      if (booked_eye_test) {
+        cards.future.push('your-eye-test-appointment');
+      }
       if (booked_blood_test) {
         cards.future.push('your-blood-test-appointment');
       }
       if (booked_diabetes_review) {
         cards.future.push('your-diabetes-review-appointment');
       }
-      if (booked_eye_test) {
-        cards.future.push('your-eye-test-appointment');
-      }
-      cards.future.push('repeat-prescription');
 
       res.render(
         'planner/main',
