@@ -3,7 +3,6 @@
     {
       "slug": "diabetes-blood-glucose-test",
       "name": "Blood sugar test",
-      "triage_hint": "<p>In your GP practice, blood sugar test appointments are carried out by a practice nurse.</p>",
       "confirmation_hint": "<p>The glycated haemoglobin (HbA1c) test gives your average blood glucose levels over the previous two to three months. The results can indicate whether the measures you're taking to control your diabetes are working.</p><p>Unlike other tests the HbA1c test can be carried out at any time of day and it doesn't require any special preparation, such as fasting.</p><p>The test will involve taking a small sample of blood from a vein.</p>",
       "filters": {
         "time_of_day": true,
@@ -13,7 +12,6 @@
     {
       "slug": "diabetes-foot-check",
       "name": "Diabetes foot check",
-      "triage_hint": "<p>In your GP practice, diabetes foot checks are carried out by a practice nurse.</p>",
       "confirmation_hint": "<p>People with diabetes have a much greater risk of developing problems with their feet. It is therefore important to have your feet examined regularly or if you have cuts or bruises.</p><p>You will be asked to remove any footwear and the healthcare professional will examine your feet.</p><p>The charity Diabetes UK has information on <a href='https://www.diabetes.org.uk/Documents/Guide%20to%20diabetes/monitoring/What-to-expect-at-annual-foot-check.pdf'>what to expect at your annual foot check.</a></p>",
       "filters": {
         "time_of_day": true,
@@ -31,7 +29,6 @@
     {
       "slug": "diabetes-annual-review",
       "name": "Diabetes annual review",
-      "triage_hint": "<p>In your GP practice, diabetes annual reviews are carried out by a nurse practitioner.</p>",
       "confirmation_hint": "<p>Your diabetic review will allow your doctors to monitor your health and assess aspects such as your long term blood glucose control, cholesterol levels and blood pressure.</p><p>Because the review covers a lot of different things, it can be useful to bring a notebook and pen.</p><p>The charity Diabetes UK have <a href=\"http://www.diabetes.co.uk/nhs/diabetes-annual-care-review.html\">information about the diabetes annual review.</a></p>",
       "filters": {
         "time_of_day": true,
