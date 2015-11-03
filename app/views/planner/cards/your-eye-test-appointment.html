@@ -4,7 +4,17 @@
 {% block id %}your-eye-test-appointment{% endblock %}
 
 {% block heading %}
-  Your diabetes eye check appointment
+  Your diabetes eye check<br>
+  <span style="font-weight: normal;">
+    {{ booked_eye_test.appointment_date }} at {{ booked_eye_test.appointment_time }}
+  </span>
+{% endblock %}
+
+{% block leadin %}
+  <div class="item-leadin-content">
+    Plan how you’ll get home after the check. Drops can make your eyes blurry
+    and you shouldn’t drive for a couple of hours afterwards.
+  </div>
 {% endblock %}
 
 {% block body %}

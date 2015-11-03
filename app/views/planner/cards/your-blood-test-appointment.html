@@ -4,7 +4,10 @@
 {% block id %}your-blood-test-appointment{% endblock %}
 
 {% block heading %}
-  Blood sugar test
+  Your blood sugar test<br>
+  <span style="font-weight: normal;">
+    {{ booked_blood_test.appointment_date }} at {{ booked_blood_test.appointment_time }}
+  </span>
 {% endblock %}
 
 {% block body %}
