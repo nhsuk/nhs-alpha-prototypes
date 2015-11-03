@@ -1,5 +1,9 @@
 <div class="service-header">
 	<div class="service-name">
-		Book an appointment
+		{% if service.name %}
+			Book a {{ service.name|lower }} appointment
+		{% else %}
+			Book an appointment
+		{% endif %}
 	</div>
 </div>

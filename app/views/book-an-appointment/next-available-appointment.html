@@ -10,14 +10,9 @@
 <main id="content" role="main" class="">
 
   <div class="text">
-    {% if service.name %}
-    <h1 class="heading-xlarge">
-      Choose a {{ service.name|lower }} appointment
-    </h1>
-      {{ service.triage_hint|safe }}
-    {% else %}
     <h1 class="heading-xlarge">Choose an appointment</h1>
-    {% endif %}
+
+    {{ service.triage_hint|safe }}
   </div>
 
   <div class="grid-row">
