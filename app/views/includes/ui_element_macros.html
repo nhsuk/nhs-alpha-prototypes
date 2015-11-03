@@ -71,14 +71,14 @@
       <p class="appointment-type {{ i.appointment_type_class }}">
         {{ i.appointment_length }} minute <b>{{ i.appointment_type }}</b> appointment
       </p>
-      <p class="appointment-address">
-        {% if i.address %}
+      {% if i.address %}
+        <p class="appointment-address">
           {{ i.address|safe }}
-        {% endif %}
-      </p>
+        </p>
+      {% endif %}
       {% if i.tools %}
-        <ul class="inline">
-          <li><a href="javascript:void(0)">Set reminders</a></li>
+        <ul>
+          <li><a href="javascript:void(0)">Send me a text reminder 2 days before</a></li>
           <li><a href="javascript:void(0)" class="danger">Change or cancel</a></li>
         </ul>
       {% endif %}
