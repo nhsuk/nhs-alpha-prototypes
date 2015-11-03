@@ -13,20 +13,18 @@
   <main id="content" role="main">
     <h1 class="heading-xlarge">Sign in</h1>
 
-    <p>You have been sent these details in a text message.</p>
-
     <form action="main" method="post" class="form">
       {{
         form_macros.text_field({
           id: 'username',
-          label: 'Username'
+          label: 'NHS number'
         })
       }}
 
       {{
         form_macros.password_field({
           id: 'password',
-          label: 'Password'
+          label: 'Passcode'
         })
       }}
 
