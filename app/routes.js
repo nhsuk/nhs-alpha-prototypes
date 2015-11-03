@@ -213,6 +213,10 @@ module.exports = {
 
     app.get('/book-an-appointment/:service_slug?/confirm-appointment/:uuid', function(req, res) {
       var appointment = find_appointment(req.params.uuid),
+          service_slug = req.params.service_slug || 'general-practice',
+          service = app.locals.services.filter(function(service) {
+            return service.slug === service_slug;
+          })[0],
           practice = app.locals.gp_practices[0],
           address = appointment.address || [practice.name].concat(practice.address);
 
@@ -220,6 +224,7 @@ module.exports = {
         'book-an-appointment/confirm-appointment',
         {
           practice: practice,
+          service: service,
           appointment: appointment,
           address: address
         }
