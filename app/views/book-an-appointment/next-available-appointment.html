@@ -29,13 +29,14 @@
     </div>
     <div class="column-two-thirds">
 
-      <h2 class="heading-small" style="font-weight:normal;">First available appointment:</h2>
+      <h2 class="appointment-section-heading">First available appointment:</h2>
 
       {{
         ui_element_macros.appointment_option({
           link_url: 'confirm-appointment/' + appointments.face_to_face.uuid,
           appointment_date: appointments.face_to_face.appointment_date,
           appointment_time: appointments.face_to_face.appointment_time,
+          appointment_days_away: appointments.face_to_face.appointment_days_away,
           avatar_img_path: '/public/images/' + appointments.face_to_face.practitioner.photo,
           name: appointments.face_to_face.practitioner.name,
           position: appointments.face_to_face.practitioner.role,
@@ -47,11 +48,15 @@
         })
       }}
 
-      <h3 class="heading-medium">More appointment options:</h3>
+      <h3 class="appointment-section-heading more">More appointment options</h3>
 
-      <ul class="list-bullet">
+      <ul>
         {% if service.filters.gender %}
-          <li><a href="next-appointment-with-woman">I’d like to see a woman</a></li>
+          <li>
+            <a href="next-appointment-with-woman">
+              I’d like to see a woman or female-identified person
+            </a>
+          </li>
         {% endif %}
 
         {% if service.filters.time_of_day %}
@@ -63,9 +68,9 @@
         {% endif %}
       </ul>
 
-      <p>
-        or <a href="all-appointments">see all appointments</a>
-      </p>
+      <div class="appointment-section-heading all">
+        <a href="all-appointments">See all appointments</a>
+      </div>
 
     </div>
   </div>

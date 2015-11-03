@@ -32,43 +32,92 @@
 
 // Appointment option links
 .appointment-option {
-  display: block;
-  padding: 0.85rem 1rem 1rem 1rem;
-  margin-bottom: 2rem;
-  box-shadow: inset 0px 0px 0px 1px rgba($nhs-blue, 0.2);
-  border-left: 5px solid rgba($nhs-blue, 0.2);
 
-  transition: background-color 0.2s ease-out;
+  //max-width: 600px;
 
-  .details {
-    float: left;
-    width: 80%;
-    @include breakpoint(break-1) {
-      width: auto;
-    }
+  .button-secondary-cta {
+    @include fontsize(16, all);
   }
+}
+
+.appointment-distance {
+  color: $white;
+  font-weight: bold;
+  padding: 0.75rem 2rem;
+  background-color: $nhs-black;
+}
+
+.appointment-time {
+  margin-top: 2px;
+  padding: 0.75rem 2rem;
+  background-color: tint($nhs-blue, 75);
+  border-top: 2px solid tint($nhs-blue, 50);
+}
+
+.appointment-location {
+  margin-top: 2px;
+  padding: 0.5rem 2rem;
+  background-color: tint($nhs-blue, 90);
+
+  @extend %contain-floats;
+
+  .appointment-address {
+    float: left;
+    @include fontsize(14, all);
+  }
+
+  .appointment-map-link {
+    float: right;
+    @include fontsize(14, all);
+  }
+}
+
+.appointment-telephone-alert {
+  @include fontsize(14, all);
+  padding: 0.5rem 2rem 0.5rem 4rem;
+  background: url('/public/images/icon-telephone.svg') no-repeat 2rem center tint($nhs-yellow, 75);
+  background-size: auto 16px;
+}
+
+.appointment-details {
+  padding: 1rem 2rem;
+
+  @extend %contain-floats;
 
   .mugshot {
     float: left;
-    width: 15%;
-    margin-right: 5%;
-    @include breakpoint(break-1) {
-      width: 8rem;
-      height: 8rem;
-      margin-right: 2rem;
+    width: 60px;
+    height: 60px;
+    margin-right: 18px;
+
+    & > img {
+      max-width: 100%;
     }
   }
-  img {
-    max-width: none;
-    width: 100%;
-    border-radius: 100%;
-    box-shadow: 0px 0px 2px 0px rgba($nhs-black,0.5);
+
+  .details {
+    float: left;
   }
 
-  h3 {
-    @include sassline($fontsize: medium, $font: $bodytype, $lineheight: 2, $below: 1, $breakpoint: all);
-    color: $nhs-blue;
-    text-decoration: underline;
+  .practioner-name {
+    font-weight: bold;
+  }
+  .practioner-details,
+  .appointment-type {
+    @include fontsize(16, all);
+    line-height: 1.2
+  }
+
+  .cta {
+    clear: both;
+    padding-top: 0.75rem;
+    margin: 0 -2rem;
+
+    @include breakpoint(break-1) {
+      clear: none;
+      float: right;
+      margin: 0;
+    }
   }
 }
 
@@ -155,7 +204,7 @@
 }
 
 // Shared styles
-.appointment-option,
+/*.appointment-option,
 .appointment-option:link,
 .appointment-option:active,
 .appointment-option:hover,
@@ -202,4 +251,4 @@
   .appointment-address {
     @include fontsize(16, all);
   }
-}
+}*/

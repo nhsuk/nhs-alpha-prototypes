@@ -22,13 +22,14 @@
     </div>
     <div class="column-two-thirds">
 
-      <h2 class="heading-small" style="font-weight:normal;">First available appointment with a <b>female</b> practitioner:</h2>
+      <h2 class="appointment-section-heading">First available appointment with a female practitioner:</h2>
 
       {{
         ui_element_macros.appointment_option({
           link_url: 'confirm-appointment/' + appointments.female_gp.uuid,
           appointment_date: appointments.female_gp.appointment_date,
           appointment_time: appointments.female_gp.appointment_time,
+          appointment_days_away: appointments.female_gp.appointment_days_away,
           avatar_img_path: '/public/images/' + appointments.female_gp.practitioner.photo,
           name: appointments.female_gp.practitioner.name,
           position: appointments.female_gp.practitioner.role,
@@ -39,13 +40,14 @@
         })
       }}
 
-      <h3 class="heading-small" style="font-weight:normal;">First available <b>face to face</b> appointment:</h3>
+      <h3 class="appointment-section-heading">First available face to face appointment:</h3>
 
       {{
         ui_element_macros.appointment_option({
           link_url: 'confirm-appointment/' + appointments.face_to_face.uuid,
           appointment_date: appointments.face_to_face.appointment_date,
           appointment_time: appointments.face_to_face.appointment_time,
+          appointment_days_away: appointments.face_to_face.appointment_days_away,
           avatar_img_path: '/public/images/' + appointments.face_to_face.practitioner.photo,
           name: appointments.face_to_face.practitioner.name,
           position: appointments.face_to_face.practitioner.role,
@@ -56,13 +58,14 @@
         })
       }}
 
-      <h3 class="heading-small" style="font-weight:normal;">First available appointment:</h3>
+      <h3 class="appointment-section-heading">First available appointment:</h3>
 
       {{
         ui_element_macros.appointment_option({
           link_url: 'confirm-appointment/' + appointments.next.uuid,
           appointment_date: appointments.next.appointment_date,
           appointment_time: appointments.next.appointment_time,
+          appointment_days_away: appointments.next.appointment_days_away,
           avatar_img_path: '/public/images/' + appointments.next.practitioner.photo,
           name: appointments.next.practitioner.name,
           position: appointments.next.practitioner.role,
@@ -73,16 +76,16 @@
         })
       }}
 
-      <h3 class="heading-medium">More appointment options:</h3>
+      <h3 class="appointment-section-heading more">More appointment options</h3>
 
-      <ul class="list-bullet">
+      <ul>
         <li><a href="next-appointment-with-woman-early-morning">I’d like an early morning appointment</a></li>
         <li><a href="see-particular-person">I’d like to see a particular person</a></li>
       </ul>
 
-      <p>
-        or <a href="all-appointments">see all appointments</a>
-      </p>
+      <div class="appointment-section-heading all">
+        <a href="all-appointments">See all appointments</a>
+      </div>
     </div>
   </div>
 
