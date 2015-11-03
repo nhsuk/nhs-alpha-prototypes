@@ -11,10 +11,6 @@
 {% block content %}
   <main id="content" class="planner" role="main">
     <section>
-      <header>
-        <h2>Previously</h2>
-      </header>
-
       <div class="js-cards items-container">
         {% for card in cards.past %}
           {% set template = 'planner/cards/' + card + '.html' %}
@@ -25,7 +21,7 @@
 
     <section>
       <header>
-        <h2>Things to do</h2>
+        <h2>Things to do now</h2>
       </header>
 
       <div class="js-cards items-container">
@@ -38,7 +34,7 @@
 
     <section>
       <header>
-        <h2>Next time</h2>
+        <h2>Appointments and reminders</h2>
       </header>
 
       <div class="js-cards items-container">
