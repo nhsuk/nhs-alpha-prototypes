@@ -48,34 +48,6 @@
     </div>
 
   </div>
-
-  <!--
-  <a href="{{ i.link_url }}" class="appointment-option">
-    <div class="mugshot">
-      <img src="{{ i.avatar_img_path }}">
-    </div>
-    <div class="details">
-      <h3>
-        {% if i.appointment_date %}
-          {{ i.appointment_date }} at
-        {% endif %}
-        {{ i.appointment_time }}
-      </h3>
-      <p>
-        <b>{{ i.name }}</b><br>
-        {{ i.position }}, {{ i.gender }}
-      </p>
-      <p class="appointment-type {{ i.appointment_type_class }}">
-        {{ i.appointment_length }} minute <b>{{ i.appointment_type }}</b> appointment
-      </p>
-      {% if i.address %}
-        <p class="appointment-address">
-          {{ i.address.join('<br>') }}
-        </p>
-      {% endif %}
-    </div>
-  </a>
--->
 {% endmacro %}
 
 {% macro appointment_summary(i) %}
