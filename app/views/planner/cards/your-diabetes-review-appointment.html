@@ -4,7 +4,10 @@
 {% block id %}your-diabetes-review-appointment{% endblock %}
 
 {% block heading %}
-  Your diabetes review appointment
+  Your diabetes review appointment<br>
+  <span style="font-weight: normal;">
+    {{ booked_diabetes_review.appointment_date }} at {{ booked_diabetes_review.appointment_time }}
+  </span>
 {% endblock %}
 
 {% block body %}

@@ -4,7 +4,10 @@
 {% block id %}your-eye-test-appointment{% endblock %}
 
 {% block heading %}
-  Your diabetes eye check appointment
+  Your diabetes eye check appointment<br>
+  <span style="font-weight: normal;">
+    {{ booked_eye_test.appointment_date }} at {{ booked_eye_test.appointment_time }}
+  </span>
 {% endblock %}
 
 {% block body %}
