@@ -29,6 +29,17 @@
           {% set template = 'planner/cards/' + card + '.html' %}
           {% include template %}
         {% endfor %}
+
+        {% if !cards.present.length %}
+          <p>You’re all done for now. You’ll get a text message when you need
+          to book another appointment or pick up your medication.</p>
+
+          <p>
+            There’s information about
+            <a href="/diabetes-content/information-and-support-type-2-diabetes">understanding
+            diabetes, education courses and support groups</a>.
+          </p>
+        {% endif %}
       </div>
     </section>
 
