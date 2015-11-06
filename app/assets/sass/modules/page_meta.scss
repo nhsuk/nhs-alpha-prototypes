@@ -1,0 +1,16 @@
+// Content pages "meta"
+.page-meta {
+  @include fontsize(14, all);
+  margin-top: 4rem;
+  padding-top: 2rem;
+  border-top: 1px solid $nhs-grey-2;
+  color: $nhs-grey-1;
+
+  .feedback {
+    margin-top: 2rem;
+
+    a {
+      color: $nhs-grey-1;
+    }
+  }
+}
