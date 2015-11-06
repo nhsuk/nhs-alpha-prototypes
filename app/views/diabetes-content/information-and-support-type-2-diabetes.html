@@ -1,22 +1,25 @@
 {% extends 'templates/nhs_content_layout.html' %}
+{% import 'includes/ui_element_macros.html' as ui_element_macros %}
 
 {% block content %}
 
 <main id="content" role="main">
 
-<div class="text markdown-content">
+  {% include "diabetes-content/includes/nav-contents.html" %}
+
+  <div class="text markdown-content">
 
 {% markdown %}
 
-#Finding further information and support for type 2 diabetes
+#Further information and support
 
-There is a lot of information and support available for type 2 diabetes. Some of the support depends on the area you live in. 
+There is a lot of information and support available for type 2 diabetes. Some of the support depends on the area you live in.
 
 ##Understanding type 2 diabetes
-Information about what diabetes is, diagnosis and monitoring your condition. 
+Information about what diabetes is, diagnosis and monitoring your condition.
 
 - [What is diabetes?](https://www.diabetes.org.uk/Guide-to-diabetes/What-is-diabetes/) from the charity Diabetes UK
-- [Type 2 diabetes - the basics](http://www.webmd.com/diabetes/guide/type-2-diabetes) from the medical site WebMD 
+- [Type 2 diabetes - the basics](http://www.webmd.com/diabetes/guide/type-2-diabetes) from the medical site WebMD
 - [Diabetes treatments](https://www.diabetes.org.uk/Guide-to-diabetes/What-is-diabetes/Diabetes-treatments/) from Diabetes UK
 - [15 checks you should do when you have diabetes](https://www.diabetes.org.uk/Guide-to-diabetes/Monitoring/15-healthcare-essentials/) from Diabetes UK
 - [Managing your diabetes](https://www.diabetes.org.uk/Guide-to-diabetes/Managing-your-diabetes/) from Diabetes UK
@@ -25,23 +28,23 @@ Information about what diabetes is, diagnosis and monitoring your condition.
 You have to [tell the DVLA that you have type 2 diabetes](https://www.gov.uk/diabetes-driving).  You can be fined if you don’t.
 
 ##Courses for managing diabetes
-There are free education courses to help you learn more about and manage your type 2 diabetes. Check with hospitals in your area. 
+There are free education courses to help you learn more about and manage your type 2 diabetes. Check with hospitals in your area.
 
-The NHS also offers one-day courses courses. To sign up email the contacts on the pages below. 
+The NHS also offers one-day courses courses. To sign up email the contacts on the pages below.
 
 - [course for newly diagnosed people ](http://www.desmond-project.org.uk/newlydiagnosedandfoundationmodules-278.html)
 - [foundation course to build on newly diagnosed](http://www.desmond-project.org.uk/newlydiagnosedandfoundationmodules-278.html)
-- [course for South Asians](http://www.desmond-project.org.uk/newlydiagnosedandfoundationmodules-278.html) delivered with interpreters in Punjabi, Urdu, Bengali and Gujarati 
+- [course for South Asians](http://www.desmond-project.org.uk/newlydiagnosedandfoundationmodules-278.html) delivered with interpreters in Punjabi, Urdu, Bengali and Gujarati
 
 ###What you need to take part
-Your GP will need to refer you. You can phone your GP surgery to get a referral letter, you don’t need to make an appointment. 
+Your GP will need to refer you. You can phone your GP surgery to get a referral letter, you don’t need to make an appointment.
 
-Bring the referral letter from your GP to the first session. 
+Bring the referral letter from your GP to the first session.
 
 ##Support groups for type 2 diabetes
-The charity Diabetes UK runs [local support groups](https://www.diabetes.org.uk/How_we_help/Local_support_groups/). 
+The charity Diabetes UK runs [local support groups](https://www.diabetes.org.uk/How_we_help/Local_support_groups/).
 
-They can help with things like managing your diabetes on a daily basis, diet, exercise or dealing with emotional problems like depression. They’re a place to talk and find out how others live with the condition. 
+They can help with things like managing your diabetes on a daily basis, diet, exercise or dealing with emotional problems like depression. They’re a place to talk and find out how others live with the condition.
 
 ##Blogs about diabetes
 
@@ -68,15 +71,26 @@ They can help with things like managing your diabetes on a daily basis, diet, ex
 - [Video with exercise tips](https://www.youtube.com/watch?v=9RDltBjdbEY) - simple exercises that you can do at home
 
 ##Carry medical ID
-Some people choose to wear a special wristband or carry something in their wallet that says they have diabetes, in case there is a medical emergency. 
+Some people choose to wear a special wristband or carry something in their wallet that says they have diabetes, in case there is a medical emergency.
 
 Knowing you have diabetes can make a difference to the treatment you’ll be given.
 
-Google ‘medical ID’ to find a website that sells them.  
+Google ‘medical ID’ to find a website that sells them.
 
 {% endmarkdown %}
 
-</div>
+    {{
+      ui_element_macros.simple_pagination({
+        previous: {
+          url: "/diabetes-content/diet",
+          title: "Food and keeping active"
+        }
+      })
+    }}
+
+    {% include "includes/nhs.uk/page_meta.html" %}
+
+  </div>
 
 </main>
 

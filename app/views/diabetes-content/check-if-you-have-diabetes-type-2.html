@@ -1,10 +1,13 @@
 {% extends 'templates/nhs_content_layout.html' %}
+{% import 'includes/ui_element_macros.html' as ui_element_macros %}
 
 {% block content %}
 
 <main id="content" role="main">
 
-<div class="text markdown-content">
+  {% include "diabetes-content/includes/nav-contents.html" %}
+
+  <div class="text markdown-content">
 
 {% markdown %}
 #Check if you have type 2 diabetes
@@ -38,7 +41,13 @@ The earlier diabetes is diagnosed and treatment starts, the better.  Untreated d
 
 You can book an appointment online or over the phone.
 
-[Book online](/book-an-appointment)
+{% endmarkdown %}
+
+<p>
+  <a href="/book-an-appointment" class="button button-secondary-cta">Book an appointment</a>
+</p>
+
+{% markdown %}
 
 Phone: 0888 123 456
 
@@ -55,7 +64,18 @@ To get the most out of your appointment, it may help you to write down some ques
 
 {% endmarkdown %}
 
-</div>
+    {{
+      ui_element_macros.simple_pagination({
+        next: {
+          url: "/diabetes-content/diabetes-2-diagnosis",
+          title: "Getting diagnosed"
+        }
+      })
+    }}
+
+    {% include "includes/nhs.uk/page_meta.html" %}
+
+  </div>
 
 </main>
 

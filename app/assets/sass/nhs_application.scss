@@ -47,6 +47,8 @@
 @import "modules/radios-and-checkboxes";
 //@import "modules/auto-suggest";
 @import "modules/select-boxes";
+@import "modules/guide_navigation";
+@import "modules/page_meta";
 
 // NHS.UK Template
 
@@ -61,9 +63,9 @@
 // Default content stuff
 
 .markdown-content {
-  h1 { @extend .heading-xlarge; }
-  h2 { @extend .heading-large; }
-  h3 { @extend .heading-medium; }
+  h1 { @extend .heading-large; }
+  h2 { @extend .heading-medium; }
+  h3 { @extend .heading-small; }
 
   ul { @extend .list-bullet; }
   ol { @extend .list-number; }
