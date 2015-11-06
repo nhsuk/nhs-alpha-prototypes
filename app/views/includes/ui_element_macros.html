@@ -111,3 +111,24 @@
     </div>
   </a>
 {% endmacro %}
+
+{% macro simple_pagination(i) %}
+  <div class="pagination-simple">
+    {% if i.next %}
+    <div class="next-page">
+      <a href="{{ i.next.url }}">
+        <span class="prefix">Next page:</span>
+        <span class="title">{{ i.next.title }}</span>
+      </a>
+    </div>
+    {% endif %}
+    {% if i.previous %}
+    <div class="previous-page">
+      <a href="{{ i.previous.url }}">
+        <span class="prefix">Previous page:</span>
+        <span class="title">{{ i.previous.title }}</span>
+      </a>
+    </div>
+    {% endif %}
+  </div>
+{% endmacro %}

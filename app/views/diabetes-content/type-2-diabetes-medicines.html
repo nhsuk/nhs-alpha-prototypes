@@ -1,14 +1,17 @@
 {% extends 'templates/nhs_content_layout.html' %}
+{% import 'includes/ui_element_macros.html' as ui_element_macros %}
 
 {% block content %}
 
 <main id="content" role="main">
 
-<div class="text markdown-content">
+  {% include "diabetes-content/includes/nav-contents.html" %}
+
+  <div class="text markdown-content">
 
 {% markdown %}
 
-#Understanding medicines for type 2 diabetes#
+#Understanding medication#
 
 Most people need medicine to control their type 2 diabetes. Medicine is taken to keep your blood sugar level as normal as possible to prevent further health problems. You’ll have to take it for the rest of your life.
 
@@ -72,7 +75,20 @@ If you're going on holiday:
 
 {% endmarkdown %}
 
-</div>
+    {{
+      ui_element_macros.simple_pagination({
+        previous: {
+          url: "/diabetes-content/diabetes-2-diagnosis",
+          title: "Getting diagnosed"
+        },
+        next: {
+          url: "/diabetes-content/going-for-regular-diabetes-check-ups",
+          title: "Going for regular check ups"
+        }
+      })
+    }}
+
+  </div>
 
 </main>
 

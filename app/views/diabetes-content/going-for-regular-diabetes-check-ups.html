@@ -1,17 +1,21 @@
 {% extends 'templates/nhs_content_layout.html' %}
+{% import 'includes/ui_element_macros.html' as ui_element_macros %}
 
 {% block content %}
 
 <main id="content" role="main">
 
+  {% include "diabetes-content/includes/nav-contents.html" %}
+
   <div class="text">
-    <h1 class="heading-xlarge" id="going-for-regular-diabetes-type-2-check-ups">Regular type 2 diabetes check ups</h1>
 
-    <p class="lede">Type 2 diabetes check ups help to make sure your condition doesn’t lead to other health problems, eg with your eyesight, heart or your feet.</p>
+    <h1 class="heading-large" id="going-for-regular-diabetes-type-2-check-ups">Going for regular check ups</h1>
 
-    <h2 class="heading-large">Every 3 months</h2>
+    <p>Type 2 diabetes check ups help to make sure your condition doesn’t lead to other health problems, eg with your eyesight, heart or your feet.</p>
 
-    <h3 class="heading-medium">Long-term blood sugar checks (HbA1C test)</h3>
+    <h2 class="heading-medium">Every 3 months</h2>
+
+    <h3 class="heading-small">Long-term blood sugar checks (HbA1C test)</h3>
     <p>
       Checks your average blood sugar levels and how close they are to normal.
     </p>
@@ -22,9 +26,9 @@
       <a href="/book-an-appointment/diabetes-blood-glucose-test/find-new-appointment">Book a blood sugar test</a>
     </div>
 
-    <h2 class="heading-large">Once a year</h2>
+    <h2 class="heading-medium">Once a year</h2>
 
-    <h3 class="heading-medium">Feet</h3>
+    <h3 class="heading-small">Feet</h3>
     <p>
       Checks if you&rsquo;ve lost any sensation in your feet and possibly for ulcers and infections.
     </p>
@@ -35,7 +39,7 @@
       <a href="/book-an-appointment/diabetes-foot-check/find-new-appointment">Book a diabetes foot check</a>
     </div>
 
-    <h3 class="heading-medium">Eyes</h3>
+    <h3 class="heading-small">Eyes</h3>
     <p>
       Checks for damage to blood vessels in your eyes.
     </p>
@@ -46,7 +50,7 @@
       <a href="/book-an-appointment/diabetes-eye-screening/find-new-appointment">Book a diabetes eye check</a>
     </div>
 
-    <h3 class="heading-medium">Blood pressure, blood fats (cholesterol) and kidneys</h3>
+    <h3 class="heading-small">Blood pressure, blood fats (cholesterol) and kidneys</h3>
     <p>
       Checks for high blood pressure, heart and kidney disease.
     </p>
@@ -55,12 +59,25 @@
       <a href="/book-an-appointment/diabetes-annual-review/find-new-appointment">Book a diabetes annual review</a>
     </div>
 
-    <hr>
-
     <p><a href="javascript:void(0);">Why it’s important to have these check ups</a></p>
     <h2 class="heading-large" id="what-happens-after-your-appointment">What happens after your appointment</h2>
     <p>The person you have the appointment with, for example your diabetes nurse, will tell you how long it takes to get the test results and if you need to come in again.</p>
+
+    {{
+      ui_element_macros.simple_pagination({
+        previous: {
+          url: "/diabetes-content/type-2-diabetes-medicines",
+          title: "Understanding medication"
+        },
+        next: {
+          url: "/diabetes-content/health-problems-caused-by-diabetes-type-2",
+          title: "Health problems"
+        }
+      })
+    }}
+
   </div>
+
 </main>
 
 {% endblock %}

@@ -1,13 +1,16 @@
 {% extends 'templates/nhs_content_layout.html' %}
+{% import 'includes/ui_element_macros.html' as ui_element_macros %}
 
 {% block content %}
 
 <main id="content" role="main">
 
-<div class="text markdown-content">
+  {% include "diabetes-content/includes/nav-contents.html" %}
+
+  <div class="text markdown-content">
 
 {% markdown %}
-#Getting diagnosed with type 2 diabetes
+#Getting diagnosed
 Often type 2 diabetes is diagnosed by accident when you see your GP about something else and they ask for a blood or urine test.
 
 However, if you have any [symptoms](/diabetes-content/check-if-you-have-diabetes-type-2) you should go and see your GP straight away.
@@ -57,7 +60,20 @@ Usually the following things happen after your diagnosis:
 4. You’ll have to go for [regular type 2 diabetes check ups](/diabetes-content/going-for-regular-diabetes-check-ups).
 {% endmarkdown %}
 
-</div>
+    {{
+      ui_element_macros.simple_pagination({
+        previous: {
+          url: "/diabetes-content/check-if-you-have-diabetes-type-2",
+          title: "Check if you have type 2 diabetes"
+        },
+        next: {
+          url: "/diabetes-content/type-2-diabetes-medicines",
+          title: "Understanding medication"
+        }
+      })
+    }}
+
+  </div>
 
 </main>
 

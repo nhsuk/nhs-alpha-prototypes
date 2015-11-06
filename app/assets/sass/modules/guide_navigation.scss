@@ -1,0 +1,69 @@
+.guide-header {
+  padding-bottom: 2rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid $nhs-grey-2;
+
+  .guide-contents {
+    counter-reset: section;
+    font-size: 15px;
+    @extend %contain-floats;
+  }
+
+  ol {
+    margin: 0;
+    padding: 0;
+
+    @include breakpoint(break-1) {
+      float: left;
+      width: 50%;
+    }
+  }
+
+  li {
+    white-space: nowrap;
+    margin-bottom: 0;
+    padding-bottom: 4px;
+  }
+
+  li:before {
+    counter-increment: section;
+    content: counter(section) ".";
+    margin-right: 0.5rem;
+  }
+}
+
+.pagination-simple {
+  @extend %contain-floats;
+
+  padding-top: 2rem;
+  margin-top: 2rem;
+  border-top: 2px solid $nhs-grey-2;
+
+  @include breakpoint(break-1) {
+    .previous-page,
+    .next-page {
+      float: left;
+      width: 50%;
+    }
+
+    .next-page {
+      float: right;
+      text-align: right;
+    }
+  }
+
+  a {
+    display: inline-block;
+    text-decoration: none !important;
+  }
+
+  .prefix {
+    font-size: 15px;
+    color: $nhs-black;
+  }
+
+  .title {
+    display: block;
+    text-decoration: underline;
+  }
+}
