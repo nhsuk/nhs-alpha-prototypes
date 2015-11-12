@@ -30,6 +30,15 @@
 // NHS Panels
 // ==========================================================================
 
+// Content callout
+.callout-box {
+  font-weight: bold;
+  padding: 1px 18px;
+  margin: 24px 0;
+  background-color: tint($nhs-yellow, 80);
+  border-left: 3px solid $nhs-yellow;
+}
+
 // Appointment option links
 .appointment-option {
 
