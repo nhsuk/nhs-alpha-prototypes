@@ -1,0 +1,35 @@
+{% extends 'templates/nhs_content_layout.html' %}
+{% import 'includes/ui_element_macros.html' as ui_element_macros %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  {% include "depression-and-anxiety/includes/nav-contents.html" %}
+
+  <div class="text markdown-content">
+
+{% markdown %}
+#Medication
+{% endmarkdown %}
+
+    {{
+      ui_element_macros.simple_pagination({
+        previous: {
+          url: "/depression-and-anxiety/getting-therapy",
+          title: "Getting therapy"
+        },
+        next: {
+          url: "/depression-and-anxiety/managing-depression-and-anxiety",
+          title: "Managing depression and anxiety"
+        }
+      })
+    }}
+
+    {% include "includes/nhs.uk/page_meta.html" %}
+
+  </div>
+
+</main>
+
+{% endblock %}
