@@ -36,6 +36,10 @@ module.exports = {
       res.render('examples/template-data', { 'name' : 'Foo' });
     });
 
+    app.get('/diabetes-content*', function (req, res) {
+      res.redirect('/type-2-diabetes' + req.params[0]);
+    });
+
     // add your routes here
 
     // Change or cancel appointment fork:

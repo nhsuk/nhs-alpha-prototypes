@@ -1,0 +1,36 @@
+<div class="guide-header text">
+
+  <h1 class="heading-xlarge">Type 2 diabetes</h1>
+
+  <script>
+    // smelly playskool function to deal with nav state.
+    $(function() {
+      var here = window.location.pathname;
+      var $els = $('.guide-contents li');
+      for (var i=0; i<$els.length; i++) {
+        var $el = $($els[i]);
+        var href = $el.children('a').attr('href');
+        if (href === here) {
+          var text = $el.text();
+          $el.html(text);
+          break;
+        }
+      }
+    });
+  </script>
+
+  <div class="guide-contents">
+    <ol>
+      <li><a href="/type-2-diabetes/check-if-you-have-diabetes-type-2">Check if you have type 2 diabetes</a></li>
+      <li><a href="/type-2-diabetes/diabetes-2-diagnosis">Getting diagnosed</a></li>
+      <li><a href="/type-2-diabetes/type-2-diabetes-medicines">Understanding medication</a></li>
+      <li><a href="/type-2-diabetes/going-for-regular-diabetes-check-ups">Going for regular check ups</a></li>
+    </ol>
+    <ol>
+      <li><a href="/type-2-diabetes/health-problems-caused-by-diabetes-type-2">Health problems</a></li>
+      <li><a href="/type-2-diabetes/diet">Food and keeping active</a></li>
+      <li><a href="/type-2-diabetes/information-and-support-type-2-diabetes">Further information and support</a></li>
+    </ol>
+  </div>
+
+</div>
