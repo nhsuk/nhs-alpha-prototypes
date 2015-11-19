@@ -37,6 +37,12 @@ module.exports = {
       return service;
     }
 
+    function getPractitionerFromUuid(uuid) {
+      return app.locals.practitioners.filter(function(practitioner) {
+        return practitioner.uuid === uuid;
+      })[0];
+    };
+
     app.get('/', function (req, res) {
       res.render('index');
     });
@@ -119,9 +125,7 @@ module.exports = {
 
     app.get('/book-an-appointment/appointments-with-practitioner', function(req, res) {
       var practitioner_uuid = req.query.practitioner,
-          practitioner = app.locals.practitioners.filter(function(p) {
-            return p.uuid === practitioner_uuid;
-          })[0];
+          practitioner = getPractitionerFromUuid(practitioner_uuid);
 
       res.render(
         'book-an-appointment/appointments-with-practitioner',
