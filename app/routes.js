@@ -143,7 +143,6 @@ module.exports = {
           practice: practice,
           service: service,
           appointments: {
-            next: find_matching_appointment([filterByService(service.slug)]),
             face_to_face: find_matching_appointment([filterByService(service.slug),filterFaceToFace]),
             early: find_matching_appointment([filterByService(service.slug),filterBefore10]),
           }
@@ -157,7 +156,6 @@ module.exports = {
         {
           practice: app.locals.gp_practices[0],
           appointments: {
-            next: find_matching_appointment([filterByService('general-practice')]),
             face_to_face: find_matching_appointment([filterByService('general-practice'),filterFaceToFace]),
             female_gp: find_matching_appointment([filterByService('general-practice'),filterFemaleGP])
           }
@@ -171,7 +169,6 @@ module.exports = {
         {
           practice: app.locals.gp_practices[0],
           appointments: {
-            next: find_matching_appointment([filterByService('general-practice')]),
             face_to_face: find_matching_appointment([filterByService('general-practice'),filterFaceToFace]),
             female_gp: find_matching_appointment([filterByService('general-practice'),filterFemaleGP]),
             early_female_gp: find_matching_appointment([filterByService('general-practice'),filterFemaleGP, filterBefore10])
@@ -203,7 +200,6 @@ module.exports = {
           practice: practice,
           service: service,
           appointments: {
-            next: find_matching_appointment([filterByService(service.slug)]),
             face_to_face: find_matching_appointment([filterByService(service.slug),filterFaceToFace]),
           }
         }
