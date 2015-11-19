@@ -43,6 +43,22 @@ module.exports = {
       })[0];
     };
 
+    function findPractitionersForService(service_slug) {
+      var service_to_uuid = {};  // {'eye-check': [practitioner_uuid_1, practitioner_uuid_2]}
+
+      app.locals.appointments.forEach(function(appointment) {
+        if(!service_to_uuid.hasOwnProperty(appointment.service)) {
+          service_to_uuid[appointment.service] = [];
+        }
+
+        if(-1 == service_to_uuid[appointment.service].indexOf(appointment.practitioner_uuid)) {
+          service_to_uuid[appointment.service].push(appointment.practitioner_uuid);
+        }
+      });
+
+      return service_to_uuid[service_slug].map(getPractitionerFromUuid);
+    }
+
     app.get('/', function (req, res) {
       res.render('index');
     });
@@ -113,12 +129,15 @@ module.exports = {
       )
     });
 
-    app.get('/book-an-appointment/see-particular-person', function(req, res) {
+    app.get('/book-an-appointment/:service_slug?/see-particular-person', function(req, res) {
+      var service = getServiceFromSlug(req.params.service_slug),
+          practitioners = findPractitionersForService(service.slug);
+
       res.render(
         'book-an-appointment/see-particular-person',
         {
           practice: app.locals.gp_practices[0],
-          practitioners: app.locals.practitioners
+          practitioners: practitioners
         }
       );
     });
