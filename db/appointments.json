@@ -17,6 +17,17 @@
       "appointment_date": "Wednesday 2nd December 2015",
       "appointment_time": "08:10",
       "appointment_days_away": "10",
+      "practitioner_uuid": "b47c7963-bf48-4f6c-b906-1017325eaa05",
+      "appointment_length": "5",
+      "appointment_type": "face to face",
+      "appointment_type_class": "face-to-face"
+    },
+    {
+      "uuid": "7b5e4800-e528-4967-986d-ba589dba6b65",
+      "service": "diabetes-blood-glucose-test",
+      "appointment_date": "Wednesday 2nd December 2015",
+      "appointment_time": "16:45",
+      "appointment_days_away": "10",
       "practitioner_uuid": "0f0332bf-abd0-44cb-af1c-2663e132a5ec",
       "appointment_length": "5",
       "appointment_type": "face to face",
@@ -45,6 +56,17 @@
       "appointment_type_class": "face-to-face"
     },
     {
+      "uuid": "ed4c037c-5f98-45f8-a59f-23ea80276651",
+      "service": "diabetes-foot-check",
+      "appointment_date": "Monday 1st February 2016",
+      "appointment_time": "11:30",
+      "appointment_days_away": "10",
+      "practitioner_uuid": "b47c7963-bf48-4f6c-b906-1017325eaa05",
+      "appointment_length": "20",
+      "appointment_type": "face to face",
+      "appointment_type_class": "face-to-face"
+    },
+    {
       "uuid": "e729d1e7-4e24-463b-b1cb-195bfc9de60a",
       "service": "diabetes-annual-review",
       "appointment_date": "Tuesday 15th December 2015",
@@ -58,10 +80,32 @@
     {
       "uuid": "2938864b-63d4-4d2b-b271-2bf09202210e",
       "service": "diabetes-annual-review",
+      "appointment_date": "Wednesday 16th December 2015",
+      "appointment_time": "11:50",
+      "appointment_days_away": "10",
+      "practitioner_uuid": "0195855d-0659-468b-ae41-43338b5d8fe5",
+      "appointment_length": "25",
+      "appointment_type": "face to face",
+      "appointment_type_class": "face-to-face"
+    },
+    {
+      "uuid": "a8d38dab-d9a7-4a1e-b963-2b090e2f7983",
+      "service": "diabetes-annual-review",
       "appointment_date": "Thursday 17th December 2015",
       "appointment_time": "08:20",
       "appointment_days_away": "10",
       "practitioner_uuid": "b47c7963-bf48-4f6c-b906-1017325eaa05",
+      "appointment_length": "25",
+      "appointment_type": "face to face",
+      "appointment_type_class": "face-to-face"
+    },
+    {
+      "uuid": "7bb7c9d1-2979-4440-b11d-1aee543ae361",
+      "service": "diabetes-annual-review",
+      "appointment_date": "Friday 18th December 2015",
+      "appointment_time": "10:35",
+      "appointment_days_away": "10",
+      "practitioner_uuid": "880ea4b2-696c-4c75-87cb-80cdcdd9ac1c",
       "appointment_length": "25",
       "appointment_type": "face to face",
       "appointment_type_class": "face-to-face"
