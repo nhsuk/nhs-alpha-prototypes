@@ -140,7 +140,7 @@ module.exports = {
       res.render(
         'book-an-appointment/next-appointment-early-morning',
         {
-          practice: app.locals.gp_practices[0],
+          practice: practice,
           service: service,
           appointments: {
             next: find_matching_appointment([filterByService(service.slug)]),
