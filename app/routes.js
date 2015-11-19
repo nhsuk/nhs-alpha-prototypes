@@ -133,15 +133,19 @@ module.exports = {
       );
     });
 
-    app.get('/book-an-appointment/next-appointment-early-morning', function(req, res) {
+    app.get('/book-an-appointment/:service_slug?/next-appointment-early-morning', function(req, res) {
+      var service = getServiceFromSlug(req.params.service_slug),
+          practice = service.slug === 'general-practice' ? app.locals.gp_practices[0] : null;
+
       res.render(
         'book-an-appointment/next-appointment-early-morning',
         {
           practice: app.locals.gp_practices[0],
+          service: service,
           appointments: {
-            next: find_matching_appointment([filterByService('general-practice')]),
-            face_to_face: find_matching_appointment([filterByService('general-practice'),filterFaceToFace]),
-            early: find_matching_appointment([filterByService('general-practice'),filterBefore10]),
+            next: find_matching_appointment([filterByService(service.slug)]),
+            face_to_face: find_matching_appointment([filterByService(service.slug),filterFaceToFace]),
+            early: find_matching_appointment([filterByService(service.slug),filterBefore10]),
           }
         }
       );
