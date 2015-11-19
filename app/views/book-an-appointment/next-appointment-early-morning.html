@@ -36,7 +36,8 @@
           gender: appointments.early.practitioner.gender,
           appointment_length: appointments.early.appointment_length,
           appointment_type: appointments.early.appointment_type,
-          appointment_type_class: appointments.early.appointment_type_class
+          appointment_type_class: appointments.early.appointment_type_class,
+          address: appointments.early.address
         })
       }}
 
@@ -54,19 +55,25 @@
           gender: appointments.face_to_face.practitioner.gender,
           appointment_length: appointments.face_to_face.appointment_length,
           appointment_type: appointments.face_to_face.appointment_type,
-          appointment_type_class: appointments.face_to_face.appointment_type_class
+          appointment_type_class: appointments.face_to_face.appointment_type_class,
+          address: appointments.face_to_face.address
         })
       }}
 
       <h3 class="appointment-section-heading more">More appointment options</h3>
 
       <ul>
-        <li>
-          <a href="next-appointment-with-woman-early-morning">
-            I’d like to see a woman or female-identified person
-          </a>
-        </li>
-        <li><a href="see-particular-person">I’d like to see a particular person</a></li>
+        {% if service.filters.gender %}
+          <li>
+            <a href="next-appointment-with-woman-early-morning">
+              I’d like to see a woman or female-identified person
+            </a>
+          </li>
+        {% endif %}
+
+        {% if service.filters.person %}
+          <li><a href="see-particular-person">I’d like to see a particular person</a></li>
+        {% endif %}
       </ul>
 
       <div class="appointment-section-heading all">
