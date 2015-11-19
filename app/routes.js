@@ -28,6 +28,15 @@ module.exports = {
       return find_matching_appointments(filter_functions)[0]
     }
 
+    function getServiceFromSlug(service_slug_param) {
+      var service_slug = service_slug_param || 'general-practice',
+          service = app.locals.services.filter(function(service) {
+            return service.slug === service_slug;
+          })[0];
+
+      return service;
+    }
+
     app.get('/', function (req, res) {
       res.render('index');
     });
@@ -181,11 +190,8 @@ module.exports = {
 
     app.get('/book-an-appointment/:service_slug?/next-available-appointment', function(req, res) {
 
-      var service_slug = req.params.service_slug || 'general-practice',
-          service = app.locals.services.filter(function(service) {
-            return service.slug === service_slug;
-          })[0],
-          practice = service_slug === 'general-practice' ? app.locals.gp_practices[0] : null;
+      var service = getServiceFromSlug(req.params.service_slug),
+          practice = service.slug === 'general-practice' ? app.locals.gp_practices[0] : null;
 
       res.render(
         'book-an-appointment/next-available-appointment',
@@ -193,34 +199,30 @@ module.exports = {
           practice: practice,
           service: service,
           appointments: {
-            next: find_matching_appointment([filterByService(service_slug)]),
-            face_to_face: find_matching_appointment([filterByService(service_slug),filterFaceToFace]),
+            next: find_matching_appointment([filterByService(service.slug)]),
+            face_to_face: find_matching_appointment([filterByService(service.slug),filterFaceToFace]),
           }
         }
       );
     });
 
     app.get('/book-an-appointment/:service_slug?/all-appointments', function(req, res) {
-      var service_slug = req.params.service_slug || 'general-practice',
-          service = app.locals.services.filter(function(service) {
-            return service.slug === service_slug;
-          })[0],
-          practice = service_slug === 'general-practice' ? app.locals.gp_practices[0] : null;
+
+      var service = getServiceFromSlug(req.params.service_slug),
+          practice = service.slug === 'general-practice' ? app.locals.gp_practices[0] : null;
+
       res.render(
         'book-an-appointment/all-appointments',
         {
           practice: practice,
-          appointments: find_matching_appointments([filterByService(service_slug)]),
+          appointments: find_matching_appointments([filterByService(service.slug)]),
         }
       );
     });
 
     app.get('/book-an-appointment/:service_slug?/confirm-appointment/:uuid', function(req, res) {
       var appointment = find_appointment(req.params.uuid),
-          service_slug = req.params.service_slug || 'general-practice',
-          service = app.locals.services.filter(function(service) {
-            return service.slug === service_slug;
-          })[0],
+          service = getServiceFromSlug(req.params.service_slug),
           practice = app.locals.gp_practices[0],
           address = appointment.address || [practice.name].concat(practice.address);
 
@@ -236,15 +238,12 @@ module.exports = {
     });
 
     app.get('/book-an-appointment/:service_slug?/appointment-confirmed/:uuid', function(req, res) {
-      var service_slug = req.params.service_slug || 'general-practice',
-          service = app.locals.services.filter(function(service) {
-            return service.slug === service_slug;
-          })[0],
+      var service = getServiceFromSlug(req.params.service_slug),
           offramp = req.session.service_booking_offramp &&
-                    req.session.service_booking_offramp[service_slug];
+                    req.session.service_booking_offramp[service.slug];
 
       if (offramp) {
-        delete req.session.service_booking_offramp[service_slug];
+        delete req.session.service_booking_offramp[service.slug];
         res.redirect(offramp.replace('UUID', req.params.uuid));
       }
       else {
