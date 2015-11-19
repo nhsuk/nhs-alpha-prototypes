@@ -142,8 +142,9 @@ module.exports = {
       );
     });
 
-    app.get('/book-an-appointment/appointments-with-practitioner', function(req, res) {
+    app.get('/book-an-appointment/:service_slug?/appointments-with-practitioner', function(req, res) {
       var practitioner_uuid = req.query.practitioner,
+          service = getServiceFromSlug(req.params.service_slug),
           practitioner = getPractitionerFromUuid(practitioner_uuid);
 
       res.render(
@@ -151,7 +152,9 @@ module.exports = {
         {
           practice: app.locals.gp_practices[0],
           practitioner: practitioner,
-          appointments: app.locals.appointments.filter(filterByPractitionerUuid(practitioner_uuid))
+          appointments: find_matching_appointments([
+            filterByPractitionerUuid(practitioner_uuid),
+            filterByService(service.slug)])
         }
       );
     });
