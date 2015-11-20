@@ -37,6 +37,28 @@ module.exports = {
       return service;
     }
 
+    function getPractitionerFromUuid(uuid) {
+      return app.locals.practitioners.filter(function(practitioner) {
+        return practitioner.uuid === uuid;
+      })[0];
+    };
+
+    function findPractitionersForService(service_slug) {
+      var service_to_uuid = {};  // {'eye-check': [practitioner_uuid_1, practitioner_uuid_2]}
+
+      app.locals.appointments.forEach(function(appointment) {
+        if(!service_to_uuid.hasOwnProperty(appointment.service)) {
+          service_to_uuid[appointment.service] = [];
+        }
+
+        if(-1 == service_to_uuid[appointment.service].indexOf(appointment.practitioner_uuid)) {
+          service_to_uuid[appointment.service].push(appointment.practitioner_uuid);
+        }
+      });
+
+      return service_to_uuid[service_slug].map(getPractitionerFromUuid);
+    }
+
     app.get('/', function (req, res) {
       res.render('index');
     });
@@ -107,28 +129,32 @@ module.exports = {
       )
     });
 
-    app.get('/book-an-appointment/see-particular-person', function(req, res) {
+    app.get('/book-an-appointment/:service_slug?/see-particular-person', function(req, res) {
+      var service = getServiceFromSlug(req.params.service_slug),
+          practitioners = findPractitionersForService(service.slug);
+
       res.render(
         'book-an-appointment/see-particular-person',
         {
           practice: app.locals.gp_practices[0],
-          practitioners: app.locals.practitioners
+          practitioners: practitioners
         }
       );
     });
 
-    app.get('/book-an-appointment/appointments-with-practitioner', function(req, res) {
+    app.get('/book-an-appointment/:service_slug?/appointments-with-practitioner', function(req, res) {
       var practitioner_uuid = req.query.practitioner,
-          practitioner = app.locals.practitioners.filter(function(p) {
-            return p.uuid === practitioner_uuid;
-          })[0];
+          service = getServiceFromSlug(req.params.service_slug),
+          practitioner = getPractitionerFromUuid(practitioner_uuid);
 
       res.render(
         'book-an-appointment/appointments-with-practitioner',
         {
           practice: app.locals.gp_practices[0],
           practitioner: practitioner,
-          appointments: app.locals.appointments.filter(filterByPractitionerUuid(practitioner_uuid))
+          appointments: find_matching_appointments([
+            filterByPractitionerUuid(practitioner_uuid),
+            filterByService(service.slug)])
         }
       );
     });
