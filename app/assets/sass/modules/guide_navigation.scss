@@ -20,12 +20,14 @@
   }
 
   li {
-    white-space: nowrap;
+    position: relative;
     margin-bottom: 0;
-    padding-bottom: 4px;
+    padding: 0 24px 4px 22px;
   }
 
   li:before {
+    position: absolute;
+    left: 0;
     counter-increment: section;
     content: counter(section) ".";
     margin-right: 0.5rem;

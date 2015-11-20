@@ -1,0 +1,37 @@
+<div class="guide-header text">
+
+  <h1 class="heading-xlarge">Depression and anxiety</h1>
+
+  <script>
+    // smelly playskool function to deal with nav state.
+    $(function() {
+      var here = window.location.pathname;
+      var $els = $('.guide-contents li');
+      for (var i=0; i<$els.length; i++) {
+        var $el = $($els[i]);
+        var href = $el.children('a').attr('href');
+        if (href === here) {
+          var text = $el.text();
+          $el.html(text);
+          break;
+        }
+      }
+    });
+  </script>
+
+  <div class="guide-contents">
+    <ol>
+      <li>
+        <a href="/depression-and-anxiety/how-to-tell-if-you-have-depression-or-anxiety">
+          How to tell if you have depression or anxiety
+        </a>
+      </li>
+      <li><a href="/depression-and-anxiety/seeking-help">Seeking help</a></li>
+    </ol>
+    <ol>
+      <li><a href="/depression-and-anxiety/getting-therapy">Getting therapy</a></li>
+      <li><a href="/depression-and-anxiety/medication">Medication</a></li>
+    </ol>
+  </div>
+
+</div>
