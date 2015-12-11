@@ -1,0 +1,60 @@
+{% extends 'templates/nhs_content_layout.html' %}
+{% import 'includes/ui_element_macros.html' as ui_element_macros %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <div class="text">
+
+    <h1 class="heading-xlarge">Get physiotherapy</h1>
+
+    <p>
+      You can book an assessment with the following physiotherapy practices:
+    </p>
+
+    <div style="border-top: 1px solid #b9d2dc; padding-bottom: 1rem;">
+      <h2 class="heading-medium">Leeds Community Healthcare NHS Trust</h2>
+      <p>Appointments are usually available within 2 weeks</p>
+      <p class="font-xsmall">
+        Muscoloskeletal and Rehabilitation Service<br>
+        Ground Floor,<br>
+        St Marys Hospital,<br>
+        Greenhill Road,<br>
+        Leeds<br>
+        LS12 3QE
+      </p>
+      <p>
+        Telephone: 0113 8431250 or 0113 8431909<br>
+        Email: <a href="mailto:leedsmsk@nhs.net">leedsmsk@nhs.net</a>
+      </p>
+    </div>
+
+    <div style="border-top: 1px solid #b9d2dc; padding-bottom: 1rem;">
+      <h2 class="heading-medium">Chapel Allerton Hospital</h2>
+      <p>Appointments are usually available within 2 weeks</p>
+      <p class="font-xsmall">
+        Chapeltown Road,<br>
+        Leeds,<br>
+        LS7 4SA
+      </p>
+      <p>
+        Telephone: 0113 262 3404
+      </p>
+    </div>
+
+    <div style="border-top: 1px solid #b9d2dc; padding-bottom: 1rem;">
+      <h2 class="heading-large">Other options</h2>
+
+      <p>
+        You can book an appointment at any physiotherapist as a private patient,
+        although you will have to pay for treatment.
+      </p>
+    </div>
+
+    {% include "includes/nhs.uk/page_meta.html" %}
+
+  </div>
+
+</main>
+
+{% endblock %}
