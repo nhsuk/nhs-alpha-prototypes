@@ -1,0 +1,26 @@
+{% extends 'templates/nhs_content_layout.html' %}
+{% import 'includes/ui_element_macros.html' as ui_element_macros %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <div class="text markdown-content">
+
+{% markdown %}
+# Shoulder pain
+
+Sometimes when your shoulder hurts it's muscle pain. A physiotherapist might be
+able to help fix your muscle and stop the pain.
+{% endmarkdown %}
+
+<p>
+  <a href="find-practice" class="button button-secondary-cta">Get physiotherapy</a>
+</p>
+
+    {% include "includes/nhs.uk/page_meta.html" %}
+
+  </div>
+
+</main>
+
+{% endblock %}
