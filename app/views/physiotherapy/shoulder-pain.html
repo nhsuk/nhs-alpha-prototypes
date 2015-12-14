@@ -1,0 +1,80 @@
+{% extends 'templates/nhs_content_layout.html' %}
+{% import 'includes/ui_element_macros.html' as ui_element_macros %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <h1 class="heading-xlarge">Shoulder pain</h1>
+
+  <div class="text markdown-content">
+{% markdown %}
+
+You can have shoulder pain because of the following: 
+
+- bad posture
+- frozen shoulder - stiffness, sometimes no movement at all
+- the muscles and tendons around your shoulder aren’t working properly (rotator cuff disorder)
+-  shoulder is unstable and moves more than it should (hypermobility)
+- the joint at the top of the shoulder isn’t working properly (acromioclavicular joint disorder)
+- osteoporosis
+- broken or fractured upper arm bone or collarbone
+{% endmarkdown %}
+
+<div class="callout-box">
+  <p>If you’ve injured your shoulder you should go and see your GP.</p>
+</div>
+
+{% markdown %}
+##Treating shoulder pain at home
+
+There are things you can do at home to reduce swelling and ease the pain:
+
+- use ice packs (a bag of frozen peas wrapped in a towel will work)
+- take anti-inflammatories, like ibuprofen
+- take painkillers, like paracetamol
+
+Try to keep the shoulder moving but avoid doing anything that makes it hurt.
+
+If there is no improvement after a couple of weeks, you might want to get
+further help.
+
+##Physiotherapy
+
+You can get physiotherapy on the NHS to relieve pain and stiffness and help movement.
+{% endmarkdown %}
+
+<p>
+  <a href="find-practice" class="button button-secondary-cta">Get physiotherapy</a>
+</p>
+
+{% markdown %}
+##When to see your GP
+
+See your GP if:
+
+- you injured your shoulder, eg when falling
+- the pain is severe
+{% endmarkdown %}
+
+<p>
+  <a href="/book-a-gp-appointment" class="button button-secondary-cta">Book a GP appointment</a>
+</p>
+
+{% markdown %}
+Your GP will recommend the best treatment for you. This can include:
+
+- physiotherapy (see above)
+- medication
+- injections to relieve severe pain
+- surgery
+
+Shoulder pain can be long term. Even after you get treatment symptoms might continue.
+{% endmarkdown %}
+
+    {% include "includes/nhs.uk/page_meta.html" %}
+
+  </div>
+
+</main>
+
+{% endblock %}

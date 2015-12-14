@@ -1,0 +1,50 @@
+{% extends 'templates/nhs_content_layout.html' %}
+{% import 'includes/form_macros.html' as form_macros %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <div class="text">
+
+    <h1 class="heading-xlarge">Get physiotherapy</h1>
+
+    <p><a href="javascript:void(0);">About physiotherapy</a></p>
+
+    <p>To find physiotherapy appointments on the NHS enter one of these:</p>
+
+    <ul class="list-bullet">
+      <li>your GP practice’s name</li>
+      <li>your GP practice’s address</li>
+    </ul>
+
+    <details>
+      <summary>Why do I need to give this information?</summary>
+      <div>
+        <p>Physiotherapy paid for by the NHS is only available from certain physiotherapists linked to your GP practice.</p>
+
+        <p><a href="javascript:void(0);">Learn more</a></p>
+      </div>
+    </details>
+
+    <form method="get" class="form" action="get-physiotherapy">
+      {{
+        form_macros.text_field({
+          id: "practice_name",
+          label: "Practice name or address"
+        })
+      }}
+
+      {{
+        form_macros.button({
+          label: "Find my practice"
+        })
+      }}
+    </form>
+
+    <a href="/register-with-a-gp">What if I’m not registered with a GP</a>
+
+  </div>
+
+</main>
+
+{% endblock %}

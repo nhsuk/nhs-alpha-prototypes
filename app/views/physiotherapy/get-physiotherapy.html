@@ -1,0 +1,74 @@
+{% extends 'templates/nhs_content_layout.html' %}
+{% import 'includes/ui_element_macros.html' as ui_element_macros %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <div class="text">
+
+    <h1 class="heading-xlarge">Get physiotherapy in your area</h1>
+
+    <h2 class="heading-large">Street Lane Practice, Leeds</h2>
+
+    <p>
+      You can book a physiotherapy appointment at one of the places below.
+    </p>
+
+    <img src="/public/images/physio-map.png" width="100%" style="max-width: 280px" />
+
+    <p>
+      Your first appointment will be to assess the type of physiotherapy you need.
+    </p>
+
+    <p><a href="http://www.nhs.uk/conditions/Physiotherapy/Pages/Introduction.aspx">
+      Learn more about physiotherapy treatment.
+    </a></p>
+
+    <div style="border-top: 1px solid #b9d2dc; padding-bottom: 1rem; margin-top: 1rem">
+      <h2 class="heading-medium">Leeds Community Healthcare NHS Trust</h2>
+      <p>Appointments are usually available within 2 weeks</p>
+      <p class="font-xsmall">
+        Muscoloskeletal and Rehabilitation Service<br>
+        Ground Floor,<br>
+        St Marys Hospital,<br>
+        Greenhill Road,<br>
+        Leeds<br>
+        LS12 3QE
+      </p>
+      <p>
+        <b>To book</b><br />
+        Call <nobr>0113 843 1250</nobr> or <nobr>0113 843 1909</nobr><br />
+        Email <a href="mailto:leedsmsk@nhs.net">leedsmsk@nhs.net</a>
+      </p>
+    </div>
+
+    <div style="border-top: 1px solid #b9d2dc; padding-bottom: 1rem;">
+      <h2 class="heading-medium">Chapel Allerton Hospital</h2>
+      <p>Appointments are usually available within 2 weeks</p>
+      <p class="font-xsmall">
+        Chapeltown Road,<br>
+        Leeds,<br>
+        LS7 4SA
+      </p>
+      <p>
+        <b>To book</b><br />
+        Call <nobr>0113 262 3404</nobr>
+      </p>
+    </div>
+
+    <div style="border-top: 1px solid #b9d2dc; padding-bottom: 1rem;">
+      <h2 class="heading-large">Get physiotherapy privately</h2>
+
+      <p>You can get physiotherapy privately but you have to pay for treatment.
+      Prices depend on the kind of therapy you need.</p>
+     
+      <p>You may not have to wait for treatment.</p>
+
+      <p><a href="http://www.csp.org.uk/your-health/find-physio/physio2u">Find a physiotherapist in your area.</a></p>
+    </div>
+
+  </div>
+
+</main>
+
+{% endblock %}
