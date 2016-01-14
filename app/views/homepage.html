@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+
+    <title>NHS.UK - The information and services you need, when you need them.</title>
+
+    <link href="{{assetPath}}stylesheets/govuk-template.css?0.12.0" media="screen" rel="stylesheet" type="text/css" />
+    <link href="{{assetPath}}stylesheets/nhs_fonts.css" media="all" rel="stylesheet" type="text/css" />
+    <link href="data:image/x-icon;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQEAYAAABPYyMiAAAABmJLR0T///////8JWPfcAAAACXBIWXMAAABIAAAASABGyWs+AAAAF0lEQVRIx2NgGAWjYBSMglEwCkbBSAcACBAAAeaR9cIAAAAASUVORK5CYII=" rel="icon" type="image/x-icon">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    {% include "includes/nhs.uk/head.html" %}
+    {% include "includes/nhs.uk/scripts.html" %}
+
+    <style type="text/css">
+      /* Homepage styles - sketched in */
+
+      .fleft {
+        float: left;
+      }
+      .fright {
+        float: right;
+      }
+
+      /* header area */
+
+      #global-header {
+        border-bottom: 0;
+      }
+      #global-header .header-container {
+        position: relative;
+        padding-top: 15px;
+        height: 80px;
+      }
+
+      .blurb {
+        margin-top: 19px;
+        margin-left: 12px;
+        color: #fff;
+        font-size: 16px;
+        line-height: 16px;
+      }
+      .sign-in {
+        position: absolute;
+        right: 0;
+        top: 0;
+        padding: 30px;
+        background-color: #FFED00;
+      }
+      .sign-in .button {
+        background-color: #231f20;
+      }
+
+      /* Footer area */
+
+      html {
+        background-color: #f4f4f4;
+      }
+      #footer {
+        color: #231f20;
+        border-top: 0;
+        background-color: #f4f4f4;
+      }
+      #footer a {
+        color: #231f20;
+      }
+      .copyright {
+        font-size: 14px;
+        line-height: 16px;
+      }
+
+    </style>
+
+  </head>
+
+  <body class="homepage">
+    <script type="text/javascript">document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
+
+
+
+    <div id="skiplink-container">
+      <div>
+        <a href="#content" class="skiplink">Skip to main content</a>
+      </div>
+    </div>
+
+    <header role="banner" id="global-header">
+      <div class="header-container">
+
+        <a href="{% block logotypeLink %}/{% endblock %}" class="header-logo" title="{% block logotypeTitle %}Go to the NHS.UK homepage{% endblock %}">
+          <img src="{{assetPath}}images/nhs-rev-logotype.svg" alt="">
+        </a>
+
+        <div class="blurb fleft">
+          The information and services you need,<br>
+          when you need them.
+        </div>
+
+        <div class="sign-in fright">
+          <a href="#" class="button button-get-started">Sign in</a>
+        </div>
+
+      </div>
+    </header>
+    <!--end header-->
+
+    <main id="content" role="main">
+    </main>
+
+    <footer id="footer" role="contentinfo">
+      <div class="footer-wrapper">
+
+        <div class="copyright">
+          <table>
+            <tr>
+              <td width="90">
+                <img src="{{assetPath}}images/logo-ogl.png" width="73" />
+              </td>
+              <td>
+                Content available under <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/">Open Government Licence v3.0</a>,<br>
+                except where otherwise stated.<br><br>
+                &copy; Crown copyright.
+              </td>
+            </tr>
+          </table>
+        </div>
+
+        <div class="text">
+          <p>
+            <small>
+            </small>
+          </p>
+        </div>
+
+      </div>
+    </footer>
+
+  </body>
+</html>
