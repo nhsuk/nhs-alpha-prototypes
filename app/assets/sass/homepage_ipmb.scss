@@ -62,7 +62,7 @@
 }
 .sign-in {
   position: absolute;
-  right: 15px;
+  right: 0;
   top: 15px;
   background-color: $nhs-yellow;
   @include breakpoint(break-1) {
