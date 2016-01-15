@@ -30,28 +30,14 @@
         padding: 0 30px;
       }
 
-      .search-area {
-        background-color: #E7F0F9;
-        padding-top: 60px;
-        padding-bottom: 60px;
+      .copy-small {
+        font-size: 16px;
       }
 
-      /* symptoms and conditions area */
-
-      .content-area {
-        color: #fff;
-        background-color: #0072C6;
-        padding-top: 30px;
-        padding-bottom: 30px;
-      }
-      .content-area a {
-        color: #fff;
-      }
-
-      .services-area {
-        background-color: #fff;
-        padding-top: 30px;
-        padding-bottom: 60px;
+      .button,
+      .button:link, .button:hover, .button:focus, .button:visited {
+        background-color: #00953a;
+        border-color: #00953a;
       }
 
       /* header area */
@@ -81,6 +67,62 @@
       }
       .sign-in .button {
         background-color: #231f20;
+        border-color: #231f20;
+      }
+
+      /* search area */
+
+      .search-area {
+        background-color: #E7F0F9;
+        padding-top: 60px;
+        padding-bottom: 60px;
+        height: 51px;
+      }
+
+      .search-area input[type="text"] {
+        float: left;
+        font-size: 26px;
+        line-height: 45px;
+        padding: 0 15px;
+        width: 720px;
+        background-color: #fff;
+        border: 3px solid #231f20;
+      }
+
+      .search-area button {
+        text-indent: -999em;
+        background: url({{assetPath}}/images/icon-search.svg) center no-repeat;
+        float: left;
+        width: 51px;
+        height: 51px;
+        background-color: #231f20;
+        border: 3px solid #231f20;
+      }
+
+      /* symptoms and conditions area */
+
+      .content-area {
+        color: #fff;
+        background-color: #0072C6;
+        padding-top: 30px;
+        padding-bottom: 30px;
+      }
+      .content-area a {
+        color: #fff;
+      }
+
+      /* Services area */
+
+      .services-area {
+        background-color: #fff;
+        padding-top: 30px;
+        padding-bottom: 60px;
+      }
+      .new-service-flag {
+        display: inline-block;
+        padding-left: 15px;
+        padding-right: 15px;
+        background-color: #FFED00;
       }
 
       /* Footer area */
@@ -138,7 +180,10 @@
 
     <div class="search-area">
       <div class="generic-wrapper">
-        search
+
+        <input type="text" value="Search" />
+        <button class="search">Search</button>
+
       </div>
     </div>
 
@@ -173,7 +218,50 @@
 
     <div class="services-area">
       <div class="generic-wrapper">
-        services
+        <div class="grid-row">
+          <div class="column-third">
+            <h3 class="heading-medium">Book an appointment</h3>
+            <div style="height:160px;">
+              <p class="copy-small">
+                Use this service if you need to make an appointment with your GP
+                or another healthcare professional.
+              </p>
+            </div>
+            <div style="margin-bottom:10px;">
+              <a href="#" class="button button-get-started">Book an appointment</a>
+            </div>
+            <p>
+              <a href="#" style="font-size:14px;">Cancel or change an existing appointment</a>
+            </p>
+          </div>
+          <div class="column-third">
+            <h3 class="heading-medium">Register with a new GP</h3>
+            <div style="height:160px;">
+              <p class="copy-small">
+                Use this service if you need to:<br>
+                • register for the first time<br>
+                • register with a new practice after moving<br>
+                • register someone else
+              </p>
+            </div>
+            <a href="#" class="button button-get-started">Register with a new GP</a>
+          </div>
+          <div class="column-third">
+            <div>
+              <h3 class="heading-medium new-service-flag">New service</h3>
+              <p><a href="#" style="font-size:21px;"><b>Type 2 diabetes planner</b></a></p>
+            </div>
+            <div>
+              <h4 class="heading-medium">Other services</h4>
+              <ul class="copy-small">
+                <li><a href="#">111 online</a></li>
+                <li><a href="#">Get a European Health Insurance card</a></li>
+                <li><a href="#">Apply for an exemption certificate</a></li>
+              </ul>
+              <p><a href="#"><b>More services</b></a></p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
