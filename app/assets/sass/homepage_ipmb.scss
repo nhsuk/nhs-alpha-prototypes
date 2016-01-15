@@ -1,0 +1,184 @@
+// Add "tint" and "shade" mixins
+
+// Add percentage of white to a color
+@function tint($color, $percent){
+  @return mix(white, $color, $percent);
+}
+
+@import "colours";
+
+// NHS "Sassline" based typography
+@import "typography/variables";
+@import "typography/modular-scale";
+@import "typography/mixins";
+@import "typography/typography";
+
+/* Homepage styles - sketched in */
+
+.generic-wrapper {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 15px;
+  @include breakpoint(break-1) {
+    top: 0;
+    padding: 0 30px;
+  }
+}
+
+.copy-small {
+  font-size: 16px;
+}
+
+.button,
+.button:link, .button:hover, .button:focus, .button:visited {
+  background-color: $nhs-light-green;
+  border-color: $nhs-light-green;
+}
+
+/* header area */
+
+#global-header {
+  border-bottom: 0;
+}
+#global-header .header-container {
+  position: relative;
+  @include breakpoint(break-1) {
+    padding-top: 15px;
+    height: 80px;
+  }
+}
+
+.blurb {
+  clear: both;
+  padding: 0 0 12px 0;
+  color: $nhs-white;
+  font-size: 16px;
+  line-height: 16px;
+  @include breakpoint(break-1) {
+    float: left;
+    clear: none;
+    padding: 19px 0 0 12px;
+  }
+}
+.sign-in {
+  position: absolute;
+  right: 0;
+  top: 15px;
+  background-color: $nhs-yellow;
+  @include breakpoint(break-1) {
+    top: 0;
+    right: 30px;
+    padding: 30px;
+  }
+}
+.sign-in .button {
+  background-color: $nhs-black;
+  border-color: $nhs-black;
+}
+
+/* search area */
+
+.search-area .generic-wrapper {
+  position: relative;
+}
+
+.search-area {
+  background-color: tint($nhs-blue, 80);
+  padding-top: 15px;
+  padding-bottom: 15px;
+  @include breakpoint(break-1) {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+}
+
+.search-area input[type="text"] {
+  box-sizing: border-box;
+  width: 100%;
+  font-size: 21px;
+  line-height: 45px;
+  padding: 0 10px;
+  background-color: $nhs-white;
+  border: 3px solid $nhs-black;
+  @include breakpoint(break-1) {
+    font-size: 26px;
+    padding: 0 15px;
+  }
+}
+
+.search-area button {
+  position: absolute;
+  right: 15px;
+  top: 0;
+  text-indent: -999em;
+  background: url(/public/images/icon-search.svg) center no-repeat;
+  float: left;
+  width: 51px;
+  height: 51px;
+  background-color: $nhs-black;
+  border: 3px solid $nhs-black;
+  @include breakpoint(break-1) {
+    right: 30px;
+  }
+}
+
+/* symptoms and conditions area */
+
+.content-area {
+  color: #fff;
+  background-color: $nhs-blue;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  @include breakpoint(break-1) {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+}
+.content-area a {
+  color: $nhs-white;
+}
+
+/* Services area */
+
+.services-area {
+  background-color: $nhs-white;
+  padding-top: 15px;
+  padding-bottom: 30px;
+  @include breakpoint(break-1) {
+    padding-top: 30px;
+    padding-bottom: 60px;
+  }
+}
+.service-unit {
+  @include breakpoint(break-1) {
+    height: 160px;
+  }
+}
+.new-service-flag {
+  display: inline-block;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-top: 30px;
+  background-color: $nhs-yellow;
+  @include breakpoint(break-1) {
+    margin-top: 0;
+  }
+}
+
+/* Footer area */
+
+html {
+  background-color: tint($nhs-black, 90);
+}
+#footer {
+  color: $nhs-black;
+  border-top: 0;
+  background-color: tint($nhs-black, 90);
+}
+#footer a {
+  color: $nhs-black;
+}
+.copyright {
+  font-size: 14px;
+  line-height: 16px;
+}

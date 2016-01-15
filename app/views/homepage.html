@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+
+    <title>NHS.UK - The information and services you need, when you need them.</title>
+
+    <link href="{{assetPath}}stylesheets/govuk-template.css?0.12.0" media="screen" rel="stylesheet" type="text/css" />
+    <link href="{{assetPath}}stylesheets/nhs_fonts.css" media="all" rel="stylesheet" type="text/css" />
+    <link href="data:image/x-icon;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQEAYAAABPYyMiAAAABmJLR0T///////8JWPfcAAAACXBIWXMAAABIAAAASABGyWs+AAAAF0lEQVRIx2NgGAWjYBSMglEwCkbBSAcACBAAAeaR9cIAAAAASUVORK5CYII=" rel="icon" type="image/x-icon">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    {% include "includes/nhs.uk/head.html" %}
+    {% include "includes/nhs.uk/scripts.html" %}
+
+    <link rel="stylesheet" href="{{assetPath}}stylesheets/homepage_ipmb.css" />
+
+  </head>
+
+  <body class="homepage">
+    <script type="text/javascript">document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
+
+
+
+    <div id="skiplink-container">
+      <div>
+        <a href="#content" class="skiplink">Skip to main content</a>
+      </div>
+    </div>
+
+    <header role="banner" id="global-header">
+      <div class="header-container">
+
+        <a href="{% block logotypeLink %}/{% endblock %}" class="header-logo" title="{% block logotypeTitle %}Go to the NHS.UK homepage{% endblock %}">
+          <img src="{{assetPath}}images/nhs-rev-logotype.svg" alt="">
+        </a>
+
+        <div class="blurb">
+          The information and services you need,<br>
+          when you need them.
+        </div>
+
+        <div class="sign-in">
+          <a href="#" class="button button-get-started">Sign in</a>
+        </div>
+
+      </div>
+    </header>
+    <!--end header-->
+
+    <div class="search-area">
+      <div class="generic-wrapper">
+
+        <input type="text" value="Search" />
+        <button class="search">Search</button>
+
+      </div>
+    </div>
+
+    <div class="content-area">
+      <div class="generic-wrapper">
+        <div class="grid-row">
+          <div class="column-half">
+            <h2 class="heading-medium">Symptoms</h2>
+            <ul>
+              <li><a href="#">Stomach ache</a></li>
+              <li><a href="#">Back pain</a></li>
+              <li><a href="#">Headache</a></li>
+              <li><a href="/physiotherapy/shoulder-pain">Shoulder pain</a></li>
+              <li><a href="#">Toothache</a></li>
+            </ul>
+            <p><a href="#"><b>More symptoms</b></a></p>
+          </div>
+          <div class="column-half">
+            <h2 class="heading-medium">Conditions</h2>
+            <ul>
+              <li><a href="/depression-and-anxiety/">Depression and anxiety</a></li>
+              <li><a href="/type-2-diabetes/">Type 2 diabetes</a></li>
+              <li><a href="#">Fungal nail infection</a></li>
+              <li><a href="#">Shingles</a></li>
+              <li><a href="#">Hand foot and mouth disease</a></li>
+            </ul>
+            <p><a href="#"><b>More conditions</b></a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="services-area">
+      <div class="generic-wrapper">
+        <div class="grid-row">
+          <div class="column-third">
+            <h3 class="heading-medium">Book an appointment</h3>
+            <div class="service-unit">
+              <p class="copy-small">
+                Use this service if you need to make an appointment with your GP
+                or another healthcare professional.
+              </p>
+            </div>
+            <div style="margin-bottom:10px;">
+              <a href="/book-an-appointment/" class="button button-get-started">Book an appointment</a>
+            </div>
+            <p>
+              <a href="/change-or-cancel-an-appointment/" style="font-size:14px;">Cancel or change an existing appointment</a>
+            </p>
+          </div>
+          <div class="column-third">
+            <h3 class="heading-medium">Register with a new GP</h3>
+            <div class="service-unit">
+              <p class="copy-small">
+                Use this service if you need to:<br>
+                • register for the first time<br>
+                • register with a new practice after moving<br>
+                • register someone else
+              </p>
+            </div>
+            <a href="/register-with-a-gp/" class="button button-get-started">Register with a new GP</a>
+          </div>
+          <div class="column-third">
+            <div>
+              <h3 class="heading-medium new-service-flag">New service</h3>
+              <p><a href="/planner/" style="font-size:21px;"><b>Type 2 diabetes planner</b></a></p>
+            </div>
+            <div>
+              <h4 class="heading-medium">Other services</h4>
+              <ul class="copy-small">
+                <li><a href="#">111 online</a></li>
+                <li><a href="https://www.ehic.org.uk/Internet/startApplication.do">Get a European Health Insurance card</a></li>
+                <li><a href="http://www.nhsbsa.nhs.uk/HealthCosts/2095.aspx">Apply for an exemption certificate</a></li>
+                <li><a href="https://yellowcard.mhra.gov.uk/">Report side effects from medication</a></li>
+              </ul>
+              <p><a href="#"><b>More services</b></a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer id="footer" role="contentinfo">
+      <div class="footer-wrapper">
+
+        <div class="copyright">
+          <table>
+            <tr>
+              <td width="90">
+                <img src="{{assetPath}}images/logo-ogl.png" width="73" />
+              </td>
+              <td>
+                Content available under <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/">Open Government Licence v3.0</a>,<br>
+                except where otherwise stated.<br><br>
+                &copy; Crown copyright.
+              </td>
+            </tr>
+          </table>
+        </div>
+
+        <div class="text">
+          <p>
+            <small>
+            </small>
+          </p>
+        </div>
+
+      </div>
+    </footer>
+
+  </body>
+</html>
