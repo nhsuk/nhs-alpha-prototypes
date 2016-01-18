@@ -21,6 +21,63 @@
     <script src="http://alpha.nhs.uk/public/javascripts/vendor/html5shiv-printshiv.js" type="text/javascript"></script>
   <![endif]-->
 
+  <style type="text/css">
+    .button {
+      display: -moz-inline-stack;
+      display: inline-block;
+      width: 100%;
+      height: 4rem;
+      line-height: 4rem;
+      padding: 0 1rem;
+      border: 0;
+      color: #fff;
+      background-color: #006647;
+      cursor: pointer;
+      border: 3px solid #003300;
+      -webkit-border-radius: 0;
+      -moz-border-radius: 0;
+      border-radius: 0;
+      -webkit-appearance: none;
+      /* to be fixed */
+      text-decoration: none !important; }
+      .button:link, .button:hover, .button:focus, .button:visited {
+        color: #fff;
+        background-color: #006647; }
+      @media (min-width: 641px) {
+        .button {
+          width: auto; } }
+
+    .button::-moz-focus-inner {
+      border: 0;
+      padding: 0; }
+
+    .button:focus {
+      outline: 3px solid #FFED00; }
+
+    .button[disabled="disabled"] {
+      background: #77BC1F; }
+
+    .button[disabled="disabled"]:focus {
+      outline: none; }
+
+    .button-secondary-cta {
+      background-color: #0072C6;
+      border-color: #002F87;
+      border-width: 2px;
+      color: #fff;
+      height: 3rem;
+      line-height: 3rem;
+      font-size: 16px;
+      font-weight: bold;
+      padding-right: 2.5rem;
+      background-image: url("/public/images/icon-button-start.svg");
+      background-repeat: no-repeat;
+      background-position: 97.5% 57.5%; }
+      .button-secondary-cta:link, .button-secondary-cta:hover, .button-secondary-cta:focus, .button-secondary-cta:visited {
+        color: #fff;
+        background-color: #0072C6; }
+  </style>
+
 </head>
 <body>
 
@@ -97,6 +154,10 @@
   <li>your child has it</li>
   <li>you’re elderly</li>
 </ul>
+
+<p>
+  <a href="/book-an-appointment/start" class="button button-secondary-cta">Book a GP appointment</a>
+</p>
 
 <p>Your GP may prescribe you antiviral tablets. They should be taken within 72 hours of your rash appearing.</p>
 
