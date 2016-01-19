@@ -83,45 +83,6 @@ body {
       border: none;
     }
   }
-
-  #header-menu-link {
-    float: right;
-    height: 100%;
-    margin: 0 0 0 30px;
-    @include media(tablet) {
-      float: left;
-    }
-
-    a {
-      display: block;
-      position: relative;
-      top: 50%;
-      transform: translateY(-50%);
-      -webkit-transform: translateY(-50%);
-      color: $nhs-white;
-      font-weight: bold;
-      font-size: 18px;
-      text-decoration: none;
-
-      &:before {
-        content: '';
-        display: block;
-        float: left;
-        width: 30px;
-        height: 25px;
-        margin-right: 7px;
-        background: url('/public/images/icon-menu.svg') center no-repeat;
-      }
-
-      &:hover {
-        text-decoration: underline;
-      }
-      &:focus {
-        background-color: transparent;
-        outline: 3px solid $nhs-yellow;
-      }
-    }
-  }
 }
 
 .service-header {
