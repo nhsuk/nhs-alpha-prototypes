@@ -1,0 +1,42 @@
+{% extends 'templates/nhs_transaction_layout.html' %}
+
+{% block afterHeader %}
+  {% include "includes/service-headers/register-with-a-gp.html" %}
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main" class="">
+
+  <h1 class="heading-xlarge">
+    {{ practice.name }}
+  </h1>
+
+  <div class="grid-row">
+    <div class="column-third">
+      <p><b>
+        {{ practice.address.join('<br>') }}
+      </b>
+      </p>
+    </div>
+
+    <div class="column-third">
+      <img src="/public/images/gp-map.png" style="display:block; height: 22rem; margin-top: 1rem;">
+    </div>
+  </div>
+
+  <div>
+    <p>
+    <i>Some text here about how this service might be delivered</i>
+    </p>
+
+    </p>
+  </div>
+
+  <div style="padding-top: 1rem;">
+    <a class="button" href="https://www.myvisiononline.co.uk/vpp/">Book an appointment</a>
+  </div>
+
+</main>
+
+{% endblock %}

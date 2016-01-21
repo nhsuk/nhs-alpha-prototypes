@@ -129,6 +129,15 @@ module.exports = {
       )
     });
 
+    // Book an appointment - practice details
+    // TODO: parse and pass in the service details
+    app.get('/book-an-appointment/:service_slug?/practice-details/:practice', function(req, res) {
+      var practice = find_gp_practice(req.params.practice);
+
+      res.render('book-an-appointment/practice-details',
+                 {'practice': practice});
+    });
+
     app.get('/book-an-appointment/:service_slug?/see-particular-person', function(req, res) {
       var service = getServiceFromSlug(req.params.service_slug),
           practitioners = findPractitionersForService(service.slug);
