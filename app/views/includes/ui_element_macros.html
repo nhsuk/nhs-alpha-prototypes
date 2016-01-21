@@ -112,6 +112,29 @@
   </a>
 {% endmacro %}
 
+{% macro breadcrumbs(obj) %}
+<div id="breadcrumbs">
+  <div class="breadcrumbs-wrapper">
+
+    <ol>
+      <li><a href="/homepage">Home</a></li>
+      {% for x in obj.items %}
+      <li>
+        {% if x.href %}
+        <a href="{{ x.href }}">
+        {% endif %}
+        {{ x.text }}
+        {% if x.href %}
+        </a>
+        {% endif %}
+      </li>
+      {% endfor %}
+    </ol>
+
+  </div>
+</div>
+{% endmacro %}
+
 {% macro simple_pagination(i) %}
   <div class="pagination-simple">
     {% if i.next %}
