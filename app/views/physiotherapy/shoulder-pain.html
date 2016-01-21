@@ -3,13 +3,21 @@
 
 {% block content %}
 
+{{ ui_element_macros.breadcrumbs({
+  items: {
+    1: {
+      text: "Shoulder pain"
+    }
+  }
+})}}
+
 <main id="content" role="main">
   <h1 class="heading-xlarge">Shoulder pain</h1>
 
   <div class="text markdown-content">
 {% markdown %}
 
-You can have shoulder pain because of the following: 
+You can have shoulder pain because of the following:
 
 - bad posture
 - frozen shoulder - stiffness, sometimes no movement at all
