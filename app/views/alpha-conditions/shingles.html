@@ -79,6 +79,28 @@
         background-color: #0072C6; }
   </style>
 
+  <style type="text/css">
+    #breadcrumbs {
+      padding-top: 15px;
+      font-size: 15px;
+      overflow: auto; }
+      #breadcrumbs .breadcrumbs-wrapper {
+        max-width: 960px;
+        margin: 0 15px;
+        padding: 0; }
+        @media (min-width: 641px) {
+          #breadcrumbs .breadcrumbs-wrapper {
+            margin: 0 auto;
+            padding: 0 30px; } }
+      #breadcrumbs li {
+        display: inline-block;
+        margin-left: 0; }
+      #breadcrumbs li:after {
+        content: ' >'; }
+      #breadcrumbs li:last-child:after {
+        content: ''; }
+  </style>
+
 </head>
 <body>
 
