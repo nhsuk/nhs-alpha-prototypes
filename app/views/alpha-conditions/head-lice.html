@@ -1,3 +1,4 @@
+{% import 'includes/ui_element_macros.html' as ui_element_macros %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -52,6 +53,14 @@
     to help us improve it. The live service is <a href="http://www.nhs.uk">NHS.UK.</a>
   </p>
 </div>
+
+{{ ui_element_macros.breadcrumbs({
+  items: {
+    1: {
+      text: "Head lice"
+    }
+  }
+})}}
 
 <main id="content" class="block-container" role="main" tabindex="-1">
 
