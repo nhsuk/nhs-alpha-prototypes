@@ -76,24 +76,24 @@
           {{ i.address|safe }}
         </p>
       {% endif %}
-      <ul>
-        <li>
-          <a href="#" class="icomoon icomoon-calendar">Add to your calendar</a>
-        </li>
-        <!--<li>
-          <a href="#" class="icomoon icomoon-location">Show a map</a>
-        </li>-->
-        <li>
-          <a href="#" class="icomoon icomoon-printer">Print this page</a>
-        </li>
-        {% if i.tools %}
+      {% if i.tools %}
+        <ul>
+          <li>
+            <a href="#" class="icomoon icomoon-calendar">Add to your calendar</a>
+          </li>
+          <!--<li>
+            <a href="#" class="icomoon icomoon-location">Show a map</a>
+          </li>-->
+          <li>
+            <a href="#" class="icomoon icomoon-printer">Print this page</a>
+          </li>
           <li><a href="javascript:void(0)">Send me a text reminder 2 days before</a></li>
           <li><a href="javascript:void(0)" class="danger">Change or cancel this appointment</a></li>
-        {% endif %}
-      </ul>
-      <p>
-        <a href="/homepage" style="font-size: 16px;">Back to NHS.UK homepage</a>
-      </p>
+        </ul>
+        <p>
+          <a href="/homepage" style="font-size: 16px;">Back to NHS.UK homepage</a>
+        </p>
+      {% endif %}
     </div>
   </div>
 {% endmacro %}
