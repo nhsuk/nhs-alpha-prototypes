@@ -76,12 +76,21 @@
           {{ i.address|safe }}
         </p>
       {% endif %}
-      {% if i.tools %}
-        <ul>
+      <ul>
+        <li>
+          <a href="#" class="icomoon icomoon-calendar">Add to your calendar</a>
+        </li>
+        <!--<li>
+          <a href="#" class="icomoon icomoon-location">Show a map</a>
+        </li>-->
+        <li>
+          <a href="#" class="icomoon icomoon-printer">Print this page</a>
+        </li>
+        {% if i.tools %}
           <li><a href="javascript:void(0)">Send me a text reminder 2 days before</a></li>
           <li><a href="javascript:void(0)" class="danger">Change or cancel</a></li>
-        </ul>
-      {% endif %}
+        {% endif %}
+      </ul>
     </div>
   </div>
 {% endmacro %}
