@@ -3,6 +3,18 @@
 
 {% block content %}
 
+{{ ui_element_macros.breadcrumbs({
+  items: {
+    1: {
+      text: "Type 2 diabetes",
+      href: "/type-2-diabetes"
+    },
+    2: {
+      text: "Getting diagnosed"
+    }
+  }
+})}}
+
 <main id="content" role="main">
 
   {% include "type-2-diabetes/includes/nav-contents.html" %}
@@ -76,7 +88,7 @@ Usually the following things happen after your diagnosis:
     {% include "includes/nhs.uk/page_meta.html" %}
 
   </div>
-  
+
 </main>
 
 {% endblock %}

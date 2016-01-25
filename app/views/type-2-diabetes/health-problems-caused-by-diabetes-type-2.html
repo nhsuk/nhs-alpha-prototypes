@@ -3,6 +3,18 @@
 
 {% block content %}
 
+{{ ui_element_macros.breadcrumbs({
+  items: {
+    1: {
+      text: "Type 2 diabetes",
+      href: "/type-2-diabetes"
+    },
+    2: {
+      text: "Health problems"
+    }
+  }
+})}}
+
 <main id="content" role="main">
 
   {% include "type-2-diabetes/includes/nav-contents.html" %}
@@ -10,7 +22,7 @@
   <div class="text markdown-content">
 
 {% markdown %}
-#Health problems#
+#Health problems
 You need to watch your health and have regular check-ups if you have diabetes because high blood sugar can cause other problems and lead to:
 
 - [heart disease](http://www.nhs.uk/conditions/coronary-heart-disease/pages/introduction.aspx) and [stroke](http://www.nhs.uk/conditions/coronary-heart-disease/pages/introduction.aspx)

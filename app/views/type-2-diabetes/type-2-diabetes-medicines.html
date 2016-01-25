@@ -3,6 +3,18 @@
 
 {% block content %}
 
+{{ ui_element_macros.breadcrumbs({
+  items: {
+    1: {
+      text: "Type 2 diabetes",
+      href: "/type-2-diabetes"
+    },
+    2: {
+      text: "Understanding medication"
+    }
+  }
+})}}
+
 <main id="content" role="main">
 
   {% include "type-2-diabetes/includes/nav-contents.html" %}
@@ -11,7 +23,7 @@
 
 {% markdown %}
 
-#Understanding medication#
+#Understanding medication
 
 Most people need medicine to control their type 2 diabetes. Medicine is taken to keep your blood sugar level as normal as possible to prevent further health problems. You’ll have to take it for the rest of your life.
 

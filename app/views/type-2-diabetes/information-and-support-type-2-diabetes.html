@@ -3,6 +3,18 @@
 
 {% block content %}
 
+{{ ui_element_macros.breadcrumbs({
+  items: {
+    1: {
+      text: "Type 2 diabetes",
+      href: "/type-2-diabetes"
+    },
+    2: {
+      text: "Further information and support"
+    }
+  }
+})}}
+
 <main id="content" role="main">
 
   {% include "type-2-diabetes/includes/nav-contents.html" %}

@@ -1,0 +1,29 @@
+#breadcrumbs {
+  font-size: 15px;
+
+  @extend %contain-floats;
+
+  .breadcrumbs-wrapper {
+    max-width: 960px;
+  	margin: 0 15px;
+    padding: 0;
+
+    @include media(tablet) {
+      margin: 0 auto;
+      padding: 0 30px;
+    }
+  }
+
+  li {
+    display: inline-block;
+  }
+
+  li:after {
+    content: ' >';
+  }
+
+  li:last-child:after {
+    content: '';
+  }
+
+}

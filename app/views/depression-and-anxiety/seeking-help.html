@@ -1,7 +1,23 @@
 {% extends 'templates/nhs_content_layout.html' %}
 {% import 'includes/ui_element_macros.html' as ui_element_macros %}
 
+{% block pageTitle %}
+  Seeking help
+{% endblock %}
+
 {% block content %}
+
+{{ ui_element_macros.breadcrumbs({
+  items: {
+    1: {
+      text: "Depression and anxiety",
+      href: "/depression-and-anxiety"
+    },
+    2: {
+      text: "Seeking help"
+    }
+  }
+})}}
 
 <main id="content" role="main">
 
