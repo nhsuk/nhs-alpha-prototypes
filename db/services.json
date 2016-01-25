@@ -7,7 +7,8 @@
       "filters": {
         "time_of_day": true,
         "person": true
-      }
+      },
+      "booking_url": "https://systmonline.tpp-uk.com/2/Login?PracticeId=F81142&Date=20160121164214"
     },
     {
       "slug": "diabetes-foot-check",
@@ -16,7 +17,8 @@
       "filters": {
         "time_of_day": true,
         "person": true
-      }
+      },
+      "booking_url": "https://patient.emisaccess.co.uk/Account/Login"
     },
     {
       "slug": "diabetes-eye-screening",
@@ -24,7 +26,8 @@
       "confirmation_hint": "<p>People with diabetes are at risk of eye damage from diabetic retinopathy. Eye checks are a way of detecting the condition early before you notice any changes to your vision.</p><p>The check takes about half an hour and involves examining the back of the eyes and taking photographs of the retina.</p><p>If you wear glasses, bring these with you to the appointment.</p><p>It is also advisable to bring sunglasses with you to help on the way home. When your pupils expand, lights will become brighter.</p><p>The charity Diabetes UK have further <a href=\"http://www.diabetes.co.uk/diabetes-complications/retinopathy-screening.html\">information about diabetes eye check appointments.</a></p>",
       "filters": {
         "time_of_day": true
-      }
+      },
+      "booking_url": "https://www.ebs.ncrs.nhs.uk/"
     },
     {
       "slug": "diabetes-annual-review",
@@ -33,7 +36,8 @@
       "filters": {
         "time_of_day": true,
         "person": true
-      }
+      },
+      "booking_url": "https://patient.emisaccess.co.uk/Account/Login"
     },
     {
       "slug": "general-practice",
@@ -41,7 +45,8 @@
         "time_of_day": true,
         "gender": true,
         "person": true
-      }
+      },
+      "booking_url": "https://systmonline.tpp-uk.com/2/Login?PracticeId=F81142&Date=20160121164214"
     }
   ]
 }

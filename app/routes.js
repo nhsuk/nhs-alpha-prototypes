@@ -132,10 +132,12 @@ module.exports = {
     // Book an appointment - practice details
     // TODO: parse and pass in the service details
     app.get('/book-an-appointment/:service_slug?/practice-details/:practice', function(req, res) {
-      var practice = find_gp_practice(req.params.practice);
+      var practice = find_gp_practice(req.params.practice),
+          service = getServiceFromSlug(req.params.service_slug);
 
       res.render('book-an-appointment/practice-details',
-                 {'practice': practice});
+                 {'practice': practice,
+                  'service': service});
     });
 
     app.get('/book-an-appointment/:service_slug?/see-particular-person', function(req, res) {
