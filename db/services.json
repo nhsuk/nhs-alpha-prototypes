@@ -9,7 +9,7 @@
         "person": true
       },
       "booking_url": "https://systmonline.tpp-uk.com/2/Login?PracticeId=F81142&Date=20160121164214",
-      "booking_hint": "You need to have your blood sugar level checked every 3 months so your medication can be adjusted if needed."
+      "booking_hint": "<p>You need to have your blood sugar level checked every 3 months so your medication can be adjusted if needed.</p>Blood sugar tests are not always done by a GP. Ask for a blood sugar test when making your appointment so you see the right person.</p>"
     },
     {
       "slug": "diabetes-foot-check",
