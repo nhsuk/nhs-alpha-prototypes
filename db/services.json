@@ -28,7 +28,7 @@
       "filters": {
         "time_of_day": true
       },
-      "booking_url": "https://www.ebs.ncrs.nhs.uk/",
+      "booking_url": "http://nhsers.herokuapp.com/book-an-appointment/login2",
       "booking_hint": "<p>A diabetes eye check looks for damage to your eyes which can lead to sight problems and possibly blindness:</p><ul class=\"list-bullet\"><li>you get drops in your eyes to enlarge your pupils (temporarily)</li><li>a photo will be taken of the back of your eye</li><li>your vision can be blurry for a couple of hours afterwards</li><li>You shouldn’t drive for 2 hours after the eye check.</li></ul>"
     },
     {
