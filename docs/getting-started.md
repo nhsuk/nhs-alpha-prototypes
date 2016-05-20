@@ -13,8 +13,8 @@ While you don't need to know either to create a prototype it's worth noting any 
 When building a prototype you'll be doing the following:
 
 1. [creating templates to render a HTML page](./making-pages.md)
-2. [writing CSS to style those pages](./writing-css)
+2. [writing CSS to style those pages](./writing-css.md)
 
 ### Advanced
 
-3. [creating custom routes](./creating-routes)
+3. [creating custom routes](./creating-routes.md)
