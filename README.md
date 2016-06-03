@@ -1,5 +1,7 @@
 # NHS.UK Alpha Prototypes
 
+Prototypes from the NHS Alpha project, from July 2015 to January 2016.
+
 These prototypes have been built on an adapted [GOV.UK prototyping kit.](https://github.com/alphagov/govuk_prototype_kit).
 
 They contain code from these GOV.UK resources:
