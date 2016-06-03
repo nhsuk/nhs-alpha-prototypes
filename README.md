@@ -12,7 +12,7 @@ It's built on the [Express](http://expressjs.com/) framework and contains code a
 
 ## Requirements
 
-#### [Node](http://nodejs.org/)
+#### [Node v4.x.x](http://nodejs.org/)
 
 You may already have it, try:
 

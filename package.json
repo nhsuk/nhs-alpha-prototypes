@@ -3,9 +3,6 @@
   "description": "NHS prototyping app in Express",
   "version": "0.1.0",
   "private": true,
-  "engines": {
-    "node": "0.10.x"
-  },
   "dependencies": {
     "bluebird": "2.10.2",
     "consolidate": "0.x",
@@ -19,10 +16,10 @@
     "grunt-contrib-copy": "0.5.0",
     "grunt-contrib-watch": "0.5.3",
     "grunt-nodemon": "0.3.0",
-    "grunt-sass": "0.18.0",
+    "grunt-sass": "1.1.0",
     "grunt-text-replace": "0.3.12",
     "minimist": "0.0.8",
-    "node-sass": "2.1.1",
+    "node-sass": "3.4.2",
     "readdir": "0.0.6",
     "swig": "^1.4.2",
     "swig-extras": "0.0.1"
