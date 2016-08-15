@@ -71,3 +71,6 @@
   ul { @extend .list-bullet; }
   ol { @extend .list-number; }
 }
+
+// Prototype warning banner
+@import "modules/prototype-warning";

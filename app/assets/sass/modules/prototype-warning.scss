@@ -1,0 +1,22 @@
+.prototype-warning {
+  p {
+    margin: 0;
+    padding: 1em 0;
+    font-size: 13px;
+    border-bottom: 1px solid #b9d2dc;
+  }
+  b {
+    color: #9B004F;
+  }
+}
+
+.prototype-warning-container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  @media (min-width: 641px) {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
