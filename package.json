@@ -18,6 +18,7 @@
     "grunt-nodemon": "0.3.0",
     "grunt-sass": "1.1.0",
     "grunt-text-replace": "0.3.12",
+    "helmet": "^2.1.2",
     "minimist": "0.0.8",
     "node-sass": "3.4.2",
     "readdir": "0.0.6",

@@ -1,5 +1,6 @@
 var path = require('path'),
     express = require('express'),
+    helmet = require('helmet'),
     swig = require('swig'),
     swig_extras = require('swig-extras'),
     session = require('express-session'),
@@ -54,6 +55,37 @@ app.use(function (req, res, next) {
 app.use(session({
   secret: 'this is actually public'
 }));
+
+if (env !== 'development') {
+  app.use(helmet.contentSecurityPolicy({
+    directives: {
+      defaultSrc: [
+        '\'self\''
+      ],
+      scriptSrc: [
+        '\'self\'',
+        '\'unsafe-inline\''
+      ],
+      imgSrc: [
+        '\'self\'',
+        'data:'
+      ],
+      styleSrc: [
+        '\'self\'',
+        '\'unsafe-inline\''
+      ],
+      connectSrc: [
+        '\'self\''
+      ]
+    }
+  }));
+  app.use(helmet.xssFilter());
+  app.use(helmet.frameguard({
+    action: 'deny',
+  }));
+  app.use(helmet.hidePoweredBy());
+  app.use(helmet.ieNoOpen());
+}
 
 // give views/layouts direct access to session data
 app.use(function(req, res, next){
