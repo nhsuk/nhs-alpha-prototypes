@@ -1,0 +1,83 @@
+{% extends 'templates/nhs_content_layout.html' %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+<div class="text markdown-content">
+
+{% markdown %}
+
+#Finding further information and support for type 2 diabetes
+
+There is a lot of information and support available for type 2 diabetes. Some of the support depends on the area you live in. 
+
+##Understanding type 2 diabetes
+Information about what diabetes is, diagnosis and monitoring your condition. 
+
+- [What is diabetes?](https://www.diabetes.org.uk/Guide-to-diabetes/What-is-diabetes/) from the charity Diabetes UK
+- [Type 2 diabetes - the basics](http://www.webmd.com/diabetes/guide/type-2-diabetes) from the medical site WebMD 
+- [Diabetes treatments](https://www.diabetes.org.uk/Guide-to-diabetes/What-is-diabetes/Diabetes-treatments/) from Diabetes UK
+- [15 checks you should do when you have diabetes](https://www.diabetes.org.uk/Guide-to-diabetes/Monitoring/15-healthcare-essentials/) from Diabetes UK
+- [Managing your diabetes](https://www.diabetes.org.uk/Guide-to-diabetes/Managing-your-diabetes/) from Diabetes UK
+
+##Driving with type 2 diabetes
+You have to [tell the DVLA that you have diabetes type 2](https://www.gov.uk/diabetes-driving).  You can be fined if you don’t. 
+
+##Courses for managing diabetes
+There are free education courses to help you learn more about and manage your type 2 diabetes. Check with hospitals in your area. 
+
+The NHS also offers one-day courses courses. To sign up email the contacts on the pages below. 
+
+- [course for newly diagnosed people ](http://www.desmond-project.org.uk/newlydiagnosedandfoundationmodules-278.html)
+- [foundation course to build on newly diagnosed](http://www.desmond-project.org.uk/newlydiagnosedandfoundationmodules-278.html)
+- [course for South Asians](http://www.desmond-project.org.uk/newlydiagnosedandfoundationmodules-278.html) delivered with interpreters in Punjabi, Urdu, Bengali and Gujarati 
+
+###What you need to take part
+Your GP will need to refer you. You can phone your GP surgery to get a referral letter, you don’t need to make an appointment. 
+
+Bring the referral letter from your GP to the first session. 
+
+##Support groups for type 2 diabetes
+The charity Diabetes UK runs [local support groups](https://www.diabetes.org.uk/How_we_help/Local_support_groups/). 
+
+They can help with things like managing your diabetes on a daily basis, diet, exercise or dealing with emotional problems like depression. They’re a place to talk and find out how others live with the condition. 
+
+##Blogs about diabetes
+
+- [Diabetes.co.uk forum](http://www.diabetes.co.uk/forum/) - discussions about living with and managing diabetes
+- [Diabetes UK blogs](http://blogs.diabetes.org.uk/) - collection of different blogs on food, eyes, work and diabetes and more
+- [Vicki’s notebook](http://vickisnotebook.blogspot.co.uk/) - experiences with medication for type 2 diabetes
+
+##Chat rooms for diabetes
+
+- [Healthful Chat](http://www.healthfulchat.org/diabetes-chat-room.html) - people connecting over diabetes or just to chat
+- [Diabetes Chat](http://www.diabetes.co.uk/diabetes-chat/) - offers scheduled chats with healthcare professionals or just the chance to talk to others
+- [tudiabetes](http://www.tudiabetes.org/) - health problems, medication, diabetes research, you need to register to use the chat room
+
+##Eating with type 2 diabetes
+
+- [Top healthy eating tips](https://www.diabetes.org.uk/Guide-to-diabetes/Managing-your-diabetes/Healthy-eating/Top-tips/) - the charity Diabetes UK has 12 handy tips about enjoying food while managing your diabetes
+- [Enjoy food](https://www.diabetes.org.uk/Guide-to-diabetes/Enjoy-food/) - information on shopping, cooking and eating from Diabetes UK
+- [Recipe cookbook](http://www.diabetes.co.uk/diet-for-type2-diabetes.html) - 365 recipes for people with diabetes
+- [Ten steps to eating well](http://patient.info/health/type-2-diabetes-healthy-eating-sheet) - practical tips about how you can change your diet from Patient Info
+
+##Keeping active with type 2 diabetes
+
+- [Getting active and staying active](https://www.diabetes.org.uk/Guide-to-diabetes/Managing-your-diabetes/Exercise/) - the charity Diabetes UK explains what kind of activity you could do and gives tips on how to get active
+- [Video with exercise tips](https://www.youtube.com/watch?v=9RDltBjdbEY) - simple exercises that you can do at home
+
+##Carry medical ID
+Some people choose to wear a special wristband or carry something in their wallet that says they have diabetes, in case there is a medical emergency. 
+
+Knowing you have diabetes can make a difference to the treatment you’ll be given.
+
+Google ‘medical ID’ to find a website that sells them.  
+
+{% endmarkdown %}
+
+</div>
+
+</main>
+
+{% endblock %}
